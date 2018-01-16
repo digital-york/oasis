@@ -1,0 +1,8 @@
+de:
+  hyrax:
+    icons:
+      material:     'fa fa-file-text-o'
+    select_type:
+      material:
+        name:               "Material"
+        description:        "Material Werke"
