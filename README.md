@@ -1,24 +1,34 @@
-# README
+[![Build Status](https://travis-ci.org/digital-york/oasis.svg?branch=master)](https://travis-ci.org/digital-york/oasis)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## OASIS
 
-Things you may want to cover:
+![OASIS](app/assets/images/oasis.png)
 
-* Ruby version
+The Open Accessible Summaries In Language Studies (OASIS) initiative aims to make research findings on language learning and teaching available and accessible to a wide audience.
 
-* System dependencies
 
-* Configuration
+## Project Team
 
-* Database creation
+Emma Marsden (University of York; project coordinator)
+Sible Andringa (University of Amsterdam)
+Laura Collins (Concordia University)
+Carrie Jackson (Penn State University)
+Rowena Kasprowicz (University of York)
+Luke Plonsky (Georgetown University) 
+ 
+## Collaborators
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+The Association for Language LearningSible Andringa (Universiteit van Amsterdam)
+Marta Anton (Indiana University-Purdue University Indianapolis)
+Ian Bauckham CBE (CEO Tenax Schools Trust, Author Teaching Schools Council MFL Pedagogy Report)
+Catherine van Beuningen; (University of Applied Sciences Utrecht and Amsterdam University of Applied Sciences)
+Heidi Byrnes (Georgetown University)
+Terry Lamb (Secretary General, former President of the International Federation of Language Teaching Associations)
+Kevin McManus (Penn State University)
+Lais de Oliveira Borges (UCL)
+Charlene Polio (Michigan State University)
+Andrea Revesz (UCL)
+Fatma Said (The University of York)
+Natasha Tokowicz (University of Pittsburgh)
+Tessa Warren (University of Pittsburgh) 
+  
