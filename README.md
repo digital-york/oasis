@@ -24,7 +24,9 @@ Luke Plonsky (Georgetown University)
  
 ## Collaborators
 
-The Association for Language LearningSible Andringa (Universiteit van Amsterdam)
+The Association for Language Learning
+
+Sible Andringa (Universiteit van Amsterdam)
 
 Marta Anton (Indiana University-Purdue University Indianapolis)
 
