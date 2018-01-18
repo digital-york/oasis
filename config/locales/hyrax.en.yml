@@ -45,13 +45,13 @@ en:
           subject_tesim: Subject
           title_tesim: Title
   hyrax:
-    product_name:           "Hyrax"
-    product_twitter_handle: "@SamveraRepo"
-    institution_name:       "Institution"
-    institution_name_full:  "The Institution Name"
-    account_name:           "My Institution Account Id"
+    product_name:           "OASIS"
+    product_twitter_handle: "@oasis-database"
+    institution_name:       "OASIS"
+    institution_name_full:  "Open Accessible Summaries In Language Studies"
+    account_name:           "My Account Id"
     directory:
       suffix:               "@example.org"
     footer:
-      copyright_html: "<strong>Copyright &copy; 2017 Samvera</strong> Licensed under the Apache License, Version 2.0"
-      service_html: A service of <a href="http://samvera.org/" class="navbar-link" target="_blank">Samvera</a>.
+      copyright_html: "<strong>Copyright &copy; 2018 OASIS</strong>"
+      service_html: Powered by <a href="https://dlib.york.ac.uk/" class="navbar-link" target="_blank">York Digital Library</a>.
