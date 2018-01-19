@@ -6,9 +6,10 @@ class Material < ActiveFedora::Base
   self.indexer = MaterialIndexer
   # Change this to restrict which works can be added as a child.
   # self.valid_child_concerns = []
-  validates :title, presence: { message: 'Your material must have a title.' }
-
   self.human_readable_type = 'Material'
+  validates :material_creator,                presence:     { message: 'Your material must have a creator.' }
+  validates :material_type,                    presence:    { message: 'Your material must have a type.' }
+  validates :material_general_research_area, presence:    { message: 'Your material must have a general research area.' }
 
   include ::Oasis::OasisMetadata
 
