@@ -31,7 +31,8 @@ class CatalogController < ApplicationController
     config.default_solr_params = {
       qt: "search",
       rows: 10,
-      qf: "title_tesim description_tesim creator_tesim keyword_tesim"
+      #qf: "title_tesim description_tesim creator_tesim keyword_tesim"
+      qf: "material_creator_tesim material_type_tesim material_general_research_area_tesim"
     }
 
     # solr field configuration for document/show views
@@ -39,19 +40,31 @@ class CatalogController < ApplicationController
     config.index.display_type_field = solr_name("has_model", :symbol)
     config.index.thumbnail_field = 'thumbnail_path_ss'
 
+
+    #Oasis fields
+    config.index.material_creator_field               = solr_name('material_creator_value', :stored_searchable)
+    config.index.material_type_field                  = solr_name('material_type_value', :stored_searchable)
+    config.index.material_general_research_area_field = solr_name('material_general_research_area_value', :stored_searchable)
+
+
     # solr fields that will be treated as facets by the blacklight application
     #   The ordering of the field names is the order of the display
-    config.add_facet_field solr_name("human_readable_type", :facetable), label: "Type", limit: 5
-    config.add_facet_field solr_name("resource_type", :facetable), label: "Resource Type", limit: 5
-    config.add_facet_field solr_name("creator", :facetable), limit: 5
-    config.add_facet_field solr_name("contributor", :facetable), label: "Contributor", limit: 5
-    config.add_facet_field solr_name("keyword", :facetable), limit: 5
-    config.add_facet_field solr_name("subject", :facetable), limit: 5
-    config.add_facet_field solr_name("language", :facetable), limit: 5
-    config.add_facet_field solr_name("based_near_label", :facetable), limit: 5
-    config.add_facet_field solr_name("publisher", :facetable), limit: 5
-    config.add_facet_field solr_name("file_format", :facetable), limit: 5
-    config.add_facet_field solr_name('member_of_collections', :symbol), limit: 5, label: 'Collections'
+    #config.add_facet_field solr_name("human_readable_type", :facetable), label: "Type", limit: 5
+    #config.add_facet_field solr_name("resource_type", :facetable), label: "Resource Type", limit: 5
+    #config.add_facet_field solr_name("creator", :facetable), limit: 5
+    #config.add_facet_field solr_name("contributor", :facetable), label: "Contributor", limit: 5
+    #config.add_facet_field solr_name("keyword", :facetable), limit: 5
+    #config.add_facet_field solr_name("subject", :facetable), limit: 5
+    #config.add_facet_field solr_name("language", :facetable), limit: 5
+    #config.add_facet_field solr_name("based_near_label", :facetable), limit: 5
+    #config.add_facet_field solr_name("publisher", :facetable), limit: 5
+    #config.add_facet_field solr_name("file_format", :facetable), limit: 5
+    #config.add_facet_field solr_name('member_of_collections', :symbol), limit: 5, label: 'Collections'
+
+    # Oasis search facet fields
+    config.add_facet_field solr_name('material_creator', :facetable), label: "Creator", collapse: false, limit: 5
+    config.add_facet_field solr_name('material_type', :facetable), label: "Material type", limit: 5
+    config.add_facet_field solr_name('material_general_research_area', :facetable), label: "Research Area", limit: 5
 
     # The generic_type isn't displayed on the facet list
     # It's used to give a label to the filter that comes from the user profile
@@ -85,6 +98,12 @@ class CatalogController < ApplicationController
     config.add_index_field solr_name("identifier", :stored_searchable), helper_method: :index_field_link, field_name: 'identifier'
     config.add_index_field solr_name("embargo_release_date", :stored_sortable, type: :date), label: "Embargo release date", helper_method: :human_readable_date
     config.add_index_field solr_name("lease_expiration_date", :stored_sortable, type: :date), label: "Lease expiration date", helper_method: :human_readable_date
+
+    #Oasis search fields
+    config.add_index_field solr_name("material_creator", :stored_searchable), label: "Creator", itemprop: 'creator'
+    config.add_index_field solr_name("material_type", :stored_searchable), label: "Material type", itemprop: 'material_type'
+    config.add_index_field solr_name("material_general_research_area", :stored_searchable), label: "General Research Area", itemprop: 'general_research_area'
+
 
     # solr fields to be displayed in the show (single result) view
     #   The ordering of the field names is the order of the display
@@ -272,6 +291,32 @@ class CatalogController < ApplicationController
         pf: solr_name
       }
     end
+
+    # Add Oasis search fields
+    config.add_search_field('material_creator') do |field|
+      solr_name = solr_name("material_creator", :stored_searchable)
+      field.solr_local_parameters = {
+          qf: solr_name,
+          pf: solr_name
+      }
+    end
+
+    config.add_search_field('material_type') do |field|
+      solr_name = solr_name("material_type", :stored_searchable)
+      field.solr_local_parameters = {
+          qf: solr_name,
+          pf: solr_name
+      }
+    end
+
+    config.add_search_field('material_general_research_area') do |field|
+      solr_name = solr_name("material_general_research_area", :stored_searchable)
+      field.solr_local_parameters = {
+          qf: solr_name,
+          pf: solr_name
+      }
+    end
+
 
     # "sort results by" select (pulldown)
     # label in pulldown is followed by the name of the SOLR field to sort by and
