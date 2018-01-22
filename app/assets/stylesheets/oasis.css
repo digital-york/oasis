@@ -1,0 +1,36 @@
+.homepage_row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.homepage_column {
+    text-align: center;
+    float: left;
+    width: 50%;
+}
+
+.navbtn {
+    width: 228px;
+    font: bold 18px Verdana, "Helvetica Neue", Helvetica, Arial, clean, sans-serif !important;
+    text-shadow: 0 -1px 1px rgba(0,0,0,0.25), -2px 0 1px rgba(0,0,0,0.25);
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-box-shadow: 0 1px 2px rgba(0,0,0,0.5);
+    -webkit-box-shadow: 0 1px 2px rgba(0,0,0,0.5);
+    display: inline-block;
+    color: white;
+    position: relative;
+    bottom: 0px;
+    padding-top: 25px;
+    white-space: nowrap;
+    text-decoration: none;
+    height: 80px;
+    cursor: pointer;
+    background: #3b5086 scroll 0 0;
+    border-style: none;
+    text-align: center;
+    vertical-align: middle;
+    overflow: visible;
+}
