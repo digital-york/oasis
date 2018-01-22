@@ -50,6 +50,8 @@ en:
     institution_name:       "OASIS"
     institution_name_full:  "Open Accessible Summaries In Language Studies"
     account_name:           "My Account Id"
+    controls:
+      submit:               "Submit summary"
     directory:
       suffix:               "@example.org"
     footer:
