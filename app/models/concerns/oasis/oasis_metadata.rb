@@ -7,13 +7,13 @@ module Oasis
         index.as :stored_searchable, :sortable, :facetable
       end
       property :material_type,                      predicate: ::RDF::URI.new('http://dlib.york.ac.uk/ontologies/oasis#material_type'), multiple: true do |index|
-          index.as :stored_searchable, :sortable, :facetable
+          index.as :stored_searchable, :sortable
       end
       property :material_general_research_area,   predicate: ::RDF::URI.new('http://dlib.york.ac.uk/ontologies/oasis#general_research_area'), multiple: true do |index|
         index.as :stored_searchable, :sortable, :facetable
       end
       property :material_type_of_file,             predicate: ::RDF::URI.new('http://dlib.york.ac.uk/ontologies/oasis#type_of_file'), multiple: true do |index|
-        index.as :stored_searchable, :sortable, :facetable
+        index.as :stored_searchable, :sortable
       end
 
       #--------------------------
@@ -40,10 +40,10 @@ module Oasis
         index.as :stored_searchable
       end
       property :participants_firstlanguage,                 predicate: ::RDF::URI.new('http://dlib.york.ac.uk/ontologies/oasis#participants_firstlanguage'), multiple: true do |index|
-        index.as :stored_searchable
+        index.as :stored_searchable, :sortable, :facetable
       end
       property :participants_targetlanguage,                predicate: ::RDF::URI.new('http://dlib.york.ac.uk/ontologies/oasis#participants_targetlanguage'), multiple: true do |index|
-        index.as :stored_searchable
+        index.as :stored_searchable, :sortable, :facetable
       end
       property :participants_age,                            predicate: ::RDF::URI.new('http://dlib.york.ac.uk/ontologies/oasis#participants_age'), multiple: false do |index|
         index.as :stored_searchable
