@@ -32,12 +32,14 @@ class CatalogController < ApplicationController
       qt: "search",
       rows: 10,
       #qf: "title_tesim description_tesim creator_tesim keyword_tesim"
-      qf: "summary_general_research_area_tesim participants_targetlanguage_tesim"
+      qf: "summary_general_research_area_tesim participants_targetlanguage_tesim publication_author_tesim"
     }
 
     # solr field configuration for document/show views
     #config.index.title_field = solr_name("title", :stored_searchable)
     config.index.summary_general_research_area_field = solr_name("summary_general_research_area", :stored_searchable)
+    config.index.summary_general_research_area_field = solr_name("publication_author",              :stored_searchable)
+
     config.index.display_type_field = solr_name("has_model", :symbol)
     config.index.thumbnail_field = 'thumbnail_path_ss'
 
@@ -61,6 +63,8 @@ class CatalogController < ApplicationController
 
     # Oasis search facet fields
     config.add_facet_field solr_name('summary_general_research_area', :facetable), label: "General Research Area", limit: 5
+    config.add_facet_field solr_name('publication_author', :facetable), label: "Author", limit: 5
+    config.add_facet_field solr_name('publication_date',   :facetable), label: "Publication Date", limit: 5
     config.add_facet_field solr_name('participants_targetlanguage',    :facetable), label: "Language Being Learned", limit: 5
 
     # The generic_type isn't displayed on the facet list

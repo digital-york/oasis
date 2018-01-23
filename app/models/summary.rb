@@ -8,9 +8,8 @@ class Summary < ActiveFedora::Base
   # self.valid_child_concerns = []
 
   self.human_readable_type = 'Summary'
-  validates :summary_creator,                presence:     { message: 'Your summary must have a creator.' }
-  validates :summary_type,                    presence:    { message: 'Your summary must have a type.' }
-  validates :summary_general_research_area, presence:    { message: 'Your summary must have a general research area.' }
+  validates :publication_author,             presence:     { message: 'Your summary must have an author.' }
+  validates :summary_general_research_area, presence:     { message: 'Your summary must have a general research area.' }
 
   include ::Oasis::OasisMetadata
 

@@ -78,7 +78,31 @@ module Oasis
 
       #--------------------------
       #publication and acknowledgements group
-      property :relateditem_type,                  predicate: ::RDF::URI.new('http://dlib.york.ac.uk/ontologies/oasis#relateditem_type'), multiple: true do |index|
+      property :publication_author,                  predicate: ::RDF::URI.new('http://dlib.york.ac.uk/ontologies/oasis#publication_author'), multiple: true do |index|
+        index.as :stored_searchable, :sortable, :facetable
+      end
+      property :publication_title,                  predicate: ::RDF::URI.new('http://dlib.york.ac.uk/ontologies/oasis#publication_title'), multiple: true do |index|
+        index.as :stored_searchable, :sortable, :facetable
+      end
+      property :publication_journal_name,          predicate: ::RDF::URI.new('http://dlib.york.ac.uk/ontologies/oasis#publication_journal_name'), multiple: true do |index|
+        index.as :stored_searchable, :sortable, :facetable
+      end
+      property :publication_date,                  predicate: ::RDF::URI.new('http://dlib.york.ac.uk/ontologies/oasis#publication_date'), multiple: true do |index|
+        index.as :stored_searchable, :sortable, :facetable
+      end
+      property :publication_volume,               predicate: ::RDF::URI.new('http://dlib.york.ac.uk/ontologies/oasis#publication_volume'), multiple: true do |index|
+        index.as :stored_searchable
+      end
+      property :publication_issue,                  predicate: ::RDF::URI.new('http://dlib.york.ac.uk/ontologies/oasis#publication_issue'), multiple: true do |index|
+        index.as :stored_searchable
+      end
+      property :publication_pages_from,                  predicate: ::RDF::URI.new('http://dlib.york.ac.uk/ontologies/oasis#publication_pages_from'), multiple: true do |index|
+        index.as :stored_searchable
+      end
+      property :publication_pages_to,                  predicate: ::RDF::URI.new('http://dlib.york.ac.uk/ontologies/oasis#publication_pages_to'), multiple: true do |index|
+        index.as :stored_searchable
+      end
+      property :publication_identifier,        predicate: ::RDF::URI.new('http://dlib.york.ac.uk/ontologies/oasis#publication_pages_from'), multiple: true do |index|
         index.as :stored_searchable
       end
 

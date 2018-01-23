@@ -27,12 +27,22 @@ module Hyrax
                   :participants_time_spent_using_l2,
                   :participants_domain_of_use,
 
+                  :publication_author,
+                  :publication_title,
+                  :publication_journal_name,
+                  :publication_date,
+                  :publication_volume,
+                  :publication_issue,
+                  :publication_pages_from,
+                  :publication_pages_to,
+                  :publication_identifier,
+
                   :licence,
                   :emails,
                   :licence_agreement,
                   :comments
     ]
 
-    self.required_fields = [:summary_creator,:summary_type,:summary_general_research_area]
+    self.required_fields = [:publication_author,:summary_general_research_area]
   end
 end
