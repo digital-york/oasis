@@ -6,7 +6,6 @@ class Summary < ActiveFedora::Base
   self.indexer = SummaryIndexer
   # Change this to restrict which works can be added as a child.
   # self.valid_child_concerns = []
-  validates :title, presence: { message: 'Your work must have a title.' }
 
   self.human_readable_type = 'Summary'
   validates :summary_creator,                presence:     { message: 'Your summary must have a creator.' }

@@ -12,9 +12,6 @@ module Oasis
       property :summary_general_research_area,   predicate: ::RDF::URI.new('http://dlib.york.ac.uk/ontologies/oasis#general_research_area'), multiple: true do |index|
         index.as :stored_searchable, :sortable, :facetable
       end
-      property :summary_type_of_file,             predicate: ::RDF::URI.new('http://dlib.york.ac.uk/ontologies/oasis#type_of_file'), multiple: true do |index|
-        index.as :stored_searchable, :sortable
-      end
 
       #--------------------------
       #further details group
