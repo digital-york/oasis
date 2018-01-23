@@ -2,35 +2,35 @@ module Oasis
   module OasisMetadata extend ActiveSupport::Concern
     included do
       #--------------------------
-      #material type group
-      property :material_creator,                  predicate: ::RDF::URI.new('http://dlib.york.ac.uk/ontologies/oasis#creator'), multiple: true do |index|
+      #summary details group
+      property :summary_creator,                  predicate: ::RDF::URI.new('http://dlib.york.ac.uk/ontologies/oasis#creator'), multiple: true do |index|
         index.as :stored_searchable, :sortable, :facetable
       end
-      property :material_type,                      predicate: ::RDF::URI.new('http://dlib.york.ac.uk/ontologies/oasis#material_type'), multiple: true do |index|
+      property :summary_type,                      predicate: ::RDF::URI.new('http://dlib.york.ac.uk/ontologies/oasis#summary_type'), multiple: true do |index|
           index.as :stored_searchable, :sortable
       end
-      property :material_general_research_area,   predicate: ::RDF::URI.new('http://dlib.york.ac.uk/ontologies/oasis#general_research_area'), multiple: true do |index|
+      property :summary_general_research_area,   predicate: ::RDF::URI.new('http://dlib.york.ac.uk/ontologies/oasis#general_research_area'), multiple: true do |index|
         index.as :stored_searchable, :sortable, :facetable
       end
-      property :material_type_of_file,             predicate: ::RDF::URI.new('http://dlib.york.ac.uk/ontologies/oasis#type_of_file'), multiple: true do |index|
+      property :summary_type_of_file,             predicate: ::RDF::URI.new('http://dlib.york.ac.uk/ontologies/oasis#type_of_file'), multiple: true do |index|
         index.as :stored_searchable, :sortable
       end
 
       #--------------------------
       #further details group
-      property :material_datatype,                  predicate: ::RDF::URI.new('http://dlib.york.ac.uk/ontologies/oasis#datatype'), multiple: true do |index|
+      property :summary_datatype,                  predicate: ::RDF::URI.new('http://dlib.york.ac.uk/ontologies/oasis#datatype'), multiple: true do |index|
         index.as :stored_searchable, :sortable, :facetable
       end
-      property :material_linguistictarget,         predicate: ::RDF::URI.new('http://dlib.york.ac.uk/ontologies/oasis#linguistictarget'), multiple: true do |index|
+      property :summary_linguistictarget,         predicate: ::RDF::URI.new('http://dlib.york.ac.uk/ontologies/oasis#linguistictarget'), multiple: true do |index|
         index.as :stored_searchable, :sortable, :facetable
       end
-      property :material_funder,                     predicate: ::RDF::URI.new('http://dlib.york.ac.uk/ontologies/oasis#funder'), multiple: true do |index|
+      property :summary_funder,                     predicate: ::RDF::URI.new('http://dlib.york.ac.uk/ontologies/oasis#funder'), multiple: true do |index|
         index.as :stored_searchable, :sortable, :facetable
       end
-      property :material_title,                      predicate: ::RDF::URI.new('http://dlib.york.ac.uk/ontologies/oasis#title'), multiple: true do |index|
+      property :summary_title,                      predicate: ::RDF::URI.new('http://dlib.york.ac.uk/ontologies/oasis#title'), multiple: true do |index|
         index.as :stored_searchable
       end
-      property :material_notes,                      predicate: ::RDF::URI.new('http://dlib.york.ac.uk/ontologies/oasis#notes'), multiple: true do |index|
+      property :summary_notes,                      predicate: ::RDF::URI.new('http://dlib.york.ac.uk/ontologies/oasis#notes'), multiple: true do |index|
         index.as :stored_searchable
       end
 

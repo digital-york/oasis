@@ -1,8 +1,8 @@
 # Generated via
-#  `rails generate hyrax:work Material`
+#  `rails generate hyrax:work Summary`
 require 'rails_helper'
 
-RSpec.describe Hyrax::MaterialsController do
+RSpec.describe Hyrax::SummariesController do
   it "has tests" do
     skip "Add your tests here"
   end

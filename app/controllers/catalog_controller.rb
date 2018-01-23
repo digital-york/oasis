@@ -32,7 +32,7 @@ class CatalogController < ApplicationController
       qt: "search",
       rows: 10,
       #qf: "title_tesim description_tesim creator_tesim keyword_tesim"
-      qf: "material_creator_tesim material_type_tesim material_general_research_area_tesim material_linguistictarget_tesim"
+      qf: "summary_creator_tesim summary_type_tesim summary_general_research_area_tesim summary_linguistictarget_tesim"
     }
 
     # solr field configuration for document/show views
@@ -42,9 +42,9 @@ class CatalogController < ApplicationController
 
 
     #Oasis fields
-    config.index.material_creator_field               = solr_name('material_creator_value', :stored_searchable)
-    config.index.material_type_field                  = solr_name('material_type_value', :stored_searchable)
-    config.index.material_general_research_area_field = solr_name('material_general_research_area_value', :stored_searchable)
+    config.index.summary_creator_field               = solr_name('summary_creator_value', :stored_searchable)
+    config.index.summary_type_field                  = solr_name('summary_type_value', :stored_searchable)
+    config.index.summary_general_research_area_field = solr_name('summary_general_research_area_value', :stored_searchable)
     config.index.participants_firstlanguage_field     = solr_name('participants_firstlanguage_value', :stored_searchable)
 
     # solr fields that will be treated as facets by the blacklight application
@@ -62,9 +62,9 @@ class CatalogController < ApplicationController
     #config.add_facet_field solr_name('member_of_collections', :symbol), limit: 5, label: 'Collections'
 
     # Oasis search facet fields
-    config.add_facet_field solr_name('material_creator', :facetable), label: "Creator", collapse: false, limit: 5
-    config.add_facet_field solr_name('material_linguistictarget', :facetable), label: "Language feature", limit: 5
-    config.add_facet_field solr_name('material_general_research_area', :facetable), label: "Research Area", limit: 5
+    config.add_facet_field solr_name('summary_creator', :facetable), label: "Creator", collapse: false, limit: 5
+    config.add_facet_field solr_name('summary_linguistictarget', :facetable), label: "Language feature", limit: 5
+    config.add_facet_field solr_name('summary_general_research_area', :facetable), label: "Research Area", limit: 5
     config.add_facet_field solr_name('participants_firstlanguage', :facetable), label: "First Language(s) of Learners", limit: 5
     config.add_facet_field solr_name('participants_targetlanguage', :facetable), label: "Language Being Learned", limit: 5
 
@@ -102,9 +102,9 @@ class CatalogController < ApplicationController
     config.add_index_field solr_name("lease_expiration_date", :stored_sortable, type: :date), label: "Lease expiration date", helper_method: :human_readable_date
 
     #Oasis search fields
-    config.add_index_field solr_name("material_creator", :stored_searchable), label: "Creator", itemprop: 'creator'
-    config.add_index_field solr_name("material_type", :stored_searchable), label: "Material type", itemprop: 'material_type'
-    config.add_index_field solr_name("material_general_research_area", :stored_searchable), label: "General Research Area", itemprop: 'general_research_area'
+    config.add_index_field solr_name("summary_creator", :stored_searchable), label: "Creator", itemprop: 'creator'
+    config.add_index_field solr_name("summary_type", :stored_searchable), label: "Summary type", itemprop: 'summary_type'
+    config.add_index_field solr_name("summary_general_research_area", :stored_searchable), label: "General Research Area", itemprop: 'general_research_area'
 
 
     # solr fields to be displayed in the show (single result) view
@@ -295,24 +295,24 @@ class CatalogController < ApplicationController
     end
 
     # Add Oasis search fields
-    config.add_search_field('material_creator') do |field|
-      solr_name = solr_name("material_creator", :stored_searchable)
+    config.add_search_field('summary_creator') do |field|
+      solr_name = solr_name("summary_creator", :stored_searchable)
       field.solr_local_parameters = {
           qf: solr_name,
           pf: solr_name
       }
     end
 
-    config.add_search_field('material_linguistictarget') do |field|
-      solr_name = solr_name("material_linguistictarget", :stored_searchable)
+    config.add_search_field('summary_linguistictarget') do |field|
+      solr_name = solr_name("summary_linguistictarget", :stored_searchable)
       field.solr_local_parameters = {
           qf: solr_name,
           pf: solr_name
       }
     end
 
-    config.add_search_field('material_general_research_area') do |field|
-      solr_name = solr_name("material_general_research_area", :stored_searchable)
+    config.add_search_field('summary_general_research_area') do |field|
+      solr_name = solr_name("summary_general_research_area", :stored_searchable)
       field.solr_local_parameters = {
           qf: solr_name,
           pf: solr_name

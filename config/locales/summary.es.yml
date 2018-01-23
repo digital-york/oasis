@@ -1,10 +1,10 @@
 es:
   hyrax:
     icons:
-      material:     'fa fa-file-text-o'
+      summary:     'fa fa-file-text-o'
     select_type:
-      material:
+      summary:
         # TODO: translate `human_name` into Spanish
-        name:               "Material"
+        name:               "Summary"
         # TODO: translate `human_name` into Spanish
-        description:        "Material trabajos"
+        description:        "Summary trabajos"
