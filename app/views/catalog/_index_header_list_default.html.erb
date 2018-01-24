@@ -1,10 +1,5 @@
 <% doc_presenter = index_presenter(document) %>
-<% pub_title = ''%>
-<% index_fields(document).each do |field_name, field| -%>
-    <% if field_name=='publication_title_tesim' %>
-        <% pub_title = doc_presenter.field_value field_name%>
-    <% end %>
-<% end %>
+<% pub_title = doc_presenter.field_value 'publication_title_tesim'%>
 
 <h3>
   <% unless pub_title.nil? || pub_title==''%>

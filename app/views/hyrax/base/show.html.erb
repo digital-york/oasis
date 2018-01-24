@@ -2,14 +2,14 @@
 
 <%= render 'shared/citations' %>
 
+<% doc_presenter = index_presenter(@presenter.solr_document) %>
+
+<% ra = doc_presenter.field_value 'summary_general_research_area_tesim'%>
 <div class="row">
-  <%unless @presenter.solr_document._source["summary_general_research_area_tesim"].nil? %>
+  <%unless ra.nil? %>
   <div class="col-xs-12">
     <h4>General Research Areas</h4>
-
-    <%@presenter.solr_document._source["summary_general_research_area_tesim"].each do |ra|%>
-        <li><%=ra%></li>
-    <%end%>
+    <li><%=ra%></li>
   </div>
   <%end%>
 
