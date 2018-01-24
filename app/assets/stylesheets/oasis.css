@@ -34,3 +34,8 @@
     vertical-align: middle;
     overflow: visible;
 }
+
+.catalog .list-thumbnail {
+    max-width: 150px;
+    max-height: 150px;
+}
