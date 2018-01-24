@@ -5,7 +5,11 @@
 <% doc_presenter = index_presenter(@presenter.solr_document) %>
 
 <% ra = doc_presenter.field_value 'summary_general_research_area_tesim'%>
-<div class="row">
+<div class="row" id="accordion">
+  <h3>
+    About the summary
+  </h3>
+  <div>
   <%unless ra.nil? %>
   <div class="col-xs-12">
     <h4>General Research Areas</h4>
@@ -58,4 +62,28 @@
     <%end%>
   </div>
   <%end%>
+
+  </div>
+
+  <h3>
+    References for Publications
+  </h3>
+  <div>
+    All references here ...
+  </div>
+
+  <h3>
+    More Summary Details
+  </h3>
+  <div>
+    More Summary Details here ...
+  </div>
+
+  <h3>
+    Participants
+  </h3>
+  <div>
+    Participants Details here ...
+  </div>
+
 </div>

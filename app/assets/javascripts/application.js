@@ -20,6 +20,9 @@
 //= require dataTables/bootstrap/3/jquery.dataTables.bootstrap
 //= require blacklight/blacklight
 
+// Required by OASIS
+//= require jquery-ui
+
 //= require_tree .
 //= require hyrax
 
