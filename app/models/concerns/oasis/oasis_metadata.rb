@@ -3,7 +3,7 @@ module Oasis
     included do
       #--------------------------
       #summary details group
-      property :summary_creator,                  predicate: ::RDF::URI.new('http://dlib.york.ac.uk/ontologies/oasis#creator'), multiple: true do |index|
+      property :summary_writer,                  predicate: ::RDF::URI.new('http://dlib.york.ac.uk/ontologies/oasis#writer'), multiple: true do |index|
         index.as :stored_searchable, :sortable, :facetable
       end
       property :summary_type,                      predicate: ::RDF::URI.new('http://dlib.york.ac.uk/ontologies/oasis#summary_type'), multiple: true do |index|

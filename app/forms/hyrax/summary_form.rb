@@ -3,7 +3,7 @@
 module Hyrax
   class SummaryForm < Hyrax::Forms::WorkForm
     self.model_class = ::Summary
-    self.terms = [:summary_creator,
+    self.terms = [:summary_writer,
                   :summary_type,
                   :summary_general_research_area,
                   :summary_datatype,
@@ -43,6 +43,6 @@ module Hyrax
                   :comments
     ]
 
-    self.required_fields = [:publication_author,:summary_general_research_area]
+    self.required_fields = [:summary_writer,:publication_author,:summary_general_research_area]
   end
 end

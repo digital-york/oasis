@@ -1,0 +1,61 @@
+<% provide :page_title, @presenter.page_title %>
+
+<%= render 'shared/citations' %>
+
+<div class="row">
+  <%unless @presenter.solr_document._source["summary_general_research_area_tesim"].nil? %>
+  <div class="col-xs-12">
+    <h4>General Research Areas</h4>
+
+    <%@presenter.solr_document._source["summary_general_research_area_tesim"].each do |ra|%>
+        <li><%=ra%></li>
+    <%end%>
+  </div>
+  <%end%>
+
+  <%unless @presenter.solr_document._source["publication_author_tesim"].nil? %>
+  <div class="col-xs-12">
+    <h4>Author(s) of Research</h4>
+
+    <%@presenter.solr_document._source["publication_author_tesim"].each do |a|%>
+        <li><%=a%></li>
+    <%end%>
+  </div>
+  <%end%>
+
+  <%unless @presenter.solr_document._source["publication_date_tesim"].nil? %>
+  <div class="col-xs-12">
+    <h4>Year the Research Published</h4>
+
+    <%@presenter.solr_document._source["publication_date_tesim"].each do |d|%>
+        <li><%=d%></li>
+    <%end %>
+  </div>
+  <%end%>
+
+  <div class="col-xs-12">
+    <h4>Date of upload</h4>
+
+    <li>TBD</li>
+  </div>
+
+  <%unless @presenter.solr_document._source["summary_writer_tesim"].nil? %>
+  <div class="col-xs-12">
+    <h4>Writer of the Summary</h4>
+
+    <%@presenter.solr_document._source["summary_writer_tesim"].each do |w|%>
+        <li><%=w%></li>
+    <%end%>
+  </div>
+  <%end%>
+
+  <%unless @presenter.solr_document._source["participants_targetlanguage_tesim"].nil? %>
+  <div class="col-xs-12">
+    <h4>Language Being Learned</h4>
+
+    <%@presenter.solr_document._source["participants_targetlanguage_tesim"].each do |l|%>
+        <li><%=l%></li>
+    <%end%>
+  </div>
+  <%end%>
+</div>

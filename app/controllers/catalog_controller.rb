@@ -62,7 +62,7 @@ class CatalogController < ApplicationController
     #config.add_facet_field solr_name('member_of_collections', :symbol), limit: 5, label: 'Collections'
 
     # Oasis search facet fields
-    config.add_facet_field solr_name('summary_general_research_area', :facetable), label: "General Research Area", limit: 5
+    config.add_facet_field solr_name('summary_general_research_area', :facetable), label: "Research Area", limit: 5
     config.add_facet_field solr_name('publication_author', :facetable), label: "Author", limit: 5
     config.add_facet_field solr_name('publication_date',   :facetable), label: "Publication Date", limit: 5
     config.add_facet_field solr_name('participants_targetlanguage',    :facetable), label: "Language Being Learned", limit: 5
@@ -101,7 +101,7 @@ class CatalogController < ApplicationController
     # config.add_index_field solr_name("lease_expiration_date", :stored_sortable, type: :date), label: "Lease expiration date", helper_method: :human_readable_date
 
     #Oasis search fields
-    config.add_index_field solr_name("participants_targetlanguage", :stored_searchable), label: "Summary type", itemprop: 'summary_type'
+    config.add_index_field solr_name("participants_targetlanguage", :stored_searchable), label: "Summary type", itemprop: 'participants_targetlanguage'
     config.add_index_field solr_name("summary_general_research_area", :stored_searchable), label: "General Research Area", itemprop: 'general_research_area'
 
 
