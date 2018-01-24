@@ -7,5 +7,9 @@
 <% end %>
 
 <h3>
-  <%= link_to pub_title, document %>
+  <% unless pub_title.nil? || pub_title==''%>
+    <%= link_to pub_title, document %>
+  <% else %>
+    <%= link_to document.title_or_label, document %>
+  <% end %>
 </h3>
