@@ -1,0 +1,11 @@
+<% doc_presenter = index_presenter(document) %>
+<% pub_title = ''%>
+<% index_fields(document).each do |field_name, field| -%>
+    <% if field_name=='publication_title_tesim' %>
+        <% pub_title = doc_presenter.field_value field_name%>
+    <% end %>
+<% end %>
+
+<h3>
+  <%= link_to pub_title, document %>
+</h3>
