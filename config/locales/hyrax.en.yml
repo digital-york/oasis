@@ -60,6 +60,10 @@ en:
     admin:
       sidebar:
         works: "Summaries"
+    base:
+      items:
+        header: Files
+        title: File name
   helpers:
     action:
       batch:
