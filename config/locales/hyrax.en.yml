@@ -61,9 +61,15 @@ en:
       sidebar:
         works: "Summaries"
     base:
+      form_progress:
+        required_descriptions: "Desdribe your summary"
       items:
         header: Files
         title: File name
+    works:
+      progress:
+        header: "Save Summary"
+    
     dashboard:
       my:
         action:
@@ -71,6 +77,7 @@ en:
           edit_work: "Edit Summary"
           highlight: "Highlight Summary on Profile"
           transfer:  "Transfer Ownership of Summary"
+
   helpers:
     action:
       batch:
