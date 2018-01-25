@@ -64,6 +64,13 @@ en:
       items:
         header: Files
         title: File name
+    dashboard:
+      my:
+        action:
+          delete_work:  "Delete Summary"
+          edit_work: "Edit Summary"
+          highlight: "Highlight Summary on Profile"
+          transfer:  "Transfer Ownership of Summary"
   helpers:
     action:
       batch:
