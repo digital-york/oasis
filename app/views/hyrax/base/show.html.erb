@@ -40,7 +40,7 @@
   <div class="col-xs-12">
     <h4>Date of upload</h4>
 
-    <li>TBD</li>
+    <li><%= doc_presenter.field_value "date_uploaded_dtsi"%></li>
   </div>
 
   <%unless @presenter.solr_document._source["summary_writer_tesim"].nil? %>
