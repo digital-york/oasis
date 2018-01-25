@@ -79,10 +79,13 @@ class CatalogController < ApplicationController
     # solr fields to be displayed in the index (search results) view
     #   The ordering of the field names is the order of the display
     #Oasis search fields
-    config.add_index_field solr_name("participants_targetlanguage", :stored_searchable), label: "Language Being Learned", itemprop: 'participants_targetlanguage'
-    config.add_index_field solr_name("summary_general_research_area", :stored_searchable), label: "General Research Area", itemprop: 'general_research_area'
+    config.add_index_field solr_name("summary_general_research_area", :stored_searchable), label: "Research Area", itemprop: 'general_research_area'
     config.add_index_field solr_name("publication_author", :stored_searchable), label: "Author of Research", itemprop: 'publication_author'
-    config.add_index_field solr_name("publication_date", :stored_searchable), label: "Publication Date", itemprop: 'publication_date'
+    config.add_index_field solr_name("publication_date", :stored_searchable), label: "Publication Year", itemprop: 'publication_date'
+    config.add_index_field solr_name("date_uploaded", :stored_searchable), label: "Upload Date", itemprop: 'date_uploaded'
+    config.add_index_field solr_name("summary_writer", :stored_searchable), label: "Summary Writer", itemprop: 'summary_writer'
+    config.add_index_field solr_name("participants_targetlanguage", :stored_searchable), label: "Language Being Learned", itemprop: 'participants_targetlanguage'
+
     config.add_index_field solr_name("publication_title", :stored_searchable), label: "Publication Title", itemprop: 'publication_title'
 
     # solr fields to be displayed in the show (single result) view
