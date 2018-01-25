@@ -57,3 +57,12 @@ en:
     footer:
       copyright_html: "<strong>Copyright &copy; 2018 OASIS</strong>"
       service_html: Powered by <a href="https://dlib.york.ac.uk/" class="navbar-link" target="_blank">York Digital Library</a>.
+    admin:
+      sidebar:
+        works: "Summaries"
+  helpers:
+    action:
+      batch:
+        new: "Create batch of summaries"
+      work:
+        new: "Add new summary"
