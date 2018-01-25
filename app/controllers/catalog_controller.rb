@@ -48,24 +48,17 @@ class CatalogController < ApplicationController
     config.index.participants_targetlanguage_field   = solr_name('participants_targetlanguage_value', :stored_searchable)
 
     # solr fields that will be treated as facets by the blacklight application
-    #   The ordering of the field names is the order of the display
-    #config.add_facet_field solr_name("human_readable_type", :facetable), label: "Type", limit: 5
-    #config.add_facet_field solr_name("resource_type", :facetable), label: "Resource Type", limit: 5
-    #config.add_facet_field solr_name("creator", :facetable), limit: 5
-    #config.add_facet_field solr_name("contributor", :facetable), label: "Contributor", limit: 5
-    #config.add_facet_field solr_name("keyword", :facetable), limit: 5
-    #config.add_facet_field solr_name("subject", :facetable), limit: 5
-    #config.add_facet_field solr_name("language", :facetable), limit: 5
-    #config.add_facet_field solr_name("based_near_label", :facetable), limit: 5
-    #config.add_facet_field solr_name("publisher", :facetable), limit: 5
-    #config.add_facet_field solr_name("file_format", :facetable), limit: 5
-    #config.add_facet_field solr_name('member_of_collections', :symbol), limit: 5, label: 'Collections'
-
-    # Oasis search facet fields
-    config.add_facet_field solr_name('summary_general_research_area', :facetable), label: "Research Area", limit: 5
-    config.add_facet_field solr_name('publication_author', :facetable), label: "Author", limit: 5
-    config.add_facet_field solr_name('publication_date',   :facetable), label: "Publication Date", limit: 5
+    # The ordering of the field names is the order of the display
+    config.add_facet_field solr_name('publication_author',              :facetable), label: "Author", limit: 5
+    config.add_facet_field solr_name('summary_general_research_area', :facetable), label: "Topic", limit: 5
+    config.add_facet_field solr_name('summary_linguistictarget',       :facetable), label: "Language feature", limit: 5
     config.add_facet_field solr_name('participants_targetlanguage',    :facetable), label: "Language Being Learned", limit: 5
+    config.add_facet_field solr_name('participants_firstlanguage',     :facetable), label: "First Language(s) of Learners", limit: 5
+    config.add_facet_field solr_name('publication_date',   :facetable), label: "Date of Publication", limit: 5
+    config.add_facet_field solr_name('publication_title',   :facetable), label: "Journal Title(s)", limit: 5
+    config.add_facet_field solr_name('participants_gender', :facetable), label: "Gender of Learners", limit: 5
+    config.add_facet_field solr_name('participants_proficiency', :facetable), label: "Proficiency of Learners", limit: 5
+    config.add_facet_field solr_name('participants_domain_of_use', :facetable), label: "Domains of Use", limit: 5
 
     # The generic_type isn't displayed on the facet list
     # It's used to give a label to the filter that comes from the user profile
