@@ -53,7 +53,7 @@ en:
     controls:
       submit:               "Submit summary"
     directory:
-      suffix:               "@example.org"
+      suffix:               "@oasis-database"
     footer:
       copyright_html: "<strong>Copyright &copy; 2018 OASIS</strong>"
       service_html: Powered by <a href="https://dlib.york.ac.uk/" class="navbar-link" target="_blank">York Digital Library</a>.
@@ -62,14 +62,14 @@ en:
         works: "Summaries"
     base:
       form_progress:
-        required_descriptions: "Desdribe your summary"
+        required_descriptions: "Describe your summary"
       items:
         header: Files
         title: File name
     works:
       progress:
         header: "Save Summary"
-    
+
     dashboard:
       my:
         action:
