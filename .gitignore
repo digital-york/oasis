@@ -16,6 +16,7 @@
 /tmp/*
 /public/*
 /.idea/*
+/fits.log
 
 !/log/.keep
 !/tmp/.keep
