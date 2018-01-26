@@ -44,3 +44,7 @@
     font-size: 24px;
     padding-top: 20px;
 }
+
+.works-list .media-body {
+  width: 100%;
+}
