@@ -34,3 +34,7 @@
     vertical-align: middle;
     overflow: visible;
 }
+
+.image-masthead .background-container {
+    filter: none;
+}
