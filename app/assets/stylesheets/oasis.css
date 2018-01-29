@@ -46,5 +46,9 @@
 }
 
 .works-list .media-body {
-  width: 100%;
+    width: 100%;
+}
+
+.image-masthead .background-container {
+    filter: none;
 }
