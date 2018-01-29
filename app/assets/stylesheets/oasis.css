@@ -52,3 +52,7 @@
 .representative-media {
   width: 150px;
  }
+
+.image-masthead .background-container {
+    filter: none;
+}
