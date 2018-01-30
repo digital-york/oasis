@@ -4,11 +4,8 @@ module Hyrax
   class SummaryForm < Hyrax::Forms::WorkForm
     self.model_class = ::Summary
     self.terms = [:summary_writer,
-                  :summary_type,
                   :summary_general_research_area,
-                  :summary_datatype,
                   :summary_linguistictarget,
-                  :summary_funder,
                   :summary_title,
                   :summary_notes,
                   :participants_type,
