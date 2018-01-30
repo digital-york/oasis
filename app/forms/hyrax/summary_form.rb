@@ -43,6 +43,6 @@ module Hyrax
                   :comments
     ]
 
-    self.required_fields = [:summary_writer,:publication_author,:summary_general_research_area]
+    self.required_fields = [:summary_title,:summary_writer,:publication_author,:summary_general_research_area]
   end
 end
