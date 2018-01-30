@@ -4,16 +4,28 @@ module Hyrax
   class SummaryForm < Hyrax::Forms::WorkForm
     self.model_class = ::Summary
     self.terms = [:summary_writer,
+                  :title_of_summary,
+
                   :summary_general_research_area,
                   :summary_linguistictarget,
-                  :summary_title,
-                  :summary_notes,
-                  :participants_type,
-                  :participants_firstlanguage,
                   :participants_targetlanguage,
-                  :participants_age,
+                  :participants_firstlanguage,
+
+                  :publication_date,
+                  :publication_title,
+
+                  :participants_type,
                   :participants_gender,
                   :participants_proficiency,
+                  :participants_domain_of_use,
+
+                  :conference_name,
+                  :material_on_IRIS,
+
+
+                  :summary_notes,
+
+                  :participants_age,
                   :participants_type_of_instruction,
                   :participants_amount_of_instruction,
                   :participants_length_of_residence,
@@ -22,12 +34,9 @@ module Hyrax
                   :participants_amount_of_prior_instruction,
 
                   :participants_time_spent_using_l2,
-                  :participants_domain_of_use,
 
                   :publication_author,
-                  :publication_title,
                   :publication_journal_name,
-                  :publication_date,
                   :publication_volume,
                   :publication_issue,
                   :publication_pages_from,
@@ -40,6 +49,6 @@ module Hyrax
                   :comments
     ]
 
-    self.required_fields = [:summary_title,:summary_writer,:publication_author,:summary_general_research_area]
+    self.required_fields = [:title_of_summary,:summary_writer,:publication_author,:summary_general_research_area]
   end
 end
