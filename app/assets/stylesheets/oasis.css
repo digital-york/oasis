@@ -10,6 +10,23 @@
     width: 50%;
 }
 
+.homepage_div {
+    text-align: center;
+    height: 2.5em;
+    overflow: hidden;
+}
+
+.homepage_div h4{
+    cursor: pointer;
+}
+
+.homepage_logo {
+    max-height: 120px;
+}
+
+.text_left {
+    text-align: left;
+}
 .navbtn {
     width: 228px;
     font: bold 18px Verdana, "Helvetica Neue", Helvetica, Arial, clean, sans-serif !important;
