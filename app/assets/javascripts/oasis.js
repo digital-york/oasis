@@ -12,5 +12,13 @@ $(function() {
         }
         return false;
     });
+
+    $("#homepage_submit").click(function() {
+        window.location.href = '/new_summary';
+    });
+
+    $("#homepage_search").click(function() {
+        window.location.href = '/catalog';
+    });
 });
 
