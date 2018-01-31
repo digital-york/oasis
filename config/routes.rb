@@ -22,6 +22,8 @@ Rails.application.routes.draw do
     concerns :exportable
   end
 
+  get '/new_summary' => 'hyrax/summaries#new', key: 'new_summary'
+
   resources :bookmarks do
     concerns :exportable
 

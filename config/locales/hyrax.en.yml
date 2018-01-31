@@ -52,6 +52,7 @@ en:
     account_name:           "My Account Id"
     controls:
       submit:               "Submit summary"
+      search:               "Search and download"
     directory:
       suffix:               "@oasis-database"
     footer:
