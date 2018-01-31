@@ -11,9 +11,14 @@
         <li <%= 'class=active' if current_page?(hyrax.about_path) %>>
           <%= link_to t(:'hyrax.controls.about'), hyrax.about_path %></li>
       </ul><!-- /.nav -->
+      <!--
       <div class="searchbar-right navbar-right col-sm-7 col-md-6">
+      -->
+      <!--comment out below-->
+      <% if false %>
         <%= render partial: 'catalog/search_form' %>
-      </div>
+      <% end %>
+      <!--</div>-->
     </div>
   </div>
 </nav><!-- /.navbar -->
