@@ -85,3 +85,22 @@ en:
         new: "Create batch of summaries"
       work:
         new: "Add new summary"
+
+  simple_form:
+    labels:
+      summary:
+        title_of_summary: "Title of summary"
+        summary_general_research_area: "General Research Area"
+        summary_linguistictarget: "Language feature"
+        conference_name: "Conference Name"
+        material_on_IRIS: "Materials on IRIS"
+
+        participants_type: "Participant Type"
+        participants_firstlanguage: "First language of learners"
+        participants_targetlanguage: "Language being learned"
+        participants_gender: "Gender of learners"
+        participants_proficiency: "Proficiency of Learners"
+        participants_domain_of_use: "Domains of use of Language Being Learned"
+
+        publication_journal_name: "Journal title"
+        publication_date: "Date of publication / award"
