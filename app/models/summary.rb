@@ -9,6 +9,7 @@ class Summary < ActiveFedora::Base
 
   self.human_readable_type = 'Summary'
   validates :summary_writer,                 presence:     { message: 'Your summary must have a writer.' }
+  validates :title_of_summary,               presence:     { message: 'Your summary must have a title.' }
   validates :publication_author,             presence:     { message: 'Your summary must have an author.' }
   validates :summary_general_research_area, presence:     { message: 'Your summary must have a general research area.' }
 

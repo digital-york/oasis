@@ -5,6 +5,7 @@ module Hyrax
     self.model_class = ::Summary
     self.terms = [:summary_writer,
                   :title_of_summary,
+                  :publication_identifier,
 
                   :summary_general_research_area,
                   :summary_linguistictarget,
@@ -41,7 +42,7 @@ module Hyrax
                   :publication_issue,
                   :publication_pages_from,
                   :publication_pages_to,
-                  :publication_identifier,
+
 
                   :licence,
                   :emails,
@@ -49,6 +50,9 @@ module Hyrax
                   :comments
     ]
 
-    self.required_fields = [:title_of_summary,:summary_writer,:publication_author,:summary_general_research_area]
+    self.required_fields = [:summary_writer,
+                            :title_of_summary,
+                            :publication_author,
+                            :summary_general_research_area]
   end
 end
