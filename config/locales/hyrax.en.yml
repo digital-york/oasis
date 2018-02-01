@@ -104,3 +104,6 @@ en:
 
         publication_journal_name: "Journal title"
         publication_date: "Date of publication / award"
+    hints:
+      summary:
+        title_of_summary: ""
