@@ -8,8 +8,8 @@
           <%= link_to t(:'hyrax.controls.submit'), '/new_summary' %></li>
         <li <%= 'class=active' if current_page?('/catalog') %>>
           <%= link_to t(:'hyrax.controls.search'), '/catalog' %></li>
-        <li <%= 'class=active' if current_page?(hyrax.about_path) %>>
-          <%= link_to t(:'hyrax.controls.about'), hyrax.about_path %></li>
+        <li <%= 'class=active' if current_page?('/aboutpage') %>>
+          <%= link_to t(:'hyrax.controls.about'), '/aboutpage' %></li>
       </ul><!-- /.nav -->
       <!--
       <div class="searchbar-right navbar-right col-sm-7 col-md-6">

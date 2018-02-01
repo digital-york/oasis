@@ -23,6 +23,7 @@ Rails.application.routes.draw do
   end
 
   get '/new_summary' => 'hyrax/summaries#new', key: 'new_summary'
+  get '/aboutpage' => 'static_pages#aboutpage', key: 'aboutpage'
 
   resources :bookmarks do
     concerns :exportable

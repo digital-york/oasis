@@ -105,7 +105,7 @@ class ContentBlock < ActiveRecord::Base
     def default_oasis_about_text
       ERB.new(
           IO.read(
-              Rails.root.join('app', 'views', 'hyrax', 'content_blocks', 'templates', 'about.html.erb')
+              Rails.root.join('app', 'views', 'hyrax', 'content_blocks', 'templates', 'aboutpage.html.erb')
           )
       ).result
     end
