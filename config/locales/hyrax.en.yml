@@ -97,7 +97,10 @@ en:
         materials_on_iris: "Materials on IRIS"
         summary_notes: "Notes"
         emails: "Email address"
+        notification_of_download: "Notification of download"
         comments: "Comments on the submission process"
+        licence: "Licence"
+        licence_agreement: "Licence Agreement"
 
         participants_type: "Participant Type"
         participants_firstlanguage: "First Language of Learners"
@@ -114,6 +117,7 @@ en:
         participants_time_spent_using_l2: "Time Spent Using the L2"
         participants_year_of_teaching_experience: "Years of Teaching Experience"
 
+        publication_identifier: "Publication Identifier (DOI)"
         publication_author: "Author of Publication"
         publication_title: "Title of Publication"
         publication_journal_name: "Journal"
@@ -122,13 +126,14 @@ en:
         publication_issue: "Issue"
         publication_pages_from: "Pages:From"
         publication_pages_to: "Pages:To"
-
     hints:
       summary:
         summary_writer: "Sunarme, initial. (e.g. Marsden, E.)"
         materials_on_iris: "If materials used in this research study are held on IRIS, please enter URL:"
         summary_notes: "Any other comments"
         comments: "Lastly, and thank you for getting this far, please leave any comments about the submission form."
+        emails: "This information will only be used in relation to your summary being held in OASIS, such as if there is a problem with the upload or the information stored. Your email address will not be shared with anyone beyond the OASIS team."
+        notification_of_download: "I wish to be notified by email whenever my material is downloaded."
 
         participants_type: "Participants involved in this research study"
         participants_age: "Age of learners involved in this research study. Any format is appropriate. For example, an age range, a mean, one specific age, age in years, age in months. The field accepts free text."
