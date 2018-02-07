@@ -1,0 +1,21 @@
+terms:
+  - id: 1
+    term: "Academic"
+  - id: 2
+    term: "Higher Education"
+  - id: 3
+    term: "Home"
+  - id: 4
+    term: "Residence abroad"
+  - id: 5
+    term: "School - language instruction only"
+  - id: 6
+    term: "School - subject(s) other than language"
+  - id: 7
+    term: "With friends"
+  - id: 8
+    term: "With wider family"
+  - id: 9
+    term: "Work"
+  - id: 10
+    term: "Other"
