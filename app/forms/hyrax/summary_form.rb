@@ -30,7 +30,7 @@ module Hyrax
                   :participants_time_spent_using_l2,
                   :participants_domain_of_use,
                   :participants_year_of_teaching_experience,
-                  :material_on_iris,
+                  :materials_on_iris,
                   :licence,
                   :licence_agreement,
                   :emails,
@@ -54,7 +54,7 @@ module Hyrax
                             :participants_type,
                             :participants_firstlanguage,
                             :participants_targetlanguage,
-                            :material_on_iris,
+                            :materials_on_iris,
                             :emails,
                             :notification_of_download
                          ]

@@ -125,6 +125,9 @@ module Oasis
       property :notification_of_download,   predicate: ::RDF::URI.new('http://dlib.york.ac.uk/ontologies/oasis#notification_of_download'), multiple: false do |index|
         index.as :stored_searchable
       end
+      property :conference_name,   predicate: ::RDF::URI.new('http://dlib.york.ac.uk/ontologies/oasis#conference_name'), multiple: false do |index|
+        index.as :stored_searchable
+      end
     end
   end
 end
