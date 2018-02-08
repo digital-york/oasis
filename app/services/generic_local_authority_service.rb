@@ -12,5 +12,5 @@ module GenericLocalAuthorityService
   def self.label(id)
     authority.find(id).fetch('term')
   end
-  
+
 end
