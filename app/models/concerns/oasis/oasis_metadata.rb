@@ -122,6 +122,9 @@ module Oasis
       property :materials_on_iris,       predicate: ::RDF::URI.new('http://dlib.york.ac.uk/ontologies/oasis#materials_on_iris'), multiple: false do |index|
         index.as :stored_searchable
       end
+      property :iris_url,       predicate: ::RDF::URI.new('http://dlib.york.ac.uk/ontologies/oasis#iris_url'), multiple: false do |index|
+        index.as :stored_searchable
+      end
       property :notification_of_download,   predicate: ::RDF::URI.new('http://dlib.york.ac.uk/ontologies/oasis#notification_of_download'), multiple: false do |index|
         index.as :stored_searchable
       end

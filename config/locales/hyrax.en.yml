@@ -95,6 +95,7 @@ en:
         summary_linguistictarget: "Language feature"
         conference_name: "Conference Name"
         materials_on_iris: "Materials on IRIS"
+        iris_url: "IRIS URL"
         summary_notes: "Notes"
         emails: "Email address"
         notification_of_download: "Notification of download"

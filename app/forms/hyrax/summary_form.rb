@@ -31,6 +31,7 @@ module Hyrax
                   :participants_domain_of_use,
                   :participants_year_of_teaching_experience,
                   :materials_on_iris,
+                  :iris_url,
                   :licence,
                   :licence_agreement,
                   :emails,
