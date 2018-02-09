@@ -55,6 +55,8 @@ module Hyrax
                             :participants_firstlanguage,
                             :participants_targetlanguage,
                             :materials_on_iris,
+                            :licence,
+                            :licence_agreement,
                             :emails,
                             :notification_of_download
                          ]
