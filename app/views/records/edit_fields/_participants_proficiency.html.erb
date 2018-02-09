@@ -1,0 +1,5 @@
+<%= f.input :participants_proficiency, as: :select,
+    collection: GenericLocalAuthorityService.select_all_options('proficiency_of_learners'),
+    include_blank: true,
+    input_html: { class: 'form-control' }
+%>

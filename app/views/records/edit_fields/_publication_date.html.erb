@@ -1,0 +1,6 @@
+<%= f.input :publication_date, as: :select,
+    collection: GenericLocalAuthorityService.select_all_options('years_of_publication'),
+    include_blank: true,
+
+    input_html: { class: 'form-control' }
+%>

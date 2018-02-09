@@ -1,0 +1,6 @@
+<%= f.input :publication_journal_name, as: :select,
+    collection: GenericLocalAuthorityService.select_all_options('journals'),
+    include_blank: true,
+
+    input_html: { class: 'form-control' }
+%>

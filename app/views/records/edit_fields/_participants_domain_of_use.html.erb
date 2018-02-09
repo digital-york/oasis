@@ -1,0 +1,6 @@
+<%= f.input :participants_domain_of_use, as: :select,
+    collection: GenericLocalAuthorityService.select_all_options('domains_of_use'),
+    include_blank: true,
+
+    input_html: { class: 'form-control' }
+%>

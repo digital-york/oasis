@@ -1,0 +1,4 @@
+<%= f.input :participants_gender, as: :radio_buttons,
+    collection: GenericLocalAuthorityService.select_all_options('gender_of_learners'),
+    input_html: { }
+%>

@@ -1,0 +1,6 @@
+<%= f.input :participants_firstlanguage, as: :select,
+    collection: GenericLocalAuthorityService.select_all_options('first_language_of_learners'),
+    include_blank: true,
+
+    input_html: { class: 'form-control' }
+%>
