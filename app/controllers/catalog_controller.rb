@@ -59,6 +59,7 @@ class CatalogController < ApplicationController
     config.add_facet_field solr_name('participants_gender', :facetable), label: "Gender of Learners", limit: 5
     config.add_facet_field solr_name('participants_proficiency', :facetable), label: "Proficiency of Learners", limit: 5
     config.add_facet_field solr_name('participants_domain_of_use', :facetable), label: "Domains of Use", limit: 5
+    config.add_facet_field solr_name('of_likely_interest_to', :facetable), label: "Of likely interest to", limit: 5
 
     # The generic_type isn't displayed on the facet list
     # It's used to give a label to the filter that comes from the user profile
