@@ -1,0 +1,4 @@
+<%= f.input :of_likely_interest_to, as: :radio_buttons,
+    collection: GenericLocalAuthorityService.select_all_options('of_likely_interest_to'),
+    input_html: { }
+%>
