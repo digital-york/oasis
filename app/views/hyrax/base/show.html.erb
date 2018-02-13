@@ -2,91 +2,85 @@
 
 <%= render 'shared/citations' %>
 
+<div class="panel-heading">
+  <%= render 'title_of_summary', presenter: @presenter %>
+</div>
+
 <% doc_presenter = index_presenter(@presenter.solr_document) %>
 
-<% ra = doc_presenter.field_value 'summary_general_research_area_tesim'%>
-<div class="row" id="accordion">
-  <h3>
-    About the summary
-  </h3>
-  <div>
-  <%unless ra.nil? %>
-  <div class="col-xs-12">
-    <h4>General Research Areas</h4>
-    <li><%=ra%></li>
-  </div>
-  <%end%>
-
-  <%unless @presenter.solr_document._source["publication_author_tesim"].nil? %>
-  <div class="col-xs-12">
-    <h4>Author(s) of Research</h4>
-
-    <%@presenter.solr_document._source["publication_author_tesim"].each do |a|%>
-        <li><%=a%></li>
-    <%end%>
-  </div>
-  <%end%>
-
-  <%unless @presenter.solr_document._source["publication_date_tesim"].nil? %>
-  <div class="col-xs-12">
-    <h4>Year the Research Published</h4>
-
-    <%@presenter.solr_document._source["publication_date_tesim"].each do |d|%>
-        <li><%=d%></li>
-    <%end %>
-  </div>
-  <%end%>
-
-  <div class="col-xs-12">
+<!-- Writer of Summary -->
+<%= render :partial => 'generic_field', :locals => {:field_name => 'summary_writer'} %>
+<!-- Title of summary -->
+<%= render :partial => 'generic_field', :locals => {:field_name => 'title_of_summary'} %>
+<!-- Publication Identifier (DOI) -->
+<%= render :partial => 'generic_field', :locals => {:field_name => 'publication_identifier'} %>
+<!-- Author of publication -->
+<%= render :partial => 'generic_field', :locals => {:field_name => 'publication_author'} %>
+<!-- Title of publication -->
+<%= render :partial => 'generic_field', :locals => {:field_name => 'publication_title'} %>
+<!-- Year of Publication -->
+<%= render :partial => 'generic_field', :locals => {:field_name => 'publication_date'} %>
+<!-- Journal -->
+<%= render :partial => 'generic_field', :locals => {:field_name => 'publication_journal_name'} %>
+<!-- Volume -->
+<%= render :partial => 'generic_field', :locals => {:field_name => 'publication_volume'} %>
+<!-- Issue -->
+<%= render :partial => 'generic_field', :locals => {:field_name => 'publication_issue'} %>
+<!-- Pages -->
+<%= render :partial => 'publication_pages' %>
+<!-- Research Area -->
+<%= render :partial => 'generic_field', :locals => {:field_name => 'summary_general_research_area'} %>
+<!-- Participant Type -->
+<%= render :partial => 'generic_field', :locals => {:field_name => 'participants_type'} %>
+<!-- First Language of Learners -->
+<%= render :partial => 'generic_field', :locals => {:field_name => 'participants_firstlanguage'} %>
+<!-- Language Being Learned -->
+<%= render :partial => 'generic_field', :locals => {:field_name => 'participants_targetlanguage'} %>
+<!-- Of likely interest to  -->
+<%= render :partial => 'generic_field', :locals => {:field_name => 'of_likely_interest_to'} %>
+<!-- Materials on IRIS -->
+<%= render :partial => 'materials_on_iris' %>
+<!-- Licence -->
+<%= render :partial => 'generic_field', :locals => {:field_name => 'licence'} %>
+<!-- Email -->
+<%= render :partial => 'generic_field', :locals => {:field_name => 'emails'} %>
+<!-- Notification of download -->
+<%= render :partial => 'generic_field', :locals => {:field_name => 'notification_of_download'} %>
+<!-- Language feature -->
+<%= render :partial => 'generic_field', :locals => {:field_name => 'summary_linguistictarget'} %>
+<!-- Age of Learners -->
+<%= render :partial => 'generic_field', :locals => {:field_name => 'participants_age'} %>
+<!-- Gender of Learners -->
+<%= render :partial => 'generic_field', :locals => {:field_name => 'participants_gender'} %>
+<!-- Proficiency of Learners -->
+<%= render :partial => 'generic_field', :locals => {:field_name => 'participants_proficiency'} %>
+<!-- Type of Instruction -->
+<%= render :partial => 'generic_field', :locals => {:field_name => 'participants_type_of_instruction'} %>
+<!-- Amount of Instruction -->
+<%= render :partial => 'generic_field', :locals => {:field_name => 'participants_amount_of_instruction'} %>
+<!-- Length of Residence of Learners -->
+<%= render :partial => 'generic_field', :locals => {:field_name => 'participants_length_of_residence'} %>
+<!-- Age of Learners at Attrival -->
+<%= render :partial => 'generic_field', :locals => {:field_name => 'participants_age_of_learners_of_arrival'} %>
+<!-- Amount of Prior Instruction -->
+<%= render :partial => 'generic_field', :locals => {:field_name => 'participants_amount_of_prior_instruction'} %>
+<!-- Time Spent Using the L2 -->
+<%= render :partial => 'generic_field', :locals => {:field_name => 'participants_time_spent_using_l2'} %>
+<!-- Domains of use of Language Being Learned -->
+<%= render :partial => 'generic_field', :locals => {:field_name => 'participants_domain_of_use'} %>
+<!-- Years of Teaching Experience -->
+<%= render :partial => 'generic_field', :locals => {:field_name => 'participants_year_of_teaching_experience'} %>
+<!-- Notes -->
+<%= render :partial => 'generic_field', :locals => {:field_name => 'summary_notes'} %>
+<!-- Conference Name -->
+<%= render :partial => 'generic_field', :locals => {:field_name => 'conference_name'} %>
+<div class="col-xs-12 summary-field">
     <h4>Date of upload</h4>
-
-    <li><%= doc_presenter.field_value "date_uploaded_dtsi"%></li>
-  </div>
-
-  <%unless @presenter.solr_document._source["summary_writer_tesim"].nil? %>
-  <div class="col-xs-12">
-    <h4>Writer of the Summary</h4>
-
-    <%@presenter.solr_document._source["summary_writer_tesim"].each do |w|%>
-        <li><%=w%></li>
-    <%end%>
-  </div>
-  <%end%>
-
-  <%unless @presenter.solr_document._source["participants_targetlanguage_tesim"].nil? %>
-  <div class="col-xs-12">
-    <h4>Language Being Learned</h4>
-
-    <%@presenter.solr_document._source["participants_targetlanguage_tesim"].each do |l|%>
-        <li><%=l%></li>
-    <%end%>
-  </div>
-  <%end%>
-
-  </div>
-
-  <h3>
-    References for Publications
-  </h3>
-  <div>
-    All references here ...
-  </div>
-
-  <h3>
-    More Summary Details
-  </h3>
-  <div>
-    More Summary Details here ...
-  </div>
-
-  <h3>
-    Participants
-  </h3>
-  <div>
-    Participants Details here ...
-  </div>
-
+    <%= doc_presenter.field_value "date_uploaded_dtsi"%>
 </div>
-<%= render 'items', presenter: @presenter %>
+
 <%= render 'social_media' %>
+
+<%= render 'items', presenter: @presenter %>
+
 

@@ -1,0 +1,9 @@
+<%unless (@presenter.solr_document._source[field_name+"_tesim"].nil?) or (@presenter.solr_document._source[field_name+"_tesim"][0]=='') %>
+    <div class="col-xs-12 summary-field">
+      <h4><%=I18n.t('simple_form.labels.summary.'+field_name)%></h4>
+
+      <%@presenter.solr_document._source[field_name+"_tesim"].each do |w|%>
+          <%=w%>
+      <%end%>
+    </div>
+<%end%>
