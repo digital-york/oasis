@@ -3,7 +3,7 @@
       <h4><%=I18n.t('simple_form.labels.summary.'+field_name)%></h4>
 
       <%@presenter.solr_document._source[field_name+"_tesim"].each do |w|%>
-        <%=w%>
+          <%=GenericLocalAuthorityService.id_to_label(authority_file_name, w.to_i)%>
       <%end%>
     </div>
 <%end%>

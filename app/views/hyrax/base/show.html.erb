@@ -19,9 +19,9 @@
 <!-- Title of publication -->
 <%= render :partial => 'generic_field', :locals => {:field_name => 'publication_title'} %>
 <!-- Year of Publication -->
-<%= render :partial => 'generic_field', :locals => {:field_name => 'publication_date'} %>
+<%= render :partial => 'generic_field_with_authority', :locals => {:field_name => 'publication_date', :authority_file_name => 'years_of_publication'} %>
 <!-- Journal -->
-<%= render :partial => 'generic_field', :locals => {:field_name => 'publication_journal_name'} %>
+<%= render :partial => 'generic_field_with_authority', :locals => {:field_name => 'publication_journal_name', :authority_file_name => 'journals'} %>
 <!-- Volume -->
 <%= render :partial => 'generic_field', :locals => {:field_name => 'publication_volume'} %>
 <!-- Issue -->
@@ -29,7 +29,7 @@
 <!-- Pages -->
 <%= render :partial => 'publication_pages' %>
 <!-- Research Area -->
-<%= render :partial => 'generic_field', :locals => {:field_name => 'summary_general_research_area'} %>
+<%= render :partial => 'generic_field_with_authority', :locals => {:field_name => 'summary_general_research_area', :authority_file_name => 'research_areas'} %>
 <!-- Participant Type -->
 <%= render :partial => 'generic_field', :locals => {:field_name => 'participants_type'} %>
 <!-- First Language of Learners -->

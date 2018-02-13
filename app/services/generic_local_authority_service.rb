@@ -13,4 +13,13 @@ module GenericLocalAuthorityService
     authority.find(id).fetch('term')
   end
 
+  def self.id_to_label(key, id)
+    authority = Qa::Authorities::Local.subauthority_for(key)
+    term = ''
+    begin
+      term = authority.find(id).fetch('term')
+    rescue
+    end
+    term
+  end
 end
