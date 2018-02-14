@@ -21,6 +21,20 @@
             <% end%>
         <%end%>
 
+        <%
+          materials_on_iris = doc_presenter.field_value 'materials_on_iris_tesim'
+          iris_url        = doc_presenter.field_value 'iris_url_tesim'
+        %>
+        <%if materials_on_iris=='Yes' and (not iris_url.nil?) and iris_url!='' %>
+            <tr>
+              <th>
+                <%= link_to image_tag("iris_logo_small.jpg", :class=>'link_to_iris'), iris_url, target: "_blank"%>
+              </th>
+              <td>
+                <%= link_to iris_url, iris_url, target: "_blank"%>
+              </td>
+            </tr>
+        <% end%>
       </table>
     </div>
 
