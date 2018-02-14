@@ -1,2 +1,4 @@
 batch_upload:
   enabled: false
+show_deposit_agreement:
+  enabled: false
