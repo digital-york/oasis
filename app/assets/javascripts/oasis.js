@@ -27,7 +27,7 @@ $(function() {
             //$("#iri_url_div").css("height","100%");
         }
     });
-    $("#summary_materials_on_iris_no").change(function(){
+    $("#summary_materials_on_iris_no").click(function(){
         if( $(this).val()=='No'){
             $("#iri_url_div").css("display","none");
             //$("#iri_url_div").css("height","0px");
