@@ -98,7 +98,7 @@ module Oasis
       property :publication_pages_to,                  predicate: ::RDF::URI.new('http://dlib.york.ac.uk/ontologies/oasis#publication_pages_to'), multiple: false do |index|
         index.as :stored_searchable
       end
-      property :publication_identifier,        predicate: ::RDF::URI.new('http://dlib.york.ac.uk/ontologies/oasis#publication_pages_from'), multiple: false do |index|
+      property :publication_identifier,        predicate: ::RDF::URI.new('http://dlib.york.ac.uk/ontologies/oasis#publication_identifier'), multiple: false do |index|
         index.as :stored_searchable
       end
 
