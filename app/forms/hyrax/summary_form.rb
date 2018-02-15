@@ -38,7 +38,8 @@ module Hyrax
                   :emails,
                   :notification_of_download,
                   :summary_notes,
-                  :conference_name
+                  :conference_name,
+                  :comments
     ]
 
     self.required_fields = [:summary_writer,
