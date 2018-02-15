@@ -21,16 +21,14 @@ $(function() {
         window.location.href = '/catalog';
     });
 
-    $("#summary_materials_on_iris_yes").change(function(){
+    $("#summary_materials_on_iris_yes").click(function(){
         if( $(this).val()=='Yes'){
             $("#iri_url_div").css("display","block");
-            //$("#iri_url_div").css("height","100%");
         }
     });
     $("#summary_materials_on_iris_no").click(function(){
         if( $(this).val()=='No'){
             $("#iri_url_div").css("display","none");
-            //$("#iri_url_div").css("height","0px");
         }
     });
 });
