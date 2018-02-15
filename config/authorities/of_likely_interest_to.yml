@@ -10,10 +10,12 @@ terms:
   - id: 5
     term: "Teachers"
   - id: 6
-    term: "Test developers"
+    term: "Curriculum / material developers"
   - id: 7
-    term: "Researchers"
+    term: "Test developers"
   - id: 8
-    term: "University students"
+    term: "Researchers"
   - id: 9
+    term: "University students"
+  - id: 10
     term: "Other"
