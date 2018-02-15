@@ -1,9 +1,9 @@
 <% doc_presenter = index_presenter(document) %>
-<% pub_title = doc_presenter.field_value 'publication_title_tesim'%>
+<% summary_title = doc_presenter.field_value 'title_of_summary_tesim'%>
 
 <h3>
-  <% unless pub_title.nil? || pub_title==''%>
-    <%= link_to pub_title, document %>
+  <% unless summary_title.nil? || summary_title==''%>
+    <%= link_to summary_title, document %>
   <% else %>
     <%= link_to document.title_or_label, document %>
   <% end %>
