@@ -78,6 +78,8 @@ en:
           edit_work: "Edit Summary"
           highlight: "Highlight Summary on Profile"
           transfer:  "Transfer Ownership of Summary"
+        works: "Your Work"
+
 
   helpers:
     action:
