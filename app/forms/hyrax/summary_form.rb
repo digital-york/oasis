@@ -38,7 +38,6 @@ module Hyrax
                   :emails,
                   :notification_of_download,
                   :summary_notes,
-                  :conference_name,
                   :comments
     ]
 
