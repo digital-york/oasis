@@ -1,5 +1,4 @@
 <%= f.input :participants_targetlanguage, as: :select,
     collection: GenericLocalAuthorityService.select_all_options('languages_being_learned'),
-    include_blank: true,
-    input_html: { class: 'form-control' }
+    input_html: { class: 'form-control', multiple: true  }
 %>
