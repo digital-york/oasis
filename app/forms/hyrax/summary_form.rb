@@ -53,8 +53,6 @@ module Hyrax
                             :publication_pages_to,
                             :summary_general_research_area,
                             :participants_type,
-                            :participants_firstlanguage,
-                            :participants_targetlanguage,
                             :of_likely_interest_to,
                             :materials_on_iris,
                             :licence,
