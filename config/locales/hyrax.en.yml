@@ -93,7 +93,7 @@ en:
       summary:
         summary_writer: "Writer of summary"
         title_of_summary: "Title of summary"
-        summary_general_research_area: "Research Area / Topic"
+        summary_general_research_area: "Topic"
         summary_linguistictarget: "Language feature"
         conference_name: "Conference Name"
         materials_on_iris: "Materials on IRIS"
