@@ -1,5 +1,13 @@
+<%
+  years = {}
+  years['in press'] = 'in press'
+  (1920..Date.today.year).reverse_each do |year|
+    years[year] = year
+  end
+%>
+
 <%= f.input :publication_date, as: :select,
-    collection: GenericLocalAuthorityService.select_all_options('years_of_publication'),
+    collection: years,
     include_blank: true,
 
     input_html: { class: 'form-control' }
