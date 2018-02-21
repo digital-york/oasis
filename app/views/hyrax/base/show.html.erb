@@ -19,7 +19,7 @@
 <!-- Title of publication -->
 <%= render :partial => 'generic_field', :locals => {:field_name => 'publication_title'} %>
 <!-- Year of Publication -->
-<%= render :partial => 'generic_field_with_authority', :locals => {:field_name => 'publication_date', :authority_file_name => 'years_of_publication'} %>
+<%= render :partial => 'generic_field', :locals => {:field_name => 'publication_date'} %>
 <!-- Journal -->
 <%= render :partial => 'generic_field_with_authority', :locals => {:field_name => 'publication_journal_name', :authority_file_name => 'journals'} %>
 <!-- Volume -->
