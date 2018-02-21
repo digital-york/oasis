@@ -124,7 +124,7 @@ en:
         publication_identifier: "Publication Identifier (DOI)"
         publication_author: "Author of Publication"
         publication_title: "Title of Publication"
-        publication_journal_name: "Journal"
+        publication_journal_name: "Journal of Publication"
         publication_date: "Year of Publication"
         publication_volume: "Volume"
         publication_issue: "Issue"

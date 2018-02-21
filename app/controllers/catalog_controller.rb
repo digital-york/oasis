@@ -55,7 +55,7 @@ class CatalogController < ApplicationController
     config.add_facet_field solr_name('participants_targetlanguage',    :facetable), label: "Language Being Learned", limit: 5
     config.add_facet_field solr_name('participants_firstlanguage',     :facetable), label: "First Language(s) of Learners", limit: 5
     config.add_facet_field solr_name('publication_date',   :facetable), label: "Date of Publication", limit: 5
-    config.add_facet_field solr_name('publication_journal_name',   :facetable), label: "Journal Title(s)", limit: 5
+    config.add_facet_field solr_name('publication_journal_name',   :facetable), label: "Journal of Publication", limit: 5
     config.add_facet_field solr_name('participants_gender', :facetable), label: "Gender of Learners", limit: 5
     config.add_facet_field solr_name('participants_proficiency', :facetable), label: "Proficiency of Learners", limit: 5
     config.add_facet_field solr_name('participants_domain_of_use', :facetable), label: "Domains of Use", limit: 5
