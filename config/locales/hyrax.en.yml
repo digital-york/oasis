@@ -111,7 +111,7 @@ en:
         participants_targetlanguage: "Language Being Learned"
         participants_gender: "Gender of Learners"
         participants_proficiency: "Proficiency of Learners"
-        participants_domain_of_use: "Domains of use of Language Being Learned"
+        participants_domain_of_use: "Context of Language Use"
         participants_age: "Age of Learners"
         participants_type_of_instruction: "Type of Instruction"
         participants_amount_of_instruction: "Amount of Instruction"
