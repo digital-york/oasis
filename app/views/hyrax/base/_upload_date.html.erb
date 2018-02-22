@@ -1,0 +1,6 @@
+<div class="col-sm-3">
+  <b>Upload date</b>
+</div>
+<div class="col-sm-9">
+  <%=DateTime.parse(@presenter.solr_document._source["date_uploaded_dtsi"]).strftime("%d %B %Y")%>
+</div>

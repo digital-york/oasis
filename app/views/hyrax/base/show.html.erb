@@ -2,85 +2,89 @@
 
 <%= render 'shared/citations' %>
 
-<div class="panel-heading">
-  <%= render 'title_of_summary', presenter: @presenter %>
+<div class="row work-type">
+  <div class="col-xs-12">
+    WORK TYPE
+  </div>
+  <div class="col-xs-12">&nbsp;</div>
+  <div itemscope itemtype="http://schema.org/CreativeWork" class="col-xs-12">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <%= render 'title_of_summary', presenter: @presenter %>
+      </div>
+      <div class="panel-body">
+        <div class="row">
+          <%= render 'workflow_actions_widget', presenter: @presenter %>
+
+          <div class="col-sm-3 text-center">
+            <%= render 'representative_media', presenter: @presenter, viewer: true %>
+            <%= render 'citations', presenter: @presenter %>
+            <%= render 'social_media' %>
+          </div>
+          <div class="col-sm-9">
+            <div id="summary-details">
+              <h4>Sumary details</h4>
+              <hr/>
+              <div id="publication" class="row">
+                <div class="col-sm-3">
+                  <b>Publication</b>
+                </div>
+                <div class="col-sm-9">
+                  APA
+                </div>
+              </div>
+
+              <div id="writer"  class="row">
+                <%= render :partial => 'generic_field', :locals => {:field_name => 'summary_writer'} %>
+              </div>
+
+              <div id="update_date"  class="row">
+                <%= render :partial => 'upload_date' %>
+              </div>
+
+              <div id="topic" class="row">
+                <%= render :partial => 'generic_field_with_authority', :locals => {:field_name => 'summary_general_research_area', :authority_file_name => 'research_areas'} %>
+              </div>
+
+              <div id="participant_type" class="row">
+                <%= render :partial => 'generic_field_with_authority', :locals => {:field_name => 'participants_type', :authority_file_name => 'participant_types'} %>
+              </div>
+
+              <div id="language_being_learned" class="row">
+                <%= render :partial => 'generic_field_with_authority', :locals => {:field_name => 'participants_targetlanguage', :authority_file_name => 'languages_being_learned'} %>
+              </div>
+
+              <div id="age_of_learners" class="row">
+                <%= render :partial => 'generic_field', :locals => {:field_name => 'participants_age'} %>
+              </div>
+
+              <div id="materials_on_iris" class="row">
+                <%= render :partial => 'materials_on_iris' %>
+              </div>
+
+              <div id="of_likely_interest_to" class="row">
+                <%= render :partial => 'generic_field_with_authority', :locals => {:field_name => 'of_likely_interest_to', :authority_file_name => 'of_likely_interest_to'} %>
+              </div>
+            </div>
+
+            <div id="participant-details">
+
+            </div>
+
+            <div id="study-details">
+
+            </div>
+
+          </div>
+          <div class="col-sm-12">
+
+            <%= render 'items', presenter: @presenter %>
+            <%# TODO: we may consider adding these partials in the future %>
+            <%#= render 'sharing_with', presenter: @presenter %>
+            <%#= render 'user_activity', presenter: @presenter %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
-
-<% doc_presenter = index_presenter(@presenter.solr_document) %>
-
-<!-- Writer of Summary -->
-<%= render :partial => 'generic_field', :locals => {:field_name => 'summary_writer'} %>
-<!-- Title of summary -->
-<%= render :partial => 'generic_field', :locals => {:field_name => 'title_of_summary'} %>
-<!-- Publication Identifier (DOI) -->
-<%= render :partial => 'generic_field', :locals => {:field_name => 'publication_identifier'} %>
-<!-- Author of publication -->
-<%= render :partial => 'generic_field', :locals => {:field_name => 'publication_author'} %>
-<!-- Title of publication -->
-<%= render :partial => 'generic_field', :locals => {:field_name => 'publication_title'} %>
-<!-- Year of Publication -->
-<%= render :partial => 'generic_field', :locals => {:field_name => 'publication_date'} %>
-<!-- Journal -->
-<%= render :partial => 'generic_field_with_authority', :locals => {:field_name => 'publication_journal_name', :authority_file_name => 'journals'} %>
-<!-- Volume -->
-<%= render :partial => 'generic_field', :locals => {:field_name => 'publication_volume'} %>
-<!-- Issue -->
-<%= render :partial => 'generic_field', :locals => {:field_name => 'publication_issue'} %>
-<!-- Pages -->
-<%= render :partial => 'publication_pages' %>
-<!-- Research Area -->
-<%= render :partial => 'generic_field_with_authority', :locals => {:field_name => 'summary_general_research_area', :authority_file_name => 'research_areas'} %>
-<!-- Participant Type -->
-<%= render :partial => 'generic_field', :locals => {:field_name => 'participants_type'} %>
-<!-- First Language of Learners -->
-<%= render :partial => 'generic_field', :locals => {:field_name => 'participants_firstlanguage'} %>
-<!-- Language Being Learned -->
-<%= render :partial => 'generic_field', :locals => {:field_name => 'participants_targetlanguage'} %>
-<!-- Of likely interest to  -->
-<%= render :partial => 'generic_field', :locals => {:field_name => 'of_likely_interest_to'} %>
-<!-- Materials on IRIS -->
-<%= render :partial => 'materials_on_iris' %>
-<!-- Licence -->
-<%= render :partial => 'generic_field', :locals => {:field_name => 'licence'} %>
-<!-- Email -->
-<%= render :partial => 'generic_field', :locals => {:field_name => 'emails'} %>
-<!-- Notification of download -->
-<%= render :partial => 'generic_field', :locals => {:field_name => 'notification_of_download'} %>
-<!-- Language feature -->
-<%= render :partial => 'generic_field', :locals => {:field_name => 'summary_linguistictarget'} %>
-<!-- Age of Learners -->
-<%= render :partial => 'generic_field', :locals => {:field_name => 'participants_age'} %>
-<!-- Gender of Learners -->
-<%= render :partial => 'generic_field', :locals => {:field_name => 'participants_gender'} %>
-<!-- Proficiency of Learners -->
-<%= render :partial => 'generic_field', :locals => {:field_name => 'participants_proficiency'} %>
-<!-- Type of Instruction -->
-<%= render :partial => 'generic_field', :locals => {:field_name => 'participants_type_of_instruction'} %>
-<!-- Amount of Instruction -->
-<%= render :partial => 'generic_field', :locals => {:field_name => 'participants_amount_of_instruction'} %>
-<!-- Length of Residence of Learners -->
-<%= render :partial => 'generic_field', :locals => {:field_name => 'participants_length_of_residence'} %>
-<!-- Age of Learners at Attrival -->
-<%= render :partial => 'generic_field', :locals => {:field_name => 'participants_age_of_learners_of_arrival'} %>
-<!-- Amount of Prior Instruction -->
-<%= render :partial => 'generic_field', :locals => {:field_name => 'participants_amount_of_prior_instruction'} %>
-<!-- Time Spent Using the L2 -->
-<%= render :partial => 'generic_field', :locals => {:field_name => 'participants_time_spent_using_l2'} %>
-<!-- Domains of use of Language Being Learned -->
-<%= render :partial => 'generic_field', :locals => {:field_name => 'participants_domain_of_use'} %>
-<!-- Years of Teaching Experience -->
-<%= render :partial => 'generic_field', :locals => {:field_name => 'participants_year_of_teaching_experience'} %>
-<!-- Notes -->
-<%= render :partial => 'generic_field', :locals => {:field_name => 'summary_notes'} %>
-<!-- Conference Name -->
-<%= render :partial => 'generic_field', :locals => {:field_name => 'conference_name'} %>
-<div class="col-xs-12 summary-field">
-    <h4>Date of upload</h4>
-    <%= doc_presenter.field_value "date_uploaded_dtsi"%>
-</div>
-
-<%= render 'social_media' %>
-
-<%= render 'items', presenter: @presenter %>
-
-

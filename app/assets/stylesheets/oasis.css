@@ -40,3 +40,6 @@
 .link_to_iris{
     max-height: 40px;
 }
+.link_to_iris_small{
+    max-height: 25px;
+}

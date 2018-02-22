@@ -1,9 +1,12 @@
 <%unless (@presenter.solr_document._source[field_name+"_tesim"].nil?) or (@presenter.solr_document._source[field_name+"_tesim"][0]=='') %>
-    <div class="col-xs-12 summary-field">
-      <h4><%=I18n.t('simple_form.labels.summary.'+field_name)%></h4>
 
+    <div class="col-sm-3">
+      <b><%=I18n.t('simple_form.labels.summary.'+field_name)%></b>
+    </div>
+    <div class="col-sm-9">
       <%@presenter.solr_document._source[field_name+"_tesim"].each do |w|%>
-          <%=GenericLocalAuthorityService.id_to_label(authority_file_name, w.to_i)%>
+          <%=GenericLocalAuthorityService.id_to_label(authority_file_name, w.to_i)%><br/>
       <%end%>
     </div>
+
 <%end%>
