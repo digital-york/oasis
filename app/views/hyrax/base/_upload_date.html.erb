@@ -1,6 +1,8 @@
-<div class="col-sm-3">
-  <b>Upload date</b>
-</div>
-<div class="col-sm-9">
-  <%=DateTime.parse(@presenter.solr_document._source["date_uploaded_dtsi"]).strftime("%d %B %Y")%>
+<div id="update_date"  class="row detail_page_block">
+  <div class="col-sm-3">
+    <b>Upload date</b>
+  </div>
+  <div class="col-sm-9">
+    <%=DateTime.parse(@presenter.solr_document._source["date_uploaded_dtsi"]).strftime("%d %B %Y")%>
+  </div>
 </div>

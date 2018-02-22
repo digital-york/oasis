@@ -43,3 +43,8 @@
 .link_to_iris_small{
     max-height: 25px;
 }
+
+.detail_page_block {
+    padding-top: 0.2em;
+    padding-bottom: 0.2em;
+}

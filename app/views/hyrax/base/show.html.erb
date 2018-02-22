@@ -22,46 +22,15 @@
             <div id="summary-details">
               <h4>Sumary details</h4>
               <hr/>
-              <div id="publication" class="row">
-                <div class="col-sm-3">
-                  <b>Publication</b>
-                </div>
-                <div class="col-sm-9">
-                  APA
-                </div>
-              </div>
-
-              <div id="writer"  class="row">
-                <%= render :partial => 'generic_field', :locals => {:field_name => 'summary_writer'} %>
-              </div>
-
-              <div id="update_date"  class="row">
-                <%= render :partial => 'upload_date' %>
-              </div>
-
-              <div id="topic" class="row">
-                <%= render :partial => 'generic_field_with_authority', :locals => {:field_name => 'summary_general_research_area', :authority_file_name => 'research_areas'} %>
-              </div>
-
-              <div id="participant_type" class="row">
-                <%= render :partial => 'generic_field_with_authority', :locals => {:field_name => 'participants_type', :authority_file_name => 'participant_types'} %>
-              </div>
-
-              <div id="language_being_learned" class="row">
-                <%= render :partial => 'generic_field_with_authority', :locals => {:field_name => 'participants_targetlanguage', :authority_file_name => 'languages_being_learned'} %>
-              </div>
-
-              <div id="age_of_learners" class="row">
-                <%= render :partial => 'generic_field', :locals => {:field_name => 'participants_age'} %>
-              </div>
-
-              <div id="materials_on_iris" class="row">
-                <%= render :partial => 'materials_on_iris' %>
-              </div>
-
-              <div id="of_likely_interest_to" class="row">
-                <%= render :partial => 'generic_field_with_authority', :locals => {:field_name => 'of_likely_interest_to', :authority_file_name => 'of_likely_interest_to'} %>
-              </div>
+              <%= render :partial => 'publication' %>
+              <%= render :partial => 'generic_field', :locals => {:field_name => 'summary_writer'} %>
+              <%= render :partial => 'upload_date' %>
+              <%= render :partial => 'generic_field_with_authority', :locals => {:field_name => 'summary_general_research_area', :authority_file_name => 'research_areas'} %>
+              <%= render :partial => 'generic_field_with_authority', :locals => {:field_name => 'participants_type', :authority_file_name => 'participant_types'} %>
+              <%= render :partial => 'generic_field_with_authority', :locals => {:field_name => 'participants_targetlanguage', :authority_file_name => 'languages_being_learned'} %>
+              <%= render :partial => 'generic_field', :locals => {:field_name => 'participants_age'} %>
+              <%= render :partial => 'materials_on_iris' %>
+              <%= render :partial => 'generic_field_with_authority', :locals => {:field_name => 'of_likely_interest_to', :authority_file_name => 'of_likely_interest_to'} %>
             </div>
 
             <div id="participant-details">
