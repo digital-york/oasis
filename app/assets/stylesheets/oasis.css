@@ -44,7 +44,12 @@
     max-height: 25px;
 }
 
-.detail_page_block {
+.detail_page_section_block {
+    padding-top: 0.4em;
+    padding-bottom: 0.4em;
+}
+
+.detail_page_item_block {
     padding-top: 0.2em;
     padding-bottom: 0.2em;
 }

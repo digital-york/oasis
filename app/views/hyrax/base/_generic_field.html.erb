@@ -1,5 +1,5 @@
 <%unless (@presenter.solr_document._source[field_name+"_tesim"].nil?) or (@presenter.solr_document._source[field_name+"_tesim"][0]=='') %>
-    <div class="row detail_page_block">
+    <div class="row detail_page_item_block">
         <div class="col-sm-3">
           <b><%=I18n.t('simple_form.labels.summary.'+field_name)%></b>
         </div>
