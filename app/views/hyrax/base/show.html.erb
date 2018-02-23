@@ -39,9 +39,9 @@
               <%= render :partial => 'generic_field_with_authority', :locals => {:field_name => 'of_likely_interest_to', :authority_file_name => 'of_likely_interest_to'} %>
             </div>
 
-            <div id="participant-details" class="detail_page_section_block">
-              <h4>More participant details</h4>
-              <hr/>
+            <button type="button" class="btn btn-info accordian_title" data-toggle="collapse" data-target="#participant-details">More participant details</button>
+            <br/>
+            <div id="participant-details" class="detail_page_section_block collapse">
               <!-- First Language of Learners -->
               <%= render :partial => 'generic_field_with_authority', :locals => {:field_name => 'participants_firstlanguage', :authority_file_name => 'first_language_of_learners'} %>
               <!-- Proficiency of Learners -->
@@ -55,13 +55,11 @@
               <!-- Time Spent Using the L2 -->
               <%= render :partial => 'generic_field', :locals => {:field_name => 'participants_time_spent_using_l2'} %>
               <!-- Context of language use  -->
-
-
             </div>
+            <br/>
 
-            <div id="study-details" class="detail_page_section_block">
-              <h4>More study details</h4>
-              <hr/>
+            <button type="button" class="btn btn-info accordian_title" data-toggle="collapse" data-target="#study-details">More study details</button>
+            <div id="study-details" class="detail_page_section_block collapse">
               <!-- Language feature -->
               <%= render :partial => 'generic_field_with_authority', :locals => {:field_name => 'summary_linguistictarget', :authority_file_name => 'language_features'} %>
               <!-- Type of Instruction -->
@@ -69,8 +67,9 @@
               <!-- Amount of Instruction -->
               <%= render :partial => 'generic_field', :locals => {:field_name => 'participants_amount_of_instruction'} %>
             </div>
+            <br/>
 
-            <div id ="cite_summary">
+            <div id ="cite_summary" class="detail_page_section_block">
               <%= render :partial => 'cite_summary' %>
             </div>
           </div>
