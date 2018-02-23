@@ -5,4 +5,5 @@
                                      DateTime.parse(@presenter.solr_document._source["date_uploaded_dtsi"]).strftime("%Y"),
                                      @presenter.solr_document._source["title_of_summary_tesim"],
                                      'OASIS Summary'))%>
+  <%=request.original_url %>
 </div>
