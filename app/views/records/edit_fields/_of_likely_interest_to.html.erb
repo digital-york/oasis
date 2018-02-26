@@ -1,4 +1,3 @@
-<%= f.input :of_likely_interest_to, as: :check_boxes,
+<%= f.input :of_likely_interest_to, as: :select,
     collection: GenericLocalAuthorityService.select_all_options('of_likely_interest_to'),
-    input_html: { }
-%>
+    input_html: { class: 'form-control', multiple: true  } %>
