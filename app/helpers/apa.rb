@@ -17,7 +17,7 @@ class Apa
       return authors[0] + ' '
     else
       l = ''
-      authors.each do |author, index|
+      authors.each_with_index do |author, index|
         if index<authors.length-1
           l = l + author + ', '
         else
