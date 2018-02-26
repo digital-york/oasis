@@ -52,8 +52,105 @@ en:
     account_name:           "My Account Id"
     controls:
       submit:               "Submit summary"
+      search:               "Search and download"
     directory:
-      suffix:               "@example.org"
+      suffix:               "@oasis-database"
     footer:
       copyright_html: "<strong>Copyright &copy; 2018 OASIS</strong>"
       service_html: Powered by <a href="https://dlib.york.ac.uk/" class="navbar-link" target="_blank">York Digital Library</a>.
+    admin:
+      sidebar:
+        works: "Summaries"
+    base:
+      form_progress:
+        required_descriptions: "Describe your summary"
+      items:
+        header: Files
+        title: File name
+    works:
+      progress:
+        header: "Save Summary"
+
+    dashboard:
+      my:
+        action:
+          delete_work:  "Delete Summary"
+          edit_work: "Edit Summary"
+          highlight: "Highlight Summary on Profile"
+          transfer:  "Transfer Ownership of Summary"
+        works: "Your Work"
+
+
+  helpers:
+    action:
+      batch:
+        new: "Create batch of summaries"
+      work:
+        new: "Add new summary"
+
+  simple_form:
+    labels:
+      summary:
+        summary_writer: "Writer of summary"
+        title_of_summary: "Title of summary"
+        summary_general_research_area: "Topic"
+        summary_linguistictarget: "Language feature"
+        conference_name: "Conference Name"
+        materials_on_iris: "Materials on IRIS"
+        of_likely_interest_to: "Of likely interest to ..."
+        iris_url: "IRIS URL"
+        summary_notes: "Notes"
+        emails: "Email address"
+        notification_of_download: "Notification of download"
+        comments: "Comments on the submission process"
+        licence: "Licence"
+        licence_agreement: "Licence Agreement"
+
+        participants_type: "Participant Type"
+        participants_firstlanguage: "First Language of Learners"
+        participants_targetlanguage: "Language Being Learned"
+        participants_gender: "Gender of Learners"
+        participants_proficiency: "Proficiency of Learners"
+        participants_domain_of_use: "Context of Language Use"
+        participants_age: "Age of Learners"
+        participants_type_of_instruction: "Type of Instruction"
+        participants_amount_of_instruction: "Amount of Instruction"
+        participants_length_of_residence: "Length of Residence of Learners"
+        participants_age_of_learners_of_arrival: "Age of Learners at Arrival"
+        participants_amount_of_prior_instruction: "Amount of Prior Instruction"
+        participants_time_spent_using_l2: "Time Spent Using the L2"
+        participants_year_of_teaching_experience: "Years of Teaching Experience"
+
+        publication_identifier: "Publication Identifier (DOI)"
+        publication_author: "Author of Publication"
+        publication_title: "Title of Publication"
+        publication_journal_name: "Journal of Publication"
+        publication_date: "Year of Publication"
+        publication_volume: "Volume"
+        publication_issue: "Issue"
+        publication_pages_from: "Pages:From"
+        publication_pages_to: "Pages:To"
+    hints:
+      summary:
+        summary_writer: "Sunarme, initial. (e.g. Marsden, E.)"
+        materials_on_iris: "If materials used in this research study are held on IRIS, please enter URL:"
+        of_likely_interest_to: "Please select the likely audiences for your summary."
+        summary_notes: "Any other comments"
+        comments: "Lastly, and thank you for getting this far, please leave any comments about the submission form."
+        emails: "This information will only be used in relation to your summary being held in OASIS, such as if there is a problem with the upload or the information stored. Your email address will not be shared with anyone beyond the OASIS team."
+        notification_of_download: "I wish to be notified by email whenever my material is downloaded."
+        licence: "Here you indicate how you would like others to use, and subsequently acknowledge and license, the material you are uploading. Choose the type of Creative Commons licence agreement you prefer. There is a brief explanation of each below."
+        participants_type: "Participants involved in this research study"
+        participants_age: "Age of learners involved in this research study. Any format is appropriate. For example, an age range, a mean, one specific age, age in years, age in months. The field accepts free text."
+        participants_gender: "Gender of learners involved in this research study."
+        participants_proficiency: "Proficiency of learners involved in this research study."
+        participants_type_of_instruction: "If intervention study, type of instruction / treatment given during experimental intervention e.g. processing instruction, recasts, oral interaction tasks. This is a free text box. "
+        participants_amount_of_instruction: "If intervention study, length and/or amount of instruction during intervention period (e.g. 9 hours and/or 2 weeks). This is a free text box. "
+        participants_length_of_residence: "Length of residence in country where L2 used. You can provide specific length in years and/or months; or you can provide a range. This is a free text box. "
+        participants_age_of_learners_of_arrival: "You can provide specific age in years and/or months; or you can provide a range. This is a free text box. "
+        participants_amount_of_prior_instruction: "Length of exposure to previous instruction. You can provide length in years and/or months; or you can provide a range. This is a free text box. "
+        participants_time_spent_using_l2: "Time spent using the L2. You can provide your information in any format, for example, as hours per day, or days per week, or weeks per year. This is a free text box."
+
+        publication_identifier: "If possible, please enter a DOI in the following format, in full: http://dx.doi.org/10.1177/1362168814558838"
+        publication_author: "The authors of the research article which has been summarised. Please give in format: Sunarme, initial. (e.g. Marsden, E.)"
+        publication_title: "The title of the research article which has been summarised."

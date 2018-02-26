@@ -1,0 +1,86 @@
+<% provide :page_title, @presenter.page_title %>
+
+<%= render 'shared/citations' %>
+
+<div class="row work-type">
+  <div class="col-xs-12">&nbsp;</div>
+  <div itemscope itemtype="http://schema.org/CreativeWork" class="col-xs-12">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <%= render 'title_of_summary', presenter: @presenter %>
+      </div>
+      <div class="panel-body">
+        <div class="row">
+          <%= render 'workflow_actions_widget', presenter: @presenter %>
+
+          <div class="col-sm-3 text-center">
+            <%= render 'representative_media', presenter: @presenter, viewer: true %>
+            <%#= render 'citations', presenter: @presenter %>
+            <%= render 'social_media' %>
+          </div>
+          <div class="col-sm-9">
+            <div id="summary-details" class="detail_page_section_block">
+              <h4>Sumary details</h4>
+              <hr/>
+              <%= render :partial => 'publication' %>
+              <!-- Writer of Summary -->
+              <%= render :partial => 'generic_field', :locals => {:field_name => 'summary_writer'} %>
+              <%= render :partial => 'upload_date' %>
+              <!-- Research Area -->
+              <%= render :partial => 'generic_field_with_authority', :locals => {:field_name => 'summary_general_research_area', :authority_file_name => 'research_areas'} %>
+              <!-- Participant Type -->
+              <%= render :partial => 'generic_field_with_authority', :locals => {:field_name => 'participants_type', :authority_file_name => 'participant_types'} %>
+              <!-- Language Being Learned -->
+              <%= render :partial => 'generic_field_with_authority', :locals => {:field_name => 'participants_targetlanguage', :authority_file_name => 'languages_being_learned'} %>
+              <!-- Age of Learners -->
+              <%= render :partial => 'generic_field', :locals => {:field_name => 'participants_age'} %>
+              <!-- Materials on IRIS -->
+              <%= render :partial => 'materials_on_iris' %>
+              <%= render :partial => 'generic_field_with_authority', :locals => {:field_name => 'of_likely_interest_to', :authority_file_name => 'of_likely_interest_to'} %>
+            </div>
+
+            <button type="button" class="btn btn-info accordian_title" data-toggle="collapse" data-target="#participant-details">More participant details</button>
+            <br/>
+            <div id="participant-details" class="detail_page_section_block collapse">
+              <!-- First Language of Learners -->
+              <%= render :partial => 'generic_field_with_authority', :locals => {:field_name => 'participants_firstlanguage', :authority_file_name => 'first_language_of_learners'} %>
+              <!-- Proficiency of Learners -->
+              <%= render :partial => 'generic_field_with_authority', :locals => {:field_name => 'participants_proficiency', :authority_file_name => 'proficiency_of_learners'} %>
+              <!-- Gender of Learners -->
+              <%= render :partial => 'generic_field_with_authority', :locals => {:field_name => 'participants_gender', :authority_file_name => 'gender_of_learners'} %>
+              <!-- Age of Learners at Attrival -->
+              <%= render :partial => 'generic_field', :locals => {:field_name => 'participants_age_of_learners_of_arrival'} %>
+              <!-- Length of Residence of Learners -->
+              <%= render :partial => 'generic_field', :locals => {:field_name => 'participants_length_of_residence'} %>
+              <!-- Time Spent Using the L2 -->
+              <%= render :partial => 'generic_field', :locals => {:field_name => 'participants_time_spent_using_l2'} %>
+              <!-- Context of language use  -->
+            </div>
+            <br/>
+
+            <button type="button" class="btn btn-info accordian_title" data-toggle="collapse" data-target="#study-details">More study details</button>
+            <div id="study-details" class="detail_page_section_block collapse">
+              <!-- Language feature -->
+              <%= render :partial => 'generic_field_with_authority', :locals => {:field_name => 'summary_linguistictarget', :authority_file_name => 'language_features'} %>
+              <!-- Type of Instruction -->
+              <%= render :partial => 'generic_field', :locals => {:field_name => 'participants_type_of_instruction'} %>
+              <!-- Amount of Instruction -->
+              <%= render :partial => 'generic_field', :locals => {:field_name => 'participants_amount_of_instruction'} %>
+            </div>
+            <br/>
+
+            <div id ="cite_summary" class="detail_page_section_block">
+              <%= render :partial => 'cite_summary' %>
+            </div>
+          </div>
+          <div class="col-sm-12">
+            <%#= render 'items', presenter: @presenter %>
+            <%# TODO: we may consider adding these partials in the future %>
+            <%#= render 'sharing_with', presenter: @presenter %>
+            <%#= render 'user_activity', presenter: @presenter %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

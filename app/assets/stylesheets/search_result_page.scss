@@ -1,0 +1,11 @@
+/* changes to search result page */
+.document {
+  .list-thumbnail {
+    display: none;
+    float: left;
+  }
+  .metadata {
+    width: 100%;
+    display: inline-block;
+  }
+}

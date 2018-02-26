@@ -1,0 +1,18 @@
+<%= f.input :licence, as: :radio_buttons,
+    collection: GenericLocalAuthorityService.select_all_options('oasis_licences'),
+    input_html: { }
+%>
+
+Here is a brief explanation of the licence terms. For further information see http://creativecommons.org/licences/.<br/>
+<br/>
+<b>Attribution-NonCommercial-ShareAlike</b><br/>
+Others downloading your material must adhere to the same conditions as the Attribution-NonCommercial Licence below. Also, anything they create (derivatives) must be distributed under the same type of licence ('Share Alike').<br/>
+<br/>
+<b>Attribution-NonCommercial</b><br/>
+Others downloading your material:<br/>
+- are free to copy, distribute and display the work<br/>
+- are free to adapt and build upon the work<br/>
+- may not use the work for commercial purposes<br/>
+- must give the original author credit<br/>
+- any derivatives (adaptations of the work) must also be non-commercial, but can be licensed on alternative terms<br/>
+<br/>

@@ -1,6 +1,16 @@
 development:
   archivist:
     - archivist1@example.com
+  admin_policy_object_editor:
+    - frank.feng@york.ac.uk
+    - peri.stracchino@york.ac.uk
+    - sebastian.palucha@york.ac.uk
+  admin:
+    - frank.feng@york.ac.uk
+    - jim.adamson@york.ac.uk
+    - peri.stracchino@york.ac.uk
+    - paul.harding@york.ac.uk
+    - sebastian.palucha@york.ac.uk
 
 test:
   archivist:

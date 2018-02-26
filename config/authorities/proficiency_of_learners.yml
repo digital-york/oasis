@@ -1,0 +1,31 @@
+terms:
+  - id: 1
+    term: "Complete beginner"
+  - id: 2
+    term: "Near beginner"
+  - id: 3
+    term: "Pre-intermediate"
+  - id: 4
+    term: "Intermediate"
+  - id: 5
+    term: "Intermediate/advanced"
+  - id: 6
+    term: "Advanced"
+  - id: 7
+    term: "Near native"
+  - id: 8
+    term: "Native"
+  - id: 9
+    term: "Bilingual since infancy"
+  - id: 10
+    term: "CFER"
+  - id: 11
+    term: "ACTFL"
+  - id: 12
+    term: "TOEFL"
+  - id: 13
+    term: "IELTS"
+  - id: 14
+    term: "Oxford Placement Test"
+  - id: 15
+    term: "Other"

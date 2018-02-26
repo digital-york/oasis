@@ -1,0 +1,18 @@
+<%unless @presenter.solr_document._source["materials_on_iris_tesim"].nil? %>
+    <div class="row detail_page_item_block">
+        <div class="col-sm-3">
+          <%= image_tag("iris_logo_small.jpg", :class=>'link_to_iris_small') %>
+          <b><%=I18n.t('simple_form.labels.summary.materials_on_iris')%></b>
+        </div>
+
+        <div class="col-sm-9" style="vertical-align: middle;">
+          <%if @presenter.solr_document._source["materials_on_iris_tesim"][0]=='Yes'%>
+              <%unless @presenter.solr_document._source["iris_url_tesim"].nil? %>
+                  <%= link_to @presenter.solr_document._source["iris_url_tesim"][0], @presenter.solr_document._source["iris_url_tesim"][0], target: "_blank"%>
+              <%end%>
+          <%end%>
+        </div>
+    </div>
+<%end%>
+
+

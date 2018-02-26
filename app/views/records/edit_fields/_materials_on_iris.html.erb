@@ -1,0 +1,10 @@
+<%= f.input :materials_on_iris, as: :radio_buttons,
+    collection: [['Yes','Yes'],['No','No']],
+    input_html: { }
+%>
+
+<div id="iri_url_div" style="display: none;">
+<%= f.input :iris_url,
+    input_html: { class: 'form-control' }
+%>
+</div>

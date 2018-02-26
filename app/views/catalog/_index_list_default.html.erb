@@ -1,0 +1,41 @@
+    <div class="metadata">
+      <table class="table">
+        <% doc_presenter = index_presenter(document) %>
+        <%
+          fields = {"summary_general_research_area_tesim": "Topic",
+                   "publication_author_tesim":"Author of Research",
+                   "publication_date_tesim":"Publication Year",
+                   "date_uploaded_dtsi":"Upload Date",
+                   "summary_writer_tesim": "Summary Writer",
+                   "participants_targetlanguage_tesim": "Language Being Learned"
+                   }
+        %>
+
+        <%fields.each do |key,label|%>
+            <% v = doc_presenter.field_value key%>
+            <%unless v.nil? || v==''%>
+                <tr>
+                  <th><span class="attribute-label h4"><%= label %></span></th>
+                  <td><%= v %></td>
+                </tr>
+            <% end%>
+        <%end%>
+
+        <%
+          materials_on_iris = doc_presenter.field_value 'materials_on_iris_tesim'
+          iris_url        = doc_presenter.field_value 'iris_url_tesim'
+        %>
+        <%if materials_on_iris=='Yes' and (not iris_url.nil?) and iris_url!='' %>
+            <tr>
+              <th>
+                <%= link_to image_tag("iris_logo_small.jpg", :class=>'link_to_iris'), iris_url, target: "_blank"%>
+              </th>
+              <td>
+                <%= link_to iris_url, iris_url, target: "_blank"%>
+              </td>
+            </tr>
+        <% end%>
+      </table>
+    </div>
+
+    <div class="clearfix"></div>

@@ -1,0 +1,69 @@
+terms:
+  - id: 1
+    term: "Afrikaans"
+  - id: 2
+    term: "American Sign Language"
+  - id: 3
+    term: "Arabic"
+  - id: 4
+    term: "Artificial language"
+  - id: 5
+    term: "British Sign Language"
+  - id: 6
+    term: "Bulgarian"
+  - id: 7
+    term: "Catalan"
+  - id: 8
+    term: "Chinese"
+  - id: 9
+    term: "Dutch"
+  - id: 10
+    term: "English"
+  - id: 11
+    term: "Esperanto"
+  - id: 12
+    term: "Estonian"
+  - id: 13
+    term: "Farsi"
+  - id: 14
+    term: "Finnish"
+  - id: 15
+    term: "French"
+  - id: 16
+    term: "German"
+  - id: 17
+    term: "Greek"
+  - id: 18
+    term: "Hebrew"
+  - id: 19
+    term: "Italian"
+  - id: 20
+    term: "Japanese"
+  - id: 21
+    term: "Korean"
+  - id: 22
+    term: "Latin"
+  - id: 23
+    term: "Malay"
+  - id: 24
+    term: "Norwegian"
+  - id: 26
+    term: "Polish"
+  - id: 27
+    term: "Portuguese"
+  - id: 28
+    term: "Russian"
+  - id: 29
+    term: "Sign Language (other)"
+  - id: 30
+    term: "Spanish"
+  - id: 31
+    term: "Swedish"
+  - id: 32
+    term: "Turkish"
+  - id: 33
+    term: "Vietnamese"
+  - id: 34
+    term: "Welsh"
+  - id: 25
+    term: "Other"

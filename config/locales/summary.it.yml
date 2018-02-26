@@ -1,0 +1,8 @@
+it:
+  hyrax:
+    icons:
+      summary:     'fa fa-file-text-o'
+    select_type:
+      summary:
+        name:               "Summary"
+        description:        "Summary opere"

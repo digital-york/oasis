@@ -1,0 +1,5 @@
+<%= f.input :summary_linguistictarget, as: :select,
+    collection: GenericLocalAuthorityService.select_all_options('language_features'),
+
+    input_html: { class: 'form-control', multiple: true  }
+%>

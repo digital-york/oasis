@@ -1,0 +1,5 @@
+<%= f.input :summary_general_research_area, as: :select,
+    collection: GenericLocalAuthorityService.select_all_options('research_areas'),
+
+    input_html: { class: 'form-control', multiple: true  }
+%>

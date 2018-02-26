@@ -1,0 +1,4 @@
+<%= f.input :participants_type, as: :select,
+    collection: GenericLocalAuthorityService.select_all_options('participant_types'),
+    input_html: { class: 'form-control', multiple: true  }
+%>

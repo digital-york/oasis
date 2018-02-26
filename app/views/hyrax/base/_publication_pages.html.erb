@@ -1,0 +1,6 @@
+<%unless @presenter.solr_document._source["publication_pages_from_tesim"].nil? %>
+    <div class="col-xs-12 summary-field">
+      <h4>Pages</h4>
+      <%=@presenter.solr_document._source["publication_pages_from_tesim"][0]%>-<%=@presenter.solr_document._source["publication_pages_to_tesim"][0]%>
+    </div>
+<%end%>

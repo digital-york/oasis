@@ -1,0 +1,29 @@
+terms:
+  - id: 1
+    term: "Animacy"
+  - id: 2
+    term: "Figurative language"
+  - id: 3
+    term: "Interfaces"
+  - id: 4
+    term: "Lexis (vocabulary)"
+  - id: 5
+    term: "Morphology"
+  - id: 6
+    term: "Grammar (morphosyntax)"
+  - id: 7
+    term: "Nonwords"
+  - id: 8
+    term: "Other"
+  - id: 9
+    term: "Phonetics"
+  - id: 10
+    term: "Phonology"
+  - id: 11
+    term: "Pragmatics"
+  - id: 12
+    term: "Quantifier"
+  - id: 13
+    term: "Semantics"
+  - id: 14
+    term: "Syntax"

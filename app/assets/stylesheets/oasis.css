@@ -1,40 +1,60 @@
-.homepage_row:after {
-    content: "";
-    display: table;
-    clear: both;
-}
-
-.homepage_column {
+.homepage_div {
     text-align: center;
-    float: left;
-    width: 50%;
+    height: 2.5em;
+    overflow: hidden;
 }
 
-.navbtn {
-    width: 228px;
-    font: bold 18px Verdana, "Helvetica Neue", Helvetica, Arial, clean, sans-serif !important;
-    text-shadow: 0 -1px 1px rgba(0,0,0,0.25), -2px 0 1px rgba(0,0,0,0.25);
-    border-radius: 5px;
-    -moz-border-radius: 5px;
-    -webkit-border-radius: 5px;
-    -moz-box-shadow: 0 1px 2px rgba(0,0,0,0.5);
-    -webkit-box-shadow: 0 1px 2px rgba(0,0,0,0.5);
-    display: inline-block;
-    color: white;
-    position: relative;
-    bottom: 0px;
-    padding-top: 25px;
-    white-space: nowrap;
-    text-decoration: none;
-    height: 80px;
+.homepage_div h4{
     cursor: pointer;
-    background: #286090 scroll 0 0;
-    border-style: none;
-    text-align: center;
-    vertical-align: middle;
-    overflow: visible;
 }
+
+.homepage_logo {
+    max-height: 120px;
+}
+
+.text_left {
+    text-align: left;
+}
+
+.catalog .list-thumbnail {
+    max-width: 150px;
+    max-height: 150px;
+}
+
+.menu_header {
+    font-size: 24px;
+    padding-top: 20px;
+}
+
+.works-list .media-body {
+  width: 100%;
+}
+
+.representative-media {
+  width: 150px;
+ }
 
 .image-masthead .background-container {
     filter: none;
+}
+.link_to_iris{
+    max-height: 40px;
+}
+.link_to_iris_small{
+    max-height: 25px;
+}
+
+.detail_page_section_block {
+    padding-top: 0.4em;
+    padding-bottom: 0.4em;
+}
+
+.detail_page_item_block {
+    padding-top: 0.2em;
+    padding-bottom: 0.2em;
+}
+
+.accordian_title {
+    padding-top: 0.4em;
+    padding-bottom: 0.4em;
 }
