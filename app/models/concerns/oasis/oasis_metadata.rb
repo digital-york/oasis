@@ -119,8 +119,8 @@ module Oasis
       property :comments,                 predicate: ::RDF::URI.new('http://dlib.york.ac.uk/ontologies/oasis#comments'), multiple: false do |index|
         index.as :stored_searchable
       end
-      property :of_likely_interest_to,   predicate: ::RDF::URI.new('http://dlib.york.ac.uk/ontologies/oasis#of_likely_interest_to'), multiple: false do |index|
-        index.as :stored_searchable
+      property :of_likely_interest_to,   predicate: ::RDF::URI.new('http://dlib.york.ac.uk/ontologies/oasis#of_likely_interest_to'), multiple: true do |index|
+        index.as :stored_searchable, :sortable, :facetable
       end
       property :materials_on_iris,       predicate: ::RDF::URI.new('http://dlib.york.ac.uk/ontologies/oasis#materials_on_iris'), multiple: false do |index|
         index.as :stored_searchable
