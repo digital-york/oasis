@@ -32,7 +32,7 @@ class CatalogController < ApplicationController
       qt: "search",
       rows: 10,
       #qf: "title_tesim description_tesim creator_tesim keyword_tesim"
-      qf: "summary_general_research_area_tesim participants_targetlanguage_tesim publication_author_tesim"
+      qf: "publication_author_tesim publication_title_tesim summary_writer_tesim title_of_summary_tesim"
     }
 
     # solr field configuration for document/show views
