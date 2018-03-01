@@ -1,0 +1,7 @@
+<p>
+  <%
+  writer = recent_document._source["summary_writer_tesim"][0]
+  title = recent_document._source["title_of_summary_tesim"][0]
+  %>
+  <%= link_to writer + ':  ' + title, [main_app, recent_document], target: :blank %>
+</p>
