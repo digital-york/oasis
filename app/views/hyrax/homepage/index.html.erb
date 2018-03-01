@@ -67,7 +67,11 @@
   </div>
   <br/>
 
-  <p>Funded by:</p>
+  <h4>Recently uploaded</h4>
+  <%= render 'recently_uploaded', recent_documents: @recent_documents %>
+  <br/>
+
+  <h4>Funded by:</h4>
   <%= image_tag("ESRC-logo-300x258.jpg", :alt => "ESRC", class: "homepage_logo") %>
   <%= image_tag("BritishAcademy.jpg", :alt => "ESRC", class: "homepage_logo") %><br/>
 </div>
