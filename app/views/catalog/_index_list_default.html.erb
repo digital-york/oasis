@@ -16,11 +16,7 @@
         <%
         ras = doc_presenter.document._source['summary_general_research_area_tesim']
         v = ''
-        if not ras.nil?
-          ras.each do |ra|
-            v = v + GenericLocalAuthorityService.id_to_label('journals',ra.to_i) + '<br/>'
-          end
-        end
+        ras.each { |ra| v = v + GenericLocalAuthorityService.id_to_label('journals',ra.to_i) + '<br/>'} unless ras.nil?
         %>
         <tr>
           <th><span class="attribute-label h4">Topic</span></th>
@@ -31,11 +27,7 @@
         <%
           pts = doc_presenter.document._source['participants_type_tesim']
           v = ''
-          if not pts.nil?
-            pts.each do |pt|
-              v = v + GenericLocalAuthorityService.id_to_label('participant_types',pt.to_i) + '<br/>'
-            end
-          end
+          pts.each { |x| v = v + GenericLocalAuthorityService.id_to_label('participant_types',x.to_i) + '<br/>'} unless pts.nil?
         %>
         <tr>
           <th><span class="attribute-label h4">Participant type</span></th>
@@ -46,16 +38,14 @@
         <%
           ages = doc_presenter.document._source['participants_age_tesim']
           v = ''
-          if not ages.nil?
-            ages.each do |age|
-              v = v + GenericLocalAuthorityService.id_to_label('age_of_learners',pt.to_i) + '<br/>'
-            end
-          end
+          ages.each { |x| v = v + GenericLocalAuthorityService.id_to_label('age_of_learners',x.to_i) + '<br/>'} unless (ages.nil? or ages.length==0)
         %>
+        <%if v!=''%>
         <tr>
           <th><span class="attribute-label h4">Age</span></th>
           <td><%= sanitize(v) %></td>
         </tr>
+        <%end%>
 
         <%
           materials_on_iris = doc_presenter.field_value 'materials_on_iris_tesim'
