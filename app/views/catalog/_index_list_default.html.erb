@@ -1,18 +1,32 @@
     <div class="metadata">
       <table class="table">
         <% doc_presenter = index_presenter(document) %>
+
+        <%
+        authors = doc_presenter.document._source['publication_author_tesim']
+        pubyear = doc_presenter.document._source['publication_date_tesim']
+        apa_short = Apa.get_apa_short_html(authors, pubyear)
+        %>
+        <tr>
+          <th><span class="attribute-label h4">Publication</span></th>
+          <td><%= apa_short %></td>
+        </tr>
+
         <%
           fields = {"summary_general_research_area_tesim": "Topic",
-                   "publication_author_tesim":"Author of Research",
-                   "publication_date_tesim":"Publication Year",
-                   "date_uploaded_dtsi":"Upload Date",
-                   "summary_writer_tesim": "Summary Writer",
-                   "participants_targetlanguage_tesim": "Language Being Learned"
+                   "participants_type_tesim":"Participant type",
+                   "participants_age":"Age"
                    }
         %>
 
         <%fields.each do |key,label|%>
-            <% v = doc_presenter.field_value key%>
+            <%
+              values = doc_presenter.document._source[key]
+              v = ''
+              values.each do |v|
+
+              end
+            %>
             <%unless v.nil? || v==''%>
                 <tr>
                   <th><span class="attribute-label h4"><%= label %></span></th>
