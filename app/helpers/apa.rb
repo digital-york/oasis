@@ -7,6 +7,10 @@ class Apa
   end
 
   def self.get_apa_short_html(authors, publication_year)
+    if authors.nil? or publication_year.nil?
+      return ''
+    end
+
     if authors.length==1
       return get_surname(authors[0]) + ' (' + publication_year[0] + ')'
     elsif authors.length==2
