@@ -1,4 +1,4 @@
-<%= f.input :participants_gender, as: :check_boxes,
+<%= f.input :participants_age, as: :select,
     collection: GenericLocalAuthorityService.select_all_options('age_of_learners'),
-    input_html: {  }
+    input_html: { }
 %>
