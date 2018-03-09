@@ -86,7 +86,7 @@ class Apa
 
   def self.get_pages_string(page_from,page_to)
     if not page_from.nil? and page_from!='' and not page_to.nil? and page_to!=''
-      return page_from + '('+page_to+')'+'.'
+      return page_from + '-'+page_to+'.'
     end
     ''
   end
