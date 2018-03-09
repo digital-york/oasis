@@ -85,8 +85,8 @@ class Apa
   end
 
   def self.get_pages_string(page_from,page_to)
-    if not page_from.nil? and not page_from[0].nil? and page_from[0]!='' and not page_to.nil? and not page_to[0].nil? and page_to[0]!=''
-      return page_from[0] + '('+page_to[0]+')'+'.'
+    if not page_from.nil? and page_from!='' and not page_to.nil? and page_to!=''
+      return page_from + '('+page_to+')'+'.'
     end
     ''
   end
