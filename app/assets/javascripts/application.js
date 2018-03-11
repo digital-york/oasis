@@ -10,8 +10,9 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= 
-//= require turbolinks
+//=
+// Temporarly disable turbolinks to support TINYMCE in production
+// require turbolinks
 //
 // Required by Blacklight
 //= require jquery
@@ -25,4 +26,3 @@
 
 //= require_tree .
 //= require hyrax
-
