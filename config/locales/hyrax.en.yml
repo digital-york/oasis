@@ -57,6 +57,7 @@ en:
       suffix:               "@oasis-database"
     footer:
       copyright_html: "<strong>Copyright &copy; 2018 OASIS</strong>"
+      disclaimer_html: <a href="https://www.york.ac.uk/about/legal-statements/" class="navbar-link" target="_blank">Legal statements</a> @ University of York
       service_html: Powered by <a href="https://dlib.york.ac.uk/" class="navbar-link" target="_blank">York Digital Library</a>.
     admin:
       sidebar:
