@@ -6,6 +6,11 @@ class Apa
     name
   end
 
+  # temporary solution for https://github.com/digital-york/oasis/issues/29
+  def self.get_apa_short_author_all_in_one(author_all, publication_year)
+    return author_all[0].strip  + ' (' + publication_year[0] + ')'
+  end
+
   def self.get_apa_short_html(authors, publication_year)
     if authors.nil? or publication_year.nil?
       return ''
@@ -36,7 +41,10 @@ class Apa
   end
 
   def self.get_author_string(authors)
-    if authors.length==1
+    # if gets a string, e.g. author_all, just return it directly, as a temporary solution for: https://github.com/digital-york/oasis/issues/29
+    if authors.is_a? String
+      return authors + ' '
+    elsif authors.length==1
       return authors[0] + ' '
     else
       l = ''
