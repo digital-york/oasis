@@ -3,7 +3,11 @@
         <b>Publication</b>
       </div>
       <div class="col-sm-9">
-        <%=sanitize(Apa.get_reference_html(@presenter.solr_document._source["publication_author_tesim"],
+        <%
+        authors = @presenter.solr_document._source["publication_author_all_tesim"] unless @presenter.solr_document._source["publication_author_all_tesim"].nil?
+        authors = @presenter.solr_document._source["publication_author_tesim"] if authors.nil?
+        %>
+        <%=sanitize(Apa.get_reference_html(authors,
                                  @presenter.solr_document._source["publication_date_tesim"],
                                  @presenter.solr_document._source["publication_title_tesim"],
                                  @presenter.solr_document._source["publication_journal_name_tesim"],
