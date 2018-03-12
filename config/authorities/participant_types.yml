@@ -1,15 +1,11 @@
 terms:
   - id: 1
-    term: "Adolescent learners"
-  - id: 2
-    term: "Adults learners"
-  - id: 3
     term: "Artificial language learners"
-  - id: 4
+  - id: 2
     term: "Bilinguals"
-  - id: 5
+  - id: 3
     term: "First language attriters"
-  - id: 6
+  - id: 4
     term: "First language learners"
   - id: 7
     term: "Foreign language learners"
@@ -22,20 +18,16 @@ terms:
   - id: 11
     term: "Native speakers"
   - id: 12
-    term: "Parent"
+    term: "Parents"
   - id: 13
     term: "Policy-makers"
   - id: 14
-    term: "Primary school"
-  - id: 15
-    term: "Secondary school"
-  - id: 16
     term: "Second language learners"
-  - id: 17
+  - id: 15
+    term: "Teacher educators / CPD providers"
+  - id: 16
     term: "Teacher trainees"
-  - id: 18
+  - id: 17
     term: "Teachers"
-  - id: 19
-    term: "Young learners"
-  - id: 20
+  - id: 18
     term: "Other"
