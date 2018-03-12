@@ -3,9 +3,16 @@
         <% doc_presenter = index_presenter(document) %>
 
         <%
-        authors = doc_presenter.document._source['publication_author_tesim']
+        apa_short = ''
         pubyear = doc_presenter.document._source['publication_date_tesim']
-        apa_short = Apa.get_apa_short_html(authors, pubyear)
+        #authors = doc_presenter.document._source['publication_author_tesim']
+        authors = doc_presenter.document._source['publication_author_all_tesim'] unless doc_presenter.document._source['publication_author_all_tesim'].nil?
+        if authors.nil?
+          authors = doc_presenter.document._source['publication_author_tesim']
+          apa_short = Apa.get_apa_short_html(authors, pubyear)
+        else
+          apa_short = Apa.get_apa_short_author_all_in_one(authors, pubyear)
+        end
         %>
         <tr>
           <th><span class="attribute-label h4">Publication</span></th>
