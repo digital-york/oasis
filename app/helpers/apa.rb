@@ -19,7 +19,7 @@ class Apa
     if authors.length==1
       return get_surname(authors[0]) + ' (' + publication_year[0] + ')'
     elsif authors.length==2
-      return get_surname(authors[0]) + ' & ' + get_surname(authors[1]) + '(' + publication_year[0] + ')'
+      return get_surname(authors[0]) + ' & ' + get_surname(authors[1]) + ' (' + publication_year[0] + ')'
     elsif authors.length>2
       return get_surname(authors[0]) + ' et al. (' + publication_year[0] + ')'
     else
