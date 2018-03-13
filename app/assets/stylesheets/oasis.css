@@ -70,3 +70,6 @@
     image-rendering: -webkit-optimize-contrast;
 }
 
+body .image-masthead .background-container-gradient {
+    background: none;
+}
