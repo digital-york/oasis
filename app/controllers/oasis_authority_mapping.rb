@@ -7,6 +7,7 @@ class OasisAuthorityMapping
       "journals"                     => "publication_journal_name",
       "language_features"           => "summary_linguistictarget",
       "languages_being_learned"    => "participants_targetlanguage",
+      "age_of_learners"         => "participants_age",
       "oasis_licences"               => "licence",
       "of_likely_interest_to"       => "of_likely_interest_to",
       "participant_types"            => "participants_type",

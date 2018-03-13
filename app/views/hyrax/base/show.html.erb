@@ -33,7 +33,7 @@
               <!-- Language Being Learned -->
               <%= render :partial => 'generic_field_with_authority', :locals => {:field_name => 'participants_targetlanguage', :authority_file_name => 'languages_being_learned'} %>
               <!-- Age of Learners -->
-              <%= render :partial => 'generic_field', :locals => {:field_name => 'participants_age'} %>
+              <%= render :partial => 'generic_field_with_authority', :locals => {:field_name => 'participants_age', :authority_file_name => 'age_of_learners'} %>
               <!-- Materials on IRIS -->
               <%= render :partial => 'materials_on_iris' %>
               <%= render :partial => 'generic_field_with_authority', :locals => {:field_name => 'of_likely_interest_to', :authority_file_name => 'of_likely_interest_to'} %>
