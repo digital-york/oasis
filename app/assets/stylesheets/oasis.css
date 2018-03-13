@@ -62,3 +62,11 @@
     padding-top: 0.4em;
     padding-bottom: 0.4em;
 }
+
+.main_logo {
+    display: block;
+    max-height: 100%;
+    margin: 0 auto;
+    image-rendering: -webkit-optimize-contrast;
+}
+
