@@ -1,8 +1,8 @@
 module Oasis
   module OasisMetadata extend ActiveSupport::Concern
     included do
-      #--------------------------
-      #summary details group
+      # --------------------------
+      # summary details group
       property :summary_writer,                  predicate: ::RDF::URI.new('http://dlib.york.ac.uk/ontologies/oasis#writer'), multiple: true do |index|
         index.as :stored_searchable, :sortable, :facetable
       end
@@ -14,8 +14,8 @@ module Oasis
         index.as :stored_searchable, :sortable, :facetable
       end
 
-      #--------------------------
-      #further details group
+      # --------------------------
+      # further details group
       property :summary_linguistictarget,         predicate: ::RDF::URI.new('http://dlib.york.ac.uk/ontologies/oasis#linguistictarget'), multiple: true do |index|
         index.as :stored_searchable, :sortable, :facetable
       end
@@ -23,10 +23,10 @@ module Oasis
         index.as :stored_searchable
       end
 
-      #--------------------------
-      #participants group
+      # --------------------------
+      # participants group
       property :participants_type,                           predicate: ::RDF::URI.new('http://dlib.york.ac.uk/ontologies/oasis#participants_type'), multiple: true do |index|
-        index.as :stored_searchable
+        index.as :stored_searchable, :sortable, :facetable
       end
       property :participants_firstlanguage,                 predicate: ::RDF::URI.new('http://dlib.york.ac.uk/ontologies/oasis#participants_firstlanguage'), multiple: true do |index|
         index.as :stored_searchable, :sortable, :facetable
@@ -35,13 +35,13 @@ module Oasis
         index.as :stored_searchable, :sortable, :facetable
       end
       property :participants_age,                            predicate: ::RDF::URI.new('http://dlib.york.ac.uk/ontologies/oasis#participants_age'), multiple: true do |index|
-        index.as :stored_searchable
+        index.as :stored_searchable, :sortable, :facetable
       end
       property :participants_gender,                         predicate: ::RDF::URI.new('http://dlib.york.ac.uk/ontologies/oasis#participants_gender'), multiple: false do |index|
-        index.as :stored_searchable
+        index.as :stored_searchable, :sortable, :facetable
       end
       property :participants_proficiency,                    predicate: ::RDF::URI.new('http://dlib.york.ac.uk/ontologies/oasis#participants_proficiency'), multiple: true do |index|
-        index.as :stored_searchable
+        index.as :stored_searchable, :sortable, :facetable
       end
       property :participants_type_of_instruction,           predicate: ::RDF::URI.new('http://dlib.york.ac.uk/ontologies/oasis#participants_type_of_instruction'), multiple: false do |index|
         index.as :stored_searchable
@@ -65,15 +65,15 @@ module Oasis
         index.as :stored_searchable
       end
       property :participants_domain_of_use,                  predicate: ::RDF::URI.new('http://dlib.york.ac.uk/ontologies/oasis#participants_domain_of_use'), multiple: true do |index|
-        index.as :stored_searchable
+        index.as :stored_searchable, :sortable, :facetable
       end
       property :participants_year_of_teaching_experience,  predicate: ::RDF::URI.new('http://dlib.york.ac.uk/ontologies/oasis#participants_year_of_teaching_experience'), multiple: false do |index|
         index.as :stored_searchable
       end
 
 
-      #--------------------------
-      #publication and acknowledgements group
+      # --------------------------
+      # publication and acknowledgements group
       property :publication_author,                  predicate: ::RDF::URI.new('http://dlib.york.ac.uk/ontologies/oasis#publication_author'), multiple: true do |index|
         index.as :stored_searchable, :sortable, :facetable
       end
@@ -102,8 +102,8 @@ module Oasis
         index.as :stored_searchable
       end
 
-      #--------------------------
-      #communication / licence group
+      # --------------------------
+      # communication / licence group
       property :licence,                  predicate: ::RDF::URI.new('http://dlib.york.ac.uk/ontologies/oasis#licence'), multiple: false do |index|
         index.as :stored_searchable
       end
@@ -111,19 +111,19 @@ module Oasis
         index.as :stored_searchable
       end
 
-      #--------------------------
-      #Submit group
+      # --------------------------
+      # Submit group
       property :licence_agreement,       predicate: ::RDF::URI.new('http://dlib.york.ac.uk/ontologies/oasis#licence_agreement'), multiple: false do |index|
         index.as :stored_searchable
       end
       property :comments,                 predicate: ::RDF::URI.new('http://dlib.york.ac.uk/ontologies/oasis#comments'), multiple: false do |index|
         index.as :stored_searchable
       end
-      property :of_likely_interest_to,   predicate: ::RDF::URI.new('http://dlib.york.ac.uk/ontologies/oasis#of_likely_interest_to'), multiple: false do |index|
-        index.as :stored_searchable
+      property :of_likely_interest_to,   predicate: ::RDF::URI.new('http://dlib.york.ac.uk/ontologies/oasis#of_likely_interest_to'), multiple: true do |index|
+        index.as :stored_searchable, :sortable, :facetable
       end
       property :materials_on_iris,       predicate: ::RDF::URI.new('http://dlib.york.ac.uk/ontologies/oasis#materials_on_iris'), multiple: false do |index|
-        index.as :stored_searchable
+        index.as :stored_searchable, :sortable, :facetable
       end
       property :iris_url,       predicate: ::RDF::URI.new('http://dlib.york.ac.uk/ontologies/oasis#iris_url'), multiple: false do |index|
         index.as :stored_searchable
@@ -131,7 +131,6 @@ module Oasis
       property :notification_of_download,   predicate: ::RDF::URI.new('http://dlib.york.ac.uk/ontologies/oasis#notification_of_download'), multiple: false do |index|
         index.as :stored_searchable
       end
-
     end
   end
 end

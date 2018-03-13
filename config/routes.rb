@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
-  
+
   mount Blacklight::Engine => '/'
-  
+
     concern :searchable, Blacklight::Routes::Searchable.new
 
   resource :catalog, only: [:index], as: 'catalog', path: '/catalog', controller: 'catalog' do
@@ -23,7 +23,6 @@ Rails.application.routes.draw do
   end
 
   get '/new_summary' => 'hyrax/summaries#new', key: 'new_summary'
-  get '/aboutpage' => 'static_pages#aboutpage', key: 'aboutpage'
 
   resources :bookmarks do
     concerns :exportable

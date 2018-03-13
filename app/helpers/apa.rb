@@ -1,4 +1,23 @@
 class Apa
+  def self.get_surname(name)
+    if name.include? ','
+      return name.split(',')[0]
+    end
+    name
+  end
+
+  def self.get_apa_short_html(authors, publication_year)
+    if authors.length==1
+      return get_surname(authors[0]) + ' (' + publication_year[0] + ')'
+    elsif authors.length==2
+      return get_surname(authors[0]) + ' & ' + get_surname(authors[1]) + '(' + publication_year[0] + ')'
+    elsif authors.length>2
+      return get_surname(authors[0]) + ' et al. (' + publication_year[0] + ')'
+    else
+      return ''
+    end
+  end
+
   def self.get_reference_html(authors, publication_year, title, journal, volume, issue, page_from, page_to)
     get_author_string(authors) +
         get_publication_year_string(publication_year) +
