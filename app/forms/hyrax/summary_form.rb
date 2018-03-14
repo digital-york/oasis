@@ -60,5 +60,11 @@ module Hyrax
                             :emails,
                             :notification_of_download
                          ]
+
+    def self.build_permitted_params
+      super + [
+          :visibility
+      ]
+    end
   end
 end
