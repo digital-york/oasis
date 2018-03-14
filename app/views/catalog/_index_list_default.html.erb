@@ -16,7 +16,7 @@
         <%
         ras = doc_presenter.document._source['summary_general_research_area_tesim']
         v = ''
-        ras.each { |ra| v = v + GenericLocalAuthorityService.id_to_label('journals',ra.to_i) + '<br/>'} unless ras.nil?
+        ras.each { |ra| v = v + GenericLocalAuthorityService.id_to_label('research_areas',ra.to_i) + '<br/>'} unless ras.nil?
         %>
         <tr>
           <th><span class="attribute-label h4">Topic</span></th>
