@@ -6,6 +6,12 @@ module Oasis
       property :summary_writer,                  predicate: ::RDF::URI.new('http://dlib.york.ac.uk/ontologies/oasis#writer'), multiple: true do |index|
         index.as :stored_searchable, :sortable, :facetable
       end
+
+      # (tempoary) quick and dirty solution to fix the order of author problem: https://github.com/digital-york/oasis/issues/29
+      property :summary_writer_all,                  predicate: ::RDF::URI.new('http://dlib.york.ac.uk/ontologies/oasis#writer_all'), multiple: false do |index|
+        index.as :stored_searchable
+      end
+
       property :title_of_summary,                predicate: ::RDF::URI.new('http://dlib.york.ac.uk/ontologies/oasis#title'), multiple: false do |index|
         index.as :stored_searchable
       end
@@ -77,6 +83,12 @@ module Oasis
       property :publication_author,                  predicate: ::RDF::URI.new('http://dlib.york.ac.uk/ontologies/oasis#publication_author'), multiple: true do |index|
         index.as :stored_searchable, :sortable, :facetable
       end
+
+      # tempoary all publication authors in APA format
+      property :publication_author_all,                  predicate: ::RDF::URI.new('http://dlib.york.ac.uk/ontologies/oasis#publication_author_all'), multiple: false do |index|
+        index.as :stored_searchable
+      end
+
       property :publication_title,                  predicate: ::RDF::URI.new('http://dlib.york.ac.uk/ontologies/oasis#publication_title'), multiple: true do |index|
         index.as :stored_searchable, :sortable, :facetable
       end
