@@ -20,7 +20,11 @@ $(function() {
     $("#homepage_search").click(function() {
         window.location.href = '/catalog';
     });
-
+    
+    <!-- Show hiden IRIS url field -->
+    if( $("#summary_materials_on_iris_yes").val()=='Yes'){
+        $("#iri_url_div").css("display","block");
+    }
     $("#summary_materials_on_iris_yes").click(function(){
         if( $(this).val()=='Yes'){
             $("#iri_url_div").css("display","block");
@@ -32,4 +36,3 @@ $(function() {
         }
     });
 });
-

@@ -1,24 +1,50 @@
     <div class="metadata">
       <table class="table">
         <% doc_presenter = index_presenter(document) %>
-        <%
-          fields = {"summary_general_research_area_tesim": "Topic",
-                   "publication_author_tesim":"Author of Research",
-                   "publication_date_tesim":"Publication Year",
-                   "date_uploaded_dtsi":"Upload Date",
-                   "summary_writer_tesim": "Summary Writer",
-                   "participants_targetlanguage_tesim": "Language Being Learned"
-                   }
-        %>
 
-        <%fields.each do |key,label|%>
-            <% v = doc_presenter.field_value key%>
-            <%unless v.nil? || v==''%>
-                <tr>
-                  <th><span class="attribute-label h4"><%= label %></span></th>
-                  <td><%= v %></td>
-                </tr>
-            <% end%>
+        <%
+        authors = doc_presenter.document._source['publication_author_tesim']
+        pubyear = doc_presenter.document._source['publication_date_tesim']
+        apa_short = Apa.get_apa_short_html(authors, pubyear)
+        %>
+        <tr>
+          <th><span class="attribute-label h4">Publication</span></th>
+          <td><%= apa_short %></td>
+        </tr>
+
+        <!-- Research Areas / Topics -->
+        <%
+        ras = doc_presenter.document._source['summary_general_research_area_tesim']
+        v = ''
+        ras.each { |ra| v = v + GenericLocalAuthorityService.id_to_label('journals',ra.to_i) + '<br/>'} unless ras.nil?
+        %>
+        <tr>
+          <th><span class="attribute-label h4">Topic</span></th>
+          <td><%= sanitize(v) %></td>
+        </tr>
+
+        <!-- Participant types -->
+        <%
+          pts = doc_presenter.document._source['participants_type_tesim']
+          v = ''
+          pts.each { |x| v = v + GenericLocalAuthorityService.id_to_label('participant_types',x.to_i) + '<br/>'} unless pts.nil?
+        %>
+        <tr>
+          <th><span class="attribute-label h4">Participant type</span></th>
+          <td><%= sanitize(v) %></td>
+        </tr>
+
+        <!-- Participant age -->
+        <%
+          ages = doc_presenter.document._source['participants_age_tesim']
+          v = ''
+          ages.each { |x| v = v + GenericLocalAuthorityService.id_to_label('age_of_learners',x.to_i) + '<br/>'} unless (ages.nil? or ages.length==0)
+        %>
+        <%if v!=''%>
+        <tr>
+          <th><span class="attribute-label h4">Age</span></th>
+          <td><%= sanitize(v) %></td>
+        </tr>
         <%end%>
 
         <%

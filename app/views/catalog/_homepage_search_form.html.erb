@@ -1,0 +1,27 @@
+<%= form_tag search_form_action, method: :get, id: "search-form-header", role: "search" do %>
+  <%= render_hash_as_hidden_fields(search_state.params_for_search.except(:q, :search_field, :qt, :page, :utf8)) %>
+  <%= hidden_field_tag :search_field, 'all_fields' %>
+  <div class="input-group">
+
+    <label class="sr-only" for="search-field-header"><%= t("hyrax.search.form.q.label", application_name: application_name) %></label>
+    <%= text_field_tag :q, current_search_parameters , class: "q form-control", id: "search-field-header", placeholder: t("hyrax.search.form.q.placeholder") %>
+
+    <div class="input-group-btn">
+      <button type="submit" class="btn btn-primary" id="search-submit-header">
+        <%= t('hyrax.search.button.html') %>
+      </button>
+    </div><!-- /.input-group-btn -->
+  </div><!-- /.input-group -->
+    Enter <b>any text you wish</b> into the search box (e.g. speaking, French, grammar) OR<br/>
+    Browse by:
+    <%=link_to "All summaries;",                                                      "/catalog",                                         target: :_blank %>
+    <%=link_to t('simple_form.labels.summary.summary_general_research_area')+'; ',   "/catalog/facet/summary_general_research_area_sim", target: :_blank %>
+    <%=link_to "Language;",                                                          "/catalog/facet/participants_targetlanguage_sim",   target: :_blank %>
+    <%=link_to t('simple_form.labels.summary.participants_type')+'; ',               "/catalog/facet/participants_type_sim",             target: :_blank %>
+    <%=link_to t('simple_form.labels.summary.participants_age')+'; ',                "/catalog/facet/participants_age_sim",              target: :_blank %>
+    <%=link_to t('simple_form.labels.summary.summary_linguistictarget')+'; ',        "/catalog/facet/summary_linguistictarget_sim",      target: :_blank %>
+    <%=link_to "Author",                                                            "/catalog/facet/publication_author_sim",            target: :_blank %>
+
+    <br/>
+    Leave the search bar empty and click "Go" to view all content on OASIS and then use the filters to refine your search results
+<% end %>

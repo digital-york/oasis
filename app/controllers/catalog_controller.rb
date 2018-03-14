@@ -36,9 +36,9 @@ class CatalogController < ApplicationController
     }
 
     # solr field configuration for document/show views
-    #config.index.title_field = solr_name("title", :stored_searchable)
-    config.index.summary_general_research_area_field = solr_name("summary_general_research_area", :stored_searchable)
-    config.index.summary_general_research_area_field = solr_name("publication_author",              :stored_searchable)
+    config.index.title_field = solr_name("title", :stored_searchable)
+    #config.index.summary_general_research_area_field = solr_name("summary_general_research_area", :stored_searchable)
+    #config.index.summary_general_research_area_field = solr_name("publication_author",              :stored_searchable)
 
     config.index.display_type_field = solr_name("has_model", :symbol)
     config.index.thumbnail_field = 'thumbnail_path_ss'
@@ -276,22 +276,38 @@ class CatalogController < ApplicationController
     #   }
     # end
 
-    config.add_search_field('summary_general_research_area') do |field|
-      solr_name = solr_name("summary_general_research_area", :stored_searchable)
+    config.add_search_field('publication_author_tesim') do |field|
+      solr_name = solr_name("publication_author_tesim", :stored_searchable)
       field.solr_local_parameters = {
           qf: solr_name,
           pf: solr_name
       }
     end
 
-    config.add_search_field('participants_targetlanguage') do |field|
-      solr_name = solr_name("participants_targetlanguage", :stored_searchable)
+    config.add_search_field('publication_title_tesim') do |field|
+      solr_name = solr_name("publication_title_tesim", :stored_searchable)
       field.solr_local_parameters = {
           qf: solr_name,
           pf: solr_name
       }
     end
 
+
+    config.add_search_field('summary_writer_tesim') do |field|
+      solr_name = solr_name("summary_writer_tesim", :stored_searchable)
+      field.solr_local_parameters = {
+          qf: solr_name,
+          pf: solr_name
+      }
+    end
+
+    config.add_search_field('title_of_summary_tesim') do |field|
+      solr_name = solr_name("title_of_summary_tesim", :stored_searchable)
+      field.solr_local_parameters = {
+          qf: solr_name,
+          pf: solr_name
+      }
+    end
 
     # "sort results by" select (pulldown)
     # label in pulldown is followed by the name of the SOLR field to sort by and
