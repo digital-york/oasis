@@ -20,7 +20,7 @@
           </div>
           <div class="col-sm-9">
             <div id="summary-details" class="detail_page_section_block">
-              <h4>Sumary details</h4>
+              <h4>Summary details</h4>
               <hr/>
               <%= render :partial => 'publication' %>
               <!-- Writer of Summary -->
@@ -48,12 +48,18 @@
               <%= render :partial => 'generic_field_with_authority', :locals => {:field_name => 'participants_proficiency', :authority_file_name => 'proficiency_of_learners'} %>
               <!-- Gender of Learners -->
               <%= render :partial => 'generic_field_with_authority', :locals => {:field_name => 'participants_gender', :authority_file_name => 'gender_of_learners'} %>
-              <!-- Age of Learners at Attrival -->
+              <!-- Age of Learners at Arrival -->
               <%= render :partial => 'generic_field', :locals => {:field_name => 'participants_age_of_learners_of_arrival'} %>
               <!-- Length of Residence of Learners -->
               <%= render :partial => 'generic_field', :locals => {:field_name => 'participants_length_of_residence'} %>
               <!-- Time Spent Using the L2 -->
               <%= render :partial => 'generic_field', :locals => {:field_name => 'participants_time_spent_using_l2'} %>
+              <!-- Contex of language use -->
+              <%= render :partial => 'generic_field_with_authority', :locals => {:field_name => 'participants_domain_of_use', :authority_file_name => 'domains_of_use'} %>
+              <!-- Years of teaching experience -->
+              <%= render :partial => 'generic_field', :locals => {:field_name => 'participants_year_of_teaching_experience'} %>
+              <!-- Amunt of prior instruction -->
+              <%= render :partial => 'generic_field', :locals => {:field_name => 'participants_amount_of_prior_instruction'} %>
               <!-- Context of language use  -->
             </div>
             <br/>
