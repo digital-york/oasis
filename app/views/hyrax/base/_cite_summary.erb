@@ -1,10 +1,13 @@
 <div class="row detail_page_item_block">
   <div class="col-sm-12">
   <button type="button" class="btn btn-info accordian_title" data-toggle="collapse" data-target="#c_summary">How to cite this summary</button>
-
+  <%
+    authors = @presenter.solr_document._source["summary_writer_all_tesim"] unless @presenter.solr_document._source["summary_writer_all_tesim"].nil?
+    authors = @presenter.solr_document._source["summary_writer_tesim"] if authors.nil?
+  %>
   <div id="c_summary" class="collapse">
     <br/>
-    <%=sanitize(SummaryApa.get_summary_reference_html(@presenter.solr_document._source["summary_writer_tesim"],
+    <%=sanitize(SummaryApa.get_summary_reference_html(authors,
                                        DateTime.parse(@presenter.solr_document._source["date_uploaded_dtsi"]).strftime("%Y"),
                                        @presenter.solr_document._source["title_of_summary_tesim"],
                                        'OASIS Summary'))%>
