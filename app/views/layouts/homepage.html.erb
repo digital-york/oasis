@@ -1,6 +1,8 @@
 <% content_for(:navbar) do %>
   <div class="image-masthead">
-    <div class="background-container" style="background-image: url(/assets/WhiteBckG_BiggerWords.svg); background-size: contain; background-position: center;"></div>
+    <div class="background-container">
+       <%= image_tag("main_logo.png", :class=>'main_logo', alt: "OASIS") %>
+    </div>
     <span class="background-container-gradient"></span>
 
     <div class="container site-title-container">
