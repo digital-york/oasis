@@ -30,12 +30,13 @@
                   </thead>
                   <tbody>
                     <% @status_list.each do |document| %>
+                      <% doc_presenter = show_presenter(document)%>
                       <tr>
                         <td>
-                          <%= link_to document, [main_app, document] %>
+                          <%= link_to (doc_presenter.field_value 'title_of_summary_tesim'), [main_app, document], target: '_blank' %>
                         </td>
                         <td>
-                          <%= document.depositor %>
+                          <%= doc_presenter.field_value 'summary_writer_tesim' %>
                         </td>
                         <td>
                           <%= document.date_modified %>
@@ -72,7 +73,7 @@
                           <%= link_to (doc_presenter.field_value 'title_of_summary_tesim'), [main_app, document], target: '_blank' %>
                         </td>
                         <td>
-                          <%= safe_join(document.creator, tag(:br)) %>
+                          <%= doc_presenter.field_value 'summary_writer_tesim' %>
                         </td>
                         <td>
                           <%= document.date_modified %>
