@@ -1,18 +1,15 @@
 development:
   user: fedoraAdmin
   password: fedoraAdmin
-  #url: http://127.0.0.1:<%= ENV['FCREPO_DEVELOPMENT_PORT'] || 8984 %>/rest
-  url: http://127.0.0.1:8080/fedora/rest
-  base_path: /oasis
+  url: <%= Figaro.env.fedora_url %>
+  base_path: <%= Figaro.env.fedora_base_path %>
 test:
   user: fedoraAdmin
   password: fedoraAdmin
-  #url: http://127.0.0.1:<%= ENV['FCREPO_TEST_PORT'] || 8986 %>/rest
-  #base_path: /test
-  url: http://127.0.0.1:8080/fedora/rest
-  base_path: /oasis
+  url: <%= Figaro.env.fedora_url %>
+  base_path: <%= Figaro.env.fedora_base_path %>
 production:
-  user: fedoraAdmin
-  password: fedoraAdmin
-  url: http://127.0.0.1:8080/fedora/rest
-  base_path: /prod
+  user: <%= Figaro.env.fedora_username %>
+  password: <%= Figaro.env.fedora_password %>
+  url: <%= Figaro.env.fedora_url %>
+  base_path: <%= Figaro.env.fedora_base_path %>
