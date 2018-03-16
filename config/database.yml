@@ -21,5 +21,10 @@ test:
   database: db/test.sqlite3
 
 production:
-  <<: *default
-  database: db/production.sqlite3
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+  database: <%= Figaro.env.application_database_name %>
+  host: <%= Figaro.env.application_database_host %>
+  username: <%= Figaro.env.application_database_username %>
+  password: <%= Figaro.env.application_database_password %>
