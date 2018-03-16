@@ -27,3 +27,6 @@
 .byebug_history
 oasis.iml
 
+
+# Ignore application configuration
+/config/application.yml
