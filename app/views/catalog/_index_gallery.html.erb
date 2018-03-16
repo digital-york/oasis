@@ -1,0 +1,62 @@
+<div class="document col-xs-6 col-md-3">
+  <div class="thumbnail">
+    <%= render_thumbnail_tag(document, {}, :counter => document_counter_with_offset(document_counter)) %>
+
+    <div class="caption" style="text-align: left">
+      <% doc_presenter = index_presenter(document) %>
+      <% summary_title = doc_presenter.field_value 'title_of_summary_tesim'%>
+      <h4><%= link_to summary_title, document %></h4>
+
+      <%
+        apa_short = ''
+        pubyear = doc_presenter.document._source['publication_date_tesim']
+        #authors = doc_presenter.document._source['publication_author_tesim']
+        authors = doc_presenter.document._source['publication_author_all_tesim'] unless doc_presenter.document._source['publication_author_all_tesim'].nil?
+        if authors.nil?
+          authors = doc_presenter.document._source['publication_author_tesim']
+          apa_short = Apa.get_apa_short_html(authors, pubyear)
+        else
+          apa_short = Apa.get_apa_short_author_all_in_one(authors, pubyear)
+        end
+      %>
+      <b>Publication</b><br/>
+      <%= apa_short %><br/><br/>
+
+      <%
+        ras = doc_presenter.document._source['summary_general_research_area_tesim']
+        v = ''
+        ras.each { |ra| v = v + GenericLocalAuthorityService.id_to_label('research_areas',ra.to_i) + '<br/>'} unless ras.nil?
+      %>
+      <b>Topic</b><br/>
+      <%= sanitize(v) %><br/>
+
+      <!-- Participant types -->
+      <%
+        pts = doc_presenter.document._source['participants_type_tesim']
+        v = ''
+        pts.each { |x| v = v + GenericLocalAuthorityService.id_to_label('participant_types',x.to_i) + '<br/>'} unless pts.nil?
+      %>
+      <b>Participant type</b><br/>
+      <%= sanitize(v) %><br/>
+
+      <!-- Participant age -->
+      <%
+        ages = doc_presenter.document._source['participants_age_tesim']
+        v = ''
+        ages.each { |x| v = v + GenericLocalAuthorityService.id_to_label('age_of_learners',x.to_i) + '<br/>'} unless (ages.nil? or ages.length==0)
+      %>
+      <%if v!=''%>
+        <b>Age</b><br/>
+        <%= sanitize(v) %>
+      <%end%>
+      <%
+        materials_on_iris = doc_presenter.field_value 'materials_on_iris_tesim'
+        iris_url        = doc_presenter.field_value 'iris_url_tesim'
+      %>
+      <%if materials_on_iris=='Yes' and (not iris_url.nil?) and iris_url!='' %>
+          <%= link_to image_tag("iris_logo_small.jpg", :class=>'link_to_iris_small'), iris_url, target: "_blank"%>&nbsp;
+          <%= link_to 'View on IRIS', iris_url, target: "_blank"%>
+      <% end%>
+    </div>
+  </div>
+</div>
