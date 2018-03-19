@@ -46,6 +46,7 @@
 }
 .link_to_iris_small{
     max-height: 25px;
+    float: left;
 }
 
 .detail_page_section_block {
