@@ -16,8 +16,8 @@ namespace :authorities do
         other_term = t
       end
     end
-    output << "  - id: "    + other_term["id"].to_s
-    output << "    term: \""+ other_term["term"] +"\""
+    output << "  - id: "    + other_term["id"].to_s + "\n"
+    output << "    term: \""+ other_term["term"] +"\"\n"
     output.close
   end
 
@@ -36,14 +36,10 @@ namespace :authorities do
   end
 
   # To run this task, type:
-  # rake authorities:add_terms[journals.yml, /var/tmp/new_journals.csv]
+  # rake authorities:add_terms[journals.yml,/var/tmp/new_journals.csv,/var/tmp/updated_journals.yml]
   # be careful with the special characters in the CSV file, especially in the first line!
   desc "Updating authorities YAML file from CSV..."
-  task :add_terms, [:yamlfile, :csvfile] => [:environment] do |t, args|
-    puts "YAML file: " + args[:yamlfile]
-    puts "CSV  file: " + args[:csvfile]
-
-    #puts File.dirname(__FILE__)
+  task :add_terms, [:yamlfile, :csvfile, :targetfile] => [:environment] do |t, args|
     yaml = YAML.load_file(File.dirname(__FILE__) + '/../../config/authorities/' + args[:yamlfile])
     terms = yaml['terms']
     max_id = 0
@@ -54,29 +50,12 @@ namespace :authorities do
     File.foreach(args[:csvfile]).with_index do |line, line_num|
       newid    = max_id+line_num+1
       newlabel = line.squish
-      #puts "  - id: #{newid}"
-      #puts "    term: \"#{newlabel}\""
       if newlabel.strip! !=''
         terms << {"id"=>newid, "term"=>newlabel}
       end
     end
-    #puts terms
-
     sorted_terms = terms.sort_by {|k| k["term"]}
-
-    #output
-    puts 'terms:'
-    other_term = nil
-    sorted_terms.each do |t|
-      if t["term"].downcase != 'other'
-        puts "  - id: "    + t["id"].to_s
-        puts "    term: \""+ t["term"] +"\""
-      else
-        other_term = t
-      end
-    end
-    puts "  - id: "    + other_term["id"].to_s
-    puts "    term: \""+ other_term["term"] +"\""
+    save_terms_to_file(sorted_terms, args[:targetfile])
   end
 
   # To run this task, type:
