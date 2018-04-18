@@ -1,14 +1,16 @@
 namespace :authorities do
   require 'yaml'
+  require 'figaro'
 
-  solrconfig = YAML.load_file('config/solr.yml')
-  SOLR = solrconfig[Rails.env]['url']
+  SOLR = Figaro.env.solr_url
 
+  # save term array into a file
   def save_terms_to_file(terms, filename)
     output = File.open( filename, "w" )
     output << "terms:\n"
     other_term = nil
     terms.each do |t|
+      # always add 'Other' to the end of the term list
       if t["term"].downcase != 'other'
         output << "  - id: " + t["id"].to_s + "\n"
         output << "    term: \"" + t["term"] +"\"\n"
@@ -21,6 +23,19 @@ namespace :authorities do
       output << "    term: \""+ other_term["term"] +"\"\n"
     end
     output.close
+  end
+
+  # Check if a term is referenced by any object before being deleted
+  def is_term_used(authority_file_name, term)
+    solr_field = OasisAuthorityMapping.authority_mapping_filename2solr[authority_file_name.sub('.yml','')]
+    solr = RSolr.connect :url => SOLR
+    response = solr.get 'select', :params => {
+        :q=>"#{solr_field}_label_tesim:\"#{term}\"",
+        :start=>0,
+        :rows=>10
+    }
+    return false if response["response"]["numFound"] == 0
+    true
   end
 
   # To run this task, type:
@@ -58,14 +73,18 @@ namespace :authorities do
   end
 
   # To run this task, type:
-  # rake authorities:delete_terms[journals.yml,/var/tmp/terms.csv,/var/tmp/updated_journals.yml]
+  # rake authorities:del_terms[journals.yml,/var/tmp/terms.csv,/var/tmp/updated_journals.yml]
   desc "Deleting authorities terms from CSV..."
   task :del_terms, [:yamlfile,:csvfile,:targetfile] => [:environment] do |t, args|
     yaml = YAML.load_file(File.dirname(__FILE__) + '/../../config/authorities/' + args[:yamlfile])
     terms = yaml['terms']
 
     File.foreach(args[:csvfile]) do |line|
-      terms.delete_if {|t| t['term']==line.squish}
+      if is_term_used(args[:yamlfile], line.squish)==false
+        terms.delete_if {|t| t['term']==line.squish}
+      else
+        puts "found #{line.squish}, bypass this term"
+      end
     end
     save_terms_to_file(terms, args[:targetfile])
   end
