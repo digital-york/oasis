@@ -16,23 +16,22 @@ namespace :authorities do
         other_term = t
       end
     end
-    output << "  - id: "    + other_term["id"].to_s + "\n"
-    output << "    term: \""+ other_term["term"] +"\"\n"
+    unless other_term.nil?
+      output << "  - id: "    + other_term["id"].to_s + "\n"
+      output << "    term: \""+ other_term["term"] +"\"\n"
+    end
     output.close
   end
 
   # To run this task, type:
-  # rake authorities:update_yaml[x.csv]
+  # rake authorities:create_yaml[/var/tmp/x.csv,/var/tmp/target.yml]
   desc "Generating authorities YAML texts from CSV..."
-  task :create_yaml, [:sourcefile] => [:environment] do |t, args|
-    puts "Source file: " + args[:sourcefile]
-    #puts "Target file: " + args[:targetfile]
-
-    puts 'terms:'
+  task :create_yaml, [:sourcefile,:targetfile] => [:environment] do |t, args|
+    terms = []
     File.foreach(args[:sourcefile]).with_index do |line, line_num|
-      puts "  - id: #{line_num+1}"
-      puts "    term: \"#{line.squish}\""
+      terms << {"id"=>line_num+1, "term"=>line.squish}
     end
+    save_terms_to_file(terms, args[:targetfile])
   end
 
   # To run this task, type:
