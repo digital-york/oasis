@@ -72,8 +72,9 @@ namespace :authorities do
     save_terms_to_file(sorted_terms, args[:targetfile])
   end
 
+
   # To run this task, type:
-  # rake authorities:del_terms[journals.yml,/var/tmp/terms.csv,/var/tmp/updated_journals.yml]
+  # rake authorities:del_terms[journals.yml,/var/tmp/journals_to_delete.csv,/var/tmp/deleted_journals.yml]
   desc "Deleting authorities terms from CSV..."
   task :del_terms, [:yamlfile,:csvfile,:targetfile] => [:environment] do |t, args|
     yaml = YAML.load_file(File.dirname(__FILE__) + '/../../config/authorities/' + args[:yamlfile])
