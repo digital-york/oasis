@@ -1,4 +1,4 @@
-<%unless @presenter.solr_document._source["materials_on_iris_tesim"].nil? %>
+<%unless @presenter.solr_document._source["materials_on_iris_tesim"].nil? or @presenter.solr_document._source["materials_on_iris_tesim"][0]!='Yes'%>
     <div class="row detail_page_item_block">
         <div class="col-sm-3">
           <%= image_tag("iris_logo_small.jpg", :class=>'link_to_iris_small') %>
