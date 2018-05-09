@@ -1,4 +1,5 @@
-<%= f.input :participants_age, as: :select,
+<%= f.input :participants_age, as: :check_boxes,
     collection: GenericLocalAuthorityService.select_all_options('age_of_learners'),
-    input_html: { class: 'form-control', multiple: true }
+    value_method: lambda {|v| v.last.to_s },
+    input_html: { multiple: true }
 %>
