@@ -12,6 +12,10 @@
     max-height: 120px;
 }
 
+.openaccess_logo {
+    max-height: 40px;
+}
+
 .text_left {
     text-align: left;
 }
