@@ -2,3 +2,6 @@ rvm:
   - 2.5.0
 env:
   - solr_url=http://127.0.0.1:8983/solr/oasis fedora_url=http://127.0.0.1:8080/fedora/rest fedora_base_path=/oasis
+
+before_install:
+  - gem update --system
