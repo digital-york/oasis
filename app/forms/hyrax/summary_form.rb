@@ -46,7 +46,6 @@ module Hyrax
     self.required_fields = [:summary_writer,
                             :title_of_summary,
                             :publication_author,
-                            :publication_author_all,
                             :publication_title,
                             :publication_date,
                             :publication_journal_name,
