@@ -36,7 +36,7 @@ $(function() {
         }
     });
 
-    <!-- applying order from summary_summary_writer_all -->
+    <!-- applying writers' order from summary_summary_writer_all -->
     var all_writers = JSON.parse($('#summary_summary_writer_all').val());
     if(all_writers) {
         for(var i in all_writers) {
@@ -47,15 +47,36 @@ $(function() {
         }
     }
 
-    // before submitting changes, update summary_summary_writer_all first.
+    <!-- applying authors' order from summary_publication_author_all -->
+    var all_authors = JSON.parse($('#summary_publication_author_all').val());
+    if(all_authors) {
+        for(var i in all_authors) {
+            // update all authors in the order defined in publication_author_all
+            if(all_authors[i]!='') {
+                $('.summary_publication_author:eq(' + (parseInt(i) + 1) + ')').val(all_authors[i]);
+            }
+        }
+    }
+
     $("#with_files_submit").click(function(){
-        var authors = [];
+        // before submitting changes, update summary_summary_writer_all.
+        var writers = [];
         $("input[name='summary[summary_writer][]']").each(function() {
+            if($(this).val()!='') {
+                writers.push($(this).val());
+            }
+        });
+        // update hidden field 'summary_summary_writer_all' value
+        $('#summary_summary_writer_all').val(JSON.stringify(writers));
+
+        // before submitting changes, update publication_author_all.
+        var authors = [];
+        $("input[name='summary[publication_author][]']").each(function() {
             if($(this).val()!='') {
                 authors.push($(this).val());
             }
         });
-        // update hidden field 'summary_summary_writer_all' value
-        $('#summary_summary_writer_all').val(JSON.stringify(authors));
+        // update hidden field 'publication_author_all' value
+        $('#summary_publication_author_all').val(JSON.stringify(authors));
     });
 });
