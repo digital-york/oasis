@@ -37,8 +37,10 @@ $(function() {
     });
 
     <!-- applying writers' order from summary_summary_writer_all -->
-    var all_writers = JSON.parse($('#summary_summary_writer_all').val());
-    if(all_writers) {
+    var all_writers_text = $('#summary_summary_writer_all').val();
+
+    if(all_writers_text && all_writers_text!='') {
+        var all_writers = JSON.parse(all_writers_text);
         for(var i in all_writers) {
             // update all writers in the order defined in summary_summary_writer_all
             if(all_writers[i]!='') {
@@ -48,8 +50,9 @@ $(function() {
     }
 
     <!-- applying authors' order from summary_publication_author_all -->
-    var all_authors = JSON.parse($('#summary_publication_author_all').val());
-    if(all_authors) {
+    var all_authors_text = $('#summary_publication_author_all').val();
+    if(all_authors_text && all_authors_text!='') {
+        var all_authors = JSON.parse(all_authors_text);
         for(var i in all_authors) {
             // update all authors in the order defined in publication_author_all
             if(all_authors[i]!='') {
