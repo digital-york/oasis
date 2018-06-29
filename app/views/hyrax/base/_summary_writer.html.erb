@@ -1,0 +1,11 @@
+<div class="row detail_page_item_block">
+      <div class="col-sm-3">
+        <b>Writer of summary</b>
+      </div>
+      <div class="col-sm-9">
+        <%
+        writers = @presenter.solr_document._source["summary_writer_all_tesim"] unless @presenter.solr_document._source["summary_writer_all_tesim"].nil?
+        %>
+        <%=JSON.parse(writers[0]).map {|w| w.to_s}.join(", ")%>
+      </div>
+</div>
