@@ -17,6 +17,7 @@ module Hyrax
                   :publication_pages_from,
                   :publication_pages_to,
                   :summary_general_research_area,
+                  :summary_general_research_area_other,
                   :summary_linguistictarget,
                   :participants_type,
                   :participants_firstlanguage,
