@@ -36,6 +36,23 @@ $(function() {
         }
     });
 
+    function check_topic_other_fields() {
+        var t = $('#summary_summary_general_research_area option').filter(':selected').text();
+        if(t.endsWith('Other')) {
+            $("#topic_other_div").css("display","block");
+        }else{
+            $("#topic_other_div").css("display","none");
+        }
+    }
+
+    <!-- Show hiden 'other' topic field -->
+    $("#summary_summary_general_research_area").click(function(){
+        check_topic_other_fields();
+    });
+
+    <!-- check if needs to show other field on load of the page -->
+    check_topic_other_fields();
+
     <!-- applying writers' order from summary_summary_writer_all -->
     var all_writers_text = $('#summary_summary_writer_all').val();
 
