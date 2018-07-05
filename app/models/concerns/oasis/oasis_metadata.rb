@@ -20,6 +20,11 @@ module Oasis
         index.as :stored_searchable, :sortable, :facetable
       end
 
+      # Add other field for RA
+      property :summary_general_research_area_other,   predicate: ::RDF::URI.new('http://dlib.york.ac.uk/ontologies/oasis#general_research_area_other'), multiple: true do |index|
+        index.as :stored_searchable
+      end
+
       # --------------------------
       # further details group
       property :summary_linguistictarget,         predicate: ::RDF::URI.new('http://dlib.york.ac.uk/ontologies/oasis#linguistictarget'), multiple: true do |index|
