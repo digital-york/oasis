@@ -21,6 +21,7 @@ module Oasis
       end
 
       # Add other field for RA
+      # all 'other' fields MUST follow convention, e.g. use '_other' after the related field
       property :summary_general_research_area_other,   predicate: ::RDF::URI.new('http://dlib.york.ac.uk/ontologies/oasis#general_research_area_other'), multiple: true do |index|
         index.as :stored_searchable
       end
