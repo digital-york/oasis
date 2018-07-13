@@ -1,0 +1,7 @@
+en:
+  mailboxer:
+    message_mailer:
+      subject_new: "OASIS new message: %{subject}"
+      subject_reply: "OASIS new reply: %{subject}"
+    notification_mailer:
+      subject: "OASIS new notification: %{subject}"
