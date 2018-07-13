@@ -12,6 +12,7 @@ module Hyrax
                   :publication_title,
                   :publication_date,
                   :publication_journal_name,
+                  :publication_journal_name_other,
                   :publication_volume,
                   :publication_issue,
                   :publication_pages_from,
