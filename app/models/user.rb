@@ -27,4 +27,8 @@ class User < ApplicationRecord
   def to_s
     email
   end
+
+  def mailboxer_email(_object)
+    email
+  end
 end
