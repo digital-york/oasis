@@ -66,11 +66,13 @@ Rails.application.configure do
   config.action_mailer.perform_caching = false
 
   # York SMTP server
+  config.action_mailer.perform_deliveries = true
   config.action_mailer.delivery_method = :smtp
+  config.action_mailer.default_url_options = { host: "oasis-database.org" }
   config.action_mailer.smtp_settings = {
-    address:              'smtp.york.ac.uk',
-    port:                 25,
-    enable_starttls_auto: true
+      address:              'smtp.york.ac.uk',
+      port:                 25,
+      enable_starttls_auto: true
   }
 
   # Ignore bad email addresses and do not raise email delivery errors.
