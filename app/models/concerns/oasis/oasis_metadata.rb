@@ -55,6 +55,10 @@ module Oasis
       property :participants_proficiency,                    predicate: ::RDF::URI.new('http://dlib.york.ac.uk/ontologies/oasis#participants_proficiency'), multiple: true do |index|
         index.as :stored_searchable, :sortable, :facetable
       end
+      property :participants_proficiency_other,              predicate: ::RDF::URI.new('http://dlib.york.ac.uk/ontologies/oasis#participants_proficiency_other'), multiple: true do |index|
+        index.as :stored_searchable
+      end
+
       property :participants_type_of_instruction,           predicate: ::RDF::URI.new('http://dlib.york.ac.uk/ontologies/oasis#participants_type_of_instruction'), multiple: false do |index|
         index.as :stored_searchable
       end
