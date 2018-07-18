@@ -4,16 +4,18 @@
           <b><%=I18n.t('simple_form.labels.summary.'+field_name)%></b>
         </div>
         <div class="col-sm-9">
-          <%@presenter.solr_document._source[field_name+"_tesim"].each do |w|%>
-              <%=GenericLocalAuthorityService.id_to_label(authority_file_name, w.to_i)%><br/>
-              <%if 'Other' == GenericLocalAuthorityService.id_to_label(authority_file_name, w.to_i)%>
-                  <ul>
-                  <%@presenter.solr_document._source[field_name+"_other_tesim"].each do |w|%>
-                      <li><%=w%></li>
-                  <%end%>
-                  </ul>
-              <%end%>
-          <%end%>
+          <% unless @presenter.solr_document._source[field_name+"_tesim"] %>
+            <%@presenter.solr_document._source[field_name+"_tesim"].each do |w|%>
+                <%=GenericLocalAuthorityService.id_to_label(authority_file_name, w.to_i)%><br/>
+                <%if 'Other' == GenericLocalAuthorityService.id_to_label(authority_file_name, w.to_i)%>
+                    <ul>
+                    <%@presenter.solr_document._source[field_name+"_other_tesim"].each do |w|%>
+                        <li><%=w%></li>
+                    <%end%>
+                    </ul>
+                <%end%>
+            <%end%>
+          <% end %>
         </div>
     </div>
 <%end%>
