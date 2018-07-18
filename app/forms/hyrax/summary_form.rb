@@ -26,6 +26,7 @@ module Hyrax
                   :participants_age,
                   :participants_gender,
                   :participants_proficiency,
+                  :participants_proficiency_other,
                   :participants_type_of_instruction,
                   :participants_amount_of_instruction,
                   :participants_length_of_residence,
@@ -67,7 +68,10 @@ module Hyrax
 
     def self.build_permitted_params
       super + [
-          :visibility
+          :visibility,
+          :licence_agreement,
+          :admin_set_id,
+          :member_of_collection_ids
       ]
     end
   end
