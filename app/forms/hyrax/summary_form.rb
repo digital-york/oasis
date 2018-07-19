@@ -6,6 +6,7 @@ module Hyrax
     self.terms = [:summary_writer,
                   :summary_writer_all,
                   :title_of_summary,
+                  :language_summary_written_in,
                   :publication_identifier,
                   :publication_author,
                   :publication_author_all,
@@ -45,6 +46,7 @@ module Hyrax
 
     self.required_fields = [:summary_writer,
                             :title_of_summary,
+                            :language_summary_written_in,
                             :publication_author,
                             :publication_title,
                             :publication_date,
