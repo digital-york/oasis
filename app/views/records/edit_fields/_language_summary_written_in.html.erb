@@ -1,0 +1,4 @@
+<%= f.input :language_summary_written_in, as: :select,
+    collection: GenericLocalAuthorityService.select_all_options('language_summary_written_in'),
+    input_html: { class: 'form-control', multiple: true  }
+%>
