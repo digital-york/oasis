@@ -2,6 +2,7 @@
 class OasisAuthorityMapping
   @@authority_mapping_filename2solr = {
       "domains_of_use"               => "participants_domain_of_use",
+      "language_summary_written_in" => "language_summary_written_in",
       "first_language_of_learners" => "participants_firstlanguage",
       "gender_of_learners"          => "participants_gender",
       "journals"                     => "publication_journal_name",
