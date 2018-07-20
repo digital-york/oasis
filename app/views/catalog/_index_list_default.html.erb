@@ -27,7 +27,16 @@
         %>
         <tr>
           <th><span class="attribute-label h4">Topic</span></th>
-          <td><%= sanitize(v) %></td>
+          <td>
+            <%= sanitize(v).to_s %>
+            <% if sanitize(v).include? 'Other' %>
+                <ul>
+                  <%doc_presenter.document._source["summary_general_research_area_other_tesim"].each do |w|%>
+                      <li><%=w%></li>
+                  <%end%>
+                </ul>
+            <% end %>
+          </td>
         </tr>
 
         <!-- Participant types -->
@@ -72,3 +81,4 @@
     </div>
 
     <div class="clearfix"></div>
+

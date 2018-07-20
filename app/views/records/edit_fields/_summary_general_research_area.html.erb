@@ -3,3 +3,9 @@
 
     input_html: { class: 'form-control', multiple: true  }
 %>
+
+<div id="topic_other_div" style="display: none; position: relative; top: -20px;">
+  <%= f.input :summary_general_research_area_other, as: :multi_value,
+              input_html: { class: 'form-control' }
+  %>
+</div>

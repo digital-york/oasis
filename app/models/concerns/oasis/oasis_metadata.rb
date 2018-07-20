@@ -20,6 +20,12 @@ module Oasis
         index.as :stored_searchable, :sortable, :facetable
       end
 
+      # Add other field for RA
+      # all 'other' fields MUST follow convention, e.g. use '_other' after the related field
+      property :summary_general_research_area_other,   predicate: ::RDF::URI.new('http://dlib.york.ac.uk/ontologies/oasis#general_research_area_other'), multiple: true do |index|
+        index.as :stored_searchable
+      end
+
       # --------------------------
       # further details group
       property :summary_linguistictarget,         predicate: ::RDF::URI.new('http://dlib.york.ac.uk/ontologies/oasis#linguistictarget'), multiple: true do |index|
@@ -49,6 +55,10 @@ module Oasis
       property :participants_proficiency,                    predicate: ::RDF::URI.new('http://dlib.york.ac.uk/ontologies/oasis#participants_proficiency'), multiple: true do |index|
         index.as :stored_searchable, :sortable, :facetable
       end
+      property :participants_proficiency_other,              predicate: ::RDF::URI.new('http://dlib.york.ac.uk/ontologies/oasis#participants_proficiency_other'), multiple: true do |index|
+        index.as :stored_searchable
+      end
+
       property :participants_type_of_instruction,           predicate: ::RDF::URI.new('http://dlib.york.ac.uk/ontologies/oasis#participants_type_of_instruction'), multiple: false do |index|
         index.as :stored_searchable
       end
@@ -95,6 +105,12 @@ module Oasis
       property :publication_journal_name,          predicate: ::RDF::URI.new('http://dlib.york.ac.uk/ontologies/oasis#publication_journal_name'), multiple: false do |index|
         index.as :stored_searchable, :sortable, :facetable
       end
+      # Add other field for journal_name
+      # all 'other' fields MUST follow convention, e.g. use '_other' after the related field
+      property :publication_journal_name_other,   predicate: ::RDF::URI.new('http://dlib.york.ac.uk/ontologies/oasis#publication_journal_name_other'), multiple: false do |index|
+        index.as :stored_searchable
+      end
+
       property :publication_date,                  predicate: ::RDF::URI.new('http://dlib.york.ac.uk/ontologies/oasis#publication_date'), multiple: false do |index|
         index.as :stored_searchable, :sortable, :facetable
       end

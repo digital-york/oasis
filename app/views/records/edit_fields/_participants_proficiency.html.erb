@@ -3,3 +3,9 @@
     value_method: lambda {|v| v.last.to_s },
     input_html: { multiple: true  }
 %>
+
+<div id="participants_proficiency_other_div" style="display: none; position: relative; top: -20px;">
+  <%= f.input :participants_proficiency_other, as: :multi_value,
+      input_html: { class: 'form-control' }
+  %>
+</div>

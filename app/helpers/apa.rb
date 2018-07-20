@@ -27,17 +27,24 @@ class Apa
     end
   end
 
-  def self.get_reference_html(authors, publication_year, title, journal, volume, issue, page_from, page_to)
+  def self.get_reference_html(authors, publication_year, title, journal, authority_value=true, volume, issue, page_from, page_to)
+    j_string = html_italic(journal) + '. ';
+    j_string = html_italic(get_journal_string(journal)) if authority_value==true
+
     get_author_string(authors) +
         get_publication_year_string(publication_year) +
         get_title_string(title) +
-        html_italic(get_journal_string(journal))+
+        j_string+
         get_vol_issue_string(volume, issue) +
         get_pages_string(page_from,page_to)
   end
 
-  def self.html_italic(string)
-    '<i>' + string + '</i>'
+  def self.html_italic(s)
+    if s.is_a? String
+      return '<i>' + s + '</i>'
+    else
+      return '<i>' + s[0] + '</i>'
+    end
   end
 
   def self.get_author_string(authors)
