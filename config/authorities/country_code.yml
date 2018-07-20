@@ -1,0 +1,769 @@
+terms:
+  - id: 1
+    code3: "AFG"
+    name: "Afghanistan"
+  - id: 2
+    code3: "ALB"
+    name: "Albania"
+  - id: 3
+    code3: "DZA"
+    name: "Algeria"
+  - id: 4
+    code3: "ASM"
+    name: "American Samoa"
+  - id: 5
+    code3: "AND"
+    name: "Andorra"
+  - id: 6
+    code3: "AGO"
+    name: "Angola"
+  - id: 7
+    code3: "AIA"
+    name: "Anguilla"
+  - id: 8
+    code3: "ATA"
+    name: "Antarctica"
+  - id: 9
+    code3: "ATG"
+    name: "Antigua and Barbuda"
+  - id: 10
+    code3: "ARG"
+    name: "Argentina"
+  - id: 11
+    code3: "ARM"
+    name: "Armenia"
+  - id: 12
+    code3: "ABW"
+    name: "Aruba"
+  - id: 13
+    code3: "AUS"
+    name: "Australia"
+  - id: 14
+    code3: "AUT"
+    name: "Austria"
+  - id: 15
+    code3: "AZE"
+    name: "Azerbaijan"
+  - id: 16
+    code3: "BHS"
+    name: "Bahamas"
+  - id: 17
+    code3: "BHR"
+    name: "Bahrain"
+  - id: 18
+    code3: "BGD"
+    name: "Bangladesh"
+  - id: 19
+    code3: "BRB"
+    name: "Barbados"
+  - id: 20
+    code3: "BLR"
+    name: "Belarus"
+  - id: 21
+    code3: "BEL"
+    name: "Belgium"
+  - id: 22
+    code3: "BLZ"
+    name: "Belize"
+  - id: 23
+    code3: "BEN"
+    name: "Benin"
+  - id: 24
+    code3: "BMU"
+    name: "Bermuda"
+  - id: 25
+    code3: "BTN"
+    name: "Bhutan"
+  - id: 26
+    code3: "BO"
+    name: "Bolivia
+  - id: 27
+    code3: "BOL"
+    name: "Bolivia"
+  - id: 28
+    code3: "BIH"
+    name: "Bosnia and Herzegovina"
+  - id: 29
+    code3: "BWA"
+    name: "Botswana"
+  - id: 30
+    code3: "BVT"
+    name: "Bouvet Island"
+  - id: 31
+    code3: "BRA"
+    name: "Brazil"
+  - id: 32
+    code3: "IOT"
+    name: "British Indian Ocean Territory"
+  - id: 33
+    code3: "BRN"
+    name: "Brunei Darussalam"
+  - id: 34
+    code3: "BRN"
+    name: "Brunei"
+  - id: 35
+    code3: "BGR"
+    name: "Bulgaria"
+  - id: 36
+    code3: "BFA"
+    name: "Burkina Faso"
+  - id: 37
+    code3: "BDI"
+    name: "Burundi"
+  - id: 38
+    code3: "KHM"
+    name: "Cambodia"
+  - id: 39
+    code3: "CMR"
+    name: "Cameroon"
+  - id: 40
+    code3: "CAN"
+    name: "Canada"
+  - id: 41
+    code3: "CPV"
+    name: "Cape Verde"
+  - id: 42
+    code3: "CYM"
+    name: "Cayman Islands"
+  - id: 43
+    code3: "CAF"
+    name: "Central African Republic"
+  - id: 44
+    code3: "TCD"
+    name: "Chad"
+  - id: 45
+    code3: "CHL"
+    name: "Chile"
+  - id: 46
+    code3: "CHN"
+    name: "China"
+  - id: 47
+    code3: "CXR"
+    name: "Christmas Island"
+  - id: 48
+    code3: "CCK"
+    name: "Cocos (Keeling) Islands"
+  - id: 49
+    code3: "COL"
+    name: "Colombia"
+  - id: 50
+    code3: "COM"
+    name: "Comoros"
+  - id: 51
+    code3: "COG"
+    name: "Congo"
+  - id: 52
+    code3: "CD"
+    name: "Congo
+  - id: 53
+    code3: "COK"
+    name: "Cook Islands"
+  - id: 54
+    code3: "CRI"
+    name: "Costa Rica"
+  - id: 55
+    code3: "CIV"
+    name: "Côte d'Ivoire"
+  - id: 56
+    code3: "CIV"
+    name: "Ivory Coast"
+  - id: 57
+    code3: "HRV"
+    name: "Croatia"
+  - id: 58
+    code3: "CUB"
+    name: "Cuba"
+  - id: 59
+    code3: "CYP"
+    name: "Cyprus"
+  - id: 60
+    code3: "CZE"
+    name: "Czech Republic"
+  - id: 61
+    code3: "DNK"
+    name: "Denmark"
+  - id: 62
+    code3: "DJI"
+    name: "Djibouti"
+  - id: 63
+    code3: "DMA"
+    name: "Dominica"
+  - id: 64
+    code3: "DOM"
+    name: "Dominican Republic"
+  - id: 65
+    code3: "ECU"
+    name: "Ecuador"
+  - id: 66
+    code3: "EGY"
+    name: "Egypt"
+  - id: 67
+    code3: "SLV"
+    name: "El Salvador"
+  - id: 68
+    code3: "GNQ"
+    name: "Equatorial Guinea"
+  - id: 69
+    code3: "ERI"
+    name: "Eritrea"
+  - id: 70
+    code3: "EST"
+    name: "Estonia"
+  - id: 71
+    code3: "ETH"
+    name: "Ethiopia"
+  - id: 72
+    code3: "FLK"
+    name: "Falkland Islands (Malvinas)"
+  - id: 73
+    code3: "FRO"
+    name: "Faroe Islands"
+  - id: 74
+    code3: "FJI"
+    name: "Fiji"
+  - id: 75
+    code3: "FIN"
+    name: "Finland"
+  - id: 76
+    code3: "FRA"
+    name: "France"
+  - id: 77
+    code3: "GUF"
+    name: "French Guiana"
+  - id: 78
+    code3: "PYF"
+    name: "French Polynesia"
+  - id: 79
+    code3: "ATF"
+    name: "French Southern Territories"
+  - id: 80
+    code3: "GAB"
+    name: "Gabon"
+  - id: 81
+    code3: "GMB"
+    name: "Gambia"
+  - id: 82
+    code3: "GEO"
+    name: "Georgia"
+  - id: 83
+    code3: "DEU"
+    name: "Germany"
+  - id: 84
+    code3: "GHA"
+    name: "Ghana"
+  - id: 85
+    code3: "GIB"
+    name: "Gibraltar"
+  - id: 86
+    code3: "GRC"
+    name: "Greece"
+  - id: 87
+    code3: "GRL"
+    name: "Greenland"
+  - id: 88
+    code3: "GRD"
+    name: "Grenada"
+  - id: 89
+    code3: "GLP"
+    name: "Guadeloupe"
+  - id: 90
+    code3: "GUM"
+    name: "Guam"
+  - id: 91
+    code3: "GTM"
+    name: "Guatemala"
+  - id: 92
+    code3: "GGY"
+    name: "Guernsey"
+  - id: 93
+    code3: "GIN"
+    name: "Guinea"
+  - id: 94
+    code3: "GNB"
+    name: "Guinea-Bissau"
+  - id: 95
+    code3: "GUY"
+    name: "Guyana"
+  - id: 96
+    code3: "HTI"
+    name: "Haiti"
+  - id: 97
+    code3: "HMD"
+    name: "Heard Island and McDonald Islands"
+  - id: 98
+    code3: "VAT"
+    name: "Holy See (Vatican City State)"
+  - id: 99
+    code3: "HND"
+    name: "Honduras"
+  - id: 100
+    code3: "HKG"
+    name: "Hong Kong"
+  - id: 101
+    code3: "HUN"
+    name: "Hungary"
+  - id: 102
+    code3: "ISL"
+    name: "Iceland"
+  - id: 103
+    code3: "IND"
+    name: "India"
+  - id: 104
+    code3: "IDN"
+    name: "Indonesia"
+  - id: 105
+    code3: "IR"
+    name: "Iran
+  - id: 106
+    code3: "IRQ"
+    name: "Iraq"
+  - id: 107
+    code3: "IRL"
+    name: "Ireland"
+  - id: 108
+    code3: "IMN"
+    name: "Isle of Man"
+  - id: 109
+    code3: "ISR"
+    name: "Israel"
+  - id: 110
+    code3: "ITA"
+    name: "Italy"
+  - id: 111
+    code3: "JAM"
+    name: "Jamaica"
+  - id: 112
+    code3: "JPN"
+    name: "Japan"
+  - id: 113
+    code3: "JEY"
+    name: "Jersey"
+  - id: 114
+    code3: "JOR"
+    name: "Jordan"
+  - id: 115
+    code3: "KAZ"
+    name: "Kazakhstan"
+  - id: 116
+    code3: "KEN"
+    name: "Kenya"
+  - id: 117
+    code3: "KIR"
+    name: "Kiribati"
+  - id: 118
+    code3: "KP"
+    name: "Korea
+  - id: 119
+    code3: "KR"
+    name: "Korea
+  - id: 120
+    code3: "KOR"
+    name: "South Korea"
+  - id: 121
+    code3: "KWT"
+    name: "Kuwait"
+  - id: 122
+    code3: "KGZ"
+    name: "Kyrgyzstan"
+  - id: 123
+    code3: "LAO"
+    name: "Lao People's Democratic Republic"
+  - id: 124
+    code3: "LVA"
+    name: "Latvia"
+  - id: 125
+    code3: "LBN"
+    name: "Lebanon"
+  - id: 126
+    code3: "LSO"
+    name: "Lesotho"
+  - id: 127
+    code3: "LBR"
+    name: "Liberia"
+  - id: 128
+    code3: "LBY"
+    name: "Libyan Arab Jamahiriya"
+  - id: 129
+    code3: "LBY"
+    name: "Libya"
+  - id: 130
+    code3: "LIE"
+    name: "Liechtenstein"
+  - id: 131
+    code3: "LTU"
+    name: "Lithuania"
+  - id: 132
+    code3: "LUX"
+    name: "Luxembourg"
+  - id: 133
+    code3: "MAC"
+    name: "Macao"
+  - id: 134
+    code3: "MK"
+    name: "Macedonia
+  - id: 135
+    code3: "MDG"
+    name: "Madagascar"
+  - id: 136
+    code3: "MWI"
+    name: "Malawi"
+  - id: 137
+    code3: "MYS"
+    name: "Malaysia"
+  - id: 138
+    code3: "MDV"
+    name: "Maldives"
+  - id: 139
+    code3: "MLI"
+    name: "Mali"
+  - id: 140
+    code3: "MLT"
+    name: "Malta"
+  - id: 141
+    code3: "MHL"
+    name: "Marshall Islands"
+  - id: 142
+    code3: "MTQ"
+    name: "Martinique"
+  - id: 143
+    code3: "MRT"
+    name: "Mauritania"
+  - id: 144
+    code3: "MUS"
+    name: "Mauritius"
+  - id: 145
+    code3: "MYT"
+    name: "Mayotte"
+  - id: 146
+    code3: "MEX"
+    name: "Mexico"
+  - id: 147
+    code3: "FM"
+    name: "Micronesia
+  - id: 148
+    code3: "MD"
+    name: "Moldova
+  - id: 149
+    code3: "MCO"
+    name: "Monaco"
+  - id: 150
+    code3: "MNG"
+    name: "Mongolia"
+  - id: 151
+    code3: "MNE"
+    name: "Montenegro"
+  - id: 152
+    code3: "MSR"
+    name: "Montserrat"
+  - id: 153
+    code3: "MAR"
+    name: "Morocco"
+  - id: 154
+    code3: "MOZ"
+    name: "Mozambique"
+  - id: 155
+    code3: "MMR"
+    name: "Myanmar"
+  - id: 156
+    code3: "MMR"
+    name: "Burma"
+  - id: 157
+    code3: "NAM"
+    name: "Namibia"
+  - id: 158
+    code3: "NRU"
+    name: "Nauru"
+  - id: 159
+    code3: "NPL"
+    name: "Nepal"
+  - id: 160
+    code3: "NLD"
+    name: "Netherlands"
+  - id: 161
+    code3: "ANT"
+    name: "Netherlands Antilles"
+  - id: 162
+    code3: "NCL"
+    name: "New Caledonia"
+  - id: 163
+    code3: "NZL"
+    name: "New Zealand"
+  - id: 164
+    code3: "NIC"
+    name: "Nicaragua"
+  - id: 165
+    code3: "NER"
+    name: "Niger"
+  - id: 166
+    code3: "NGA"
+    name: "Nigeria"
+  - id: 167
+    code3: "NIU"
+    name: "Niue"
+  - id: 168
+    code3: "NFK"
+    name: "Norfolk Island"
+  - id: 169
+    code3: "MNP"
+    name: "Northern Mariana Islands"
+  - id: 170
+    code3: "NOR"
+    name: "Norway"
+  - id: 171
+    code3: "OMN"
+    name: "Oman"
+  - id: 172
+    code3: "PAK"
+    name: "Pakistan"
+  - id: 173
+    code3: "PLW"
+    name: "Palau"
+  - id: 174
+    code3: "PS"
+    name: "Palestinian Territory
+  - id: 175
+    code3: "PAN"
+    name: "Panama"
+  - id: 176
+    code3: "PNG"
+    name: "Papua New Guinea"
+  - id: 177
+    code3: "PRY"
+    name: "Paraguay"
+  - id: 178
+    code3: "PER"
+    name: "Peru"
+  - id: 179
+    code3: "PHL"
+    name: "Philippines"
+  - id: 180
+    code3: "PCN"
+    name: "Pitcairn"
+  - id: 181
+    code3: "POL"
+    name: "Poland"
+  - id: 182
+    code3: "PRT"
+    name: "Portugal"
+  - id: 183
+    code3: "PRI"
+    name: "Puerto Rico"
+  - id: 184
+    code3: "QAT"
+    name: "Qatar"
+  - id: 185
+    code3: "REU"
+    name: "Réunion"
+  - id: 186
+    code3: "ROU"
+    name: "Romania"
+  - id: 187
+    code3: "RUS"
+    name: "Russian Federation"
+  - id: 188
+    code3: "RUS"
+    name: "Russia"
+  - id: 189
+    code3: "RWA"
+    name: "Rwanda"
+  - id: 190
+    code3: "SH"
+    name: "Saint Helena
+  - id: 191
+    code3: "KNA"
+    name: "Saint Kitts and Nevis"
+  - id: 192
+    code3: "LCA"
+    name: "Saint Lucia"
+  - id: 193
+    code3: "SPM"
+    name: "Saint Pierre and Miquelon"
+  - id: 194
+    code3: "VCT"
+    name: "Saint Vincent and the Grenadines"
+  - id: 195
+    code3: "VCT"
+    name: "Saint Vincent & the Grenadines"
+  - id: 196
+    code3: "VCT"
+    name: "St. Vincent and the Grenadines"
+  - id: 197
+    code3: "WSM"
+    name: "Samoa"
+  - id: 198
+    code3: "SMR"
+    name: "San Marino"
+  - id: 199
+    code3: "STP"
+    name: "Sao Tome and Principe"
+  - id: 200
+    code3: "SAU"
+    name: "Saudi Arabia"
+  - id: 201
+    code3: "SEN"
+    name: "Senegal"
+  - id: 202
+    code3: "SRB"
+    name: "Serbia"
+  - id: 203
+    code3: "SYC"
+    name: "Seychelles"
+  - id: 204
+    code3: "SLE"
+    name: "Sierra Leone"
+  - id: 205
+    code3: "SGP"
+    name: "Singapore"
+  - id: 206
+    code3: "SVK"
+    name: "Slovakia"
+  - id: 207
+    code3: "SVN"
+    name: "Slovenia"
+  - id: 208
+    code3: "SLB"
+    name: "Solomon Islands"
+  - id: 209
+    code3: "SOM"
+    name: "Somalia"
+  - id: 210
+    code3: "ZAF"
+    name: "South Africa"
+  - id: 211
+    code3: "SGS"
+    name: "South Georgia and the South Sandwich Islands"
+  - id: 212
+    code3: "ESP"
+    name: "Spain"
+  - id: 213
+    code3: "LKA"
+    name: "Sri Lanka"
+  - id: 214
+    code3: "SDN"
+    name: "Sudan"
+  - id: 215
+    code3: "SUR"
+    name: "Suriname"
+  - id: 216
+    code3: "SJM"
+    name: "Svalbard and Jan Mayen"
+  - id: 217
+    code3: "SWZ"
+    name: "Swaziland"
+  - id: 218
+    code3: "SWE"
+    name: "Sweden"
+  - id: 219
+    code3: "CHE"
+    name: "Switzerland"
+  - id: 220
+    code3: "SYR"
+    name: "Syrian Arab Republic"
+  - id: 221
+    code3: "TW"
+    name: "Taiwan
+  - id: 222
+    code3: "TWN"
+    name: "Taiwan"
+  - id: 223
+    code3: "TJK"
+    name: "Tajikistan"
+  - id: 224
+    code3: "TZ"
+    name: "Tanzania
+  - id: 225
+    code3: "THA"
+    name: "Thailand"
+  - id: 226
+    code3: "TLS"
+    name: "Timor-Leste"
+  - id: 227
+    code3: "TGO"
+    name: "Togo"
+  - id: 228
+    code3: "TKL"
+    name: "Tokelau"
+  - id: 229
+    code3: "TON"
+    name: "Tonga"
+  - id: 230
+    code3: "TTO"
+    name: "Trinidad and Tobago"
+  - id: 231
+    code3: "TTO"
+    name: "Trinidad & Tobago"
+  - id: 232
+    code3: "TUN"
+    name: "Tunisia"
+  - id: 233
+    code3: "TUR"
+    name: "Turkey"
+  - id: 234
+    code3: "TKM"
+    name: "Turkmenistan"
+  - id: 235
+    code3: "TCA"
+    name: "Turks and Caicos Islands"
+  - id: 236
+    code3: "TUV"
+    name: "Tuvalu"
+  - id: 237
+    code3: "UGA"
+    name: "Uganda"
+  - id: 238
+    code3: "UKR"
+    name: "Ukraine"
+  - id: 239
+    code3: "ARE"
+    name: "United Arab Emirates"
+  - id: 240
+    code3: "GBR"
+    name: "United Kingdom"
+  - id: 241
+    code3: "USA"
+    name: "United States"
+  - id: 242
+    code3: "UMI"
+    name: "United States Minor Outlying Islands"
+  - id: 243
+    code3: "URY"
+    name: "Uruguay"
+  - id: 244
+    code3: "UZB"
+    name: "Uzbekistan"
+  - id: 245
+    code3: "VUT"
+    name: "Vanuatu"
+  - id: 246
+    code3: "VE"
+    name: "Venezuela
+  - id: 247
+    code3: "VEN"
+    name: "Venezuela"
+  - id: 248
+    code3: "VNM"
+    name: "Viet Nam"
+  - id: 249
+    code3: "VNM"
+    name: "Vietnam"
+  - id: 250
+    code3: "VG"
+    name: "Virgin Islands
+  - id: 251
+    code3: "VI"
+    name: "Virgin Islands
+  - id: 252
+    code3: "WLF"
+    name: "Wallis and Futuna"
+  - id: 253
+    code3: "ESH"
+    name: "Western Sahara"
+  - id: 254
+    code3: "YEM"
+    name: "Yemen"
+  - id: 255
+    code3: "ZMB"
+    name: "Zambia"
+  - id: 256
+    code3: "ZWE"
+    name: "Zimbabwe"
