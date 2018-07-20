@@ -36,6 +36,7 @@ module Hyrax
                   :participants_time_spent_using_l2,
                   :participants_domain_of_use,
                   :participants_year_of_teaching_experience,
+                  :participants_educational_stage,
                   :of_likely_interest_to,
                   :materials_on_iris,
                   :iris_url,

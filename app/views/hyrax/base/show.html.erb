@@ -63,6 +63,9 @@
               <!-- Amunt of prior instruction -->
               <%= render :partial => 'generic_field', :locals => {:field_name => 'participants_amount_of_prior_instruction'} %>
               <!-- Context of language use  -->
+
+              <!-- participants_educational_stage -->
+              <%= render :partial => 'generic_field_with_authority', :locals => {:field_name => 'participants_educational_stage', :authority_file_name => 'educational_stage'} %>
             </div>
             <br/>
 
