@@ -1,0 +1,103 @@
+terms:
+  - id: 1
+    term: "Afrikaans"
+  - id: 2
+    term: "American Sign Language"
+  - id: 3
+    term: "Arabic"
+  - id: 4
+    term: "Basque"
+  - id: 5
+    term: "Bulgarian"
+  - id: 6
+    term: "Catalan"
+  - id: 7
+    term: "Chinese"
+  - id: 8
+    term: "Czech"
+  - id: 9
+    term: "Danish"
+  - id: 10
+    term: "Dutch"
+  - id: 11
+    term: "English"
+  - id: 12
+    term: "Estonian"
+  - id: 13
+    term: "Farsi"
+  - id: 14
+    term: "Finnish"
+  - id: 15
+    term: "French"
+  - id: 16
+    term: "Frisian"
+  - id: 17
+    term: "German"
+  - id: 18
+    term: "Greek"
+  - id: 19
+    term: "Hebrew"
+  - id: 20
+    term: "Hindi"
+  - id: 21
+    term: "Hungarian"
+  - id: 22
+    term: "Indonesian"
+  - id: 23
+    term: "Italian"
+  - id: 24
+    term: "Japanese"
+  - id: 25
+    term: "Kazakh"
+  - id: 26
+    term: "Korean"
+  - id: 27
+    term: "Kurdish"
+  - id: 28
+    term: "Latvian (Lettish)"
+  - id: 29
+    term: "Macedonian"
+  - id: 30
+    term: "Malay"
+  - id: 31
+    term: "Mongolian"
+  - id: 32
+    term: "Nepali"
+  - id: 33
+    term: "Polish"
+  - id: 34
+    term: "Portuguese"
+  - id: 35
+    term: "Romanian"
+  - id: 36
+    term: "Russian"
+  - id: 37
+    term: "Samoan"
+  - id: 38
+    term: "Serbian"
+  - id: 39
+    term: "Sinhalese"
+  - id: 40
+    term: "Slovak"
+  - id: 41
+    term: "Slovenian"
+  - id: 42
+    term: "Spanish"
+  - id: 43
+    term: "Swedish"
+  - id: 44
+    term: "Tamil"
+  - id: 45
+    term: "Telugu"
+  - id: 46
+    term: "Thai"
+  - id: 47
+    term: "Turkish"
+  - id: 48
+    term: "Turkmen"
+  - id: 49
+    term: "Ukrainian"
+  - id: 50
+    term: "Vietnamese"
+  - id: 51
+    term: "Other"

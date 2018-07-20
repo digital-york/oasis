@@ -26,6 +26,10 @@ module Oasis
         index.as :stored_searchable
       end
 
+      property :language_summary_written_in,   predicate: ::RDF::URI.new('http://dlib.york.ac.uk/ontologies/oasis#language_summary_written_in'), multiple: true do |index|
+        index.as :stored_searchable, :sortable, :facetable
+      end
+
       # --------------------------
       # further details group
       property :summary_linguistictarget,         predicate: ::RDF::URI.new('http://dlib.york.ac.uk/ontologies/oasis#linguistictarget'), multiple: true do |index|

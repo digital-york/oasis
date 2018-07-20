@@ -108,6 +108,7 @@ en:
         comments: "Comments on the submission process"
         licence: "Licence"
         licence_agreement: "Licence Agreement"
+        language_summary_written_in: "Language Summary Written in"
 
         participants_type: "Participant Type"
         participants_firstlanguage: "First Language of Learners"
@@ -144,6 +145,7 @@ en:
         materials_on_iris: "If materials used in this research study are held on IRIS, please enter URL:"
         summary_general_research_area: "Hold down Ctrl/Command to select more than one term."
         summary_linguistictarget: "Hold down Ctrl/Command to select more than one term."
+        language_summary_written_in: "Hold down Ctrl/Command to select more than one term."
         of_likely_interest_to: "Please select the likely audiences for your summary. Hold down Ctrl/Command to select more than one term."
         summary_notes: "Any other comments"
         comments: "Lastly, and thank you for getting this far, please leave any comments about the submission form."
