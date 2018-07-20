@@ -36,6 +36,54 @@ $(function() {
         }
     });
 
+    // show/hide other topic fields
+    function check_topic_other_fields() {
+        var t = $('#summary_summary_general_research_area option').filter(':selected').text();
+        if(t.endsWith('Other')) {
+            $("#topic_other_div").css("display","block");
+        }else{
+            $("#topic_other_div").css("display","none");
+        }
+    }
+    <!-- Show hiden 'other' topic field -->
+    $("#summary_summary_general_research_area").click(function(){
+        check_topic_other_fields();
+    });
+    <!-- check if needs to show other field on load of the page -->
+    check_topic_other_fields();
+
+    // show/hide other journal name fields
+    function check_publication_journal_name_other_fields() {
+        var t = $('#summary_publication_journal_name option').filter(':selected').text();
+        if(t.endsWith('Other')) {
+            $("#publication_journal_name_other_div").css("display","block");
+        }else{
+            $("#publication_journal_name_other_div").css("display","none");
+        }
+    }
+    <!-- Show hiden 'other' journal field -->
+    $("#summary_publication_journal_name").click(function(){
+        check_publication_journal_name_other_fields();
+    });
+    <!-- check if needs to show other journal name field on load of the page -->
+    check_publication_journal_name_other_fields();
+
+    // show/hide other proficiency fields
+    function check_participants_proficiency_other_fields() {
+        if($('[id^=summary_participants_proficiency_]').eq(-2).is(':checked')) {
+            $("#participants_proficiency_other_div").css("display","block");
+        }else{
+            $("#participants_proficiency_other_div").css("display","none");
+        }
+    }
+    <!-- Show hiden 'other' proficiency field -->
+    var participants_proficiency_last = $("[id^=summary_participants_proficiency_]").eq(-2);
+    participants_proficiency_last.click(function(){
+        check_participants_proficiency_other_fields();
+    });
+    <!-- check if needs to show proficiency other field on load of the page -->
+    check_participants_proficiency_other_fields();
+
     <!-- applying writers' order from summary_summary_writer_all -->
     var all_writers_text = $('#summary_summary_writer_all').val();
 
