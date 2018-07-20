@@ -1,0 +1,33 @@
+terms:
+  - id: 1
+    term: "adult education"
+  - id: 2
+    term: "bi-/multilingual education"
+  - id: 3
+    term: "charter school (United States)"
+  - id: 4
+    term: "ethnoculturally affiliated/oriented institution"
+  - id: 5
+    term: "non-formal or supplementary  (i.e., educational programs not granting recognized credentials)"
+  - id: 6
+    term: "privately-funded institution"
+  - id: 7
+    term: "publicly-funded institution"
+  - id: 8
+    term: "religiously affiliated/oriented institution"
+  - id: 9
+    term: "residential (students reside there while attending)"
+  - id: 10
+    term: "rural setting"
+  - id: 11
+    term: "special needs education"
+  - id: 12
+    term: "suburban setting"
+  - id: 13
+    term: "teacher education"
+  - id: 14
+    term: "urban setting"
+  - id: 15
+    term: "vocational education"
+  - id: 16
+    term: "Other"
