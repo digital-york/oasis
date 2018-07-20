@@ -31,8 +31,10 @@
             <%= sanitize(v).to_s %>
             <% if sanitize(v).include? 'Other' %>
                 <ul>
-                  <%doc_presenter.document._source["summary_general_research_area_other_tesim"].each do |w|%>
-                      <li><%=w%></li>
+                  <%unless doc_presenter.document._source["summary_general_research_area_other_tesim"].nil?%>
+                    <%doc_presenter.document._source["summary_general_research_area_other_tesim"].each do |w|%>
+                        <li><%=w%></li>
+                    <%end%>
                   <%end%>
                 </ul>
             <% end %>
