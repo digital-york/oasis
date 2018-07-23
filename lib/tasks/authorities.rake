@@ -16,16 +16,26 @@ namespace :authorities do
   end
 
   # To run this rake task, type:
-  # bundle exec rake authorities:create_countries[lib/assets/iso_3166_country_codes.csv]
+  # bundle exec rake authorities:create_countries[lib/assets/iso_3166_country_codes.csv] > config/authorities/country_code.yml
   desc "Generating countries YAML from CSV..."
   task :create_countries, [:sourcefile] => [:environment] do |t, args|
     puts 'terms:'
+    countries  = Set.new()
+    duplicates = Set.new()
     File.foreach(args[:sourcefile]).with_index do |line, line_num|
       next if line_num==0  # bypass the first line which is the title
-      puts "  - id: #{line_num}"
-      all_attr = line.squish.split(',')
-      puts "    code3: #{all_attr[2].squish}"
-      puts "    name: #{all_attr[0].squish}"
+      #puts "  - id: #{line_num}"
+      all_attr = line.squish.split('"')
+
+      if countries.include? all_attr[5].squish
+        duplicates << all_attr[5].squish
+      end
+      countries << all_attr[5].squish
+      puts "  - id: #{all_attr[5].squish}"
+      puts "    term: \"#{all_attr[1].squish}\""
+    end
+    if duplicates.length >0
+        puts 'ERROR! duplicate detected: ' + duplicates.to_s
     end
   end
 
