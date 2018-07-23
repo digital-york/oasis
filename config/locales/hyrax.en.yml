@@ -127,6 +127,7 @@ en:
         participants_time_spent_using_l2: "Time Spent Using the L2"
         participants_year_of_teaching_experience: "Years of Teaching Experience"
         participants_educational_stage: "Educational Stage"
+        participants_institutional_characteristics: "Institutional Characteristics"
 
         publication_identifier: "Publication Identifier (DOI)"
         publication_author: "Author of Publication"
@@ -167,6 +168,7 @@ en:
         participants_amount_of_prior_instruction: "Length of exposure to previous instruction. You can provide length in years and/or months; or you can provide a range. This is a free text box. "
         participants_time_spent_using_l2: "Time spent using the L2. You can provide your information in any format, for example, as hours per day, or days per week, or weeks per year. This is a free text box."
         participants_educational_stage: "Educational Stage"
+        participants_institutional_characteristics: "Institutional Characteristics"
 
         publication_identifier: "If possible, please enter a DOI in the following format, in full: http://dx.doi.org/10.1177/1362168814558838"
         publication_author: "The authors of the research article which has been summarised. Please give in format: Sunarme, initial. (e.g. Marsden, E.)"
