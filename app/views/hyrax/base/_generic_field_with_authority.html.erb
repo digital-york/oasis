@@ -6,7 +6,11 @@
         <div class="col-sm-9">
           <%unless @presenter.solr_document._source[field_name+"_tesim"].nil?%>
             <%@presenter.solr_document._source[field_name+"_tesim"].each do |w|%>
-              <%=GenericLocalAuthorityService.id_to_label(authority_file_name, w.to_i)%><br/>
+              <% if w.to_i>0 %>
+                  <%=GenericLocalAuthorityService.id_to_label(authority_file_name, w.to_i)%><br/>
+              <% else %>
+                  <%=GenericLocalAuthorityService.id_to_label(authority_file_name, w)%><br/>
+              <% end %>
               <%if 'Other' == GenericLocalAuthorityService.id_to_label(authority_file_name, w.to_i)%>
                   <ul>
                   <%@presenter.solr_document._source[field_name+"_other_tesim"].each do |w|%>
