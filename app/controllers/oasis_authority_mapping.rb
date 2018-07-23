@@ -15,7 +15,8 @@ class OasisAuthorityMapping
       "proficiency_of_learners"     => "participants_proficiency",
       "research_areas"               => "summary_general_research_area",
       "educational_stage"              => "participants_educational_stage",
-      "institutional_characteristics" => "participants_institutional_characteristics"
+      "institutional_characteristics" => "participants_institutional_characteristics",
+      "country_code"                    => "participants_country"
   }
 
   def self.authority_mapping_filename2solr

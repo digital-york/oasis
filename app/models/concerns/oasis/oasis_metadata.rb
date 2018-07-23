@@ -90,6 +90,9 @@ module Oasis
       property :participants_year_of_teaching_experience,  predicate: ::RDF::URI.new('http://dlib.york.ac.uk/ontologies/oasis#participants_year_of_teaching_experience'), multiple: false do |index|
         index.as :stored_searchable
       end
+      property :participants_country,  predicate: ::RDF::URI.new('http://dlib.york.ac.uk/ontologies/oasis#participants_country'), multiple: true do |index|
+        index.as :stored_searchable
+      end
       property :participants_educational_stage,  predicate: ::RDF::URI.new('http://dlib.york.ac.uk/ontologies/oasis#participants_educational_stage'), multiple: true do |index|
         index.as :stored_searchable
       end
