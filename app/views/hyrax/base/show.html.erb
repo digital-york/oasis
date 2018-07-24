@@ -67,6 +67,8 @@
               <!-- participants_country -->
               <%= render :partial => 'generic_field_with_authority', :locals => {:field_name => 'participants_country', :authority_file_name => 'country_code'} %>
 
+              <%= render :partial => 'generic_field', :locals => {:field_name => 'participants_subnational_region'} %>
+
               <!-- participants_educational_stage -->
               <%= render :partial => 'generic_field_with_authority', :locals => {:field_name => 'participants_educational_stage', :authority_file_name => 'educational_stage'} %>
 

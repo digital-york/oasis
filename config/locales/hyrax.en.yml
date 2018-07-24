@@ -127,6 +127,7 @@ en:
         participants_time_spent_using_l2: "Time Spent Using the L2"
         participants_year_of_teaching_experience: "Years of Teaching Experience"
         participants_country: "Country / region"
+        participants_subnational_region: "Subnational region"
         participants_educational_stage: "Educational Stage"
         participants_institutional_characteristics: "Institutional Characteristics"
 
@@ -169,6 +170,7 @@ en:
         participants_amount_of_prior_instruction: "Length of exposure to previous instruction. You can provide length in years and/or months; or you can provide a range. This is a free text box. "
         participants_time_spent_using_l2: "Time spent using the L2. You can provide your information in any format, for example, as hours per day, or days per week, or weeks per year. This is a free text box."
         participants_country: "Hold down Ctrl/Command to select more than one term."
+        participants_subnational_region: "Further information about the geographical region (e.g. state, province, countries within the UK)"
         participants_educational_stage: "Educational Stage"
         participants_institutional_characteristics: "Institutional Characteristics"
 
