@@ -22,7 +22,11 @@ class SummaryIndexer < Hyrax::WorkIndexer
            else
              labels = []
              object[field_name].each do |id|
-               labels << GenericLocalAuthorityService.id_to_label(authority_filename, id.to_i)
+               if id.to_i >0
+                 labels << GenericLocalAuthorityService.id_to_label(authority_filename, id.to_i)
+               else
+                 labels << GenericLocalAuthorityService.id_to_label(authority_filename, id)
+               end
              end
              solr_doc[field_name+'_label_tesim'] = labels
            end
