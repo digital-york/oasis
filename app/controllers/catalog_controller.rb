@@ -61,6 +61,7 @@ class CatalogController < ApplicationController
     config.add_facet_field solr_name('participants_firstlanguage', :facetable), label: "First Language of Learners", limit: 5
     config.add_facet_field solr_name('participants_gender', :facetable), label: "Gender of Learners", limit: 5
     config.add_facet_field solr_name('participants_domain_of_use', :facetable), label: "Context of Language Use", limit: 5
+    config.add_facet_field solr_name('participants_country', :facetable), label: "Country", limit: 5
     config.add_facet_field solr_name('of_likely_interest_to', :facetable), label: "Of likely interest to", limit: 5
     config.add_facet_field solr_name('materials_on_iris', :facetable), label: "Materials on IRIS", limit: 5
     config.add_facet_field solr_name('publication_date', :facetable), label: "Date of Publication", limit: 5
