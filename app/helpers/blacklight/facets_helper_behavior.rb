@@ -73,7 +73,11 @@ module Blacklight::FacetsHelperBehavior
     f = get_model_field_name(facet_field)
     if OasisAuthorityMapping.authority_mapping_solr2filename.keys.include? f and item.value != ''
       # seek authority label and update facet_label
-      facet_label = GenericLocalAuthorityService.id_to_label(OasisAuthorityMapping.authority_mapping_solr2filename[f],item.value.to_i)
+      if item.value.to_i>0
+        facet_label = GenericLocalAuthorityService.id_to_label(OasisAuthorityMapping.authority_mapping_solr2filename[f],item.value.to_i)
+      else
+        facet_label = GenericLocalAuthorityService.id_to_label(OasisAuthorityMapping.authority_mapping_solr2filename[f],item.value)
+      end
       item.label = facet_label if facet_label!=""
     end
 

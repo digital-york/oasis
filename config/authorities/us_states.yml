@@ -1,0 +1,154 @@
+terms:
+  - id: 1
+    abbr: "AL"
+    name: "Alabama"
+  - id: 2
+    abbr: "AK"
+    name: "Alaska"
+  - id: 3
+    abbr: "AZ"
+    name: "Arizona"
+  - id: 4
+    abbr: "AR"
+    name: "Arkansas"
+  - id: 5
+    abbr: "CA"
+    name: "California"
+  - id: 6
+    abbr: "CO"
+    name: "Colorado"
+  - id: 7
+    abbr: "CT"
+    name: "Connecticut"
+  - id: 8
+    abbr: "DE"
+    name: "Delaware"
+  - id: 9
+    abbr: "DC"
+    name: "District of Columbia"
+  - id: 10
+    abbr: "FL"
+    name: "Florida"
+  - id: 11
+    abbr: "GA"
+    name: "Georgia"
+  - id: 12
+    abbr: "HI"
+    name: "Hawaii"
+  - id: 13
+    abbr: "ID"
+    name: "Idaho"
+  - id: 14
+    abbr: "IL"
+    name: "Illinois"
+  - id: 15
+    abbr: "IN"
+    name: "Indiana"
+  - id: 16
+    abbr: "IA"
+    name: "Iowa"
+  - id: 17
+    abbr: "KS"
+    name: "Kansas"
+  - id: 18
+    abbr: "KY"
+    name: "Kentucky"
+  - id: 19
+    abbr: "LA"
+    name: "Louisiana"
+  - id: 20
+    abbr: "ME"
+    name: "Maine"
+  - id: 21
+    abbr: "MT"
+    name: "Montana"
+  - id: 22
+    abbr: "NE"
+    name: "Nebraska"
+  - id: 23
+    abbr: "NV"
+    name: "Nevada"
+  - id: 24
+    abbr: "NH"
+    name: "New Hampshire"
+  - id: 25
+    abbr: "NJ"
+    name: "New Jersey"
+  - id: 26
+    abbr: "NM"
+    name: "New Mexico"
+  - id: 27
+    abbr: "NY"
+    name: "New York"
+  - id: 28
+    abbr: "NC"
+    name: "North Carolina"
+  - id: 29
+    abbr: "ND"
+    name: "North Dakota"
+  - id: 30
+    abbr: "OH"
+    name: "Ohio"
+  - id: 31
+    abbr: "OK"
+    name: "Oklahoma"
+  - id: 32
+    abbr: "OR"
+    name: "Oregon"
+  - id: 33
+    abbr: "MD"
+    name: "Maryland"
+  - id: 34
+    abbr: "MA"
+    name: "Massachusetts"
+  - id: 35
+    abbr: "MI"
+    name: "Michigan"
+  - id: 36
+    abbr: "MN"
+    name: "Minnesota"
+  - id: 37
+    abbr: "MS"
+    name: "Mississippi"
+  - id: 38
+    abbr: "MO"
+    name: "Missouri"
+  - id: 39
+    abbr: "PA"
+    name: "Pennsylvania"
+  - id: 40
+    abbr: "RI"
+    name: "Rhode Island"
+  - id: 41
+    abbr: "SC"
+    name: "South Carolina"
+  - id: 42
+    abbr: "SD"
+    name: "South Dakota"
+  - id: 43
+    abbr: "TN"
+    name: "Tennessee"
+  - id: 44
+    abbr: "TX"
+    name: "Texas"
+  - id: 45
+    abbr: "UT"
+    name: "Utah"
+  - id: 46
+    abbr: "VT"
+    name: "Vermont"
+  - id: 47
+    abbr: "VA"
+    name: "Virginia"
+  - id: 48
+    abbr: "WA"
+    name: "Washington"
+  - id: 49
+    abbr: "WV"
+    name: "West Virginia"
+  - id: 50
+    abbr: "WI"
+    name: "Wisconsin"
+  - id: 51
+    abbr: "WY"
+    name: "Wyoming"

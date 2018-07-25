@@ -1,0 +1,488 @@
+terms:
+  - id: AFG
+    term: "Afghanistan"
+  - id: ALB
+    term: "Albania"
+  - id: DZA
+    term: "Algeria"
+  - id: ASM
+    term: "American Samoa"
+  - id: AND
+    term: "Andorra"
+  - id: AGO
+    term: "Angola"
+  - id: AIA
+    term: "Anguilla"
+  - id: ATA
+    term: "Antarctica"
+  - id: ATG
+    term: "Antigua and Barbuda"
+  - id: ARG
+    term: "Argentina"
+  - id: ARM
+    term: "Armenia"
+  - id: ABW
+    term: "Aruba"
+  - id: AUS
+    term: "Australia"
+  - id: AUT
+    term: "Austria"
+  - id: AZE
+    term: "Azerbaijan"
+  - id: BHS
+    term: "Bahamas"
+  - id: BHR
+    term: "Bahrain"
+  - id: BGD
+    term: "Bangladesh"
+  - id: BRB
+    term: "Barbados"
+  - id: BLR
+    term: "Belarus"
+  - id: BEL
+    term: "Belgium"
+  - id: BLZ
+    term: "Belize"
+  - id: BEN
+    term: "Benin"
+  - id: BMU
+    term: "Bermuda"
+  - id: BTN
+    term: "Bhutan"
+  - id: BOL
+    term: "Bolivia, Plurinational State of"
+  - id: BIH
+    term: "Bosnia and Herzegovina"
+  - id: BWA
+    term: "Botswana"
+  - id: BVT
+    term: "Bouvet Island"
+  - id: BRA
+    term: "Brazil"
+  - id: IOT
+    term: "British Indian Ocean Territory"
+  - id: BRN
+    term: "Brunei Darussalam"
+  - id: BGR
+    term: "Bulgaria"
+  - id: BFA
+    term: "Burkina Faso"
+  - id: BDI
+    term: "Burundi"
+  - id: KHM
+    term: "Cambodia"
+  - id: CMR
+    term: "Cameroon"
+  - id: CAN
+    term: "Canada"
+  - id: CPV
+    term: "Cape Verde"
+  - id: CYM
+    term: "Cayman Islands"
+  - id: CAF
+    term: "Central African Republic"
+  - id: TCD
+    term: "Chad"
+  - id: CHL
+    term: "Chile"
+  - id: CHN
+    term: "China"
+  - id: CXR
+    term: "Christmas Island"
+  - id: CCK
+    term: "Cocos (Keeling) Islands"
+  - id: COL
+    term: "Colombia"
+  - id: COM
+    term: "Comoros"
+  - id: COG
+    term: "Congo"
+  - id: COD
+    term: "Congo, the Democratic Republic of the"
+  - id: COK
+    term: "Cook Islands"
+  - id: CRI
+    term: "Costa Rica"
+  - id: CIV
+    term: "Ivory Coast"
+  - id: HRV
+    term: "Croatia"
+  - id: CUB
+    term: "Cuba"
+  - id: CYP
+    term: "Cyprus"
+  - id: CZE
+    term: "Czech Republic"
+  - id: DNK
+    term: "Denmark"
+  - id: DJI
+    term: "Djibouti"
+  - id: DMA
+    term: "Dominica"
+  - id: DOM
+    term: "Dominican Republic"
+  - id: ECU
+    term: "Ecuador"
+  - id: EGY
+    term: "Egypt"
+  - id: SLV
+    term: "El Salvador"
+  - id: GNQ
+    term: "Equatorial Guinea"
+  - id: ERI
+    term: "Eritrea"
+  - id: EST
+    term: "Estonia"
+  - id: ETH
+    term: "Ethiopia"
+  - id: FLK
+    term: "Falkland Islands (Malvinas)"
+  - id: FRO
+    term: "Faroe Islands"
+  - id: FJI
+    term: "Fiji"
+  - id: FIN
+    term: "Finland"
+  - id: FRA
+    term: "France"
+  - id: GUF
+    term: "French Guiana"
+  - id: PYF
+    term: "French Polynesia"
+  - id: ATF
+    term: "French Southern Territories"
+  - id: GAB
+    term: "Gabon"
+  - id: GMB
+    term: "Gambia"
+  - id: GEO
+    term: "Georgia"
+  - id: DEU
+    term: "Germany"
+  - id: GHA
+    term: "Ghana"
+  - id: GIB
+    term: "Gibraltar"
+  - id: GRC
+    term: "Greece"
+  - id: GRL
+    term: "Greenland"
+  - id: GRD
+    term: "Grenada"
+  - id: GLP
+    term: "Guadeloupe"
+  - id: GUM
+    term: "Guam"
+  - id: GTM
+    term: "Guatemala"
+  - id: GGY
+    term: "Guernsey"
+  - id: GIN
+    term: "Guinea"
+  - id: GNB
+    term: "Guinea-Bissau"
+  - id: GUY
+    term: "Guyana"
+  - id: HTI
+    term: "Haiti"
+  - id: HMD
+    term: "Heard Island and McDonald Islands"
+  - id: VAT
+    term: "Holy See (Vatican City State)"
+  - id: HND
+    term: "Honduras"
+  - id: HKG
+    term: "Hong Kong"
+  - id: HUN
+    term: "Hungary"
+  - id: ISL
+    term: "Iceland"
+  - id: IND
+    term: "India"
+  - id: IDN
+    term: "Indonesia"
+  - id: IRN
+    term: "Iran, Islamic Republic of"
+  - id: IRQ
+    term: "Iraq"
+  - id: IRL
+    term: "Ireland"
+  - id: IMN
+    term: "Isle of Man"
+  - id: ISR
+    term: "Israel"
+  - id: ITA
+    term: "Italy"
+  - id: JAM
+    term: "Jamaica"
+  - id: JPN
+    term: "Japan"
+  - id: JEY
+    term: "Jersey"
+  - id: JOR
+    term: "Jordan"
+  - id: KAZ
+    term: "Kazakhstan"
+  - id: KEN
+    term: "Kenya"
+  - id: KIR
+    term: "Kiribati"
+  - id: PRK
+    term: "Korea, Democratic People's Republic of"
+  - id: KOR
+    term: "Korea, Republic of"
+  - id: KWT
+    term: "Kuwait"
+  - id: KGZ
+    term: "Kyrgyzstan"
+  - id: LAO
+    term: "Lao People's Democratic Republic"
+  - id: LVA
+    term: "Latvia"
+  - id: LBN
+    term: "Lebanon"
+  - id: LSO
+    term: "Lesotho"
+  - id: LBR
+    term: "Liberia"
+  - id: LBY
+    term: "Libyan Arab Jamahiriya"
+  - id: LIE
+    term: "Liechtenstein"
+  - id: LTU
+    term: "Lithuania"
+  - id: LUX
+    term: "Luxembourg"
+  - id: MAC
+    term: "Macao"
+  - id: MKD
+    term: "Macedonia, the former Yugoslav Republic of"
+  - id: MDG
+    term: "Madagascar"
+  - id: MWI
+    term: "Malawi"
+  - id: MYS
+    term: "Malaysia"
+  - id: MDV
+    term: "Maldives"
+  - id: MLI
+    term: "Mali"
+  - id: MLT
+    term: "Malta"
+  - id: MHL
+    term: "Marshall Islands"
+  - id: MTQ
+    term: "Martinique"
+  - id: MRT
+    term: "Mauritania"
+  - id: MUS
+    term: "Mauritius"
+  - id: MYT
+    term: "Mayotte"
+  - id: MEX
+    term: "Mexico"
+  - id: FSM
+    term: "Micronesia, Federated States of"
+  - id: MDA
+    term: "Moldova, Republic of"
+  - id: MCO
+    term: "Monaco"
+  - id: MNG
+    term: "Mongolia"
+  - id: MNE
+    term: "Montenegro"
+  - id: MSR
+    term: "Montserrat"
+  - id: MAR
+    term: "Morocco"
+  - id: MOZ
+    term: "Mozambique"
+  - id: MMR
+    term: "Myanmar"
+  - id: NAM
+    term: "Namibia"
+  - id: NRU
+    term: "Nauru"
+  - id: NPL
+    term: "Nepal"
+  - id: NLD
+    term: "Netherlands"
+  - id: ANT
+    term: "Netherlands Antilles"
+  - id: NCL
+    term: "New Caledonia"
+  - id: NZL
+    term: "New Zealand"
+  - id: NIC
+    term: "Nicaragua"
+  - id: NER
+    term: "Niger"
+  - id: NGA
+    term: "Nigeria"
+  - id: NIU
+    term: "Niue"
+  - id: NFK
+    term: "Norfolk Island"
+  - id: MNP
+    term: "Northern Mariana Islands"
+  - id: NOR
+    term: "Norway"
+  - id: OMN
+    term: "Oman"
+  - id: PAK
+    term: "Pakistan"
+  - id: PLW
+    term: "Palau"
+  - id: PSE
+    term: "Palestinian Territory, Occupied"
+  - id: PAN
+    term: "Panama"
+  - id: PNG
+    term: "Papua New Guinea"
+  - id: PRY
+    term: "Paraguay"
+  - id: PER
+    term: "Peru"
+  - id: PHL
+    term: "Philippines"
+  - id: PCN
+    term: "Pitcairn"
+  - id: POL
+    term: "Poland"
+  - id: PRT
+    term: "Portugal"
+  - id: PRI
+    term: "Puerto Rico"
+  - id: QAT
+    term: "Qatar"
+  - id: REU
+    term: "Réunion"
+  - id: ROU
+    term: "Romania"
+  - id: RUS
+    term: "Russian Federation"
+  - id: RWA
+    term: "Rwanda"
+  - id: SHN
+    term: "Saint Helena, Ascension and Tristan da Cunha"
+  - id: KNA
+    term: "Saint Kitts and Nevis"
+  - id: LCA
+    term: "Saint Lucia"
+  - id: SPM
+    term: "Saint Pierre and Miquelon"
+  - id: VCT
+    term: "Saint Vincent and the Grenadines"
+  - id: WSM
+    term: "Samoa"
+  - id: SMR
+    term: "San Marino"
+  - id: STP
+    term: "Sao Tome and Principe"
+  - id: SAU
+    term: "Saudi Arabia"
+  - id: SEN
+    term: "Senegal"
+  - id: SRB
+    term: "Serbia"
+  - id: SYC
+    term: "Seychelles"
+  - id: SLE
+    term: "Sierra Leone"
+  - id: SGP
+    term: "Singapore"
+  - id: SVK
+    term: "Slovakia"
+  - id: SVN
+    term: "Slovenia"
+  - id: SLB
+    term: "Solomon Islands"
+  - id: SOM
+    term: "Somalia"
+  - id: ZAF
+    term: "South Africa"
+  - id: SGS
+    term: "South Georgia and the South Sandwich Islands"
+  - id: ESP
+    term: "Spain"
+  - id: LKA
+    term: "Sri Lanka"
+  - id: SDN
+    term: "Sudan"
+  - id: SUR
+    term: "Suriname"
+  - id: SJM
+    term: "Svalbard and Jan Mayen"
+  - id: SWZ
+    term: "Swaziland"
+  - id: SWE
+    term: "Sweden"
+  - id: CHE
+    term: "Switzerland"
+  - id: SYR
+    term: "Syrian Arab Republic"
+  - id: TWN
+    term: "Taiwan"
+  - id: TJK
+    term: "Tajikistan"
+  - id: TZA
+    term: "Tanzania, United Republic of"
+  - id: THA
+    term: "Thailand"
+  - id: TLS
+    term: "Timor-Leste"
+  - id: TGO
+    term: "Togo"
+  - id: TKL
+    term: "Tokelau"
+  - id: TON
+    term: "Tonga"
+  - id: TTO
+    term: "Trinidad and Tobago"
+  - id: TUN
+    term: "Tunisia"
+  - id: TUR
+    term: "Turkey"
+  - id: TKM
+    term: "Turkmenistan"
+  - id: TCA
+    term: "Turks and Caicos Islands"
+  - id: TUV
+    term: "Tuvalu"
+  - id: UGA
+    term: "Uganda"
+  - id: UKR
+    term: "Ukraine"
+  - id: ARE
+    term: "United Arab Emirates"
+  - id: GBR
+    term: "United Kingdom"
+  - id: USA
+    term: "United States"
+  - id: UMI
+    term: "United States Minor Outlying Islands"
+  - id: URY
+    term: "Uruguay"
+  - id: UZB
+    term: "Uzbekistan"
+  - id: VUT
+    term: "Vanuatu"
+  - id: VEN
+    term: "Venezuela, Bolivarian Republic of"
+  - id: VNM
+    term: "Vietnam"
+  - id: VGB
+    term: "Virgin Islands, British"
+  - id: VIR
+    term: "Virgin Islands, U.S."
+  - id: WLF
+    term: "Wallis and Futuna"
+  - id: ESH
+    term: "Western Sahara"
+  - id: YEM
+    term: "Yemen"
+  - id: ZMB
+    term: "Zambia"
+  - id: ZWE
+    term: "Zimbabwe"
+ERROR! duplicate detected: #<Set: {"BOL", "BRN", "CIV", "KOR", "LBY", "MMR", "RUS", "VCT", "TWN", "TTO", "VEN", "VNM"}>

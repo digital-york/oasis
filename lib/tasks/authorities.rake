@@ -1,6 +1,8 @@
 namespace :authorities do
   require 'yaml'
 
+  # To run this task, type:
+  # bundle exec rake authorities:create_yaml[FILE_NAME]
   desc "Generating authorities YAML texts from CSV..."
   task :create_yaml, [:sourcefile] => [:environment] do |t, args|
     puts "Source file: " + args[:sourcefile]
@@ -11,6 +13,44 @@ namespace :authorities do
       puts "  - id: #{line_num+1}"
       puts "    term: \"#{line.squish}\""
     end
-
   end
+
+  # To run this rake task, type:
+  # bundle exec rake authorities:create_countries[lib/assets/iso_3166_country_codes.csv] > config/authorities/country_code.yml
+  desc "Generating countries YAML from CSV..."
+  task :create_countries, [:sourcefile] => [:environment] do |t, args|
+    puts 'terms:'
+    countries  = Set.new()
+    duplicates = Set.new()
+    File.foreach(args[:sourcefile]).with_index do |line, line_num|
+      next if line_num==0  # bypass the first line which is the title
+      #puts "  - id: #{line_num}"
+      all_attr = line.squish.split('"')
+
+      if countries.include? all_attr[5].squish
+        duplicates << all_attr[5].squish
+      end
+      countries << all_attr[5].squish
+      puts "  - id: #{all_attr[5].squish}"
+      puts "    term: \"#{all_attr[1].squish}\""
+    end
+    if duplicates.length >0
+        puts 'ERROR! duplicate detected: ' + duplicates.to_s
+    end
+  end
+
+  # To run this rake task, type:
+  # bundle exec rake authorities:create_us_states[lib/assets/us_states.csv] > config/authorities/us_states.yml
+  desc "Generating US states YAML from CSV..."
+  task :create_us_states, [:sourcefile] => [:environment] do |t, args|
+    puts 'terms:'
+    File.foreach(args[:sourcefile]).with_index do |line, line_num|
+      next if line_num==0  # bypass the first line which is the title
+      puts "  - id: #{line_num}"
+      all_attr = line.squish.split(',')
+      puts "    abbr: #{all_attr[1].squish}"
+      puts "    name: #{all_attr[0].squish}"
+    end
+  end
+
 end

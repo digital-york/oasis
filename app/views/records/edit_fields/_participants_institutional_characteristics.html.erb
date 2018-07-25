@@ -1,0 +1,5 @@
+<%= f.input :participants_institutional_characteristics, as: :check_boxes,
+    collection: GenericLocalAuthorityService.select_all_options('institutional_characteristics'),
+    value_method: lambda {|v| v.last.to_s },
+    input_html: { multiple: true  }
+%>

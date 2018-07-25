@@ -1,0 +1,5 @@
+<%= f.input :participants_educational_stage, as: :check_boxes,
+    collection: GenericLocalAuthorityService.select_all_options('educational_stage'),
+    value_method: lambda {|v| v.last.to_s },
+    input_html: { multiple: true  }
+%>

@@ -1,0 +1,11 @@
+terms:
+  - id: 1
+    term: "Preschool / kindergarten"
+  - id: 2
+    term: "Primary / elementary school"
+  - id: 3
+    term: "Secondary / high school"
+  - id: 4
+    term: "Tertiary / university"
+  - id: 5
+    term: "Other"

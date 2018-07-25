@@ -8,12 +8,15 @@ class OasisAuthorityMapping
       "journals"                     => "publication_journal_name",
       "language_features"           => "summary_linguistictarget",
       "languages_being_learned"    => "participants_targetlanguage",
-      "age_of_learners"         => "participants_age",
+      "age_of_learners"             => "participants_age",
       "oasis_licences"               => "licence",
       "of_likely_interest_to"       => "of_likely_interest_to",
       "participant_types"            => "participants_type",
       "proficiency_of_learners"     => "participants_proficiency",
-      "research_areas"               => "summary_general_research_area"
+      "research_areas"               => "summary_general_research_area",
+      "educational_stage"              => "participants_educational_stage",
+      "institutional_characteristics" => "participants_institutional_characteristics",
+      "country_code"                    => "participants_country"
   }
 
   def self.authority_mapping_filename2solr
