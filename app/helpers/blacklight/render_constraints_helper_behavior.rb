@@ -90,7 +90,11 @@ module Blacklight::RenderConstraintsHelperBehavior
       current_label = val.dup
       f = get_model_field_name(facet)
       if OasisAuthorityMapping.authority_mapping_solr2filename.keys.include? f and val != ''
-        facet_label = GenericLocalAuthorityService.id_to_label(OasisAuthorityMapping.authority_mapping_solr2filename[f],val.to_i)
+        if val.to_i>0
+          facet_label = GenericLocalAuthorityService.id_to_label(OasisAuthorityMapping.authority_mapping_solr2filename[f],val.to_i)
+        else
+          facet_label = GenericLocalAuthorityService.id_to_label(OasisAuthorityMapping.authority_mapping_solr2filename[f],val)
+        end
         current_label = facet_label if facet_label!=''
       end
 
