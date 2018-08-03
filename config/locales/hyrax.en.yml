@@ -144,7 +144,7 @@ en:
         publication_pages_to: "Pages:To"
     hints:
       summary:
-        summary_writer: "Sunarme, initial. (e.g. Marsden, E.)"
+        summary_writer: "Surname, initial. (e.g. Marsden, E.)"
         summary_writer_all: "Please list all writers of the summary in APA format (e.g. Surname, initial., Surname, initial. & Surname, initial.)"
         materials_on_iris: "If materials used in this research study are held on IRIS, please enter URL:"
         summary_general_research_area: "Hold down Ctrl/Command to select more than one term."
@@ -175,6 +175,6 @@ en:
         participants_institutional_characteristics: "Institutional Characteristics"
 
         publication_identifier: "If possible, please enter a DOI in the following format, in full: http://dx.doi.org/10.1177/1362168814558838"
-        publication_author: "The authors of the research article which has been summarised. Please give in format: Sunarme, initial. (e.g. Marsden, E.)"
+        publication_author: "The authors of the research article which has been summarised. Please give in format: Surname, initial. (e.g. Marsden, E.)"
         publication_author_all: "Please list all authors of the publication in APA format (e.g. Surname, initial., Surname, initial. & Surname, initial.)"
         publication_title: "The title of the research article which has been summarised."
