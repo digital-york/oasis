@@ -49,7 +49,9 @@ namespace :authorities do
     save_terms_to_file(terms, args[:targetfile])
   end
 
-  # To run this task, type:
+  # To run this task, run:
+  # bundle exec rake authorities:add_terms[AUTHORITY_YAML_FILE,NEW_TERMS_CSV,UPDATED_YAML_FILE]
+  # e.g.
   # bundle exec rake authorities:add_terms[config/authorities/journals.yml,lib/assets/authorities/add/20180807_journals.csv,config/authorities/journals_new.yml]
   # be careful with the special characters in the CSV file, especially in the first line!
   desc "Updating authorities YAML file from CSV..."
@@ -73,11 +75,13 @@ namespace :authorities do
   end
 
 
-  # To run this task, type:
-  # rake authorities:del_terms[journals.yml,/var/tmp/journals_to_delete.csv,/var/tmp/deleted_journals.yml]
+  # To run this task, run:
+  # bundle exec rake authorities:del_terms[AUTHORITY_YAML_FILE,NEW_TERMS_CSV,UPDATED_YAML_FILE]
+  # e.g.
+  # bundle exec rake authorities:del_terms[config/authorities/journals.yml,lib/assets/authorities/delete/20180807_journals.csv,config/authorities/journals_new.yml]
   desc "Deleting authorities terms from CSV..."
   task :del_terms, [:yamlfile,:csvfile,:targetfile] => [:environment] do |t, args|
-    yaml = YAML.load_file(File.dirname(__FILE__) + '/../../config/authorities/' + args[:yamlfile])
+    yaml = YAML.load_file(args[:yamlfile])
     terms = yaml['terms']
 
     File.foreach(args[:csvfile]) do |line|
