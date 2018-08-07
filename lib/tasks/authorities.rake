@@ -50,11 +50,11 @@ namespace :authorities do
   end
 
   # To run this task, type:
-  # rake authorities:add_terms[journals.yml,/var/tmp/new_journals.csv,/var/tmp/updated_journals.yml]
+  # bundle exec rake authorities:add_terms[config/authorities/journals.yml,lib/assets/authorities/add/20180807_journals.csv,config/authorities/journals_new.yml]
   # be careful with the special characters in the CSV file, especially in the first line!
   desc "Updating authorities YAML file from CSV..."
   task :add_terms, [:yamlfile, :csvfile, :targetfile] => [:environment] do |t, args|
-    yaml = YAML.load_file(File.dirname(__FILE__) + '/../../config/authorities/' + args[:yamlfile])
+    yaml = YAML.load_file(args[:yamlfile])
     terms = yaml['terms']
     max_id = 0
     terms.each do |t|
