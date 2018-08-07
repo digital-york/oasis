@@ -21,8 +21,6 @@ terms:
     term: "Cognitive Psychology"
   - id: 57
     term: "Computer Assisted Language Learning"
-  - id: 10
-    term: "Dutch Journal of Applied Linguistics"
   - id: 11
     term: "ELT Journal"
   - id: 12
@@ -33,34 +31,22 @@ terms:
     term: "European Journal of Teacher Education"
   - id: 14
     term: "Foreign Language Annals"
-  - id: 15
-    term: "Frontiers: The Interdisciplinary Journal of Study Abroad"
-  - id: 16
-    term: "Innovation in Language Learning and Teaching"
   - id: 59
     term: "Intercultural Pragmatics"
-  - id: 17
-    term: "International Journal of Applied Linguistics"
   - id: 18
     term: "International Journal of Bilingual Education and Bilingualism"
   - id: 60
     term: "International Journal of Bilingualism"
   - id: 19
     term: "International Journal of Educational Research"
-  - id: 20
-    term: "International Journal of Speech Technology"
   - id: 21
     term: "International Review of Applied Linguistics"
   - id: 22
     term: "Journal of Child Language"
   - id: 61
     term: "Journal of Communication Disorders"
-  - id: 23
-    term: "Journal of Educational and Social Research"
   - id: 62
     term: "Journal of French Language Studies"
-  - id: 24
-    term: "Journal of Immersion and Content-Based Language Education"
   - id: 25
     term: "Journal of Language and Social Psychology"
   - id: 26
@@ -117,32 +103,18 @@ terms:
     term: "Pragmatics and Society"
   - id: 72
     term: "ReCALL"
-  - id: 43
-    term: "Reading in a Foreign Language"
   - id: 73
     term: "Revista Española de Lingüística Aplicada /Spanish Journal of Applied Linguistics"
   - id: 44
     term: "Second Language Research"
   - id: 45
     term: "Studies in Second Language Acquisition"
-  - id: 46
-    term: "Studies in Second Language Learning and Teaching"
   - id: 47
     term: "System"
-  - id: 48
-    term: "TESL-EJ"
-  - id: 49
-    term: "TESOL Canada Journal"
   - id: 50
     term: "TESOL Quarterly"
-  - id: 51
-    term: "TESOL in Context"
-  - id: 52
-    term: "The Language Learning Journal"
   - id: 53
     term: "The Modern Language Journal"
-  - id: 54
-    term: "The Quarterly Journal of Experimental Psychology"
   - id: 74
     term: "Vial-Vigo International Journal of Applied Linguistics"
   - id: 75
