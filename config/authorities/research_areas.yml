@@ -41,8 +41,6 @@ terms:
     term: "Identity"
   - id: 21
     term: "Implicit learning"
-  - id: 22
-    term: "Immersion"
   - id: 23
     term: "Interaction"
   - id: 24
@@ -51,12 +49,14 @@ terms:
     term: "Learner silence"
   - id: 26
     term: "Learner strategies"
-  - id: 27
-    term: "Learning style"
   - id: 28
     term: "Learning"
+  - id: 27
+    term: "Learning style"
   - id: 29
     term: "Linguistic identity"
+  - id: 55
+    term: "Listening"
   - id: 30
     term: "Meta-analysis"
   - id: 31
@@ -79,12 +79,16 @@ terms:
     term: "Pronunciation"
   - id: 40
     term: "Prosody"
+  - id: 56
+    term: "Reading"
   - id: 41
     term: "Research methods"
   - id: 42
     term: "Self-efficacy"
   - id: 43
     term: "Sentence processing"
+  - id: 57
+    term: "Speaking"
   - id: 44
     term: "Study abroad"
   - id: 45
@@ -93,6 +97,18 @@ terms:
     term: "Teacher cognition"
   - id: 47
     term: "Teacher education"
+  - id: 59
+    term: "Teaching Methods: Communicative Language Teaching"
+  - id: 60
+    term: "Teaching Methods: Content and Language Integrated Learning (CLIL)"
+  - id: 58
+    term: "Teaching Methods: Immersion"
+  - id: 61
+    term: "Teaching Methods: Processing Instruction"
+  - id: 63
+    term: "Teaching Methods: Task repetition"
+  - id: 62
+    term: "Teaching Methods: Task-Based Language Teaching (TBLT)"
   - id: 48
     term: "Teaching materials and curriculum (syllabus, textbook design)"
   - id: 49
@@ -103,7 +119,11 @@ terms:
     term: "Testing"
   - id: 52
     term: "Vocabulary"
+  - id: 64
+    term: "Willingness to communicate"
   - id: 53
     term: "Working memory"
+  - id: 65
+    term: "Writing"
   - id: 54
     term: "Other"
