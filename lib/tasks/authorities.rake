@@ -38,6 +38,28 @@ namespace :authorities do
     true
   end
 
+  # update a term in solr
+  def update_solr(authority_file_name, old_term, new_term)
+    solr_field = OasisAuthorityMapping.authority_mapping_filename2solr[authority_file_name.sub('.yml','')]
+    solr = RSolr.connect :url => SOLR
+
+    solr_field = OasisAuthorityMapping.authority_mapping_filename2solr[authority_file_name.sub('.yml','')]
+    solr = RSolr.connect :url => SOLR
+
+    # find the object first
+    response = solr.get 'select', :params => {
+        :q=>"#{solr_field}_label_tesim:\"#{old_term}\"",
+        :start=>0,
+        :rows=>10
+    }
+    return false if response["response"]["numFound"] == 0
+    doc_id = response["response"]["docs"]["id"]
+
+    # update solr_index
+    solr.update :data => "id:#{doc_id}, #{solr_field}_label_tesim:\"#{new_term}\"", headers: { 'Content-Type' => 'application/json' }
+    true
+  end
+
   # To run this task, type:
   # rake authorities:create_yaml[/var/tmp/x.csv,/var/tmp/target.yml]
   desc "Generating authorities YAML texts from CSV..."
@@ -54,7 +76,7 @@ namespace :authorities do
   # e.g.
   # bundle exec rake authorities:add_terms[config/authorities/journals.yml,lib/assets/authorities/add/20180807_journals.csv,config/authorities/journals_new.yml]
   # be careful with the special characters in the CSV file, especially in the first line!
-  desc "Updating authorities YAML file from CSV..."
+  desc "Adding authorities YAML file from CSV..."
   task :add_terms, [:yamlfile, :csvfile, :targetfile] => [:environment] do |t, args|
     yaml = YAML.load_file(args[:yamlfile])
     terms = yaml['terms']
@@ -93,6 +115,42 @@ namespace :authorities do
     end
     save_terms_to_file(terms, args[:targetfile])
   end
+
+  # To run this task, run:
+  # bundle exec rake authorities:update_terms[AUTHORITY_YAML_FILE,NEW_TERMS_CSV,UPDATED_YAML_FILE]
+  # e.g.
+  # bundle exec rake authorities:update_terms[config/authorities/research_areas.yml,lib/assets/authorities/update/20180808_topics.csv,config/authorities/topics_new.yml]
+  desc "Updating authorities from CSV..."
+  task :update_terms, [:yamlfile,:csvfile,:targetfile] => [:environment] do |t, args|
+    yaml = YAML.load_file(args[:yamlfile])
+    terms = yaml['terms']
+
+    #puts terms.class
+
+    File.foreach(args[:csvfile]) do |line|
+      old_term = line.squish.split(',,,')[0]
+      new_term = line.squish.split(',,,')[1]
+
+      # update the authorities file first
+      terms.collect! { |t|
+        if t['term'] == old_term
+          t['term'] == new_term
+          t
+        else
+          t
+        end
+      }
+
+      # if the term is used, update solr as well
+      if is_term_used(args[:yamlfile], line.squish)==true
+        puts 'updating solr...'
+        update_solr(args[:yamlfile], old_term, new_term)
+      end
+
+    end
+    #save_terms_to_file(terms, args[:targetfile])
+  end
+
 
   # To run this task, type:
   # bundle exec rake authorities:create_yaml[FILE_NAME]
