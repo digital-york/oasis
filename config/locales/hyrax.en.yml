@@ -109,6 +109,7 @@ en:
         licence: "Licence"
         licence_agreement: "Licence Agreement"
         language_summary_written_in: "Language Summary Written in"
+        language_summary_written_in_other: "Please enter the language"
 
         participants_type: "Participant Type"
         participants_firstlanguage: "First Language of Learners"

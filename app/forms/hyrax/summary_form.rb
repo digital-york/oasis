@@ -7,6 +7,7 @@ module Hyrax
                   :summary_writer_all,
                   :title_of_summary,
                   :language_summary_written_in,
+                  :language_summary_written_in_other,
                   :publication_identifier,
                   :publication_author,
                   :publication_author_all,

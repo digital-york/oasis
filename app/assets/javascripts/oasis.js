@@ -84,6 +84,22 @@ $(function() {
     <!-- check if needs to show proficiency other field on load of the page -->
     check_participants_proficiency_other_fields();
 
+    // show/hide language_summary_written_in_other fields
+    function check_language_summary_written_in_other_fields() {
+        var t = $('#summary_language_summary_written_in option').filter(':selected').text();
+        if(t.endsWith('Other')) {
+            $("#language_summary_written_in_other_div").css("display","block");
+        }else{
+            $("#language_summary_written_in_other_div").css("display","none");
+        }
+    }
+    <!-- Show hiden language_summary_written_in_other field -->
+    $("#summary_language_summary_written_in").click(function(){
+        check_language_summary_written_in_other_fields();
+    });
+    <!-- check if needs to show summary_language_summary_written_in_other field on load of the page -->
+    check_language_summary_written_in_other_fields();
+
     <!-- applying writers' order from summary_summary_writer_all -->
     var all_writers_text = $('#summary_summary_writer_all').val();
 
