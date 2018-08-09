@@ -43,6 +43,7 @@ module Hyrax
                   :participants_educational_stage,
                   :participants_institutional_characteristics,
                   :of_likely_interest_to,
+                  :of_likely_interest_to_other,
                   :materials_on_iris,
                   :iris_url,
                   :licence,

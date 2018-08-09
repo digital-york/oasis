@@ -1,3 +1,9 @@
 <%= f.input :of_likely_interest_to, as: :select,
     collection: GenericLocalAuthorityService.select_all_options('of_likely_interest_to'),
     input_html: { class: 'form-control', multiple: true  } %>
+
+<div id="of_likely_interest_to_other_div" style="display: none; position: relative; top: -20px;">
+  <%= f.input :of_likely_interest_to_other,
+              input_html: { class: 'form-control' }
+  %>
+</div>

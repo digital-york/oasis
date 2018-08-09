@@ -101,6 +101,7 @@ en:
         conference_name: "Conference Name"
         materials_on_iris: "Materials on IRIS"
         of_likely_interest_to: "Of likely interest to ..."
+        of_likely_interest_to_other: "Please enter"
         iris_url: "IRIS URL"
         summary_notes: "Notes"
         emails: "Email address"
