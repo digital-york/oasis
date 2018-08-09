@@ -112,6 +112,7 @@ en:
         language_summary_written_in_other: "Please enter the language"
 
         participants_type: "Participant Type"
+        participants_type: "Please enter participant type"
         participants_firstlanguage: "First Language of Learners"
         participants_targetlanguage: "Language Being Learned"
         participants_gender: "Gender of Learners"

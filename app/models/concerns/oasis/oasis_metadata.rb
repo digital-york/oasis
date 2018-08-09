@@ -48,6 +48,11 @@ module Oasis
       property :participants_type,                           predicate: ::RDF::URI.new('http://dlib.york.ac.uk/ontologies/oasis#participants_type'), multiple: true do |index|
         index.as :stored_searchable, :sortable, :facetable
       end
+
+      property :participants_type_other,                    predicate: ::RDF::URI.new('http://dlib.york.ac.uk/ontologies/oasis#participants_type_other'), multiple: false do |index|
+        index.as :stored_searchable
+      end
+
       property :participants_firstlanguage,                 predicate: ::RDF::URI.new('http://dlib.york.ac.uk/ontologies/oasis#participants_firstlanguage'), multiple: true do |index|
         index.as :stored_searchable, :sortable, :facetable
       end

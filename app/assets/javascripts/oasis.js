@@ -100,6 +100,23 @@ $(function() {
     <!-- check if needs to show summary_language_summary_written_in_other field on load of the page -->
     check_language_summary_written_in_other_fields();
 
+
+    // show/hide participants_type_other fields
+    function check_participants_type_other_fields() {
+        var t = $('#summary_participants_type option').filter(':selected').text();
+        if(t.endsWith('Other')) {
+            $("#participants_type_other_div").css("display","block");
+        }else{
+            $("#participants_type_other_div").css("display","none");
+        }
+    }
+    <!-- Show hiden participants_type_other field -->
+    $("#summary_participants_type").click(function(){
+        check_participants_type_other_fields();
+    });
+    <!-- check if needs to show participants_type_other field on load of the page -->
+    check_participants_type_other_fields();
+
     <!-- applying writers' order from summary_summary_writer_all -->
     var all_writers_text = $('#summary_summary_writer_all').val();
 
