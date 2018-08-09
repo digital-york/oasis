@@ -86,7 +86,7 @@ class Apa
 
   def self.get_journal_string(journal)
     if not journal.nil? and not journal[0].nil? and journal[0]!=''
-      return GenericLocalAuthorityService.id_to_label('journals',journal[0].to_i) + '. '
+      return GenericLocalAuthorityService.id_to_label('journals',journal[0].to_i) + ', '
       #return journal[0] + '. '
     end
     ''
