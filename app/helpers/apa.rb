@@ -66,6 +66,19 @@ class Apa
     end
   end
 
+  def self.get_author_string_short(authors)
+    # if gets a string, e.g. author_all, just return it directly, as a temporary solution for: https://github.com/digital-york/oasis/issues/29
+    if authors.is_a? String
+      return authors.split(',')[0] + ' '
+    elsif authors.length==1
+      return authors[0].split(',')[0] + ' '
+    elsif authors.length==2
+      return authors[0].split(',')[0] + ' & ' + authors[1].split(',')[0]
+    else
+      return authors[0].split(',')[0] + ', et at. '
+    end
+  end
+
   def self.get_publication_year_string(year)
     if not year.nil? and not year[0].nil? and year[0]!=''
       return '(' + year[0] + '). '
