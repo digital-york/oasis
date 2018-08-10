@@ -128,6 +128,9 @@ module Oasis
       property :participants_institutional_characteristics,  predicate: ::RDF::URI.new('http://dlib.york.ac.uk/ontologies/oasis#participants_institutional_characteristics'), multiple: true do |index|
         index.as :stored_searchable
       end
+      property :participants_institutional_characteristics_other,  predicate: ::RDF::URI.new('http://dlib.york.ac.uk/ontologies/oasis#participants_institutional_characteristics_other'), multiple: false do |index|
+        index.as :stored_searchable
+      end
 
       # --------------------------
       # publication and acknowledgements group

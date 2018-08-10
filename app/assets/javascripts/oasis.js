@@ -206,6 +206,22 @@ $(function() {
     check_participants_educational_stage_other_fields();
 
     // ---------------------------------------------------
+    // show/hide participants_institutional_characteristics_other fields
+    function check_participants_institutional_characteristics_other_fields() {
+        if($('[id^=summary_participants_institutional_characteristics_]').eq(-2).is(':checked')) {
+            $("#participants_institutional_characteristics_other_div").css("display","block");
+        }else{
+            $("#participants_institutional_characteristics_other_div").css("display","none");
+        }
+    }
+    var participants_institutional_characteristics_last = $("[id^=summary_participants_institutional_characteristics_]").eq(-2);
+    participants_institutional_characteristics_last.click(function(){
+        check_participants_institutional_characteristics_other_fields();
+    });
+    <!-- check if needs to show participants_institutional_characteristics field on load of the page -->
+    check_participants_institutional_characteristics_other_fields();
+
+    // ---------------------------------------------------
     <!-- applying writers' order from summary_summary_writer_all -->
     var all_writers_text = $('#summary_summary_writer_all').val();
 

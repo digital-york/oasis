@@ -137,6 +137,7 @@ en:
         participants_educational_stage: "Educational Stage"
         participants_educational_stage_other: "Educational Stage"
         participants_institutional_characteristics: "Institutional Characteristics"
+        participants_institutional_characteristics_other: "Institutional Characteristics"
 
         publication_identifier: "Publication Identifier (DOI)"
         publication_author: "Author of Publication"

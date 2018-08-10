@@ -46,6 +46,7 @@ module Hyrax
                   :participants_educational_stage,
                   :participants_educational_stage_other,
                   :participants_institutional_characteristics,
+                  :participants_institutional_characteristics_other,
                   :of_likely_interest_to,
                   :of_likely_interest_to_other,
                   :materials_on_iris,
