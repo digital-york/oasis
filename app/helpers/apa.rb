@@ -73,7 +73,7 @@ class Apa
     elsif authors.length==1
       return authors[0].split(',')[0] + ' '
     elsif authors.length==2
-      return authors[0].split(',')[0] + ' & ' + authors[1].split(',')[0]
+      return authors[0].split(',')[0] + ' & ' + authors[1].split(',')[0] + ' '
     else
       return authors[0].split(',')[0] + ', et at. '
     end
