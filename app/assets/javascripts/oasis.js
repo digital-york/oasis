@@ -135,6 +135,38 @@ $(function() {
     check_of_likely_interest_to_other_fields();
 
 
+    // show/hide participants_firstlanguage_other fields
+    function check_participants_firstlanguage_other_fields() {
+        var t = $('#summary_participants_firstlanguage option').filter(':selected').text();
+        if(t.endsWith('Other')) {
+            $("#participants_firstlanguage_other_div").css("display","block");
+        }else{
+            $("#participants_firstlanguage_other_div").css("display","none");
+        }
+    }
+    <!-- Show hiden participants_firstlanguage_other field -->
+    $("#summary_participants_firstlanguage").click(function(){
+        check_participants_firstlanguage_other_fields();
+    });
+    <!-- check if needs to show participants_firstlanguage_other on load of the page -->
+    check_participants_firstlanguage_other_fields();
+
+    // show/hide participants_targetlanguage_other fields
+    function check_participants_targetlanguage_other_fields() {
+        var t = $('#summary_participants_targetlanguage option').filter(':selected').text();
+        if(t.endsWith('Other')) {
+            $("#participants_targetlanguage_other_div").css("display","block");
+        }else{
+            $("#participants_targetlanguage_other_div").css("display","none");
+        }
+    }
+    <!-- Show hiden participants_targetlanguage_other field -->
+    $("#summary_participants_targetlanguage").click(function(){
+        check_participants_targetlanguage_other_fields();
+    });
+    <!-- check if needs to show participants_targetlanguage_other on load of the page -->
+    check_participants_targetlanguage_other_fields();
+
     <!-- applying writers' order from summary_summary_writer_all -->
     var all_writers_text = $('#summary_summary_writer_all').val();
 

@@ -56,9 +56,17 @@ module Oasis
       property :participants_firstlanguage,                 predicate: ::RDF::URI.new('http://dlib.york.ac.uk/ontologies/oasis#participants_firstlanguage'), multiple: true do |index|
         index.as :stored_searchable, :sortable, :facetable
       end
+      property :participants_firstlanguage_other,                 predicate: ::RDF::URI.new('http://dlib.york.ac.uk/ontologies/oasis#participants_firstlanguage_other'), multiple: false do |index|
+        index.as :stored_searchable
+      end
+
       property :participants_targetlanguage,                predicate: ::RDF::URI.new('http://dlib.york.ac.uk/ontologies/oasis#participants_targetlanguage'), multiple: true do |index|
         index.as :stored_searchable, :sortable, :facetable
       end
+      property :participants_targetlanguage_other,                predicate: ::RDF::URI.new('http://dlib.york.ac.uk/ontologies/oasis#participants_targetlanguage_other'), multiple: false do |index|
+        index.as :stored_searchable
+      end
+
       property :participants_age,                            predicate: ::RDF::URI.new('http://dlib.york.ac.uk/ontologies/oasis#participants_age'), multiple: true do |index|
         index.as :stored_searchable, :sortable, :facetable
       end
