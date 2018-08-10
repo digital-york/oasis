@@ -135,6 +135,7 @@ en:
         participants_country: "Country / region"
         participants_subnational_region: "Subnational region"
         participants_educational_stage: "Educational Stage"
+        participants_educational_stage_other: "Educational Stage"
         participants_institutional_characteristics: "Institutional Characteristics"
 
         publication_identifier: "Publication Identifier (DOI)"

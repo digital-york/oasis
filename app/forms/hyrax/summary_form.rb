@@ -44,6 +44,7 @@ module Hyrax
                   :participants_country,
                   :participants_subnational_region,
                   :participants_educational_stage,
+                  :participants_educational_stage_other,
                   :participants_institutional_characteristics,
                   :of_likely_interest_to,
                   :of_likely_interest_to_other,

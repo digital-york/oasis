@@ -190,6 +190,22 @@ $(function() {
     check_participants_domain_of_use_other_fields();
 
     // ---------------------------------------------------
+    // show/hide participants_educational_stage_other fields
+    function check_participants_educational_stage_other_fields() {
+        if($('[id^=summary_participants_educational_stage_]').eq(-2).is(':checked')) {
+            $("#participants_educational_stage_other_div").css("display","block");
+        }else{
+            $("#participants_educational_stage_other_div").css("display","none");
+        }
+    }
+    var participants_educational_stage_last = $("[id^=summary_participants_educational_stage_]").eq(-2);
+    participants_educational_stage_last.click(function(){
+        check_participants_educational_stage_other_fields();
+    });
+    <!-- check if needs to show participants_educational_stage_other field on load of the page -->
+    check_participants_educational_stage_other_fields();
+
+    // ---------------------------------------------------
     <!-- applying writers' order from summary_summary_writer_all -->
     var all_writers_text = $('#summary_summary_writer_all').val();
 

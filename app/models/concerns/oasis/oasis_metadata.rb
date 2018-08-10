@@ -117,9 +117,14 @@ module Oasis
       property :participants_subnational_region,  predicate: ::RDF::URI.new('http://dlib.york.ac.uk/ontologies/oasis#participants_subnational_region'), multiple: false do |index|
         index.as :stored_searchable
       end
+
       property :participants_educational_stage,  predicate: ::RDF::URI.new('http://dlib.york.ac.uk/ontologies/oasis#participants_educational_stage'), multiple: true do |index|
         index.as :stored_searchable
       end
+      property :participants_educational_stage_other,  predicate: ::RDF::URI.new('http://dlib.york.ac.uk/ontologies/oasis#participants_educational_stage_other'), multiple: false do |index|
+        index.as :stored_searchable
+      end
+
       property :participants_institutional_characteristics,  predicate: ::RDF::URI.new('http://dlib.york.ac.uk/ontologies/oasis#participants_institutional_characteristics'), multiple: true do |index|
         index.as :stored_searchable
       end
