@@ -14,7 +14,7 @@ class SummaryApa < Apa
         get_summary_year_string(summary_publication_year) +
         get_title_string(title) +
         html_italic(oasis_publication_name) + ' of ' +
-        get_author_string(authors) +
+        get_author_string_short(authors) +
         get_publication_year_string(publication_year) + ' in ' +
         j_string +
         '.'
