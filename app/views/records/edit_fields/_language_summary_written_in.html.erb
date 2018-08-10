@@ -2,3 +2,9 @@
     collection: GenericLocalAuthorityService.select_all_options('language_summary_written_in'),
     input_html: { class: 'form-control', multiple: true  }
 %>
+
+<div id="language_summary_written_in_other_div" style="display: none; position: relative; top: -20px;">
+  <%= f.input :language_summary_written_in_other,
+              input_html: { class: 'form-control' }
+  %>
+</div>
