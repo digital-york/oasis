@@ -204,4 +204,18 @@ namespace :authorities do
     end
   end
 
+  # To run this task, type:
+  # bundle exec rake authorities:import_iris_languages[lib/assets/authorities/iris_languages.xml,config/authorities/languages.yml]
+  desc "Generating authorities YAML from XML..."
+  task :import_iris_languages, [:sourcefile,:targetfile] => [:environment] do |t, args|
+    terms = []
+    doc = File.open(args[:sourcefile]) { |f| Nokogiri::XML(f) }
+    index = 1
+    doc.xpath('/languages/language').each do |language|
+      label = language.attribute('label')
+      terms << {"id"=>index, "term"=>label.to_s}
+      index = index + 1
+    end
+    save_terms_to_file(terms, args[:targetfile])
+  end
 end

@@ -1,103 +1,291 @@
 terms:
   - id: 1
-    term: "Afrikaans"
+    term: "Abkhazian"
   - id: 2
-    term: "American Sign Language"
+    term: "Afar"
   - id: 3
-    term: "Arabic"
+    term: "Afrikaans"
   - id: 4
-    term: "Basque"
+    term: "Albanian"
   - id: 5
-    term: "Bulgarian"
+    term: "American Sign Language"
   - id: 6
-    term: "Catalan"
+    term: "Amharic"
   - id: 7
-    term: "Chinese"
+    term: "Arabic"
   - id: 8
-    term: "Czech"
+    term: "Armenian"
   - id: 9
-    term: "Danish"
+    term: "Artificial language"
   - id: 10
-    term: "Dutch"
+    term: "Assamese"
   - id: 11
-    term: "English"
+    term: "Aymara"
   - id: 12
-    term: "Estonian"
+    term: "Azerbaijani"
   - id: 13
-    term: "Farsi"
+    term: "Bashkir"
   - id: 14
-    term: "Finnish"
+    term: "Basque"
   - id: 15
-    term: "French"
+    term: "Bengali (Bangla)"
   - id: 16
-    term: "Frisian"
+    term: "Bhutani"
   - id: 17
-    term: "German"
+    term: "Bihari"
   - id: 18
-    term: "Greek"
+    term: "Bislama"
   - id: 19
-    term: "Hebrew"
+    term: "Breton"
   - id: 20
-    term: "Hindi"
+    term: "British Sign Language"
   - id: 21
-    term: "Hungarian"
+    term: "Bulgarian"
   - id: 22
-    term: "Indonesian"
+    term: "Burmese"
   - id: 23
-    term: "Italian"
+    term: "Byelorussian (Belarusian)"
   - id: 24
-    term: "Japanese"
+    term: "Cambodian"
   - id: 25
-    term: "Kazakh"
+    term: "Catalan"
   - id: 26
-    term: "Korean"
+    term: "Chinese"
   - id: 27
-    term: "Kurdish"
+    term: "Corsican"
   - id: 28
-    term: "Latvian (Lettish)"
+    term: "Croatian"
   - id: 29
-    term: "Macedonian"
+    term: "Czech"
   - id: 30
-    term: "Malay"
+    term: "Danish"
   - id: 31
-    term: "Mongolian"
+    term: "Dutch"
   - id: 32
-    term: "Nepali"
+    term: "English"
   - id: 33
-    term: "Polish"
+    term: "Esperanto"
   - id: 34
-    term: "Portuguese"
+    term: "Estonian"
   - id: 35
-    term: "Romanian"
+    term: "Faeroese"
   - id: 36
-    term: "Russian"
+    term: "Farsi"
   - id: 37
-    term: "Samoan"
+    term: "Fiji"
   - id: 38
-    term: "Serbian"
+    term: "Finnish"
   - id: 39
-    term: "Sinhalese"
+    term: "French"
   - id: 40
-    term: "Slovak"
+    term: "Frisian"
   - id: 41
-    term: "Slovenian"
+    term: "Galician"
   - id: 42
-    term: "Spanish"
+    term: "Gaelic (Scottish)"
   - id: 43
-    term: "Swedish"
+    term: "Gaelic (Manx)"
   - id: 44
-    term: "Tamil"
+    term: "Georgian"
   - id: 45
-    term: "Telugu"
+    term: "German"
   - id: 46
-    term: "Thai"
+    term: "Greek"
   - id: 47
-    term: "Turkish"
+    term: "Greenlandic"
   - id: 48
-    term: "Turkmen"
+    term: "Guarani"
   - id: 49
-    term: "Ukrainian"
+    term: "Gujarati"
   - id: 50
-    term: "Vietnamese"
+    term: "Hausa"
   - id: 51
+    term: "Hebrew"
+  - id: 52
+    term: "Hindi"
+  - id: 53
+    term: "Hungarian"
+  - id: 54
+    term: "Icelandic"
+  - id: 55
+    term: "Indonesian"
+  - id: 56
+    term: "Interlingua"
+  - id: 57
+    term: "Interlingue"
+  - id: 58
+    term: "Inuktitut"
+  - id: 59
+    term: "Inupiak"
+  - id: 60
+    term: "Irish"
+  - id: 61
+    term: "Italian"
+  - id: 62
+    term: "Japanese"
+  - id: 63
+    term: "Javanese"
+  - id: 64
+    term: "Kannada"
+  - id: 65
+    term: "Kashmiri"
+  - id: 66
+    term: "Kazakh"
+  - id: 67
+    term: "Kinyarwanda (Ruanda)"
+  - id: 68
+    term: "Kirghiz"
+  - id: 69
+    term: "Kirundi (Rundi)"
+  - id: 70
+    term: "Korean"
+  - id: 71
+    term: "Kurdish"
+  - id: 72
+    term: "Laothian"
+  - id: 73
+    term: "Latin"
+  - id: 74
+    term: "Latvian (Lettish)"
+  - id: 75
+    term: "Limburgish ( Limburger)"
+  - id: 76
+    term: "Lingala"
+  - id: 77
+    term: "Lithuanian"
+  - id: 78
+    term: "Macedonian"
+  - id: 79
+    term: "Malagasy"
+  - id: 80
+    term: "Malay"
+  - id: 81
+    term: "Malayalam"
+  - id: 82
+    term: "Maltese"
+  - id: 83
+    term: "Maori"
+  - id: 84
+    term: "Marathi"
+  - id: 85
+    term: "Moldavian"
+  - id: 86
+    term: "Mongolian"
+  - id: 87
+    term: "Nauru"
+  - id: 88
+    term: "Nepali"
+  - id: 89
+    term: "Norwegian"
+  - id: 90
+    term: "Occitan"
+  - id: 91
+    term: "Oriya"
+  - id: 92
+    term: "Oromo (Afan, Galla)"
+  - id: 93
+    term: "Pashto (Pushto)"
+  - id: 94
+    term: "Polish"
+  - id: 95
+    term: "Portuguese"
+  - id: 96
+    term: "Punjabi"
+  - id: 97
+    term: "Quechua"
+  - id: 98
+    term: "Rhaeto-Romance"
+  - id: 99
+    term: "Romanian"
+  - id: 100
+    term: "Russian"
+  - id: 101
+    term: "Samoan"
+  - id: 102
+    term: "Sangro"
+  - id: 103
+    term: "Sanskrit"
+  - id: 104
+    term: "Serbian"
+  - id: 105
+    term: "Serbo-Croatian"
+  - id: 106
+    term: "Sesotho"
+  - id: 107
+    term: "Setswana"
+  - id: 108
+    term: "Shona"
+  - id: 109
+    term: "Sign Language (other)"
+  - id: 110
+    term: "Sindhi"
+  - id: 111
+    term: "Sinhalese"
+  - id: 112
+    term: "Siswati"
+  - id: 113
+    term: "Slovak"
+  - id: 114
+    term: "Slovenian"
+  - id: 115
+    term: "Somali"
+  - id: 116
+    term: "Spanish"
+  - id: 117
+    term: "Sundanese"
+  - id: 118
+    term: "Swahili (Kiswahili)"
+  - id: 119
+    term: "Swedish"
+  - id: 120
+    term: "Tagalog"
+  - id: 121
+    term: "Tajik"
+  - id: 122
+    term: "Tamil"
+  - id: 123
+    term: "Tatar"
+  - id: 124
+    term: "Telugu"
+  - id: 125
+    term: "Thai"
+  - id: 126
+    term: "Tibetan"
+  - id: 127
+    term: "Tigrinya"
+  - id: 128
+    term: "Tonga"
+  - id: 129
+    term: "Tsonga"
+  - id: 130
+    term: "Turkish"
+  - id: 131
+    term: "Turkmen"
+  - id: 132
+    term: "Twi"
+  - id: 133
+    term: "Uighur"
+  - id: 134
+    term: "Ukrainian"
+  - id: 135
+    term: "Urdu"
+  - id: 136
+    term: "Uzbek"
+  - id: 137
+    term: "Vietnamese"
+  - id: 138
+    term: "Volapük"
+  - id: 139
+    term: "Welsh"
+  - id: 140
+    term: "Wolof"
+  - id: 141
+    term: "Xhosa"
+  - id: 142
+    term: "Yiddish"
+  - id: 143
+    term: "Yoruba"
+  - id: 144
+    term: "Zulu"
+  - id: 145
     term: "Other"

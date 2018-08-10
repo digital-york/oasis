@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<languages>
+  <language name="ab" label="Abkhazian"/>
+  <language name="aa" label="Afar"/>
+  <language name="af" label="Afrikaans"/>
+  <language name="sq" label="Albanian"/>
+  <language name="signa" label="American Sign Language"/>
+  <language name="am" label="Amharic"/>
+  <language name="ar" label="Arabic"/>
+  <language name="hy" label="Armenian"/>
+  <language name="artificial" label="Artificial language"/>
+  <language name="as" label="Assamese"/>
+  <language name="ay" label="Aymara"/>
+  <language name="az" label="Azerbaijani"/>
+  <language name="ba" label="Bashkir"/>
+  <language name="eu" label="Basque"/>
+  <language name="bn" label="Bengali (Bangla)"/>
+  <language name="dz" label="Bhutani"/>
+  <language name="bh" label="Bihari"/>
+  <language name="bi" label="Bislama"/>
+  <language name="br" label="Breton"/>
+  <language name="signb" label="British Sign Language"/>
+  <language name="bg" label="Bulgarian"/>
+  <language name="my" label="Burmese"/>
+  <language name="be" label="Byelorussian (Belarusian)"/>
+  <language name="km" label="Cambodian"/>
+  <language name="ca" label="Catalan"/>
+  <language name="zh" label="Chinese"/>
+  <language name="co" label="Corsican"/>
+  <language name="hr" label="Croatian"/>
+  <language name="cs" label="Czech"/>
+  <language name="da" label="Danish"/>
+  <language name="nl" label="Dutch"/>
+  <language name="en" label="English"/>
+  <language name="eo" label="Esperanto"/>
+  <language name="et" label="Estonian"/>
+  <language name="fo" label="Faeroese"/>
+  <language name="fa" label="Farsi"/>
+  <language name="fj" label="Fiji"/>
+  <language name="fi" label="Finnish"/>
+  <language name="fr" label="French"/>
+  <language name="fy" label="Frisian"/>
+  <language name="gl" label="Galician"/>
+  <language name="gd" label="Gaelic (Scottish)"/>
+  <language name="gv" label="Gaelic (Manx)"/>
+  <language name="ka" label="Georgian"/>
+  <language name="de" label="German"/>
+  <language name="el" label="Greek"/>
+  <language name="kl" label="Greenlandic"/>
+  <language name="gn" label="Guarani"/>
+  <language name="gu" label="Gujarati"/>
+  <language name="ha" label="Hausa"/>
+  <language name="he, iw" label="Hebrew"/>
+  <language name="hi" label="Hindi"/>
+  <language name="hu" label="Hungarian"/>
+  <language name="is" label="Icelandic"/>
+  <language name="id, in" label="Indonesian"/>
+  <language name="ia" label="Interlingua"/>
+  <language name="ie" label="Interlingue"/>
+  <language name="iu" label="Inuktitut"/>
+  <language name="ik" label="Inupiak"/>
+  <language name="ga" label="Irish"/>
+  <language name="it" label="Italian"/>
+  <language name="ja" label="Japanese"/>
+  <language name="jv" label="Javanese"/>
+  <language name="kn" label="Kannada"/>
+  <language name="ks" label="Kashmiri"/>
+  <language name="kk" label="Kazakh"/>
+  <language name="rw" label="Kinyarwanda (Ruanda)"/>
+  <language name="ky" label="Kirghiz"/>
+  <language name="rn" label="Kirundi (Rundi)"/>
+  <language name="ko" label="Korean"/>
+  <language name="ku" label="Kurdish"/>
+  <language name="lo" label="Laothian"/>
+  <language name="la" label="Latin"/>
+  <language name="lv" label="Latvian (Lettish)"/>
+  <language name="li" label="Limburgish ( Limburger)"/>
+  <language name="ln" label="Lingala"/>
+  <language name="lt" label="Lithuanian"/>
+  <language name="mk" label="Macedonian"/>
+  <language name="mg" label="Malagasy"/>
+  <language name="ms" label="Malay"/>
+  <language name="ml" label="Malayalam"/>
+  <language name="mt" label="Maltese"/>
+  <language name="mi" label="Maori"/>
+  <language name="mr" label="Marathi"/>
+  <language name="mo" label="Moldavian"/>
+  <language name="mn" label="Mongolian"/>
+  <language name="na" label="Nauru"/>
+  <language name="ne" label="Nepali"/>
+  <language name="no" label="Norwegian"/>
+  <language name="oc" label="Occitan"/>
+  <language name="or" label="Oriya"/>
+  <language name="om" label="Oromo (Afan, Galla)"/>
+  <language name="ps" label="Pashto (Pushto)"/>
+  <language name="pl" label="Polish"/>
+  <language name="pt" label="Portuguese"/>
+  <language name="pa" label="Punjabi"/>
+  <language name="qu" label="Quechua"/>
+  <language name="rm" label="Rhaeto-Romance"/>
+  <language name="ro" label="Romanian"/>
+  <language name="ru" label="Russian"/>
+  <language name="sm" label="Samoan"/>
+  <language name="sg" label="Sangro"/>
+  <language name="sa" label="Sanskrit"/>
+  <language name="sr" label="Serbian"/>
+  <language name="sh" label="Serbo-Croatian"/>
+  <language name="st" label="Sesotho"/>
+  <language name="tn" label="Setswana"/>
+  <language name="sn" label="Shona"/>
+  <language name="sign" label="Sign Language (other)"/>
+  <language name="sd" label="Sindhi"/>
+  <language name="si" label="Sinhalese"/>
+  <language name="ss" label="Siswati"/>
+  <language name="sk" label="Slovak"/>
+  <language name="sl" label="Slovenian"/>
+  <language name="so" label="Somali"/>
+  <language name="es" label="Spanish"/>
+  <language name="su" label="Sundanese"/>
+  <language name="sw" label="Swahili (Kiswahili)"/>
+  <language name="sv" label="Swedish"/>
+  <language name="tl" label="Tagalog"/>
+  <language name="tg" label="Tajik"/>
+  <language name="ta" label="Tamil"/>
+  <language name="tt" label="Tatar"/>
+  <language name="te" label="Telugu"/>
+  <language name="th" label="Thai"/>
+  <language name="bo" label="Tibetan"/>
+  <language name="ti" label="Tigrinya"/>
+  <language name="to" label="Tonga"/>
+  <language name="ts" label="Tsonga"/>
+  <language name="tr" label="Turkish"/>
+  <language name="tk" label="Turkmen"/>
+  <language name="tw" label="Twi"/>
+  <language name="ug" label="Uighur"/>
+  <language name="uk" label="Ukrainian"/>
+  <language name="ur" label="Urdu"/>
+  <language name="uz" label="Uzbek"/>
+  <language name="vi" label="Vietnamese"/>
+  <language name="vo" label="Volapük"/>
+  <language name="cy" label="Welsh"/>
+  <language name="wo" label="Wolof"/>
+  <language name="xh" label="Xhosa"/>
+  <language name="yi, ji" label="Yiddish"/>
+  <language name="yo" label="Yoruba"/>
+  <language name="zu" label="Zulu"/>
+  <language name="other" label="Other"/>
+</languages>
