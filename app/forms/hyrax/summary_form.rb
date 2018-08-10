@@ -39,6 +39,7 @@ module Hyrax
                   :participants_amount_of_prior_instruction,
                   :participants_time_spent_using_l2,
                   :participants_domain_of_use,
+                  :participants_domain_of_use_other,
                   :participants_year_of_teaching_experience,
                   :participants_country,
                   :participants_subnational_region,

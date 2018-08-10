@@ -104,6 +104,10 @@ module Oasis
       property :participants_domain_of_use,                  predicate: ::RDF::URI.new('http://dlib.york.ac.uk/ontologies/oasis#participants_domain_of_use'), multiple: true do |index|
         index.as :stored_searchable, :sortable, :facetable
       end
+      property :participants_domain_of_use_other,                  predicate: ::RDF::URI.new('http://dlib.york.ac.uk/ontologies/oasis#participants_domain_of_use_other'), multiple: false do |index|
+        index.as :stored_searchable
+      end
+
       property :participants_year_of_teaching_experience,  predicate: ::RDF::URI.new('http://dlib.york.ac.uk/ontologies/oasis#participants_year_of_teaching_experience'), multiple: false do |index|
         index.as :stored_searchable
       end

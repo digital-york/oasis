@@ -36,6 +36,7 @@ $(function() {
         }
     });
 
+    // ---------------------------------------------------
     // show/hide other topic fields
     function check_topic_other_fields() {
         var t = $('#summary_summary_general_research_area option').filter(':selected').text();
@@ -52,6 +53,7 @@ $(function() {
     <!-- check if needs to show other field on load of the page -->
     check_topic_other_fields();
 
+    // ---------------------------------------------------
     // show/hide other journal name fields
     function check_publication_journal_name_other_fields() {
         var t = $('#summary_publication_journal_name option').filter(':selected').text();
@@ -68,6 +70,7 @@ $(function() {
     <!-- check if needs to show other journal name field on load of the page -->
     check_publication_journal_name_other_fields();
 
+    // ---------------------------------------------------
     // show/hide other proficiency fields
     function check_participants_proficiency_other_fields() {
         if($('[id^=summary_participants_proficiency_]').eq(-2).is(':checked')) {
@@ -84,6 +87,7 @@ $(function() {
     <!-- check if needs to show proficiency other field on load of the page -->
     check_participants_proficiency_other_fields();
 
+    // ---------------------------------------------------
     // show/hide language_summary_written_in_other fields
     function check_language_summary_written_in_other_fields() {
         var t = $('#summary_language_summary_written_in option').filter(':selected').text();
@@ -100,7 +104,7 @@ $(function() {
     <!-- check if needs to show summary_language_summary_written_in_other field on load of the page -->
     check_language_summary_written_in_other_fields();
 
-
+    // ---------------------------------------------------
     // show/hide participants_type_other fields
     function check_participants_type_other_fields() {
         var t = $('#summary_participants_type option').filter(':selected').text();
@@ -117,7 +121,7 @@ $(function() {
     <!-- check if needs to show participants_type_other field on load of the page -->
     check_participants_type_other_fields();
 
-
+    // ---------------------------------------------------
     // show/hide of_likely_interest_to_other fields
     function check_of_likely_interest_to_other_fields() {
         var t = $('#summary_of_likely_interest_to option').filter(':selected').text();
@@ -134,7 +138,7 @@ $(function() {
     <!-- check if needs to show of_likely_interest_to_other_fields on load of the page -->
     check_of_likely_interest_to_other_fields();
 
-
+    // ---------------------------------------------------
     // show/hide participants_firstlanguage_other fields
     function check_participants_firstlanguage_other_fields() {
         var t = $('#summary_participants_firstlanguage option').filter(':selected').text();
@@ -151,6 +155,7 @@ $(function() {
     <!-- check if needs to show participants_firstlanguage_other on load of the page -->
     check_participants_firstlanguage_other_fields();
 
+    // ---------------------------------------------------
     // show/hide participants_targetlanguage_other fields
     function check_participants_targetlanguage_other_fields() {
         var t = $('#summary_participants_targetlanguage option').filter(':selected').text();
@@ -167,6 +172,24 @@ $(function() {
     <!-- check if needs to show participants_targetlanguage_other on load of the page -->
     check_participants_targetlanguage_other_fields();
 
+
+    // ---------------------------------------------------
+    // show/hide participants_domain_of_use_other fields
+    function check_participants_domain_of_use_other_fields() {
+        if($('[id^=summary_participants_domain_of_use_]').eq(-2).is(':checked')) {
+            $("#participants_domain_of_use_other_div").css("display","block");
+        }else{
+            $("#participants_domain_of_use_other_div").css("display","none");
+        }
+    }
+    var participants_domain_of_use_last = $("[id^=summary_participants_domain_of_use_]").eq(-2);
+    participants_domain_of_use_last.click(function(){
+        check_participants_domain_of_use_other_fields();
+    });
+    <!-- check if needs to show domain_of_use other field on load of the page -->
+    check_participants_domain_of_use_other_fields();
+
+    // ---------------------------------------------------
     <!-- applying writers' order from summary_summary_writer_all -->
     var all_writers_text = $('#summary_summary_writer_all').val();
 
