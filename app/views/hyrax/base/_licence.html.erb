@@ -1,15 +1,13 @@
-<%unless @presenter.solr_document._source["licence_tesim"].nil? or @presenter.solr_document._source["licence_tesim"][0]!='1'%>
+
     <div class="row detail_page_item_block">
         <div class="col-sm-3">
           <b><%=I18n.t('simple_form.labels.summary.licence')%></b>
         </div>
 
         <div class="col-sm-9" style="vertical-align: middle;">
-          <%if @presenter.solr_document._source["licence_tesim"][0]=='1'%>
-              <%= link_to image_tag('by-nc-sa.eu.svg', height:32), 'https://creativecommons.org/licenses/by-nc-sa/4.0/', target: :_blank%>
-          <%end%>
+          <%= link_to image_tag('by-nc-sa.eu.svg', height:32), 'https://creativecommons.org/licenses/by-nc-sa/4.0/', target: :_blank%>
         </div>
     </div>
-<%end%>
+
 
 
