@@ -68,6 +68,10 @@ en:
       items:
         header: Files
         title: File name
+    visibility:
+      open:
+        note_html: ""
+        warning_html: "Make available to all, pending check by OASIS team."
     works:
       progress:
         header: "Save Summary"
