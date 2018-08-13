@@ -51,7 +51,7 @@ module Hyrax
                   :of_likely_interest_to_other,
                   :materials_on_iris,
                   :iris_url,
-                  :licence,
+                  #:licence,
                   :licence_agreement,
                   :emails,
                   :notification_of_download,
@@ -74,7 +74,7 @@ module Hyrax
                             :participants_type,
                             :of_likely_interest_to,
                             :materials_on_iris,
-                            :licence,
+                            #:licence,
                             :licence_agreement,
                             :emails,
                             :notification_of_download

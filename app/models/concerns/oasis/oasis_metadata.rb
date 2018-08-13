@@ -176,9 +176,9 @@ module Oasis
 
       # --------------------------
       # communication / licence group
-      property :licence,                  predicate: ::RDF::URI.new('http://dlib.york.ac.uk/ontologies/oasis#licence'), multiple: false do |index|
-        index.as :stored_searchable
-      end
+      #property :licence,                  predicate: ::RDF::URI.new('http://dlib.york.ac.uk/ontologies/oasis#licence'), multiple: false do |index|
+      #  index.as :stored_searchable
+      #end
       property :emails,                   predicate: ::RDF::URI.new('http://dlib.york.ac.uk/ontologies/oasis#emails'), multiple: false do |index|
         index.as :stored_searchable
       end
