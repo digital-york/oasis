@@ -1,11 +1,10 @@
   <%
-  writer = recent_document._source["summary_writer_tesim"][0] unless recent_document._source["summary_writer_tesim"].nil?
   title = recent_document._source["title_of_summary_tesim"][0] unless recent_document._source["title_of_summary_tesim"].nil?
   %>
 <%
-unless writer.nil? or writer=='' or title.nil? or title==''
+unless title.nil? or title==''
 %>
 <p>
-  <%= link_to writer + ':  ' + title, [main_app, recent_document], target: :blank %>
+  <%= link_to title, [main_app, recent_document], target: :blank %>
 </p>
 <%end%>
