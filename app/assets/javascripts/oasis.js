@@ -268,4 +268,7 @@ $(function() {
         // update hidden field 'publication_author_all' value
         $('#summary_publication_author_all').val(JSON.stringify(authors));
     });
+
+    // add target="_blank" to deposit agreement link
+    $('a[href="/agreement"]').attr('target','_blank');
 });
