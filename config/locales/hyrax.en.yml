@@ -74,7 +74,7 @@ en:
         warning_html: "Make available to all, pending check by OASIS team."
     works:
       progress:
-        header: "Save Summary"
+        header: "Submit Summary"
 
     dashboard:
       my:
