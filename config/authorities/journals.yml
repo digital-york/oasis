@@ -1,123 +1,123 @@
 terms:
-  - id: 1
+  - id: "http://www.jbe-platform.com/content/journals/15720276"
     term: "Annual Review of Cognitive Linguistics"
-  - id: 2
+  - id: "https://academic.oup.com/applij/"
     term: "Applied Linguistics"
-  - id: 56
+  - id: "https://www.degruyter.com/view/j/alr"
     term: "Applied Linguistics Review"
-  - id: 3
+  - id: "https://www.cambridge.org/core/journals/applied-psycholinguistics"
     term: "Applied Psycholinguistics"
-  - id: 4
+  - id: "https://www.springer.com/psychology/cognitive+psychology/journal/13428"
     term: "Behavior Research Methods"
-  - id: 5
+  - id: "https://www.cambridge.org/core/journals/bilingualism-language-and-cognition"
     term: "Bilingualism: Language and Cognition"
-  - id: 6
+  - id: "https://www.tandfonline.com/loi/rbje20"
     term: "British Journal of Educational Studies"
-  - id: 7
+  - id: "https://www.utpjournals.press/loi/cmlr"
     term: "Canadian Modern Language Review"
-  - id: 8
+  - id: "journals.elsevier.com/cognition"
     term: "Cognition"
-  - id: 9
+  - id: "https://www.journals.elsevier.com/cognitive-psychology/"
     term: "Cognitive Psychology"
-  - id: 57
+  - id: "https://www.tandfonline.com/loi/ncal20"
     term: "Computer Assisted Language Learning"
-  - id: 11
+  - id: "https://academic.oup.com/eltj"
     term: "ELT Journal"
-  - id: 12
+  - id: "https://www.tandfonline.com/loi/ceds20"
     term: "Educational Studies"
-  - id: 58
+  - id: "https://www.journals.elsevier.com/english-for-specific-purposes/"
     term: "English for Specific Purposes"
-  - id: 13
+  - id: "https://www.tandfonline.com/loi/cete20"
     term: "European Journal of Teacher Education"
-  - id: 14
+  - id: "https://onlinelibrary.wiley.com/journal/19449720"
     term: "Foreign Language Annals"
-  - id: 59
+  - id: "https://www.degruyter.com/view/j/iprg"
     term: "Intercultural Pragmatics"
-  - id: 18
+  - id: "https://www.tandfonline.com/toc/rbeb20/current"
     term: "International Journal of Bilingual Education and Bilingualism"
-  - id: 60
+  - id: "http://journals.sagepub.com/home/ijb/"
     term: "International Journal of Bilingualism"
-  - id: 19
+  - id: "https://www.journals.elsevier.com/international-journal-of-educational-research"
     term: "International Journal of Educational Research"
-  - id: 21
+  - id: "https://www.degruyter.com/view/j/iral"
     term: "International Review of Applied Linguistics"
-  - id: 22
+  - id: "https://www.cambridge.org/core/journals/journal-of-child-language"
     term: "Journal of Child Language"
-  - id: 61
+  - id: "https://www.journals.elsevier.com/journal-of-communication-disorders/"
     term: "Journal of Communication Disorders"
-  - id: 62
+  - id: https://www.cambridge.org/core/journals/journal-of-french-language-studies
     term: "Journal of French Language Studies"
-  - id: 25
+  - id: "http://journals.sagepub.com/home/jls"
     term: "Journal of Language and Social Psychology"
-  - id: 26
+  - id: "https://www.journals.elsevier.com/journal-of-memory-and-language/"
     term: "Journal of Memory and Language"
-  - id: 27
+  - id: "https://www.tandfonline.com/loi/rmmm20"
     term: "Journal of Multilingual and Multicultural Development"
-  - id: 28
+  - id: "https://link.springer.com/journal/10936"
     term: "Journal of Psycholinguistic Research"
-  - id: 63
+  - id: "https://benjamins.com/catalog/jslp"
     term: "Journal of Second Language Pronunciation"
-  - id: 29
+  - id: "https://jslhr.pubs.asha.org"
     term: "Journal of Speech, Language, and Hearing Research"
-  - id: 30
+  - id: "https://www.tandfonline.com/loi/HLAC20"
     term: "Language Acquisition"
-  - id: 31
+  - id: "https://www.tandfonline.com/loi/rmla20"
     term: "Language Awareness"
-  - id: 64
+  - id: "https://www.tandfonline.com/loi/rlcc20"
     term: "Language Culture and Curriculum"
-  - id: 32
+  - id: "https://onlinelibrary.wiley.com/journal/14679922"
     term: "Language Learning"
-  - id: 33
+  - id: "http://www.lltjournal.org"
     term: "Language Learning and Technology"
-  - id: 34
+  - id: "https://www.journals.elsevier.com/language-sciences/"
     term: "Language Sciences"
-  - id: 65
+  - id: "https://www.cambridge.org/core/journals/language-teaching"
     term: "Language Teaching"
-  - id: 35
+  - id: "http://journals.sagepub.com/home/ltr"
     term: "Language Teaching Research"
-  - id: 36
+  - id: "http://journals.sagepub.com/home/ltj"
     term: "Language Testing"
-  - id: 37
+  - id: "https://www.tandfonline.com/toc/plcp20/current"
     term: "Language and Cognitive Processes"
-  - id: 38
+  - id: "https://www.tandfonline.com/loi/rlae20"
     term: "Language and Education"
-  - id: 66
+  - id: "https://www.tandfonline.com/loi/rmli20"
     term: "Language and Intercultural Communication"
-  - id: 39
+  - id: "https://www.journals.elsevier.com/lingua/"
     term: "Lingua"
-  - id: 40
+  - id: "https://benjamins.com/catalog/lab"
     term: "Linguistic Approaches to Bilingualism"
-  - id: 41
+  - id: "https://www.journals.elsevier.com/linguistics-and-education"
     term: "Linguistics and Education"
-  - id: 67
+  - id: "https://onlinelibrary.wiley.com/journal/17414369"
     term: "Literacy"
-  - id: 42
+  - id: "https://www.springer.com/psychology/cognitive+psychology/journal/13421"
     term: "Memory and Cognition"
-  - id: 68
+  - id: "https://www.tandfonline.com/loi/hmet20"
     term: "Metaphor and Symbol"
-  - id: 69
+  - id: "https://www.degruyter.com/view/j/mult"
     term: "Multilingua - Journal of Cross-Cultural and Interlanguage Communication"
-  - id: 70
+  - id: "http://www.ugr.es/~portalin/"
     term: "Porta Linguarum"
-  - id: 71
+  - id: "https://benjamins.com/catalog/ps"
     term: "Pragmatics and Society"
-  - id: 72
+  - id: "https://www.cambridge.org/core/journals/recall"
     term: "ReCALL"
-  - id: 73
+  - id: "https://benjamins.com/catalog/resla"
     term: "Revista Española de Lingüística Aplicada /Spanish Journal of Applied Linguistics"
-  - id: 44
+  - id: "http://journals.sagepub.com/loi/slr"
     term: "Second Language Research"
-  - id: 45
+  - id: "https://www.cambridge.org/core/journals/studies-in-second-language-acquisition"
     term: "Studies in Second Language Acquisition"
-  - id: 47
+  - id: "https://www.journals.elsevier.com/system"
     term: "System"
-  - id: 50
+  - id: "https://onlinelibrary.wiley.com/journal/15457249"
     term: "TESOL Quarterly"
-  - id: 53
+  - id: "https://onlinelibrary.wiley.com/journal/15404781"
     term: "The Modern Language Journal"
-  - id: 74
+  - id: "http://vialjournal.webs.uvigo.es"
     term: "Vial-Vigo International Journal of Applied Linguistics"
-  - id: 75
+  - id: "https://onlinelibrary.wiley.com/journal/1467971x"
     term: "World Englishes"
-  - id: 55
+  - id: "other_journal"
     term: "Other"
