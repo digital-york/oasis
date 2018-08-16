@@ -149,6 +149,7 @@ en:
         publication_title: "Title of Publication"
         publication_journal_name: "Journal of Publication"
         publication_journal_name_other: "Please specify the journal name"
+        publication_journal_name_other_url: "Please specify journal URL"
         publication_date: "Year of Publication"
         publication_volume: "Volume"
         publication_issue: "Issue"
