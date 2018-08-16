@@ -99,7 +99,12 @@ class Apa
 
   def self.get_journal_string(journal)
     if not journal.nil? and not journal[0].nil? and journal[0]!=''
-      return GenericLocalAuthorityService.id_to_label('journals',journal[0].to_i) + ', '
+      if journal[0].starts_with? 'http' or journal[0].to_i <= 0
+        return GenericLocalAuthorityService.id_to_label('journals',journal[0]) + ', '
+      else
+        return GenericLocalAuthorityService.id_to_label('journals',journal[0].to_i) + ', '
+      end
+
       #return journal[0] + '. '
     end
     ''
