@@ -30,7 +30,24 @@ class Apa
   def self.get_reference_html(authors, publication_year, title, journal, authority_value=true, volume, issue, page_from, page_to)
     j_string = html_italic(journal) + '. ';
     j_string = html_italic(get_journal_string(journal)) if authority_value==true
+    get_author_string(authors) +
+        get_publication_year_string(publication_year) +
+        get_title_string(title) +
+        j_string+
+        get_vol_issue_string(volume, issue) +
+        get_pages_string(page_from,page_to)
+  end
 
+  def self.get_other_journal_string(other_journal_name, other_journal_url)
+    if not other_journal_name.nil? and other_journal_name!=''
+      return get_html_link(other_journal_url, other_journal_name) + ', '
+    end
+    ''
+  end
+
+  def self.get_reference_with_other_journal_name_html(authors, publication_year, title, other_journal_name, other_journal_url, authority_value=true, volume, issue, page_from, page_to)
+    j_string = html_italic(other_journal_name) + '. ';
+    j_string = html_italic(get_other_journal_string(other_journal_name, other_journal_url)) if authority_value==true
     get_author_string(authors) +
         get_publication_year_string(publication_year) +
         get_title_string(title) +
@@ -97,10 +114,17 @@ class Apa
     ''
   end
 
+  def self.get_html_link(url, text, target='_blank')
+    return '<a href="'+url+'" target="' + target+ '">'+text+'</a>'
+  end
+
   def self.get_journal_string(journal)
     if not journal.nil? and not journal[0].nil? and journal[0]!=''
-      return GenericLocalAuthorityService.id_to_label('journals',journal[0].to_i) + ', '
-      #return journal[0] + '. '
+      if journal[0].starts_with? 'http' or journal[0].to_i <= 0
+        return get_html_link(journal[0], GenericLocalAuthorityService.id_to_label('journals',journal[0])) + ', '
+      else
+        return get_html_link(journal[0], GenericLocalAuthorityService.id_to_label('journals',journal[0].to_i)) + ', '
+      end
     end
     ''
   end

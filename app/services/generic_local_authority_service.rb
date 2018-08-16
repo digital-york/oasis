@@ -18,7 +18,10 @@ module GenericLocalAuthorityService
     term = ''
     begin
       term = authority.find(id).fetch('term')
-    rescue
+    rescue => error
+      puts " >>>> Something wrong"
+      puts '----------------'
+      puts error.backtrace
     end
     term
   end

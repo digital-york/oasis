@@ -154,6 +154,9 @@ module Oasis
       property :publication_journal_name_other,   predicate: ::RDF::URI.new('http://dlib.york.ac.uk/ontologies/oasis#publication_journal_name_other'), multiple: false do |index|
         index.as :stored_searchable
       end
+      property :publication_journal_name_other_url,   predicate: ::RDF::URI.new('http://dlib.york.ac.uk/ontologies/oasis#publication_journal_name_other_url'), multiple: false do |index|
+        index.as :stored_searchable
+      end
 
       property :publication_date,                  predicate: ::RDF::URI.new('http://dlib.york.ac.uk/ontologies/oasis#publication_date'), multiple: false do |index|
         index.as :stored_searchable, :sortable, :facetable

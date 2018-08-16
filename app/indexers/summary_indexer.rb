@@ -17,15 +17,21 @@ class SummaryIndexer < Hyrax::WorkIndexer
        authority_filename = OasisAuthorityMapping.authority_mapping_solr2filename[field_name]
        begin
          unless object[field_name].nil?
-           if object[field_name].is_a? String
-             solr_doc[field_name+'_label_tesim'] = GenericLocalAuthorityService.id_to_label(authority_filename, object[field_name].to_i)
+           if object[field_name].is_a? String and object[field_name]!=''
+             if object[field_name].starts_with? 'http' or object[field_name].to_i <= 0
+               solr_doc[field_name+'_label_tesim'] = GenericLocalAuthorityService.id_to_label(authority_filename, object[field_name])
+             else
+               solr_doc[field_name+'_label_tesim'] = GenericLocalAuthorityService.id_to_label(authority_filename, object[field_name].to_i)
+             end
            else
              labels = []
              object[field_name].each do |id|
-               if id.to_i >0
-                 labels << GenericLocalAuthorityService.id_to_label(authority_filename, id.to_i)
-               else
-                 labels << GenericLocalAuthorityService.id_to_label(authority_filename, id)
+               unless (id.nil? or id=='')
+                 if id.starts_with? 'http' or id.to_i <= 0
+                   labels << GenericLocalAuthorityService.id_to_label(authority_filename, id)
+                 else
+                   labels << GenericLocalAuthorityService.id_to_label(authority_filename, id.to_i)
+                 end
                end
              end
              solr_doc[field_name+'_label_tesim'] = labels
