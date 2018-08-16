@@ -30,7 +30,6 @@ class Apa
   def self.get_reference_html(authors, publication_year, title, journal, authority_value=true, volume, issue, page_from, page_to)
     j_string = html_italic(journal) + '. ';
     j_string = html_italic(get_journal_string(journal)) if authority_value==true
-
     get_author_string(authors) +
         get_publication_year_string(publication_year) +
         get_title_string(title) +
@@ -97,15 +96,17 @@ class Apa
     ''
   end
 
+  def self.get_html_link(url, text, target='_blank')
+    return '<a href="'+url+'" target="' + target+ '">'+text+'</a>'
+  end
+
   def self.get_journal_string(journal)
     if not journal.nil? and not journal[0].nil? and journal[0]!=''
       if journal[0].starts_with? 'http' or journal[0].to_i <= 0
-        return GenericLocalAuthorityService.id_to_label('journals',journal[0]) + ', '
+        return get_html_link(journal[0], GenericLocalAuthorityService.id_to_label('journals',journal[0])) + ', '
       else
-        return GenericLocalAuthorityService.id_to_label('journals',journal[0].to_i) + ', '
+        return get_html_link(journal[0], GenericLocalAuthorityService.id_to_label('journals',journal[0].to_i)) + ', '
       end
-
-      #return journal[0] + '. '
     end
     ''
   end
