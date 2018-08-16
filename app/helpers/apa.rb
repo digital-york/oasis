@@ -38,6 +38,24 @@ class Apa
         get_pages_string(page_from,page_to)
   end
 
+  def self.get_other_journal_string(other_journal_name, other_journal_url)
+    if not other_journal_name.nil? and other_journal_name!=''
+      return get_html_link(other_journal_url, other_journal_name) + ', '
+    end
+    ''
+  end
+
+  def self.get_reference_with_other_journal_name_html(authors, publication_year, title, other_journal_name, other_journal_url, authority_value=true, volume, issue, page_from, page_to)
+    j_string = html_italic(other_journal_name) + '. ';
+    j_string = html_italic(get_other_journal_string(other_journal_name, other_journal_url)) if authority_value==true
+    get_author_string(authors) +
+        get_publication_year_string(publication_year) +
+        get_title_string(title) +
+        j_string+
+        get_vol_issue_string(volume, issue) +
+        get_pages_string(page_from,page_to)
+  end
+
   def self.html_italic(s)
     if s.is_a? String
       return '<i>' + s + '</i>'
