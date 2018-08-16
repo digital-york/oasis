@@ -16,7 +16,7 @@
                                  @presenter.solr_document._source["publication_volume_tesim"],
                                  @presenter.solr_document._source["publication_issue_tesim"],
                                  @presenter.solr_document._source["publication_pages_from_tesim"][0],
-                                 @presenter.solr_document._source["publication_pages_to_tesim"][0]))%>
+                                 @presenter.solr_document._source["publication_pages_to_tesim"][0]), attributes: %w(href target))%>
         <%else%>
             <%=sanitize(Apa.get_reference_html(JSON.parse(authors[0]),
                                                @presenter.solr_document._source["publication_date_tesim"],
@@ -26,7 +26,7 @@
                                                @presenter.solr_document._source["publication_volume_tesim"],
                                                @presenter.solr_document._source["publication_issue_tesim"],
                                                @presenter.solr_document._source["publication_pages_from_tesim"][0],
-                                               @presenter.solr_document._source["publication_pages_to_tesim"][0]))%>
+                                               @presenter.solr_document._source["publication_pages_to_tesim"][0]), attributes: %w(href target))%>
         <%end%>
       </div>
 </div>
