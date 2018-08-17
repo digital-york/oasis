@@ -30,7 +30,7 @@ class Apa
   def self.get_reference_html(authors, publication_year, title, journal, authority_value=true, volume, issue, page_from, page_to)
     j_string = html_italic(journal) + '. ';
     j_string = html_italic(get_journal_string(journal)) if authority_value==true
-    get_author_string(authors) +
+    get_author_string_short(authors) +
         get_publication_year_string(publication_year) +
         get_title_string(title) +
         j_string+
@@ -48,7 +48,7 @@ class Apa
   def self.get_reference_with_other_journal_name_html(authors, publication_year, title, other_journal_name, other_journal_url, authority_value=true, volume, issue, page_from, page_to)
     j_string = html_italic(other_journal_name) + '. ';
     j_string = html_italic(get_other_journal_string(other_journal_name, other_journal_url)) if authority_value==true
-    get_author_string(authors) +
+    get_author_string_short(authors) +
         get_publication_year_string(publication_year) +
         get_title_string(title) +
         j_string+
@@ -92,7 +92,7 @@ class Apa
     elsif authors.length==2
       return authors[0].split(',')[0] + ' & ' + authors[1].split(',')[0] + ' '
     else
-      return authors[0].split(',')[0] + ', et al. '
+      return authors[0].split(',')[0] + ' et al. '
     end
   end
 
