@@ -9,14 +9,14 @@ class Apa
 
   def self.get_initial(name)
     if name.include? ','
-      return name.split(',')[1].strip[0,1].upcase
+      return name.split(',')[1].strip[0,1].upcase + '.'
     else
       return ''
     end
   end
 
   def self.format_name(name)
-    return get_surname(name) + ', ' + get_initial(name) + '.'
+    return get_surname(name) + ', ' + get_initial(name)
   end
 
   # temporary solution for https://github.com/digital-york/oasis/issues/29
