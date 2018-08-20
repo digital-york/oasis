@@ -16,7 +16,7 @@ class Apa
   end
 
   def self.format_name(name)
-    return get_surname(name) + ', ' + get_initial(name)
+    return get_surname(name) + ', ' + get_initial(name) + '.'
   end
 
   # temporary solution for https://github.com/digital-york/oasis/issues/29
