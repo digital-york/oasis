@@ -1,9 +1,22 @@
 class Apa
   def self.get_surname(name)
     if name.include? ','
-      return name.split(',')[0]
+      return name.split(',')[0].strip
+    else
+      return name.strip
     end
-    name
+  end
+
+  def self.get_initial(name)
+    if name.include? ','
+      return name.split(',')[1].strip[0,1].upcase
+    else
+      return ''
+    end
+  end
+
+  def self.format_name(name)
+    return get_surname(name) + ', ' + get_initial(name)
   end
 
   # temporary solution for https://github.com/digital-york/oasis/issues/29
@@ -30,7 +43,7 @@ class Apa
   def self.get_reference_html(authors, publication_year, title, journal, authority_value=true, volume, issue, page_from, page_to)
     j_string = html_italic(journal) + '. ';
     j_string = html_italic(get_journal_string(journal)) if authority_value==true
-    get_author_string_short(authors) +
+    get_author_string(authors) +
         get_publication_year_string(publication_year) +
         get_title_string(title) +
         j_string+
@@ -48,7 +61,7 @@ class Apa
   def self.get_reference_with_other_journal_name_html(authors, publication_year, title, other_journal_name, other_journal_url, authority_value=true, volume, issue, page_from, page_to)
     j_string = html_italic(other_journal_name) + '. ';
     j_string = html_italic(get_other_journal_string(other_journal_name, other_journal_url)) if authority_value==true
-    get_author_string_short(authors) +
+    get_author_string(authors) +
         get_publication_year_string(publication_year) +
         get_title_string(title) +
         j_string+
@@ -69,17 +82,13 @@ class Apa
     if authors.is_a? String
       return authors + ' '
     elsif authors.length==1
-      return authors[0] + ' '
+      return format_name(authors[0]) + ' '
+    elsif authors.length==2
+      return format_name(authors[0]) + ' & ' + format_name(authors[1]) + ' '
+    elsif authors.length==3
+      return format_name(authors[0]) + ', ' + format_name(authors[1]) + ' & ' + format_name(authors[2]) + ' '
     else
-      l = ''
-      authors.each_with_index do |author, index|
-        if index<authors.length-1
-          l = l + author + ', '
-        else
-          l = l + '& ' + author + ' '
-        end
-      end
-      return l
+      return format_name(authors[0]) + ' et al. '
     end
   end
 
@@ -91,6 +100,8 @@ class Apa
       return authors[0].split(',')[0] + ' '
     elsif authors.length==2
       return authors[0].split(',')[0] + ' & ' + authors[1].split(',')[0] + ' '
+    elsif authors.length==3
+      return authors[0].split(',')[0] + ', ' + authors[1].split(',')[0] + ' & ' + authors[2].split(',')[0] + ' '
     else
       return authors[0].split(',')[0] + ' et al. '
     end

@@ -1,4 +1,5 @@
 class SummaryApa < Apa
+
   def self.get_summary_reference_html(writers,
                                        summary_publication_year,
                                        title,
@@ -10,7 +11,7 @@ class SummaryApa < Apa
     j_string = html_italic(journal) + '. ';
     j_string = html_italic(get_journal_string(journal)) if authority_value==true
 
-    get_author_string_short(writers) +
+    get_author_string(writers) +
         get_summary_year_string(summary_publication_year) +
         get_title_string(title) +
         html_italic(oasis_publication_name) + ' of ' +
