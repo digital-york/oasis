@@ -55,7 +55,6 @@ module Hyrax
                   #:licence,
                   :licence_agreement,
                   :emails,
-                  :notification_of_download,
                   :summary_notes,
                   :comments
     ]
@@ -77,8 +76,7 @@ module Hyrax
                             :materials_on_iris,
                             #:licence,
                             :licence_agreement,
-                            :emails,
-                            :notification_of_download
+                            :emails
                          ]
 
     def self.build_permitted_params
