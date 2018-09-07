@@ -21,7 +21,17 @@ class Apa
 
   # temporary solution for https://github.com/digital-york/oasis/issues/29
   def self.get_apa_short_author_all_in_one(author_all, publication_year)
-    return author_all[0].strip  + ' (' + publication_year[0] + ')'
+    authors = author_all[0].strip.split('"').delete_if { |a| a=='['or a==']' or a==',' }
+    authors_s = ""
+
+    return authors[0] + ' (' + publication_year[0] + ')' if authors.length==1
+
+    authors.each_with_index do |author, index|
+      authors_s = authors_s + author + ', ' if index<authors.length-1
+      authors_s = authors_s + '& ' + author  if index==authors.length-1
+    end
+
+    return authors_s  + ' (' + publication_year[0] + ')'
   end
 
   def self.get_apa_short_html(authors, publication_year)
