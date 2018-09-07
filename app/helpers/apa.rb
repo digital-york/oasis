@@ -27,13 +27,11 @@ class Apa
     return authors[0] + ' (' + publication_year[0] + ')' if authors.length==1
 
     authors.each_with_index do |author, index|
-      puts index
       authors_s = authors_s + author + ', ' if index<authors.length-1
       authors_s = authors_s + '& ' + author  if index==authors.length-1
     end
 
     return authors_s  + ' (' + publication_year[0] + ')'
-    #return get_apa_short_html(author_all[0].strip, publication_year)
   end
 
   def self.get_apa_short_html(authors, publication_year)
