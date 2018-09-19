@@ -12,11 +12,13 @@
                   <%=GenericLocalAuthorityService.id_to_label(authority_file_name, w)%><br/>
               <% end %>
               <%if 'Other' == GenericLocalAuthorityService.id_to_label(authority_file_name, w.to_i)%>
+                <%unless @presenter.solr_document._source[field_name+"_other_tesim"].nil?%>
                   <ul>
                   <%@presenter.solr_document._source[field_name+"_other_tesim"].each do |w|%>
                       <li><%=w%></li>
                   <%end%>
                   </ul>
+                <%end%>
               <%end%>
             <%end%>
           <%end%>
