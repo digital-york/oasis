@@ -25,18 +25,21 @@
         v = ''
         ras.each { |ra| v = v + GenericLocalAuthorityService.id_to_label('research_areas',ra.to_i) + '<br/>'} unless ras.nil?
         %>
+
         <tr>
           <th><span class="attribute-label h4">Topic</span></th>
           <td>
-            <%= sanitize(v).to_s %>
-            <% if sanitize(v).include? 'Other' %>
-                <ul>
-                  <%unless doc_presenter.document._source["summary_general_research_area_other_tesim"].nil?%>
-                    <%doc_presenter.document._source["summary_general_research_area_other_tesim"].each do |w|%>
-                        <li><%=w%></li>
-                    <%end%>
-                  <%end%>
-                </ul>
+            <% ras.each do |ra| %>
+                <%= GenericLocalAuthorityService.id_to_label('research_areas',ra.to_i) %><br/>
+                <% if GenericLocalAuthorityService.id_to_label('research_areas',ra.to_i).include? 'Other' %>
+                    <ul>
+                      <%unless doc_presenter.document._source["summary_general_research_area_other_tesim"].nil?%>
+                          <%doc_presenter.document._source["summary_general_research_area_other_tesim"].each do |w|%>
+                              <li><%=w%></li>
+                          <%end%>
+                      <%end%>
+                    </ul>
+                <% end %>
             <% end %>
           </td>
         </tr>
