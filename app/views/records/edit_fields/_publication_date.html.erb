@@ -1,7 +1,7 @@
 <%
   years = {}
   years['in press'] = 'in press'
-  (1920..Date.today.year).reverse_each do |year|
+  (1920..Date.today.year+5).reverse_each do |year|
     years[year] = year
   end
 %>
