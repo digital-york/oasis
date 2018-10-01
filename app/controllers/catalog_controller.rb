@@ -57,7 +57,7 @@ class CatalogController < ApplicationController
     config.add_facet_field solr_name('participants_age', :facetable), label: "Age of learner", limit: 5
     config.add_facet_field solr_name('participants_firstlanguage', :facetable), label: "First Language of Learners", limit: 5
     config.add_facet_field solr_name('participants_proficiency', :facetable), label: "Proficiency of Learners", limit: 5
-    config.add_facet_field solr_name('summary_linguistictarget', :facetable), label: "Language feature", limit: 5
+    config.add_facet_field solr_name('summary_linguistictarget', :facetable), label: "Feature being learned", limit: 5
     config.add_facet_field solr_name('of_likely_interest_to', :facetable), label: "Of likely interest to", limit: 5
     config.add_facet_field solr_name('participants_country', :facetable), label: "Country", limit: 5
     config.add_facet_field solr_name('participants_domain_of_use', :facetable), label: "Context of Language Use", limit: 5

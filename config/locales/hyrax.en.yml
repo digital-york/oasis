@@ -101,7 +101,7 @@ en:
         title_of_summary: "Title of summary"
         summary_general_research_area: "Topic"
         summary_general_research_area_other: "new topic"
-        summary_linguistictarget: "Language feature"
+        summary_linguistictarget: "Feature being learned"
         conference_name: "Conference Name"
         materials_on_iris: "Materials on IRIS"
         of_likely_interest_to: "Of likely interest to ..."
