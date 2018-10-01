@@ -1,5 +1,5 @@
 <%= f.input :licence_agreement, as: :check_boxes,
-    collection: [[sanitize("I have read and agree to the #{link_to 'Deposit Agreement', '/agreement', target: '_blank'}"),'Yes']],
+    collection: [[sanitize("I have read and agree to the #{link_to 'deposit agreement', '/agreement', target: '_blank'}"),'Yes']],
     input_html: { style: 'checkbox inline'  }
 %>
 All OASIS summaries are licensed under a <a target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA</a> license.
