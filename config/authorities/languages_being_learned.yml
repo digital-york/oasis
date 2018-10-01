@@ -47,10 +47,10 @@ terms:
     term: "Byelorussian (Belarusian)"
   - id: 24
     term: "Cambodian"
+  - id: 146
+    term: "Cantonese"
   - id: 25
     term: "Catalan"
-  - id: 26
-    term: "Chinese"
   - id: 27
     term: "Corsican"
   - id: 28
@@ -163,6 +163,8 @@ terms:
     term: "Malayalam"
   - id: 82
     term: "Maltese"
+  - id: 26
+    term: "Mandarin"
   - id: 83
     term: "Maori"
   - id: 84
