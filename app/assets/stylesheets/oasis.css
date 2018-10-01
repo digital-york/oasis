@@ -78,3 +78,7 @@
 body .image-masthead .background-container-gradient {
     background: none;
 }
+
+div.facets h3 {
+    font-size: 1.2em;
+}
