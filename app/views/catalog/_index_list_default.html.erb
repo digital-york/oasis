@@ -105,7 +105,15 @@
         <%if v!=''%>
         <tr>
           <th><span class="attribute-label h4">Age</span></th>
-          <td><%= sanitize(v) %></td>
+          <td>
+            <% ages.each do |age| %>
+                <%= link_to  GenericLocalAuthorityService.id_to_label('age_of_learners',age.to_i),
+                           '/catalog?f[participants_age_sim][]='+age+'&locale=en&q=&search_field=all_fields',
+                           :target => "_blank"
+              %>
+               <br/>
+            <% end %>
+          </td>
         </tr>
         <%end%>
 
