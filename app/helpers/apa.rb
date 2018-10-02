@@ -50,7 +50,12 @@ class Apa
     end
   end
 
-  def self.get_reference_html(authors, publication_year, title, journal, authority_value=true, volume, issue, page_from, page_to)
+  def self.get_doi_string(doi)
+    return "" if doi.nil? or doi==''
+    return " doi: " + doi
+  end
+
+  def self.get_reference_html(authors, publication_year, title, journal, authority_value=true, volume, issue, page_from, page_to,doi)
     j_string = html_italic(journal) + '. ';
     j_string = html_italic(get_journal_string(journal)) if authority_value==true
     get_author_string(authors) +
@@ -58,7 +63,8 @@ class Apa
         get_title_string(title) +
         j_string+
         get_vol_issue_string(volume, issue) +
-        get_pages_string(page_from,page_to)
+        get_pages_string(page_from,page_to) +
+        get_doi_string(doi)
   end
 
   def self.get_other_journal_string(other_journal_name, other_journal_url)
@@ -68,7 +74,7 @@ class Apa
     ''
   end
 
-  def self.get_reference_with_other_journal_name_html(authors, publication_year, title, other_journal_name, other_journal_url, authority_value=true, volume, issue, page_from, page_to)
+  def self.get_reference_with_other_journal_name_html(authors, publication_year, title, other_journal_name, other_journal_url, authority_value=true, volume, issue, page_from, page_to,doi)
     j_string = html_italic(other_journal_name) + '. ';
     j_string = html_italic(get_other_journal_string(other_journal_name, other_journal_url)) if authority_value==true
     get_author_string(authors) +
@@ -76,7 +82,8 @@ class Apa
         get_title_string(title) +
         j_string+
         get_vol_issue_string(volume, issue) +
-        get_pages_string(page_from,page_to)
+        get_pages_string(page_from,page_to) +
+        get_doi_string(doi)
   end
 
   def self.html_italic(s)
