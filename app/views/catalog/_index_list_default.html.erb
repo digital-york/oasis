@@ -33,7 +33,7 @@
                 <% if GenericLocalAuthorityService.id_to_label('research_areas',ra.to_i).include? 'Other' %>
                     <% if GenericLocalAuthorityService.id_to_label('research_areas',ra.to_i)!='Other' %>
                         <%= link_to  GenericLocalAuthorityService.id_to_label('research_areas',ra.to_i),
-                                  '/catalog?f[research_areas_sim][]='+ra+'&locale=en&q=&search_field=all_fields',
+                                  '/catalog?f[summary_general_research_area_sim][]='+ra+'&locale=en&q=&search_field=all_fields',
                                      :target => "_blank"
                       %>
                     <% else %>
@@ -48,7 +48,7 @@
                     </ul>
                 <% else %>
                     <%= link_to  GenericLocalAuthorityService.id_to_label('research_areas',ra.to_i),
-                                  '/catalog?f[research_areas_sim][]='+ra+'&locale=en&q=&search_field=all_fields',
+                                  '/catalog?f[summary_general_research_area_sim][]='+ra+'&locale=en&q=&search_field=all_fields',
                                   :target => "_blank"
                   %>
                     <br/>
@@ -65,7 +65,35 @@
         %>
         <tr>
           <th><span class="attribute-label h4">Participant type</span></th>
-          <td><%= sanitize(v) %></td>
+          <td>
+
+            <% pts.each do |pt| %>
+                <% if GenericLocalAuthorityService.id_to_label('participant_types',pt.to_i).include? 'Other' %>
+                    <% if GenericLocalAuthorityService.id_to_label('participant_types',pt.to_i)!='Other' %>
+                        <%= link_to  GenericLocalAuthorityService.id_to_label('participant_types',pt.to_i),
+                                     '/catalog?f[participants_type_sim][]='+ra+'&locale=en&q=&search_field=all_fields',
+                                     :target => "_blank"
+                        %>
+                    <% else %>
+                        <%= GenericLocalAuthorityService.id_to_label('participant_types',pt.to_i) %><br/>
+                    <% end %>
+                    <ul>
+                      <%unless doc_presenter.document._source["participants_type_other_tesim"].nil?%>
+                          <%doc_presenter.document._source["participants_type_other_tesim"].each do |w|%>
+                              <li><%=w%></li>
+                          <%end%>
+                      <%end%>
+                    </ul>
+                <% else %>
+                    <%= link_to  GenericLocalAuthorityService.id_to_label('participant_types',pt.to_i),
+                                 '/catalog?f[participants_type_sim][]='+pt+'&locale=en&q=&search_field=all_fields',
+                                 :target => "_blank"
+                    %>
+                    <br/>
+                <% end %>
+            <% end %>
+
+          </td>
         </tr>
 
         <!-- Participant age -->
