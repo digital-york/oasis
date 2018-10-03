@@ -44,6 +44,7 @@ module Hyrax
                   :participants_domain_of_use_other,
                   :participants_year_of_teaching_experience,
                   :participants_country,
+                  :participants_country_other,
                   :participants_subnational_region,
                   :participants_educational_stage,
                   :participants_educational_stage_other,

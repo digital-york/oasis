@@ -485,4 +485,5 @@ terms:
     term: "Zambia"
   - id: ZWE
     term: "Zimbabwe"
-ERROR! duplicate detected: #<Set: {"BOL", "BRN", "CIV", "KOR", "LBY", "MMR", "RUS", "VCT", "TWN", "TTO", "VEN", "VNM"}>
+  - id: OTHER
+    term: "Other"

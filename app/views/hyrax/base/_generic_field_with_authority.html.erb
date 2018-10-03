@@ -6,18 +6,17 @@
         <div class="col-sm-9">
           <%unless @presenter.solr_document._source[field_name+"_tesim"].nil?%>
             <%@presenter.solr_document._source[field_name+"_tesim"].each do |w|%>
-              <% if w.to_i>0 %>
-                  <%= link_to  GenericLocalAuthorityService.id_to_label(authority_file_name, w.to_i),
-                             '/catalog?f['+field_name+'_sim][]='+w+'&locale=en&q=&search_field=all_fields',
-                             :target => "_blank"
-                             %><br/>
-              <% else %>
-                  <%=  link_to  GenericLocalAuthorityService.id_to_label(authority_file_name, w),
-                              '/catalog?f['+field_name+'_sim][]='+w+'&locale=en&q=&search_field=all_fields',
-                              :target => "_blank"
-                              %><br/>
-              <% end %>
-              <%if 'Other' == GenericLocalAuthorityService.id_to_label(authority_file_name, w.to_i)%>
+              <%if 'Other' != GenericLocalAuthorityService.id_to_label(authority_file_name, w.to_i>0 ? w.to_i : w)%>
+                  <%= link_to  GenericLocalAuthorityService.id_to_label(authority_file_name, w.to_i>0 ? w.to_i : w),
+                         '/catalog?f['+field_name+'_sim][]='+w+'&locale=en&q=&search_field=all_fields',
+                         :target => "_blank"
+                         %>
+              <%else%>
+                  Other
+              <%end%>
+              <br/>
+
+              <%if 'Other' == GenericLocalAuthorityService.id_to_label(authority_file_name, w.to_i>0 ? w.to_i : w)%>
                 <%unless @presenter.solr_document._source[field_name+"_other_tesim"].nil?%>
                   <ul>
                   <%@presenter.solr_document._source[field_name+"_other_tesim"].each do |w|%>

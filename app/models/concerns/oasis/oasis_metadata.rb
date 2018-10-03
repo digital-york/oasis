@@ -118,6 +118,10 @@ module Oasis
       property :participants_country,  predicate: ::RDF::URI.new('http://dlib.york.ac.uk/ontologies/oasis#participants_country'), multiple: true do |index|
         index.as :stored_searchable, :sortable, :facetable
       end
+      property :participants_country_other, predicate: ::RDF::URI.new('http://dlib.york.ac.uk/ontologies/oasis#participants_country_other'), multiple: false do |index|
+        index.as :stored_searchable
+      end
+
       property :participants_subnational_region,  predicate: ::RDF::URI.new('http://dlib.york.ac.uk/ontologies/oasis#participants_subnational_region'), multiple: false do |index|
         index.as :stored_searchable
       end
