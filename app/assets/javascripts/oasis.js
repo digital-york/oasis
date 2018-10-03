@@ -238,8 +238,6 @@ $(function() {
     <!-- check if needs to show participants_firstlanguage_other on load of the page -->
     check_summary_linguistictarget_other_fields();
 
-
-
     // ---------------------------------------------------
     // show/hide participants_country_other fields
     function check_participants_country_other_fields() {
@@ -256,9 +254,6 @@ $(function() {
     });
     <!-- check if needs to show participants_country_other on load of the page -->
     check_participants_country_other_fields();
-
-
-
 
     // ---------------------------------------------------
     <!-- applying writers' order from summary_summary_writer_all -->
