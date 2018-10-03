@@ -23,6 +23,7 @@ module Hyrax
                   :summary_general_research_area,
                   :summary_general_research_area_other,
                   :summary_linguistictarget,
+                  :summary_linguistictarget_other,
                   :participants_type,
                   :participants_type_other,
                   :participants_firstlanguage,

@@ -222,6 +222,23 @@ $(function() {
     check_participants_institutional_characteristics_other_fields();
 
     // ---------------------------------------------------
+    // show/hide summary_linguistictarget_other fields
+    function check_summary_linguistictarget_other_fields() {
+        var t = $('#summary_summary_linguistictarget option').filter(':selected').text();
+        if(t.endsWith('Other')) {
+            $("#summary_linguistictarget_other_div").css("display","block");
+        }else{
+            $("#summary_linguistictarget_other_div").css("display","none");
+        }
+    }
+    <!-- Show hiden summary_linguistictarget_other field -->
+    $("#summary_summary_linguistictarget").click(function(){
+        check_summary_linguistictarget_other_fields();
+    });
+    <!-- check if needs to show participants_firstlanguage_other on load of the page -->
+    check_summary_linguistictarget_other_fields();
+
+    // ---------------------------------------------------
     <!-- applying writers' order from summary_summary_writer_all -->
     var all_writers_text = $('#summary_summary_writer_all').val();
 
