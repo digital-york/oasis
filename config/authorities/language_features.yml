@@ -13,8 +13,6 @@ terms:
     term: "Grammar (morphosyntax)"
   - id: 7
     term: "Nonwords"
-  - id: 8
-    term: "Other"
   - id: 9
     term: "Phonetics"
   - id: 10
@@ -27,3 +25,5 @@ terms:
     term: "Semantics"
   - id: 14
     term: "Syntax"
+  - id: 8
+    term: "Other"
