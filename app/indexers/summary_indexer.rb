@@ -23,7 +23,7 @@ class SummaryIndexer < Hyrax::WorkIndexer
              else
                solr_doc[field_name+'_label_tesim'] = GenericLocalAuthorityService.id_to_label(authority_filename, object[field_name].to_i)
              end
-           else
+           elsif object[field_name].size>0
              labels = []
              object[field_name].each do |id|
                unless (id.nil? or id=='')
@@ -35,6 +35,8 @@ class SummaryIndexer < Hyrax::WorkIndexer
                end
              end
              solr_doc[field_name+'_label_tesim'] = labels
+           else
+             Rails.logger.info('ignored empty field: ' + field_name)
            end
          end
        rescue
