@@ -132,11 +132,11 @@ class Apa
   end
 
   def self.get_title_string(title)
-    if not title.nil? and not title[0].nil? and title[0]!=''
-      if title[0].end_with? '.'
-        return title[0] + ' '
+    if not title.nil?
+      if title.end_with? '.'
+        return title + ' '
       else
-        return title[0] + '. '
+        return title + '. '
       end
     end
     ''
