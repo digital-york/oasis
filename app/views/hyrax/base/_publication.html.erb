@@ -10,27 +10,27 @@
         <% if(!@presenter.solr_document._source["publication_journal_name_label_tesim"].include? 'Other') %>
             <%=sanitize(Apa.get_reference_html(JSON.parse(authors),
                                  @presenter.solr_document.publication_date,
-                                 @presenter.solr_document._source["publication_title_tesim"],
-                                 @presenter.solr_document._source["publication_journal_name_tesim"],
+                                 @presenter.solr_document.publication_title[0],
+                                 @presenter.solr_document.publication_journal_name,
                                  true,
-                                 @presenter.solr_document._source["publication_volume_tesim"],
-                                 @presenter.solr_document._source["publication_issue_tesim"],
-                                 @presenter.solr_document._source["publication_pages_from_tesim"][0],
-                                 @presenter.solr_document._source["publication_pages_to_tesim"][0],
-                                 @presenter.solr_document._source["publication_identifier_tesim"][0]
+                                 @presenter.solr_document.publication_volume,
+                                 @presenter.solr_document.publication_issue,
+                                 @presenter.solr_document.publication_pages_from,
+                                 @presenter.solr_document.publication_pages_to,
+                                 @presenter.solr_document.publication_identifier
                                  ), attributes: %w(href target))%>
         <%else%>
             <%=sanitize(Apa.get_reference_with_other_journal_name_html(JSON.parse(authors),
                                                @presenter.solr_document.publication_date,
-                                               @presenter.solr_document._source["publication_title_tesim"],
-                                               @presenter.solr_document._source["publication_journal_name_other_tesim"][0],
-                                               @presenter.solr_document._source["publication_journal_name_other_url_tesim"][0],
+                                               @presenter.solr_document.publication_title[0],
+                                               @presenter.solr_document.publication_journal_name_other,
+                                               @presenter.solr_document.publication_journal_name_other_url,
                                                true,
-                                               @presenter.solr_document._source["publication_volume_tesim"],
-                                               @presenter.solr_document._source["publication_issue_tesim"],
-                                               @presenter.solr_document._source["publication_pages_from_tesim"][0],
-                                               @presenter.solr_document._source["publication_pages_to_tesim"][0],
-                                               @presenter.solr_document._source["publication_identifier_tesim"][0]
+                                               @presenter.solr_document.publication_volume,
+                                               @presenter.solr_document.publication_issue,
+                                               @presenter.solr_document.publication_pages_from,
+                                               @presenter.solr_document.publication_pages_to,
+                                               @presenter.solr_document.publication_identifier
                                                ), attributes: %w(href target))%>
         <%end%>
       </div>

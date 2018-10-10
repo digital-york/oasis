@@ -2,33 +2,30 @@
   <div class="col-sm-12">
   <button type="button" class="btn btn-info accordian_title" data-toggle="collapse" data-target="#c_summary">How to cite this summary</button>
   <%
-    authors = @presenter.solr_document._source["publication_author_all_tesim"] unless @presenter.solr_document._source["publication_author_all_tesim"].nil?
-    authors = @presenter.solr_document._source["publication_author_tesim"] if authors.nil?
-
-    writers = @presenter.solr_document._source["summary_writer_all_tesim"] unless @presenter.solr_document._source["summary_writer_all_tesim"].nil?
-    writers = @presenter.solr_document._source["summary_writer_tesim"] if writers.nil?
+    authors = @presenter.solr_document.publication_author_all
+    writers = @presenter.solr_document.summary_writer_all
   %>
   <div id="c_summary" class="collapse">
     <br/>
     <% if(!@presenter.solr_document._source["publication_journal_name_label_tesim"].include? 'Other') %>
-        <%=sanitize(SummaryApa.get_summary_reference_html(JSON.parse(writers[0]),
+        <%=sanitize(SummaryApa.get_summary_reference_html(JSON.parse(writers),
                                        DateTime.parse(@presenter.solr_document._source["date_uploaded_dtsi"]).strftime("%Y"),
-                                       @presenter.solr_document._source["title_of_summary_tesim"],
+                                       @presenter.solr_document.title_of_summary,
                                        'OASIS Summary',
-                                       JSON.parse(authors[0]),
-                                       @presenter.solr_document._source["publication_date_tesim"],
-                                       @presenter.solr_document._source["publication_journal_name_tesim"],
+                                       JSON.parse(authors),
+                                       @presenter.solr_document.publication_date,
+                                       @presenter.solr_document.publication_journal_name,
                                        true
                                        ), attributes: %w(href target))%>
     <%else%>
-        <%=sanitize(SummaryApa.get_summary_with_other_journal_name_reference_html(JSON.parse(writers[0]),
+        <%=sanitize(SummaryApa.get_summary_with_other_journal_name_reference_html(JSON.parse(writers),
                                                           DateTime.parse(@presenter.solr_document._source["date_uploaded_dtsi"]).strftime("%Y"),
-                                                          @presenter.solr_document._source["title_of_summary_tesim"],
+                                                          @presenter.solr_document.title_of_summary,
                                                           'OASIS Summary',
-                                                          JSON.parse(authors[0]),
-                                                          @presenter.solr_document._source["publication_date_tesim"],
-                                                          @presenter.solr_document._source["publication_journal_name_other_tesim"][0],
-                                                          @presenter.solr_document._source["publication_journal_name_other_url_tesim"][0],
+                                                          JSON.parse(authors),
+                                                          @presenter.solr_document.publication_date,
+                                                          @presenter.solr_document.publication_journal_name_other,
+                                                          @presenter.solr_document.publication_journal_name_other_url,
                                                           true
         ), attributes: %w(href target))%>
     <%end%>
