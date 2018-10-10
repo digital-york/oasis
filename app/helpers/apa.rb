@@ -21,17 +21,17 @@ class Apa
 
   # temporary solution for https://github.com/digital-york/oasis/issues/29
   def self.get_apa_short_author_all_in_one(author_all, publication_year)
-    authors = author_all[0].strip.split('"').delete_if { |a| a=='['or a==']' or a==',' }
+    authors = author_all.strip.split('"').delete_if { |a| a=='['or a==']' or a==',' }
     authors_s = ""
 
-    return authors[0] + ' (' + publication_year[0] + ')' if authors.length==1
+    return authors[0] + ' (' + publication_year + ')' if authors.length==1
 
     authors.each_with_index do |author, index|
       authors_s = authors_s + author + ', ' if index<authors.length-1
       authors_s = authors_s + '& ' + author  if index==authors.length-1
     end
 
-    return authors_s  + ' (' + publication_year[0] + ')'
+    return authors_s  + ' (' + publication_year + ')'
   end
 
   def self.get_apa_short_html(authors, publication_year)
@@ -40,11 +40,11 @@ class Apa
     end
 
     if authors.length==1
-      return get_surname(authors[0]) + ' (' + publication_year[0] + ')'
+      return get_surname(authors[0]) + ' (' + publication_year + ')'
     elsif authors.length==2
-      return get_surname(authors[0]) + ' & ' + get_surname(authors[1]) + ' (' + publication_year[0] + ')'
+      return get_surname(authors[0]) + ' & ' + get_surname(authors[1]) + ' (' + publication_year + ')'
     elsif authors.length>2
-      return get_surname(authors[0]) + ' et al. (' + publication_year[0] + ')'
+      return get_surname(authors[0]) + ' et al. (' + publication_year + ')'
     else
       return ''
     end
@@ -125,8 +125,8 @@ class Apa
   end
 
   def self.get_publication_year_string(year)
-    if not year.nil? and not year[0].nil? and year[0]!=''
-      return '(' + year[0] + '). '
+    if not year.nil? and year!=''
+      return '(' + year + '). '
     end
     ''
   end
