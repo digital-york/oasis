@@ -4,12 +4,12 @@
       </div>
       <div class="col-sm-9">
         <%
-        authors = @presenter.solr_document._source["publication_author_all_tesim"] unless @presenter.solr_document._source["publication_author_all_tesim"].nil?
-        authors = @presenter.solr_document._source["publication_author_tesim"] if authors.nil?
+        authors = @presenter.solr_document.publication_author_all unless @presenter.solr_document.publication_author_all.nil?
         %>
+
         <% if(!@presenter.solr_document._source["publication_journal_name_label_tesim"].include? 'Other') %>
-            <%=sanitize(Apa.get_reference_html(JSON.parse(authors[0]),
-                                 @presenter.solr_document._source["publication_date_tesim"],
+            <%=sanitize(Apa.get_reference_html(JSON.parse(authors),
+                                 @presenter.solr_document.publication_date,
                                  @presenter.solr_document._source["publication_title_tesim"],
                                  @presenter.solr_document._source["publication_journal_name_tesim"],
                                  true,
@@ -20,8 +20,8 @@
                                  @presenter.solr_document._source["publication_identifier_tesim"][0]
                                  ), attributes: %w(href target))%>
         <%else%>
-            <%=sanitize(Apa.get_reference_with_other_journal_name_html(JSON.parse(authors[0]),
-                                               @presenter.solr_document._source["publication_date_tesim"],
+            <%=sanitize(Apa.get_reference_with_other_journal_name_html(JSON.parse(authors),
+                                               @presenter.solr_document.publication_date,
                                                @presenter.solr_document._source["publication_title_tesim"],
                                                @presenter.solr_document._source["publication_journal_name_other_tesim"][0],
                                                @presenter.solr_document._source["publication_journal_name_other_url_tesim"][0],
