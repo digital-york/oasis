@@ -30,13 +30,14 @@
                   </thead>
                   <tbody>
                     <% @status_list.each do |document| %>
-                      <% doc_presenter = show_presenter(document)%>
                       <tr>
                         <td>
-                          <%= link_to (doc_presenter.field_value 'title_of_summary_tesim'), [main_app, document], target: '_blank' %>
+                          <%= link_to document.title_of_summary, [main_app, document], target: '_blank' %>
                         </td>
                         <td>
-                          <%= doc_presenter.field_value 'summary_writer_tesim' %>
+                          <% document.summary_writer.each do |sw| %>
+                              <%= sw.to_s + ' '%>
+                          <% end %>
                         </td>
                         <td>
                           <%= document.date_modified %>
@@ -67,13 +68,14 @@
                   </thead>
                   <tbody>
                     <% @published_list.each do |document| %>
-                      <% doc_presenter = show_presenter(document)%>
                       <tr>
                         <td>
-                          <%= link_to (doc_presenter.field_value 'title_of_summary_tesim'), [main_app, document], target: '_blank' %>
+                          <%= link_to document.title_of_summary, [main_app, document], target: '_blank' %>
                         </td>
                         <td>
-                          <%= doc_presenter.field_value 'summary_writer_tesim' %>
+                          <% document.summary_writer.each do |sw| %>
+                            <%= sw.to_s + ' '%>
+                          <% end %>
                         </td>
                         <td>
                           <%= document.date_modified %>
