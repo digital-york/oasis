@@ -4,11 +4,11 @@
 
         <%
         apa_short = ''
-        pubyear = doc_presenter.document._source['publication_date_tesim']
+        pubyear = document.publication_date
         #authors = doc_presenter.document._source['publication_author_tesim']
-        authors = doc_presenter.document._source['publication_author_all_tesim'] unless doc_presenter.document._source['publication_author_all_tesim'].nil?
-        if authors.nil?
-          authors = doc_presenter.document._source['publication_author_tesim']
+        authors = document.publication_author_all unless document.publication_author_all.nil?
+        if authors.nil? or authors==''
+          authors = document.publication_author
           apa_short = Apa.get_apa_short_html(authors, pubyear)
         else
           apa_short = Apa.get_apa_short_author_all_in_one(authors, pubyear)
@@ -21,7 +21,7 @@
 
         <!-- Research Areas / Topics -->
         <%
-        ras = doc_presenter.document._source['summary_general_research_area_tesim']
+        ras = document.summary_general_research_area
         v = ''
         ras.each { |ra| v = v + GenericLocalAuthorityService.id_to_label('research_areas',ra.to_i) + '<br/>'} unless ras.nil?
         %>
@@ -40,10 +40,8 @@
                         <%= GenericLocalAuthorityService.id_to_label('research_areas',ra.to_i) %><br/>
                     <% end %>
                     <ul>
-                      <%unless doc_presenter.document._source["summary_general_research_area_other_tesim"].nil?%>
-                          <%doc_presenter.document._source["summary_general_research_area_other_tesim"].each do |w|%>
-                              <li><%=w%></li>
-                          <%end%>
+                      <%unless document.summary_general_research_area_other.nil?%>
+                          <li><%=document.summary_general_research_area_other%></li>
                       <%end%>
                     </ul>
                 <% else %>
@@ -59,7 +57,7 @@
 
         <!-- Participant types -->
         <%
-          pts = doc_presenter.document._source['participants_type_tesim']
+          pts = document.participants_type
           v = ''
           pts.each { |x| v = v + GenericLocalAuthorityService.id_to_label('participant_types',x.to_i) + '<br/>'} unless pts.nil?
         %>
@@ -78,10 +76,8 @@
                         <%= GenericLocalAuthorityService.id_to_label('participant_types',pt.to_i) %><br/>
                     <% end %>
                     <ul>
-                      <%unless doc_presenter.document._source["participants_type_other_tesim"].nil?%>
-                          <%doc_presenter.document._source["participants_type_other_tesim"].each do |w|%>
-                              <li><%=w%></li>
-                          <%end%>
+                      <%unless document.participants_type_other.nil?%>
+                          <li><%=document.participants_type_other%></li>
                       <%end%>
                     </ul>
                 <% else %>
@@ -98,7 +94,7 @@
 
         <!-- Participant age -->
         <%
-          ages = doc_presenter.document._source['participants_age_tesim']
+          ages = document.participants_age
           v = ''
           ages.each { |x| v = v + GenericLocalAuthorityService.id_to_label('age_of_learners',x.to_i) + '<br/>'} unless (ages.nil? or ages.length==0)
         %>
@@ -118,8 +114,8 @@
         <%end%>
 
         <%
-          materials_on_iris = doc_presenter.field_value 'materials_on_iris_tesim'
-          iris_url        = doc_presenter.field_value 'iris_url_tesim'
+          materials_on_iris = document.materials_on_iris
+          iris_url         = document.iris_url
         %>
         <%if materials_on_iris=='Yes' and (not iris_url.nil?) and iris_url!='' %>
             <tr>
