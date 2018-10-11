@@ -1,7 +1,7 @@
-<%unless @presenter.solr_document._source["title_of_summary_tesim"].nil? %>
+<%unless @presenter.solr_document.title_of_summary.nil? %>
     <div class="row">
       <div class="col-sm-8">
-            <h2><%= @presenter.solr_document._source["title_of_summary_tesim"][0] %>
+            <h2><%= @presenter.solr_document.title_of_summary %>
               <%= image_tag("openaccess.png", :alt => "Open Access", class: "openaccess_logo") %>
               <small class="text-muted"><%= presenter.permission_badge %> <%= presenter.workflow.badge %></small>
             </h2>
