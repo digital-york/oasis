@@ -19,9 +19,12 @@ class Apa
     return get_surname(name) + ', ' + get_initial(name)
   end
 
-  # temporary solution for https://github.com/digital-york/oasis/issues/29
+  # author_all can be passed as an Array, or a string containing all authors, e.g. ["Author1","Author2","Author3",]
   def self.get_apa_short_author_all_in_one(author_all, publication_year)
-    authors = author_all.strip.split('"').delete_if { |a| a=='['or a==']' or a==',' }
+    authors = author_all
+    if authors.is_a? String
+      authors = author_all.strip.split('"').delete_if { |a| a=='['or a==']' or a==',' }
+    end
     authors_s = ""
 
     return authors[0] + ' (' + publication_year + ')' if authors.length==1
