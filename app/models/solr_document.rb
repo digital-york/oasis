@@ -5,7 +5,7 @@ class SolrDocument
 
   # Adds Hyrax behaviors to the SolrDocument.
   include Hyrax::SolrDocumentBehavior
-
+  include Oasis::SolrDocument
 
   # self.unique_key = 'id'
 

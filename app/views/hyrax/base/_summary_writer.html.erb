@@ -3,9 +3,6 @@
         <b>Writer of summary</b>
       </div>
       <div class="col-sm-9">
-        <%
-        writers = @presenter.solr_document._source["summary_writer_all_tesim"] unless @presenter.solr_document._source["summary_writer_all_tesim"].nil?
-        %>
-        <%=JSON.parse(writers[0]).map {|w| w.to_s}.join(", ")%>
+        <%=JSON.parse(@presenter.solr_document.summary_writer_all).map {|w| w.to_s}.join(", ")%>
       </div>
 </div>

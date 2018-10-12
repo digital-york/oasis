@@ -7,7 +7,7 @@ module Oasis
         index.as :stored_searchable, :sortable, :facetable
       end
 
-      # (tempoary) quick and dirty solution to fix the order of author problem: https://github.com/digital-york/oasis/issues/29
+      # store all writer info, including order
       property :summary_writer_all,                  predicate: ::RDF::URI.new('http://dlib.york.ac.uk/ontologies/oasis#writer_all'), multiple: false do |index|
         index.as :stored_searchable
       end
@@ -22,7 +22,7 @@ module Oasis
 
       # Add other field for RA
       # all 'other' fields MUST follow convention, e.g. use '_other' after the related field
-      property :summary_general_research_area_other,   predicate: ::RDF::URI.new('http://dlib.york.ac.uk/ontologies/oasis#general_research_area_other'), multiple: true do |index|
+      property :summary_general_research_area_other,   predicate: ::RDF::URI.new('http://dlib.york.ac.uk/ontologies/oasis#general_research_area_other'), multiple: false do |index|
         index.as :stored_searchable
       end
 
@@ -77,10 +77,11 @@ module Oasis
       property :participants_gender,                         predicate: ::RDF::URI.new('http://dlib.york.ac.uk/ontologies/oasis#participants_gender'), multiple: false do |index|
         index.as :stored_searchable, :sortable, :facetable
       end
+
       property :participants_proficiency,                    predicate: ::RDF::URI.new('http://dlib.york.ac.uk/ontologies/oasis#participants_proficiency'), multiple: true do |index|
         index.as :stored_searchable, :sortable, :facetable
       end
-      property :participants_proficiency_other,              predicate: ::RDF::URI.new('http://dlib.york.ac.uk/ontologies/oasis#participants_proficiency_other'), multiple: true do |index|
+      property :participants_proficiency_other,              predicate: ::RDF::URI.new('http://dlib.york.ac.uk/ontologies/oasis#participants_proficiency_other'), multiple: false do |index|
         index.as :stored_searchable
       end
 

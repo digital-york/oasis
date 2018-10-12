@@ -44,10 +44,8 @@ class SummaryApa < Apa
   end
 
   def self.get_publication_year_string(year)
-    if not year.nil? and not year[0].nil? and year[0]!=''
-      return '(' + year[0] + ') '
-    end
-    ''
+    return '' if year.nil?
+    '(' + year + ') '
   end
 
   def self.get_summary_year_string(year)
