@@ -34,7 +34,8 @@ module Hyrax
                                               :agreement,
                                               :help,
                                               :terms,
-                                              :activities)
+                                              :activities,
+                                              :people_saying)
       end
 
       # When a request comes to the controller, it will be for one and
