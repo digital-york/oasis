@@ -15,6 +15,9 @@
     <li>
       <a href="#activities" role="tab" data-toggle="tab"><%= t(:'hyrax.pages.tabs.activities_page') %></a>
     </li>
+    <li>
+      <a href="#people_saying" role="tab" data-toggle="tab"><%= t(:'hyrax.pages.tabs.people_saying_page') %></a>
+    </li>
   </ul>
   <div class="tab-content">
     <div id="about" class="tab-pane active">
@@ -89,6 +92,23 @@
               <div class="field form-group">
                 <%= f.label :activities %><br>
                 <%= f.text_area :activities, value: f.object.value, class: 'form-control tinymce', rows: 20, cols: 120 %>
+              </div>
+            </div>
+            <div class="panel-footer">
+              <%= link_to t(:'hyrax.pages.cancel'), hyrax.admin_admin_sets_path, class: 'btn btn-default pull-right'%>
+              <%= f.button :submit, class: 'btn btn-primary pull-right'%>
+            </div>
+        <% end %>
+      </div>
+    </div>
+
+    <div id="people_saying" class="tab-pane">
+      <div class="panel panel-default labels">
+        <%= simple_form_for ContentBlock.for(:people_saying), url: hyrax.page_path(ContentBlock.for(:people_saying)) do |f| %>
+            <div class="panel-body">
+              <div class="field form-group">
+                <%= f.label :people_saying %><br>
+                <%= f.text_area :people_saying, value: f.object.value, class: 'form-control tinymce', rows: 20, cols: 120 %>
               </div>
             </div>
             <div class="panel-footer">
