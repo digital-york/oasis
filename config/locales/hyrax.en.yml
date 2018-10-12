@@ -68,6 +68,10 @@ en:
       items:
         header: Files
         title: File name
+    pages:
+      tabs:
+        activities_page: "Activities"
+        people_saying_page: "Feedback"
     visibility:
       open:
         note_html: ""

@@ -32,6 +32,9 @@ Rails.application.routes.draw do
     end
   end
 
+  get '/activities' => 'hyrax/pages#show', key: 'activities'
+  get '/people_saying' => 'hyrax/pages#show', key: 'people_saying'
+
   #mount Resque::Server, :at => "/resque"
   #
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
