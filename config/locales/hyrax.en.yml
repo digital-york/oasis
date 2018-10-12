@@ -68,6 +68,10 @@ en:
       items:
         header: Files
         title: File name
+    pages:
+      tabs:
+        activities_page: "OASIS activities and presentations"
+        people_saying_page: "What people say about OASIS"
     visibility:
       open:
         note_html: ""
