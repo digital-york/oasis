@@ -70,8 +70,8 @@ en:
         title: File name
     pages:
       tabs:
-        activities_page: "OASIS activities and presentations"
-        people_saying_page: "What people say about OASIS"
+        activities_page: "Activities"
+        people_saying_page: "Feedback"
     visibility:
       open:
         note_html: ""
