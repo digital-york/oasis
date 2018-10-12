@@ -11,7 +11,8 @@ class ContentBlock < ActiveRecord::Base
     about: :about_page,
     help: :help_page,
     terms: :terms_page,
-    agreement: :agreement_page
+    agreement: :agreement_page,
+    activities: :activities_page
   }.freeze
 
   # NOTE: method defined outside the metaclass wrapper below because
@@ -86,6 +87,16 @@ class ContentBlock < ActiveRecord::Base
       terms_page.update(value: value)
     end
 
+    def activities_page
+      find_by(name: 'activities_page') ||
+          create(name: 'activities_page', value: default_activities_text)
+    end
+
+    def activities_page=(value)
+      activities_page.update(value: value)
+    end
+
+
     def default_agreement_text
       ERB.new(
         IO.read(
@@ -99,6 +110,14 @@ class ContentBlock < ActiveRecord::Base
         IO.read(
           Hyrax::Engine.root.join('app', 'views', 'hyrax', 'content_blocks', 'templates', 'terms.html.erb')
         )
+      ).result
+    end
+
+    def default_activities_text
+      ERB.new(
+          IO.read(
+              Rails.root.join('app', 'views', 'hyrax', 'content_blocks', 'templates', 'activities.html.erb')
+          )
       ).result
     end
 
