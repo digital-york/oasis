@@ -14,6 +14,10 @@
           <%= link_to 'Help', '/help' %></li>
         <li <%= 'class=active' if current_page?('/contact') %>>
           <%= link_to 'Contact', '/contact' %></li>
+        <li <%= 'class=active' if current_page?('/activities') %>>
+          <%= link_to t(:'hyrax.pages.tabs.activities_page'), '/activities' %></li>
+        <li <%= 'class=active' if current_page?('/people_saying') %>>
+          <%= link_to t(:'hyrax.pages.tabs.people_saying_page'), '/people_saying' %></li>
       </ul><!-- /.nav -->
       <!--
       <div class="searchbar-right navbar-right col-sm-7 col-md-6">
