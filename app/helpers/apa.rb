@@ -161,8 +161,8 @@ class Apa
   end
 
   def self.get_vol_issue_string(vol,issue)
-    if not vol.nil? and not vol[0].nil? and vol[0]!='' and not issue.nil? and not issue[0].nil? and issue[0]!=''
-      return html_italic(vol[0]) + '('+issue[0]+')'+', '
+    unless vol.nil? or issue.nil?
+      return html_italic(vol) + '('+issue+')'+', '
     end
     ''
   end
