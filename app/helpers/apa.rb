@@ -150,11 +150,11 @@ class Apa
   end
 
   def self.get_journal_string(journal)
-    if not journal.nil? and not journal[0].nil? and journal[0]!=''
-      if journal[0].starts_with? 'http' or journal[0].to_i <= 0
-        return get_html_link(journal[0], GenericLocalAuthorityService.id_to_label('journals',journal[0])) + ', '
+    unless journal.nil?
+      if journal.starts_with? 'http' or journal.to_i <= 0
+        return get_html_link(journal, GenericLocalAuthorityService.id_to_label('journals',journal)) + ', '
       else
-        return get_html_link(journal[0], GenericLocalAuthorityService.id_to_label('journals',journal[0].to_i)) + ', '
+        return get_html_link(journal, GenericLocalAuthorityService.id_to_label('journals',journal.to_i)) + ', '
       end
     end
     ''
