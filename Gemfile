@@ -72,6 +72,7 @@ gem 'rubyzip', '~> 1.2.2'
 gem 'sprockets', '~> 3.7.2'
 
 gem 'hydra-role-management'
+gem 'blacklight-access_controls', '0.6.2'
 
 group :development, :test do
   gem 'solr_wrapper', '>= 0.3'
