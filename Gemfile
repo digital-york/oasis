@@ -32,7 +32,7 @@ gem 'redis', '~> 4.0'
 # Add clamav for virus checking
 gem 'clamav'
 
-gem 'loofah', '~> 2.2.1'
+gem 'loofah', '~> 2.2.3'
 gem 'rails-html-sanitizer', '~> 1.0.4'
 
 # Use Capistrano for deployment
@@ -65,7 +65,7 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
-gem 'hyrax', '2.0.1'
+gem 'hyrax', '2.0.3'
 gem 'sinatra', '~> 2.0.2'
 gem 'ffi', '~> 1.9.24'
 gem 'rubyzip', '~> 1.2.2'
