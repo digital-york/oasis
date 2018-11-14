@@ -6,9 +6,6 @@ class Downloader < ActiveFedora::Base
   belongs_to :summary, predicate: ::RDF::URI.new('https://oasis-database.org/ontologies/oasis#downloader')
 
   self.indexer = DownloaderIndexer
-  # Change this to restrict which works can be added as a child.
-  # self.valid_child_concerns = []
-  validates :title, presence: { message: 'Your work must have a title.' }
 
   self.human_readable_type = 'Downloader'
 
