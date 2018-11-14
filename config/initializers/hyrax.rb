@@ -1,6 +1,8 @@
 Hyrax.config do |config|
   # Injected via `rails g hyrax:work Summary`
   config.register_curation_concern :summary
+  # Injected via `rails g hyrax:work Downloader`
+  config.register_curation_concern :downloader
   # Register roles that are expected by your implementation.
   # @see Hyrax::RoleRegistry for additional details.
   # @note there are magical roles as defined in Hyrax::RoleRegistry::MAGIC_ROLES

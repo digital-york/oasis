@@ -1,0 +1,8 @@
+en:
+  hyrax:
+    icons:
+      downloader:     'fa fa-file-text-o'
+    select_type:
+      downloader:
+        name:               "Downloader"
+        description:        "Downloader survey"
