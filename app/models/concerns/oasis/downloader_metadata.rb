@@ -21,7 +21,8 @@ module Oasis
         index.as :stored_searchable
       end
 
-      property :downloader_country, predicate: ::RDF::URI.new('http://dlib.york.ac.uk/ontologies/oasis#downloader_country'), multiple: false do |index|
+      # downloader's country
+      property :downloader_cty, predicate: ::RDF::URI.new('http://dlib.york.ac.uk/ontologies/oasis#downloader_cty'), multiple: false do |index|
         index.as :stored_searchable
       end
     end
