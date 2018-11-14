@@ -13,5 +13,15 @@ module Hyrax
     self.required_fields = [
         :downloader_status
     ]
+
+    def self.build_permitted_params
+      super + [
+          :downloader_email,
+          :downloader_status,
+          :downloader_affiliation,
+          :downloader_contable,
+          :downloader_cty
+      ]
+    end
   end
 end
