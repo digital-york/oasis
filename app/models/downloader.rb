@@ -3,6 +3,8 @@
 class Downloader < ActiveFedora::Base
   include ::Hyrax::WorkBehavior
 
+  belongs_to :summary, predicate: ::RDF::URI.new('https://oasis-database.org/ontologies/oasis#downloader')
+
   self.indexer = DownloaderIndexer
   # Change this to restrict which works can be added as a child.
   # self.valid_child_concerns = []
