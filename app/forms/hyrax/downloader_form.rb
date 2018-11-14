@@ -3,6 +3,15 @@
 module Hyrax
   class DownloaderForm < Hyrax::Forms::WorkForm
     self.model_class = ::Downloader
-    self.terms += [:resource_type]
+
+    self.terms = [:downloader_email,
+                  :downloader_status,
+                  :downloader_affiliation,
+                  :downloader_contable,
+                  :downloader_cty
+    ]
+    self.required_fields = [
+        :downloader_status
+    ]
   end
 end
