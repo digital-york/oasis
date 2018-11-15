@@ -161,6 +161,12 @@ en:
         publication_issue: "Issue"
         publication_pages_from: "Pages:from"
         publication_pages_to: "Pages:to"
+      downloader:
+        downloader_status: "About you - (please tick all that apply)"
+        downloader_email: "Email"
+        downloader_affiliation: "Institution"
+        downloader_cty: "Country"
+        downloader_contable: "I do not wish to be contacted"
     hints:
       summary:
         summary_writer: "Surname, initial. (e.g. Marsden, E.)"
