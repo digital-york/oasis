@@ -6,6 +6,7 @@
 </head>
 
 <body>
+
 <a href="#skip_to_content" class="sr-only">Skip to Content</a>
 
 <%= content_for(:precontainer_content) %>
@@ -15,11 +16,10 @@
     <% if content_for?(:page_header) %>
       <div class="row">
         <div class="col-xs-12 main-header">
-          <%= yield(:page_header) %>
+          <%#= yield(:page_header) %>
         </div>
       </div>
     <% end %>
-
     <%= content_for?(:content) ? yield(:content) : yield %>
   </div>
 </div><!-- /#content-wrapper -->
