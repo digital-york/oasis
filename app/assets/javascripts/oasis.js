@@ -305,4 +305,21 @@ $(function() {
 
     // add target="_blank" to deposit agreement link
     $('a[href="/agreement"]').attr('target','_blank');
+
+    // Apply indentation to downloader status checkboxes in downloader survey form
+    var downloader_status_identation_list = ['undergraduate',
+                                             'masters',
+                                             'phd',
+                                             'other',
+                                             'earlycareer',
+                                             'midcareer',
+                                             'establishedscholar'];
+    $('.downloader_downloader_status').children('span').each(function () {
+        var checkbox_id = $(this).find('label').attr('for').split(/[_]+/).pop();
+
+        if(downloader_status_identation_list.indexOf(checkbox_id) > -1) {
+            $(this).attr("style", "padding-left:20px;");
+        }
+    });
+
 });
