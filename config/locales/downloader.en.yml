@@ -6,3 +6,12 @@ en:
       downloader:
         name:               "Downloader"
         description:        "Downloader survey"
+
+  simple_form:
+    labels:
+      downloader:
+        downloader_status: "About you - (please tick all that apply)"
+        downloader_email: "Email"
+        downloader_affiliation: "Institution"
+        downloader_cty: "Country"
+        downloader_contable: "Tick the checkbox below if you donot want to be contacted"
