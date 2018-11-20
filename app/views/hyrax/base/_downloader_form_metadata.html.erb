@@ -1,0 +1,12 @@
+        <div class="form-instructions">
+          <p></p>
+        </div>
+        <div class="base-terms">
+          <% f.object.primary_terms.each do |term| %>
+            <%= render_edit_field_partial(term, f: f) %>
+          <% end %>
+
+          <% f.object.secondary_terms.each do |term| %>
+            <%= render_edit_field_partial(term, f: f) %>
+          <% end %>
+        </div>
