@@ -1,23 +1,13 @@
 <% # we will yield to content_for for each tab, e.g. :files_tab %>
 <% tabs ||= %w[metadata] # default tab order %>
+
+<h3>Download Survey</h3>
+
 <div class="row">
   <div class="col-xs-12 col-sm-12">
     <div class="panel panel-default tabs" role="main">
       <!-- Nav tabs -->
       <ul class="nav nav-tabs" role="tablist">
-        <% tabs.each_with_index do | tab, i | %>
-          <% if tab != 'relationships' %>
-            <% if i == 0 %>
-              <li role="presentation" class="active">
-            <% else %>
-              <li role="presentation">
-            <% end %>
-            <a href="#<%= tab %>" aria-controls="<%= tab %>" role="tab" data-toggle="tab">
-              <%= t("hyrax.works.form.tab.#{tab}") %>
-            </a>
-            </li>
-          <% end %>
-        <% end %>
 
         <li role="presentation" id="tab-share" class="hidden">
           <a href="#share" aria-controls="share" role="tab" data-toggle="tab">
@@ -42,11 +32,6 @@
           </div>
         <% end %>
 
-        <div role="tabpanel" class="tab-pane" id="share" data-param-key="<%= f.object.model_name.param_key %>">
-          <div class="form-tab-content">
-            <%= render "form_share", f: f %>
-          </div>
-        </div>
         </div>
       </div>
     </div>
