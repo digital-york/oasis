@@ -3,26 +3,27 @@
 <head>
   <%= render partial: 'layouts/head_tag_content' %>
   <%= content_for(:head) %>
+
+  <style>
+    .container {
+      width: 100%;
+    }
+    body {
+      margin-bottom: 30px;
+    }
+  </style>
 </head>
 
-<body style="width: 60%; height: 100%;">
+<body>
 
 <a href="#skip_to_content" class="sr-only">Skip to Content</a>
 
 <%= content_for(:precontainer_content) %>
 <div id="content-wrapper" class="container" role="main">
   <a name="skip_to_content"></a>
-  <div class="col-xs-12">
-    <% if content_for?(:page_header) %>
-      <div class="row">
-        <div class="col-xs-12 main-header">
-          <%#= yield(:page_header) %>
-        </div>
-      </div>
-    <% end %>
+  <div>
     <%= content_for?(:content) ? yield(:content) : yield %>
   </div>
-</div><!-- /#content-wrapper -->
-<%= render 'shared/ajax_modal' %>
+</div>
 </body>
 </html>
