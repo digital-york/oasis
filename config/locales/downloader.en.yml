@@ -13,5 +13,5 @@ en:
         downloader_status: "About you - (please tick all that apply)"
         downloader_email: "Email"
         downloader_affiliation: "Institution"
-        downloader_cty: "Country"
+        downloader_cty: "Country / region"
         downloader_contable: "Tick the checkbox below if you donot want to be contacted"
