@@ -15,10 +15,9 @@
 
 <% if Hyrax.config.display_media_download_link? %>
     <div>
-
       <a data-fancybox data-type="iframe"
                        data-captain="Downloader Survey"
-                       data-src="/concern/downloaders/new"
+                       data-src="/concern/parent/<%= @presenter.solr_document.id %>/downloaders/new"
                        data-options='{
                                       "buttons" : ["close"],
                                       "animationEffect": "fade",
