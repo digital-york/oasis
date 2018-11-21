@@ -322,4 +322,16 @@ $(function() {
         }
     });
 
+    // By default, disable submit button
+    $('#downloader_survey_submit').attr('disabled','true');
+
+    // Toggle submit button, depending on if the checkboxes are ticked
+    $("[name='downloader[downloader_status][]']").on("click", function() {
+        if( $("input[name='downloader[downloader_status][]']:checked").length > 0 ) {
+            $('#downloader_survey_submit').removeAttr('disabled');
+        }else{
+            $('#downloader_survey_submit').attr('disabled','true');
+        }
+    });
+
 });
