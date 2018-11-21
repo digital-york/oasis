@@ -1,5 +1,6 @@
 <%= f.input :downloader_cty, as: :select,
             collection: GenericLocalAuthorityService.select_all_options('country_code'),
             value_method: lambda {|v| v.last.to_s },
-            input_html: { multiple: true  }
+            include_blank: true,
+            input_html: { class: 'form-control' }
 %>
