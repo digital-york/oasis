@@ -15,33 +15,26 @@
 
 <% if Hyrax.config.display_media_download_link? %>
     <div>
-      <a data-fancybox data-type="iframe"
-                       data-captain="Downloader Survey"
-                       data-src="/concern/parent/<%= @presenter.solr_document.id %>/downloaders/new"
-                       data-options='{
-                                      "buttons" : ["close"],
-                                      "animationEffect": "fade",
-                                      "animationDuration": "500",
-                                      "autoFocus": "true"
-
-
-                                      }'
-                       href="javascript:;" >FancyBox</a>
-
-<!--      data-options='{"modal":"true"}'-->
-
       <h2 class="sr-only"><%= t('hyrax.file_set.show.downloadable_content.heading') %></h2>
       <%= image_tag thumbnail_url(file_set),
                     class: "representative-media",
                     alt: "",
                     role: "presentation" %>
-      <%= link_to '#',
-                  'data-popup' => true,
-                  id: "detail_page_file_download",
-                  data: { label: file_set.id },
-                  class: "btn btn-default" do %>
-          <%= t('hyrax.file_set.show.downloadable_content.pdf_link') %>
-      <% end %>
+      <a data-fancybox
+         data-type="iframe"
+         data-captain="Downloader Survey"
+         data-src="/concern/parent/<%= @presenter.solr_document.id %>/downloaders/new"
+         data-options='{
+             "buttons" : ["close"],
+             "animationEffect": "fade",
+             "animationDuration": "500",
+             "autoFocus": "true",
+             "modal": "true"
+         }'
+         class="btn btn-default"
+         href="javascript:;" >
+        <%= t('hyrax.file_set.show.downloadable_content.pdf_link') %>
+      </a>
     </div>
 <% else %>
     <div>
