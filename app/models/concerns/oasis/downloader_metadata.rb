@@ -25,6 +25,10 @@ module Oasis
       property :downloader_cty, predicate: ::RDF::URI.new('http://dlib.york.ac.uk/ontologies/oasis#downloader_cty'), multiple: false do |index|
         index.as :stored_searchable
       end
+
+      property :parent_summary_id, predicate: ::RDF::URI.new('http://dlib.york.ac.uk/ontologies/oasis#parent_summary_id'), multiple: false do |index|
+        index.as :stored_searchable
+      end
     end
   end
 end

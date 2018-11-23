@@ -3,7 +3,8 @@
 class Downloader < ActiveFedora::Base
   include ::Hyrax::WorkBehavior
 
-  belongs_to :summary, predicate: ::RDF::URI.new('https://oasis-database.org/ontologies/oasis#downloader')
+  #belongs_to :summary, predicate: ::RDF::URI.new('https://oasis-database.org/ontologies/oasis#downloader')
+  belongs_to :summary, predicate: ActiveFedora::RDF::Fcrepo::RelsExt.isPartOf
 
   self.indexer = DownloaderIndexer
 

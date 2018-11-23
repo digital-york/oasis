@@ -8,7 +8,8 @@ module Hyrax
                   :downloader_status,
                   :downloader_affiliation,
                   :downloader_contable,
-                  :downloader_cty
+                  :downloader_cty,
+                  :parent_summary_id
     ]
     self.required_fields = [
         :downloader_status
@@ -20,7 +21,8 @@ module Hyrax
           :downloader_status,
           :downloader_affiliation,
           :downloader_contable,
-          :downloader_cty
+          :downloader_cty,
+          :parent_summary_id
       ]
     end
   end

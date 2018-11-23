@@ -23,7 +23,7 @@
       <a data-fancybox
          data-type="iframe"
          data-captain="Downloader Survey"
-         data-src="/concern/parent/<%= @presenter.solr_document.id %>/downloaders/new"
+         data-src="/concern/parent/<%= @presenter.solr_document.id %>/downloaders/new?summary_id=<%= @presenter.solr_document.id %>"
          data-options='{
              "buttons" : ["close"],
              "animationEffect": "fade",
