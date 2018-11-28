@@ -29,6 +29,10 @@ module Oasis
       property :parent_summary_id, predicate: ::RDF::URI.new('http://dlib.york.ac.uk/ontologies/oasis#parent_summary_id'), multiple: false do |index|
         index.as :stored_searchable
       end
+
+      property :parent_fileset_id, predicate: ::RDF::URI.new('http://dlib.york.ac.uk/ontologies/oasis#parent_fileset_id'), multiple: false do |index|
+        index.as :stored_searchable
+      end
     end
   end
 end
