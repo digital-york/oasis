@@ -4,5 +4,5 @@
             onclick: "parent.$.fancybox.close();",
             class: 'btn btn-default' %>
 <%= f.input Hyrax::Actors::OptimisticLockValidator.version_field, as: :hidden if f.object.persisted? %>
-<%= f.submit 'Download', class: 'btn btn-primary', onclick: "confirmation_needed = false;", id: "downloader_survey_submit", name: "save_with_files" %>
+<%= f.submit 'Save & Download', class: 'btn btn-primary', onclick: "confirmation_needed = false;", id: "downloader_survey_submit", name: "save_with_files" %>
 
