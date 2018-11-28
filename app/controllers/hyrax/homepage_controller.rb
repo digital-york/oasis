@@ -38,7 +38,7 @@ class Hyrax::HomepageController < ApplicationController
 
     def recent
       # grab any recent documents
-      (_, @recent_documents) = search_results(q: '', sort: sort_field, rows: 4)
+      (_, @recent_documents) = search_results(q: 'has_model_ssim:Summary', sort: sort_field, rows: 4)
     rescue Blacklight::Exceptions::ECONNREFUSED, Blacklight::Exceptions::InvalidRequest
       @recent_documents = []
     end
