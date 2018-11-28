@@ -9,7 +9,7 @@
         <div class="row">
           <div class="col-sm-12">
 
-            <button type="button" class="btn btn-info">Download summary</button>
+            <button type="button" class="btn btn-info" onclick="window.open('/downloads/<%= @presenter.solr_document._source["parent_fileset_id_tesim"][0]%>','_blank');parent.$.fancybox.close();">Download summary</button>
 
             <button type="button" class="btn btn-info" onclick="parent.$.fancybox.close();">Close</button>
 
