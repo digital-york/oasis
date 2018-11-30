@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
   get 'survey/new'
+  get 'survey/saved'
   post 'survey/submit'
 
   mount Blacklight::Engine => '/'
