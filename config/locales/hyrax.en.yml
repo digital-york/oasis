@@ -68,6 +68,26 @@ en:
       items:
         header: Files
         title: File name
+    notifications:
+      workflow:
+        changes_required:
+          message: |-
+            <em>%{title} (%{link})</em> requires additional changes before approval.
+
+            <br><br> %{comment}
+          subject: Your summary deposit requires changes
+        deposited:
+          message: |-
+            <em>%{title} (%{link})</em> was approved by <em>%{user}</em>.
+
+            <br><br>%{comment}
+          subject: Summary deposit has been approved
+        pending_review:
+          message: |-
+            <em>%{title} (%{link})</em> was deposited by <em>%{user}</em> and is awaiting approval.
+
+            <br><br>%{comment}
+          subject: Summary deposit needs review
     pages:
       tabs:
         activities_page: "Activities"
@@ -130,7 +150,7 @@ en:
         participants_gender: "Gender of learners"
         participants_proficiency: "Proficiency of learners"
         participants_proficiency_other: "Proficiency of learners"
-        
+
         participants_domain_of_use: "Context of language use"
         participants_domain_of_use_other: "Context of language use"
         participants_age: "Age of learners"
