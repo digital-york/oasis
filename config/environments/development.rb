@@ -34,7 +34,7 @@ Rails.application.configure do
   # York SMTP server
   config.action_mailer.perform_deliveries = true
   config.action_mailer.delivery_method = :smtp
-  config.action_mailer.default_url_options = { host: "oasis-database.org" }
+  config.action_mailer.default_url_options = { host: Figaro.env.oasis_host }
   config.action_mailer.smtp_settings = {
       address:              'smtp.york.ac.uk',
       port:                 25,

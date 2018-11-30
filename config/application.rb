@@ -16,3 +16,6 @@ module Oasis
     # -- all .rb files in that directory are automatically loaded.
   end
 end
+
+# Used by mail notifications
+Rails.application.routes.default_url_options[:host] = Figaro.env.oasis_host
