@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'survey/new'
+
   mount Blacklight::Engine => '/'
 
     concern :searchable, Blacklight::Routes::Searchable.new
