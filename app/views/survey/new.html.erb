@@ -1,59 +1,119 @@
 <div class="container">
-
   <h2>Downloader Survey</h2>
 
-<form action="/survey/submit" method="post">
+  <form action="/survey/submit" method="post">
 
-  <div class="form-group row">
-    <label for="status" class="col-sm-2 col-form-label">About you</label>
-    <div class="col-sm-10">
-      <div class="form-check">
-        <label class="form-check-label">
-          <input class="form-check-input" type="checkbox" name="status"> Student
-        </label>
+    <div class="form-group row">
+      <label for="status" class="col-sm-3 col-form-label">About you (required)</label>
+      <div class="col-sm-9">
+        <div class="form-check">
+          <label class="form-check-label">
+            <input class="form-check-input" type="checkbox" name="status" value="student"> Student
+          </label>
+        </div>
+        
+        <div style="padding-left: 20px;">
+          <div class="form-check">
+            <label class="form-check-label">
+              <input class="form-check-input" type="checkbox" name="status" value="undergraduate"> Undergraduate
+            </label>
+          </div>
+          <div class="form-check">
+            <label class="form-check-label">
+              <input class="form-check-input" type="checkbox" name="status" value="masters"> Masters
+            </label>
+          </div>
+          <div class="form-check">
+            <label class="form-check-label">
+              <input class="form-check-input" type="checkbox" name="status" value="phd"> PhD
+            </label>
+          </div>
+          <div class="form-check">
+            <label class="form-check-label">
+              <input class="form-check-input" type="checkbox" name="status" value="other"> Other
+            </label>
+          </div>
+        </div>
+        <div class="form-check">
+          <label class="form-check-label">
+            <input class="form-check-input" type="checkbox" name="status" value="language_teacher"> Language teacher/instructor (any level)
+          </label>
+        </div>
+        <div class="form-check">
+          <label class="form-check-label">
+            <input class="form-check-input" type="checkbox" name="status" value="teacher_educator"> Teacher educator
+          </label>
+        </div>
+        <div class="form-check">
+          <label class="form-check-label">
+            <input class="form-check-input" type="checkbox" name="status" value="university_academic"> University academic
+          </label>
+        </div>
+        <div style="padding-left: 20px;">
+          <div class="form-check">
+            <label class="form-check-label">
+              <input class="form-check-input" type="checkbox" name="status" value="early_career"> Early career
+            </label>
+          </div>
+          <div class="form-check">
+            <label class="form-check-label">
+              <input class="form-check-input" type="checkbox" name="status" value="mid_career"> Mid-career
+            </label>
+          </div>
+          <div class="form-check">
+            <label class="form-check-label">
+              <input class="form-check-input" type="checkbox" name="status" value="established_scholar"> Established scholar
+            </label>
+          </div>
+        </div>
       </div>
-      <div style="padding-left: 20px;">
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label for="email" class="col-sm-3 col-form-label">Email</label>
+      <div class="col-sm-9">
+        <input type="email" class="form-control" id="email" name="email" placeholder="Email">
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="institution" class="col-sm-3 col-form-label">Institution</label>
+      <div class="col-sm-9">
+        <input type="text" class="form-control" id="institution" name="institution" placeholder="Institution">
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label for="email" class="col-sm-3 col-form-label">Tick the checkbox below if you donot want to be contacted</label>
+      <div class="col-sm-9">
         <div class="form-check">
           <label class="form-check-label">
-            <input class="form-check-input" type="checkbox" name="status"> Undergraduate
-          </label>
-        </div>
-        <div class="form-check">
-          <label class="form-check-label">
-            <input class="form-check-input" type="checkbox" name="status"> Masters
-          </label>
-        </div>
-        <div class="form-check">
-          <label class="form-check-label">
-            <input class="form-check-input" type="checkbox" name="status"> PhD
-          </label>
-        </div>
-        <div class="form-check">
-          <label class="form-check-label">
-            <input class="form-check-input" type="checkbox" name="status"> Other
+            <input class="form-check-input" type="checkbox" name="contable" value="no"> I do not wish to be contacted
           </label>
         </div>
       </div>
     </div>
-    </div>
-  </div>
 
-  <div class="form-group row">
-    <label for="email" class="col-sm-2 col-form-label">Email</label>
-    <div class="col-sm-10">
-      <input type="email" class="form-control" id="email" name="email" placeholder="Email">
-    </div>
-  </div>
-  <div class="form-group row">
-    <label for="institution" class="col-sm-2 col-form-label">Institution</label>
-    <div class="col-sm-10">
-      <input type="text" class="form-control" id="institution" name="institution" placeholder="Institution">
-    </div>
-  </div>
+    <div class="form-group row">
+      <%
+        ctys = YAML.load_file("#{Rails.root}/config/authorities/country_code.yml")
+      %>
 
-  <input type="hidden" name="summary_id" value="<%= params["summary_id"] %>"/>
-  <input type="hidden" name="summary_fileset_id" value="<%= params["summary_fileset_id"] %>"/>
-  <input type="submit" class="btn btn-default" value="Submit">
-</form>
+      <label for="country" class="col-sm-3 col-form-label">Country / region</label>
+      <div class="col-sm-9">
+        <select class="custom-select" name="country">
+          <option selected>Select one</option>
+
+          <% ctys["terms"].each do |cty| %>
+            <option value="<%=cty["id"] %>"><%=cty["term"] %></option>
+          <% end %>
+        </select>
+      </div>
+    </div>
+
+    <input type="hidden" name="summary_id" value="<%= params["summary_id"] %>"/>
+    <input type="hidden" name="summary_fileset_id" value="<%= params["summary_fileset_id"] %>"/>
+    <input type="submit" class="btn btn-default" value="Submit">
+  </form>
 
 </div>
