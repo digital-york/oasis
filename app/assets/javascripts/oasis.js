@@ -334,4 +334,16 @@ $(function() {
         }
     });
 
+    // By default, disable submit button on survey form
+    $('#survey_form_submit').attr('disabled','true');
+
+    // Toggle submit button, depending on if the checkboxes are ticked
+    $("[name='survey[status][]']").on("click", function() {
+        if( $("input[name='survey[status][]']:checked").length > 0 ) {
+            $('#survey_form_submit').removeAttr('disabled');
+        }else{
+            $('#survey_form_submit').attr('disabled','true');
+        }
+    });
+
 });
