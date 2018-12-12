@@ -346,4 +346,14 @@ $(function() {
         }
     });
 
+    // Survey form email validation
+    $('#survey-status-email').on("change", function() {
+        state = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/.test($(this).val())
+        if(state) {
+            $(this).css({"background-color": "white"});
+        }else{
+            $(this).css({"background-color": "yellow"});
+        }
+    });
+
 });

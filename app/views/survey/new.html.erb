@@ -71,9 +71,9 @@
     </div>
 
     <div class="form-group row">
-      <label for="email" class="col-sm-3 col-form-label">Email</label>
+      <label id="survey-status-email-label" for="email" class="col-sm-3 col-form-label">Email</label>
       <div class="col-sm-9">
-        <%= text_field_tag 'email', nil, class: "form-control", placeholder: "Email" %>
+        <%= text_field_tag 'email', nil, class: "form-control", placeholder: "Email", id: 'survey-status-email' %>
       </div>
     </div>
     <div class="form-group row">
