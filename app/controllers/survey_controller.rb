@@ -18,6 +18,6 @@ class SurveyController < ApplicationController
     d.downloader_cty         = params["country"]          unless params["country"].nil?
     d.save!
 
-    redirect_to "/survey/saved?summary_id=" + summary_id.to_s + "&downloader_id=" + d.id.to_s + "&fileset_id=" + summary_fileset_id.to_s
+    redirect_to "/survey/saved?survey_done=yes&summary_id=" + summary_id.to_s + "&downloader_id=" + d.id.to_s + "&fileset_id=" + summary_fileset_id.to_s
   end
 end
