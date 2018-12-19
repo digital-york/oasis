@@ -196,4 +196,13 @@
     </div>
   </div>
 
+  <div class="form-group row">
+    <input type="hidden" name="summary_id" value="<%= params["summary_id"] %>"/>
+    <input type="hidden" name="summary_fileset_id" value="<%= params["summary_fileset_id"] %>"/>
+
+    <%= link_to t(:'helpers.action.cancel'), '#', onclick: "parent.$.fancybox.close();", class: 'btn btn-primary' %>
+    <input type="submit" class="btn btn-primary" id="survey_form_submit" value="Save & Submit">
+
+  </form>
+
 </div>
