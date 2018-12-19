@@ -1,8 +1,0 @@
-<% cancel_path = f.object.persisted? ? polymorphic_path([main_app, f.object]) : hyrax.my_works_path %>
-<%= link_to t(:'helpers.action.cancel'),
-            cancel_path,
-            onclick: "parent.$.fancybox.close();",
-            class: 'btn btn-default' %>
-<%= f.input Hyrax::Actors::OptimisticLockValidator.version_field, as: :hidden if f.object.persisted? %>
-<%= f.submit 'Save & Download', class: 'btn btn-primary', onclick: "confirmation_needed = false;", id: "downloader_survey_submit", name: "save_with_files" %>
-
