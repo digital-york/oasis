@@ -195,48 +195,5 @@
       <%= text_field_tag 'email', nil, class: "form-control", placeholder: "Email", id: 'survey-status-email' %>
     </div>
   </div>
-  <div class="form-group row">
-    <label for="institution" class="col-sm-3 col-form-label">Institution</label>
-    <div class="col-sm-9">
-      <%= text_field_tag 'institution', nil, class: "form-control", placeholder: "Institution" %>
-    </div>
-  </div>
-
-  <div class="form-group row">
-    <label for="email" class="col-sm-3 col-form-label">Tick the checkbox below if you do not want to be contacted</label>
-    <div class="col-sm-9">
-      <div class="form-check">
-        <label class="form-check-label">
-          <%= check_box_tag 'contable', 'no', false, id: 'status_contable' %>
-          I do not wish to be contacted
-        </label>
-      </div>
-    </div>
-  </div>
-
-  <div class="form-group row">
-    <%
-        ctys = YAML.load_file("#{Rails.root}/config/authorities/country_code.yml")
-      %>
-
-      <label for="country" class="col-sm-3 col-form-label">Country / region</label>
-      <div class="col-sm-9">
-        <select class="custom-select" name="country">
-          <option selected="selected">Select one</option>
-
-          <% ctys["terms"].each do |cty| %>
-            <option value="<%=cty["id"] %>"><%=cty["term"] %></option>
-          <% end %>
-        </select>
-      </div>
-    </div>
-
-    <input type="hidden" name="summary_id" value="<%= params["summary_id"] %>"/>
-    <input type="hidden" name="summary_fileset_id" value="<%= params["summary_fileset_id"] %>"/>
-
-    <%= link_to t(:'helpers.action.cancel'), '#', onclick: "parent.$.fancybox.close();", class: 'btn btn-primary' %>
-    <input type="submit" class="btn btn-primary" id="survey_form_submit" value="Save & Submit">
-
-  </form>
 
 </div>
