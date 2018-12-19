@@ -8,101 +8,112 @@
       <div class="col-sm-9">
         <div class="form-check">
           <label class="form-check-label">
-            <%= check_box_tag 'survey[status][]', 'student', false, id: 'status_student' %> Student
+            <%= check_box_tag 'survey[status][]', 'student', false, id: 'status_student' %>
+            Student
           </label>
         </div>
 
         <div style="padding-left: 20px;">
           <div class="form-check">
             <label class="form-check-label">
-              <%= check_box_tag 'survey[status][]', 'undergraduate', false, id: 'status_undergraduate' %> Undergraduate
+              <%= check_box_tag 'survey[status][]', 'undergraduate', false, id: 'status_undergraduate' %>
+              Undergraduate
             </label>
           </div>
           <div class="form-check">
             <label class="form-check-label">
-              <%= check_box_tag 'survey[status][]', 'masters', false, id: 'status_masters' %> Masters
+              <%= check_box_tag 'survey[status][]', 'masters', false, id: 'status_masters' %>
+              Masters
             </label>
           </div>
           <div class="form-check">
             <label class="form-check-label">
-              <%= check_box_tag 'survey[status][]', 'phd', false, id: 'status_phd' %> PhD
+              <%= check_box_tag 'survey[status][]', 'phd', false, id: 'status_phd' %>
+              PhD
             </label>
           </div>
           <div class="form-check">
             <label class="form-check-label">
-              <%= check_box_tag 'survey[status][]', 'other', false, id: 'status_other' %> Other
+              <%= check_box_tag 'survey[status][]', 'other', false, id: 'status_other' %>
+              Other
             </label>
           </div>
         </div>
         <div class="form-check">
           <label class="form-check-label">
-            <%= check_box_tag 'survey[status][]', 'language_teacher', false, id: 'status_language_teacher' %> Language teacher/instructor (any level)
+            <%= check_box_tag 'survey[status][]', 'language_teacher', false, id: 'status_language_teacher' %>
+            Language teacher/instructor (any level)
           </label>
         </div>
         <div class="form-check">
           <label class="form-check-label">
-            <%= check_box_tag 'survey[status][]', 'teacher_educator', false, id: 'status_teacher_educator' %> Teacher educator
+            <%= check_box_tag 'survey[status][]', 'teacher_educator', false, id: 'status_teacher_educator' %>
+            Teacher educator
           </label>
         </div>
         <div class="form-check">
           <label class="form-check-label">
-            <%= check_box_tag 'survey[status][]', 'university_academic', false, id: 'status_university_academic' %> University academic
+            <%= check_box_tag 'survey[status][]', 'university_academic', false, id: 'status_university_academic' %>
+            University academic
           </label>
         </div>
         <div style="padding-left: 20px;">
           <div class="form-check">
             <label class="form-check-label">
-              <%= check_box_tag 'survey[status][]', 'early_career', false, id: 'status_early_career' %> Early career
+              <%= check_box_tag 'survey[status][]', 'early_career', false, id: 'status_early_career' %>
+              Early career
             </label>
           </div>
           <div class="form-check">
             <label class="form-check-label">
-              <%= check_box_tag 'survey[status][]', 'mid_career', false, id: 'status_mid_career' %> Mid-career
+              <%= check_box_tag 'survey[status][]', 'mid_career', false, id: 'status_mid_career' %>
+              Mid-career
             </label>
           </div>
           <div class="form-check">
             <label class="form-check-label">
-              <%= check_box_tag 'survey[status][]', 'established_scholar', false, id: 'status_established_scholar' %> Established scholar
+              <%= check_box_tag 'survey[status][]', 'established_scholar', false, id: 'status_established_scholar' %>
+              Established scholar
             </label>
           </div>
         </div>
       </div>
-      </div>
     </div>
 
-    <div class="form-group row">
-      <label id="survey-status-email-label" for="email" class="col-sm-3 col-form-label">Email</label>
-      <div class="col-sm-9">
-        <%= text_field_tag 'email', nil, class: "form-control", placeholder: "Email", id: 'survey-status-email' %>
-      </div>
+  <div class="form-group row">
+    <label id="survey-status-email-label" for="email" class="col-sm-3 col-form-label">Email</label>
+    <div class="col-sm-9">
+      <%= text_field_tag 'email', nil, class: "form-control", placeholder: "Email", id: 'survey-status-email' %>
     </div>
-    <div class="form-group row">
-      <label for="institution" class="col-sm-3 col-form-label">Institution</label>
-      <div class="col-sm-9">
-        <%= text_field_tag 'institution', nil, class: "form-control", placeholder: "Institution" %>
-      </div>
+  </div>
+  <div class="form-group row">
+    <label for="institution" class="col-sm-3 col-form-label">Institution</label>
+    <div class="col-sm-9">
+      <%= text_field_tag 'institution', nil, class: "form-control", placeholder: "Institution" %>
     </div>
+  </div>
 
-    <div class="form-group row">
-      <label for="email" class="col-sm-3 col-form-label">Tick the checkbox below if you do not want to be contacted</label>
-      <div class="col-sm-9">
-        <div class="form-check">
-          <label class="form-check-label">
-            <%= check_box_tag 'contable', 'no', false, id: 'status_contable' %> I do not wish to be contacted
-          </label>
-        </div>
+  <div class="form-group row">
+    <label for="email" class="col-sm-3 col-form-label">Tick the checkbox below if you do not want to be contacted</label>
+    <div class="col-sm-9">
+      <div class="form-check">
+        <label class="form-check-label">
+          <%= check_box_tag 'contable', 'no', false, id: 'status_contable' %>
+          I do not wish to be contacted
+        </label>
       </div>
     </div>
+  </div>
 
-    <div class="form-group row">
-      <%
+  <div class="form-group row">
+    <%
         ctys = YAML.load_file("#{Rails.root}/config/authorities/country_code.yml")
       %>
 
       <label for="country" class="col-sm-3 col-form-label">Country / region</label>
       <div class="col-sm-9">
         <select class="custom-select" name="country">
-          <option selected>Select one</option>
+          <option selected="selected">Select one</option>
 
           <% ctys["terms"].each do |cty| %>
             <option value="<%=cty["id"] %>"><%=cty["term"] %></option>
@@ -114,12 +125,9 @@
     <input type="hidden" name="summary_id" value="<%= params["summary_id"] %>"/>
     <input type="hidden" name="summary_fileset_id" value="<%= params["summary_fileset_id"] %>"/>
 
-    <%= link_to t(:'helpers.action.cancel'),
-                '#',
-                onclick: "parent.$.fancybox.close();",
-                class: 'btn btn-primary' %>
+    <%= link_to t(:'helpers.action.cancel'), '#', onclick: "parent.$.fancybox.close();", class: 'btn btn-primary' %>
     <input type="submit" class="btn btn-primary" id="survey_form_submit" value="Save & Submit">
 
-</form>
+  </form>
 
 </div>
