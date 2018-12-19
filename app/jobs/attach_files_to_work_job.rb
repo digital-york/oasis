@@ -9,6 +9,11 @@ class AttachFilesToWorkJob < Hyrax::ApplicationJob
     user = User.find_by_user_key(work.depositor) # BUG? file depositor ignored
     work_permissions = work.permissions.map(&:to_hash)
     metadata = visibility_attributes(work_attributes)
+
+
+    # If the first element is not PDF, try to swap it with the first pdf in the array
+    oasis_pdf_first(uploaded_files)
+
     uploaded_files.each do |uploaded_file|
       actor = Hyrax::Actors::FileSetActor.new(FileSet.create, user)
       actor.create_metadata(metadata)
@@ -20,6 +25,23 @@ class AttachFilesToWorkJob < Hyrax::ApplicationJob
   end
 
   private
+    # If the first element is not PDF, try to swap it with the first pdf in the array
+    def oasis_pdf_first(uploaded_files)
+      if !uploaded_files[0].file.to_s.downcase.ends_with? '.pdf'
+        pdf_index = -1
+        uploaded_files.each_with_index do |uploaded_file,index|
+          if uploaded_file.file.to_s.downcase.ends_with? '.pdf'
+            pdf_index = index
+            break
+          end
+        end
+        if pdf_index > 0
+          # Swap array elements
+          uploaded_files[0],uploaded_files[pdf_index] =  uploaded_files[pdf_index],uploaded_files[0]
+        end
+      end
+    end
+
 
     # The attributes used for visibility - sent as initial params to created FileSets.
     def visibility_attributes(attributes)
