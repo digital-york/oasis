@@ -1,11 +1,115 @@
 <div class="container">
   <h2>Downloader Survey</h2>
 
+  <p>
+    The OASIS team is not responsible for the use of the downloaded summaries.
+  </p>
+
+  <p>
+    OASIS will be an even more informative resource if readers share their experience of using summaries that they have downloaded.
+    The OASIS team would like to contact you by email to seek brief feedback on whether, and if so how you have used the summary.
+    If you are happy to be contacted, please leave your email below. We will not share your email with third parties.
+    If you later decide that you would prefer not to receive communication from us, please contact the OASIS team, and we will delete your email.
+  </p>
+
   <form action="/survey/submit" method="post">
 
     <div class="form-group row">
       <label for="status" class="col-sm-3 col-form-label">(*) About you - Tick at least one field</label>
       <div class="col-sm-9">
+        <div class="form-check">
+          <label class="form-check-label">
+            <%= check_box_tag 'survey[status][]', 'curriculum_developer', false, id: 'status_curriculum_developer' %>
+            Curriculum / materials developer
+          </label>
+        </div>
+
+        <div class="form-check">
+          <label class="form-check-label">
+            <%= check_box_tag 'survey[status][]', 'language_teacher', false, id: 'status_language_teacher' %>
+            Language teacher/instructor
+          </label>
+        </div>
+
+        <!-- Language teacher -->
+        <div style="padding-left: 20px;">
+          <div class="form-check">
+            <label class="form-check-label">
+              <%= check_box_tag 'survey[status][]', 'language_teacher_pre_elementary', false, id: 'status_language_teacher_pre_elementary' %>
+              Pre-elementary / kindergarten
+            </label>
+          </div>
+          <div class="form-check">
+            <label class="form-check-label">
+              <%= check_box_tag 'survey[status][]', 'language_teacher_primary', false, id: 'status_language_teacher_primary' %>
+              Primary
+            </label>
+          </div>
+          <div class="form-check">
+            <label class="form-check-label">
+              <%= check_box_tag 'survey[status][]', 'language_teacher_secondary', false, id: 'status_language_teacher_secondary' %>
+              Secondary / high
+            </label>
+          </div>
+          <div class="form-check">
+            <label class="form-check-label">
+              <%= check_box_tag 'survey[status][]', 'language_teacher_tertiary', false, id: 'status_language_teacher_tertiary' %>
+              Tertiary / university
+            </label>
+          </div>
+          <div class="form-check">
+            <label class="form-check-label">
+              <%= check_box_tag 'survey[status][]', 'language_teacher_adult_edu', false, id: 'status_language_teacher_adult_edu' %>
+              Adult education
+            </label>
+          </div>
+          <div class="form-check">
+            <label class="form-check-label">
+              <%= check_box_tag 'survey[status][]', 'language_teacher_private', false, id: 'status_language_teacher_private' %>
+              Private institution
+            </label>
+          </div>
+          <div class="form-check">
+            <label class="form-check-label">
+              <%= check_box_tag 'survey[status][]', 'language_teacher_other', false, id: 'status_language_teacher_other' %>
+              Other
+            </label>
+          </div>
+        </div>
+
+        <!-- Media / journalist -->
+        <div class="form-check">
+          <label class="form-check-label">
+            <%= check_box_tag 'survey[status][]', 'media', false, id: 'status_media' %>
+            Media / journalist
+          </label>
+        </div>
+
+        <!-- Parent -->
+        <div class="form-check">
+          <label class="form-check-label">
+            <%= check_box_tag 'survey[status][]', 'parent', false, id: 'status_parent' %>
+            Parent
+          </label>
+        </div>
+
+        <!-- Policy maker -->
+        <div class="form-check">
+          <label class="form-check-label">
+            <%= check_box_tag 'survey[status][]', 'policy_maker', false, id: 'status_policy_maker' %>
+            Policy maker
+          </label>
+        </div>
+
+        <!-- Professional development provider -->
+        <div class="form-check">
+          <label class="form-check-label">
+            <%= check_box_tag 'survey[status][]', 'professional_development_provider', false, id: 'status_professional_development_provider' %>
+            Professional development provider
+          </label>
+        </div>
+
+        <!-- Student -->
         <div class="form-check">
           <label class="form-check-label">
             <%= check_box_tag 'survey[status][]', 'student', false, id: 'status_student' %>
@@ -39,18 +143,23 @@
             </label>
           </div>
         </div>
-        <div class="form-check">
-          <label class="form-check-label">
-            <%= check_box_tag 'survey[status][]', 'language_teacher', false, id: 'status_language_teacher' %>
-            Language teacher/instructor (any level)
-          </label>
-        </div>
+
+        <!-- Teacher educator -->
         <div class="form-check">
           <label class="form-check-label">
             <%= check_box_tag 'survey[status][]', 'teacher_educator', false, id: 'status_teacher_educator' %>
             Teacher educator
           </label>
         </div>
+
+        <!-- Test developer -->
+        <div class="form-check">
+          <label class="form-check-label">
+            <%= check_box_tag 'survey[status][]', 'test_developer', false, id: 'status_test_developer' %>
+            Test developer
+          </label>
+        </div>
+
         <div class="form-check">
           <label class="form-check-label">
             <%= check_box_tag 'survey[status][]', 'university_academic', false, id: 'status_university_academic' %>
