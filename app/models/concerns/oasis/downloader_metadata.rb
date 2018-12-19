@@ -13,19 +13,6 @@ module Oasis
         index.as :stored_searchable
       end
 
-      property :downloader_affiliation, predicate: ::RDF::URI.new('http://dlib.york.ac.uk/ontologies/oasis#downloader_affiliation'), multiple: false do |index|
-        index.as :stored_searchable
-      end
-
-      property :downloader_contable, predicate: ::RDF::URI.new('http://dlib.york.ac.uk/ontologies/oasis#downloader_contable'), multiple: false do |index|
-        index.as :stored_searchable
-      end
-
-      # downloader's country
-      property :downloader_cty, predicate: ::RDF::URI.new('http://dlib.york.ac.uk/ontologies/oasis#downloader_cty'), multiple: false do |index|
-        index.as :stored_searchable
-      end
-
       property :parent_summary_id, predicate: ::RDF::URI.new('http://dlib.york.ac.uk/ontologies/oasis#parent_summary_id'), multiple: false do |index|
         index.as :stored_searchable
       end
