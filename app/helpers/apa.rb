@@ -72,7 +72,7 @@ class Apa
 
   def self.get_other_journal_string(other_journal_name, other_journal_url)
     if not other_journal_name.nil? and other_journal_name!=''
-      return get_html_link(other_journal_url, other_journal_name) + ', '
+      return get_html_link(other_journal_url, other_journal_name)
     end
     ''
   end
