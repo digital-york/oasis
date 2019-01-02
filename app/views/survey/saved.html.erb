@@ -1,0 +1,26 @@
+<%
+  session['has_done_survey'] = params["survey_done"] unless params["survey_done"].nil?
+%>
+
+<div class="row work-type">
+  <div class="col-xs-12">&nbsp;</div>
+  <div itemscope itemtype="http://schema.org/CreativeWork" class="col-xs-12">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        Thank you. The information you entered has been saved successfully.
+      </div>
+      <div class="panel-body">
+        <div class="row">
+          <div class="col-sm-12">
+
+            <button type="button" class="btn btn-info" onclick="window.open('/downloads/<%= params["fileset_id"]%>','_blank');parent.$.fancybox.close();">Download summary</button>
+
+            <button type="button" class="btn btn-info" onclick="parent.$.fancybox.close();">Close</button>
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

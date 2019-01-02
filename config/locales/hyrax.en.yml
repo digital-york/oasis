@@ -181,6 +181,7 @@ en:
         publication_issue: "Issue"
         publication_pages_from: "Pages:from"
         publication_pages_to: "Pages:to"
+
     hints:
       summary:
         summary_writer: "Surname, initial. (e.g. Marsden, E.)"

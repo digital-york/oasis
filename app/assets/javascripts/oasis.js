@@ -305,4 +305,55 @@ $(function() {
 
     // add target="_blank" to deposit agreement link
     $('a[href="/agreement"]').attr('target','_blank');
+
+    // Apply indentation to downloader status checkboxes in downloader survey form
+    var downloader_status_identation_list = ['undergraduate',
+                                             'masters',
+                                             'phd',
+                                             'other',
+                                             'earlycareer',
+                                             'midcareer',
+                                             'establishedscholar'];
+    $('.downloader_downloader_status').children('span').each(function () {
+        var checkbox_id = $(this).find('label').attr('for').split(/[_]+/).pop();
+
+        if(downloader_status_identation_list.indexOf(checkbox_id) > -1) {
+            $(this).attr("style", "padding-left:20px;");
+        }
+    });
+
+    // By default, disable submit button
+    $('#downloader_survey_submit').attr('disabled','true');
+
+    // Toggle submit button, depending on if the checkboxes are ticked
+    $("[name='downloader[downloader_status][]']").on("click", function() {
+        if( $("input[name='downloader[downloader_status][]']:checked").length > 0 ) {
+            $('#downloader_survey_submit').removeAttr('disabled');
+        }else{
+            $('#downloader_survey_submit').attr('disabled','true');
+        }
+    });
+
+    // By default, disable submit button on survey form
+    $('#survey_form_submit').attr('disabled','true');
+
+    // Toggle submit button, depending on if the checkboxes are ticked
+    $("[name='survey[status][]']").on("click", function() {
+        if( $("input[name='survey[status][]']:checked").length > 0 ) {
+            $('#survey_form_submit').removeAttr('disabled');
+        }else{
+            $('#survey_form_submit').attr('disabled','true');
+        }
+    });
+
+    // Survey form email validation
+    $('#survey-status-email').on("change", function() {
+        state = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/.test($(this).val())
+        if(state) {
+            $(this).css({"background-color": "white"});
+        }else{
+            $(this).css({"background-color": "yellow"});
+        }
+    });
+
 });

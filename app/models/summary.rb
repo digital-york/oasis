@@ -3,6 +3,8 @@
 class Summary < ActiveFedora::Base
   include ::Hyrax::WorkBehavior
 
+  has_many :downloaders, dependent: :destroy, class_name: 'Downloader', :autosave => true
+
   self.indexer = SummaryIndexer
   # Change this to restrict which works can be added as a child.
   # self.valid_child_concerns = []

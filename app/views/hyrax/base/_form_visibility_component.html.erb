@@ -3,30 +3,30 @@
 <% elsif f.object.lease_expiration_date %>
   <%= render 'form_permission_under_lease', f: f %>
 <% else %>
-    <fieldset>
-      <legend class="legend-save-work">Visibility</legend>
-      <%
-      is_public  = Hydra::AccessControls::AccessRight::VISIBILITY_TEXT_VALUE_PUBLIC == f.object.visibility
-      is_private = Hydra::AccessControls::AccessRight::VISIBILITY_TEXT_VALUE_PRIVATE == f.object.visibility
+  <fieldset>
+    <legend class="legend-save-work">Visibility</legend>
+    <%
+      #is_public  = Hydra::AccessControls::AccessRight::VISIBILITY_TEXT_VALUE_PUBLIC == f.object.visibility
+      #is_private = Hydra::AccessControls::AccessRight::VISIBILITY_TEXT_VALUE_PRIVATE == f.object.visibility
 
       # default is 'public' for new objects
-      unless f.object.title_of_summary.present?
-        is_public = true
-        is_private = false
-      end
-      %>
-      <ul class="visibility">
-        <li class="radio">
-          <label>
-            <%= f.radio_button :visibility, Hydra::AccessControls::AccessRight::VISIBILITY_TEXT_VALUE_PUBLIC, data: { 'target': '#collapsePublic' }, :checked=>is_public %>
-            <%= visibility_badge(Hydra::AccessControls::AccessRight::VISIBILITY_TEXT_VALUE_PUBLIC) %>
-            <br>
-            <%= t('hyrax.visibility.open.note_html', type: f.object.human_readable_type) %>
-            <div class="collapse" id="collapsePublic">
-              <%= t('hyrax.visibility.open.warning_html', label: visibility_badge(Hydra::AccessControls::AccessRight::VISIBILITY_TEXT_VALUE_PUBLIC)) %>
-            </div>
-          </label>
-        </li>
-      </ul>
-    </fieldset>
+      #unless f.object.title_of_summary.present?
+      is_public = true
+      is_private = false
+      #end
+    %>
+    <ul class="visibility">
+      <li class="radio">
+        <label>
+          <%= f.radio_button :visibility, Hydra::AccessControls::AccessRight::VISIBILITY_TEXT_VALUE_PUBLIC, data: { 'target': '#collapsePublic' }, :checked=>is_public %>
+          <%= visibility_badge(Hydra::AccessControls::AccessRight::VISIBILITY_TEXT_VALUE_PUBLIC) %>
+          <br>
+          <%= t('hyrax.visibility.open.note_html', type: f.object.human_readable_type) %>
+          <div class="collapse" id="collapsePublic">
+            <%= t('hyrax.visibility.open.warning_html', label: visibility_badge(Hydra::AccessControls::AccessRight::VISIBILITY_TEXT_VALUE_PUBLIC)) %>
+          </div>
+        </label>
+      </li>
+    </ul>
+  </fieldset>
 <% end %>

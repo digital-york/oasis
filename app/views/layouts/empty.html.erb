@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="<%= t("hyrax.document_language", default: '') %>" prefix="og:http://ogp.me/ns#">
+<head>
+  <%= render partial: 'layouts/head_tag_content' %>
+  <%= content_for(:head) %>
+
+  <style>
+    .container {
+      width: 100%;
+    }
+    body {
+      margin-bottom: 30px;
+    }
+  </style>
+</head>
+
+<body>
+
+<a href="#skip_to_content" class="sr-only">Skip to Content</a>
+
+<%= content_for(:precontainer_content) %>
+<div id="content-wrapper" class="container" role="main">
+  <a name="skip_to_content"></a>
+  <div>
+    <%= content_for?(:content) ? yield(:content) : yield %>
+  </div>
+</div>
+</body>
+</html>
