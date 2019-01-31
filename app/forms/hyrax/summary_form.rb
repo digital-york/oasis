@@ -86,8 +86,11 @@ module Hyrax
           :visibility,
           :licence_agreement,
           :admin_set_id,
-          :member_of_collection_ids
+          :member_of_collection_ids,
+          :thumbnail_id,
+          :representative_id
       ]
     end
+
   end
 end
