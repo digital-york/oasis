@@ -200,7 +200,6 @@
         <p class="help-block">Hold down Ctrl/Command to select more than one term</p>
       </div>
       <div class="col-sm-9">
-        <input name="survey[participants_country][]" type="hidden" value="value">
         <select class="form-control select optional" multiple="multiple" name="survey[participants_country][]" id="summary_participants_country">
           <%=countries["terms"].each do |t| %>
             <option value=<%=t.fetch("id")%>><%=t.fetch("term")%></option>
