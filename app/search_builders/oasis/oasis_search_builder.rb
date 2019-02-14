@@ -1,11 +1,11 @@
 module Oasis
   class OasisSearchBuilder < Hyrax::CatalogSearchBuilder
-    self.default_processor_chain += [:add_authority_label_field_to_query, :add_oasis_text_fields_to_query, :add_other_fields_to_query, :only_search_summary]
+    self.default_processor_chain += %i[add_authority_label_field_to_query add_oasis_text_fields_to_query add_other_fields_to_query only_search_summary]
 
     # Add OASIS authority label fields to Solr query parameters
     def add_authority_label_field_to_query(solr_parameters)
       OasisAuthorityMapping.authority_mapping_solr2filename.keys.each do |field_name|
-        solr_parameters[:qf] += ' %s_label_tesim' % field_name
+        solr_parameters[:qf] += format(' %s_label_tesim', field_name)
       end
     end
 
@@ -26,7 +26,7 @@ module Oasis
 
     # Only query Summaries
     def only_search_summary(solr_parameters)
-      solr_parameters[:q] += ' has_model_ssim:Summary'
+      solr_parameters[:qf] += ' has_model_ssim:Summary'
     end
   end
 end
