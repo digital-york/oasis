@@ -17,6 +17,10 @@ module Oasis
         index.as :stored_searchable
       end
 
+      property :participants_country, predicate: ::RDF::URI.new('http://dlib.york.ac.uk/ontologies/oasis#participants_country'), multiple: true do |index|
+        index.as :stored_searchable
+      end
+
       property :parent_fileset_id, predicate: ::RDF::URI.new('http://dlib.york.ac.uk/ontologies/oasis#parent_fileset_id'), multiple: false do |index|
         index.as :stored_searchable
       end

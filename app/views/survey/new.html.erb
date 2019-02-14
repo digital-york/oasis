@@ -6,10 +6,11 @@
   </p>
 
   <p>
-    OASIS will be an even more informative resource if readers share their experience of using summaries that they have downloaded.
-    The OASIS team would like to contact you by email to seek brief feedback on whether, and if so how you have used the summary.
-    If you are happy to be contacted, please leave your email below. We will not share your email with third parties.
-    If you later decide that you would prefer not to receive communication from us, please contact the OASIS team, and we will delete your email.
+    OASIS summaries are available for download free of charge. However, it would be useful to us and our funders to have some information about who uses the summaries, so we can make OASIS an even more informative resource. If you are happy to be
+    contacted by the OASIS team for feedback on whether and how you have used the summary, please leave your email below. We will not share your email with third parties. If you later decide that you would prefer not to receive communication from us,
+    please contact the oasis team at
+    <a href="mailto:oasis@oasis-database.org">oasis@oasis-database.org</a>
+    and we will remove your address.
   </p>
 
   <form action="/survey/submit" method="post">
@@ -160,6 +161,7 @@
           </label>
         </div>
 
+        <!-- University academic -->
         <div class="form-check">
           <label class="form-check-label">
             <%= check_box_tag 'survey[status][]', 'university_academic', false, id: 'status_university_academic' %>
@@ -186,22 +188,41 @@
             </label>
           </div>
         </div>
+
       </div>
     </div>
 
-  <div class="form-group row">
-    <label id="survey-status-email-label" for="email" class="col-sm-3 col-form-label">Email</label>
-    <div class="col-sm-9">
-      <%= text_field_tag 'email', nil, class: "form-control", placeholder: "Email", id: 'survey-status-email' %>
+    <!-- Countries dropdown list -->
+    <% countries = YAML.load_file("#{Rails.root.to_s}/config/authorities/country_code.yml") %>
+    <div class="form-group row select optional summary_participants_country">
+      <div class="col-sm-3">
+        <label class="control-label select optional " for="summary_participants_country">Country / region</label>
+        <p class="help-block">Hold down Ctrl/Command to select more than one term</p>
+      </div>
+      <div class="col-sm-9">
+        <select class="form-control select optional" multiple="multiple" name="survey[participants_country][]" id="summary_participants_country">
+          <%=countries["terms"].each do |t| %>
+            <option value=<%=t.fetch("id")%>><%=t.fetch("term")%></option>
+          <% end %>
+        </select>
+      </div>
     </div>
-  </div>
 
-  <div class="form-group row"  style="text-align: right;">
-    <input type="hidden" name="summary_id" value="<%= params["summary_id"] %>"/>
-    <input type="hidden" name="summary_fileset_id" value="<%= params["summary_fileset_id"] %>"/>
+    <!-- email -->
+    <div class="form-group row">
+      <label id="survey-status-email-label" for="email" class="col-sm-3 col-form-label">Email</label>
+      <div class="col-sm-9">
+        <%= text_field_tag 'survey[email]', nil, class: "form-control", placeholder: "Email", id: 'survey-status-email' %>
+      </div>
+    </div>
 
-    <%= link_to t(:'helpers.action.cancel'), '#', onclick: "parent.$.fancybox.close();", class: 'btn btn-primary' %>
-    <input type="submit" class="btn btn-primary" id="survey_form_submit" value="Save & Submit">
+    <!-- Store summary id -->
+    <div class="form-group row">
+      <input type="hidden" name="summary_id" value="<%= params["summary_id"] %>"/>
+      <input type="hidden" name="summary_fileset_id" value="<%= params["summary_fileset_id"] %>"/>
+      <%= link_to t(:'helpers.action.cancel'), '#', onclick: "parent.$.fancybox.close();", class: 'btn btn-primary' %>
+      <input type="submit" class="btn btn-primary" id="survey_form_submit" value="Save & Submit">
+    </div>
 
   </form>
 
