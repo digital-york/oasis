@@ -26,7 +26,7 @@ module Oasis
 
     # Only query Summaries
     def only_search_summary(solr_parameters)
-      solr_parameters[:qf] += ' has_model_ssim:Summary'
+      solr_parameters[:fq] << "{!field f=has_model_ssim}#{Summary}"
     end
   end
 end
