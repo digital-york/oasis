@@ -194,7 +194,7 @@
     <% countries = YAML.load_file("#{Rails.root.to_s}/config/authorities/country_code.yml") %>
     <div class="form-group row select optional summary_participants_country">
       <div class="col-sm-3">
-        <label class="control-label select optional " for="summary_participants_country">Country / region</label>
+        <label class="control-label select optional " for="summary_participants_country">Country (optional):</label>
         <p class="help-block">Hold down Ctrl/Command to select more than one term</p>
       </div>
       <div class="col-sm-9">
@@ -218,7 +218,7 @@
 
     <!-- email -->
     <div class="form-group row">
-      <label id="survey-status-email-label" for="email" class="col-sm-3 col-form-label">Email</label>
+      <label id="survey-status-email-label" for="email" class="col-sm-3 col-form-label">Email (optional):</label>
       <div class="col-sm-9">
         <%= text_field_tag 'survey[email]', nil, class: "form-control", placeholder: "Email", id: 'survey-status-email' %>
       </div>
