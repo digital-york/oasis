@@ -101,29 +101,14 @@ class Apa
     # if gets a string, e.g. author_all, just return it directly, as a temporary solution for: https://github.com/digital-york/oasis/issues/29
     if authors.is_a? String
       return authors + ' '
-    elsif authors.length==1
-      return format_name(authors[0]) + ' '
-    elsif authors.length==2
-      return format_name(authors[0]) + ' & ' + format_name(authors[1]) + ' '
-    elsif authors.length==3
-      return format_name(authors[0]) + ', ' + format_name(authors[1]) + ' & ' + format_name(authors[2]) + ' '
+    elsif authors.length == 1
+      return authors[0] + ' '
+    elsif authors.length == 2
+      return authors[0] + ' & ' + authors[1] + ' '
+    elsif authors.length == 3
+      return authors[0] + ', ' + authors[1] + ' & ' + authors[2] + ' '
     else
-      return format_name(authors[0]) + ' et al. '
-    end
-  end
-
-  def self.get_author_string_short(authors)
-    # if gets a string, e.g. author_all, just return it directly, as a temporary solution for: https://github.com/digital-york/oasis/issues/29
-    if authors.is_a? String
-      return authors.split(',')[0] + ' '
-    elsif authors.length==1
-      return authors[0].split(',')[0] + ' '
-    elsif authors.length==2
-      return authors[0].split(',')[0] + ' & ' + authors[1].split(',')[0] + ' '
-    elsif authors.length==3
-      return authors[0].split(',')[0] + ', ' + authors[1].split(',')[0] + ' & ' + authors[2].split(',')[0] + ' '
-    else
-      return authors[0].split(',')[0] + ' et al. '
+      return authors[0] + ' et al. '
     end
   end
 
