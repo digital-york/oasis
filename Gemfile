@@ -77,6 +77,8 @@ gem 'blacklight-access_controls', '0.6.2'
 group :development, :test do
   gem 'solr_wrapper', '>= 0.3'
   gem 'xray-rails'
+  gem 'pry-rails'
+  gem 'pry-byebug'
 end
 
 gem 'rsolr', '>= 1.0'
