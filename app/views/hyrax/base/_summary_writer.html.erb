@@ -3,6 +3,6 @@
         <b>Writer of summary</b>
       </div>
       <div class="col-sm-9">
-        <%=JSON.parse(@presenter.solr_document.summary_writer_all).map {|w| w.to_s}.join(", ")%>
+        <%=sanitize(Apa.get_author_string(JSON.parse(@presenter.solr_document.summary_writer_all)))%>
       </div>
 </div>
