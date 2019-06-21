@@ -13,7 +13,8 @@ class ContentBlock < ActiveRecord::Base
     terms: :terms_page,
     agreement: :agreement_page,
     activities: :activities_page,
-    people_saying: :people_saying_page
+    people_saying: :people_saying_page,
+    supporting_journals: :supporting_journals_page
   }.freeze
 
   # NOTE: method defined outside the metaclass wrapper below because
@@ -21,6 +22,7 @@ class ContentBlock < ActiveRecord::Base
   def self.for(key)
     key = key.respond_to?(:to_sym) ? key.to_sym : key
     raise ArgumentError, "#{key} is not a ContentBlock name" unless whitelisted?(key)
+
     ContentBlock.public_send(NAME_REGISTRY[key])
   end
 
@@ -55,7 +57,7 @@ class ContentBlock < ActiveRecord::Base
 
     def about_page
       find_or_create_by(name: 'about_page') ||
-          create(name: 'about_page', value: default_oasis_about_text)
+        create(name: 'about_page', value: default_oasis_about_text)
     end
 
     def about_page=(value)
@@ -90,7 +92,7 @@ class ContentBlock < ActiveRecord::Base
 
     def activities_page
       find_by(name: 'activities_page') ||
-          create(name: 'activities_page', value: default_activities_text)
+        create(name: 'activities_page', value: default_activities_text)
     end
 
     def activities_page=(value)
@@ -99,11 +101,20 @@ class ContentBlock < ActiveRecord::Base
 
     def people_saying_page
       find_by(name: 'people_saying_page') ||
-          create(name: 'people_saying_page', value: default_people_saying_text)
+        create(name: 'people_saying_page', value: default_people_saying_text)
     end
 
     def people_saying_page=(value)
       people_saying_page.update(value: value)
+    end
+
+    def supporting_journals_page
+      find_by(name: 'supporting_journals_page') ||
+        create(name: 'supporting_journals_page', value: default_supporting_journals_text)
+    end
+
+    def supporting_journals_page=(value)
+      supporting_journals_page.update(value: value)
     end
 
     def default_agreement_text
@@ -124,27 +135,34 @@ class ContentBlock < ActiveRecord::Base
 
     def default_activities_text
       ERB.new(
-          IO.read(
-              Rails.root.join('app', 'views', 'hyrax', 'content_blocks', 'templates', 'activities.html.erb')
-          )
+        IO.read(
+          Rails.root.join('app', 'views', 'hyrax', 'content_blocks', 'templates', 'activities.html.erb')
+        )
       ).result
     end
 
     def default_people_saying_text
       ERB.new(
-          IO.read(
-              Rails.root.join('app', 'views', 'hyrax', 'content_blocks', 'templates', 'people_saying.html.erb')
-          )
+        IO.read(
+          Rails.root.join('app', 'views', 'hyrax', 'content_blocks', 'templates', 'people_saying.html.erb')
+        )
+      ).result
+    end
+
+    def default_supporting_journals_text
+      ERB.new(
+        IO.read(
+          Rails.root.join('app', 'views', 'hyrax', 'content_blocks', 'templates', 'supporting_journals.html.erb')
+        )
       ).result
     end
 
     def default_oasis_about_text
       ERB.new(
-          IO.read(
-              Rails.root.join('app', 'views', 'hyrax', 'content_blocks', 'templates', 'aboutpage.html.erb')
-          )
+        IO.read(
+          Rails.root.join('app', 'views', 'hyrax', 'content_blocks', 'templates', 'aboutpage.html.erb')
+        )
       ).result
     end
-
   end
 end

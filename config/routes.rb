@@ -39,6 +39,7 @@ Rails.application.routes.draw do
 
   get '/activities' => 'hyrax/pages#show', key: 'activities'
   get '/people_saying' => 'hyrax/pages#show', key: 'people_saying'
+  get '/supporting_journals' => 'hyrax/pages#show', key: 'supporting_journals'
 
   #mount Resque::Server, :at => "/resque"
   #
