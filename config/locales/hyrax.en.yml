@@ -92,6 +92,7 @@ en:
       tabs:
         activities_page: "Activities"
         people_saying_page: "Feedback"
+        supporting_journals_page: "Supporting journals"
     visibility:
       open:
         note_html: ""

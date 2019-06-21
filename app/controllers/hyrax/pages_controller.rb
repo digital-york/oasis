@@ -35,7 +35,8 @@ module Hyrax
                                               :help,
                                               :terms,
                                               :activities,
-                                              :people_saying)
+                                              :people_saying,
+                                              :supporting_journals)
       end
 
       # When a request comes to the controller, it will be for one and
