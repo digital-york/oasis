@@ -1,25 +1,29 @@
 <nav class="navbar navbar-default navbar-static-top" role="navigation">
   <div class="container-fluid">
     <div class="row">
-      <ul class="nav navbar-nav col-sm-5 col-md-6">
+      <ul class="nav navbar-nav">
         <li <%= 'class=active' if current_page?(hyrax.root_path) %>>
-          <%= link_to t(:'hyrax.controls.home'), hyrax.root_path %></li>
+          <%= link_to t(:'hyrax.controls.home'), hyrax.root_path, title: "Back to homepage" %>
+        </li>
         <% if user_signed_in? %>
           <li <%= 'class=active' if current_page?('/new_summary') %>>
-            <%= link_to 'Upload summary', '/new_summary' %></li>
+            <%= link_to 'Upload summary', '/new_summary' %>
+          </li>
         <% end %>
         <li <%= 'class=active' if current_page?('/about') %>>
-          <%= link_to t(:'hyrax.controls.about'), '/about' %></li>
+          <%= link_to t(:'hyrax.controls.about'), '/about', title: "About Oasis" %>
+        </li>
         <li <%= 'class=active' if current_page?('/supporting_journals') %>>
-            <%= link_to t(:'hyrax.pages.tabs.supporting_journals_page'), '/supporting_journals' %></li>
+          <%= link_to t(:'hyrax.pages.tabs.supporting_journals_page'), '/supporting_journals', title: "Supporting journals" %>
+        </li>
         <li <%= 'class=active' if current_page?('/help') %>>
-          <%= link_to 'Help', '/help' %></li>
+          <%= link_to 'Help', '/help', title: "Help" %></li>
         <li <%= 'class=active' if current_page?('/activities') %>>
-          <%= link_to t(:'hyrax.pages.tabs.activities_page'), '/activities' %></li>
+          <%= link_to t(:'hyrax.pages.tabs.activities_page'), '/activities', title: "Activities" %>
+        </li>
         <li <%= 'class=active' if current_page?('/people_saying') %>>
-          <%= link_to t(:'hyrax.pages.tabs.people_saying_page'), '/people_saying' %></li>
-        <li <%= 'class=active' if current_page?('/contact') %>>
-            <%= link_to 'Contact', '/contact' %></li>
+          <%= link_to t(:'hyrax.pages.tabs.people_saying_page'), '/people_saying', title: "People Saying" %>
+        </li>
       </ul>
       <!-- /.nav -->
       <!-- <div class="searchbar-right navbar-right col-sm-7 col-md-6"> -->
