@@ -16,3 +16,15 @@
 @import 'hyrax/hyrax';
 
 @import 'jquery-ui';
+
+
+
+/**
+ * Additional styling
+ */
+
+form#new_summary {
+    select {
+      height: 230px;
+    }
+  }
