@@ -32,7 +32,7 @@ gem 'redis', '~> 4.0'
 # Add clamav for virus checking
 gem 'clamav'
 
-gem 'loofah', '~> 2.2.3'
+gem 'loofah', '~> 2.3.1'
 gem 'rails-html-sanitizer', '~> 1.0.4'
 
 # Use Capistrano for deployment
