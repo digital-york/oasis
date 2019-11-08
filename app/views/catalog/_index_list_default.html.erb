@@ -27,7 +27,7 @@
         %>
 
         <tr>
-          <th><span class="attribute-label h4">Topic</span></th>
+          <th><span class="attribute-label h4">Area of research</span></th>
           <td>
             <% ras.each do |ra| %>
                 <% if GenericLocalAuthorityService.id_to_label('research_areas',ra.to_i).include? 'Other' %>
