@@ -1,7 +1,7 @@
 <nav class="navbar navbar-default navbar-static-top" role="navigation">
-  <div class="container-fluid">
+  <div class="container">
     <div class="row">
-      <ul class="nav navbar-nav col-sm-5 col-md-6">
+      <ul class="nav navbar-nav">
         <li <%= 'class=active' if current_page?(hyrax.root_path) %>>
           <%= link_to t(:'hyrax.controls.home'), hyrax.root_path %></li>
         <% if user_signed_in? %>
@@ -18,8 +18,6 @@
           <%= link_to t(:'hyrax.pages.tabs.activities_page'), '/activities' %></li>
         <li <%= 'class=active' if current_page?('/people_saying') %>>
           <%= link_to t(:'hyrax.pages.tabs.people_saying_page'), '/people_saying' %></li>
-        <li <%= 'class=active' if current_page?('/contact') %>>
-            <%= link_to 'Contact', '/contact' %></li>
       </ul>
       <!-- /.nav -->
       <!-- <div class="searchbar-right navbar-right col-sm-7 col-md-6"> -->
