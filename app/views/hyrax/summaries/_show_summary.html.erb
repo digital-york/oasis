@@ -18,9 +18,13 @@
               <div id="summary-details" class="detail_page_section_block">
                 <h4>Summary details</h4>
                 <hr/>
-                <%= render :partial => 'publication' %>
+                <% if(@presenter.solr_document.publication_author_all.length > 0 ) %>
+                  <%= render :partial => 'publication' %>
+                <% end %>
                 <!-- Writer of Summary -->
-                <%= render :partial => 'summary_writer' %>
+                <% if(@presenter.solr_document.summary_writer_all.length > 0 ) %>
+                  <%= render :partial => 'summary_writer' %>
+                <% end %>
                 <%= render :partial => 'upload_date' %>
                 <!-- Research Area -->
                 <%= render :partial => 'generic_field_with_authority', :locals => {:field_name => 'summary_general_research_area', :authority_file_name => 'research_areas'} %>
@@ -91,7 +95,9 @@
               <% end %>
 
               <div id="cite_summary" class="detail_page_section_block">
-                <%= render :partial => 'cite_summary' %>
+                <% if(@presenter.solr_document.summary_writer_all.length > 0 ) %>
+                  <%= render :partial => 'cite_summary' %>
+                <% end %>
               </div>
             </div>
             <div class="col-sm-12">
