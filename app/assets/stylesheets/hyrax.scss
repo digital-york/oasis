@@ -6,25 +6,41 @@
 
 @import "bootstrap-sprockets";
 @import "bootstrap-default-overrides";
-@import 'bootstrap';
-@import 'blacklight/blacklight';
+@import "bootstrap";
+@import "blacklight/blacklight";
 @import "font-awesome";
 @import "blacklight_gallery/gallery";
 @import "blacklight_gallery/masonry";
 @import "blacklight_gallery/slideshow";
 @import "blacklight_gallery/osd_viewer";
-@import 'hyrax/hyrax';
+@import "hyrax/hyrax";
 
-@import 'jquery-ui';
-
-
+@import "jquery-ui";
 
 /**
  * Additional styling
  */
 
 form#new_summary {
-    select {
-      height: 230px;
+  select {
+    height: 230px;
+
+    &[name="summary[publication_date]"],
+    &[name="summary[publication_journal_name]"] {
+      height: auto;
     }
   }
+}
+
+
+
+#search-results {
+  .metadata {
+    th {
+      padding-left: 0;
+    }
+    .h4 {
+      font-size: 14px;
+    }
+  }
+}
