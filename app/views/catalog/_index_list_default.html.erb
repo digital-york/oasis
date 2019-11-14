@@ -34,7 +34,8 @@
                     <% if GenericLocalAuthorityService.id_to_label('research_areas',ra.to_i)!='Other' %>
                         <%= link_to  GenericLocalAuthorityService.id_to_label('research_areas',ra.to_i),
                                   '/catalog?f[summary_general_research_area_sim][]='+ra+'&locale=en&q=&search_field=all_fields',
-                                     :target => "_blank"
+                                     :target => "_blank",
+                                     :title => GenericLocalAuthorityService.id_to_label('research_areas',ra.to_i)
                       %>
                     <% else %>
                         <%= GenericLocalAuthorityService.id_to_label('research_areas',ra.to_i) %><br/>
@@ -47,7 +48,8 @@
                 <% else %>
                     <%= link_to  GenericLocalAuthorityService.id_to_label('research_areas',ra.to_i),
                                   '/catalog?f[summary_general_research_area_sim][]='+ra+'&locale=en&q=&search_field=all_fields',
-                                  :target => "_blank"
+                                  :target => "_blank",
+                                  :title => GenericLocalAuthorityService.id_to_label('research_areas',ra.to_i)
                   %>
                     <br/>
                 <% end %>
@@ -70,7 +72,8 @@
                     <% if GenericLocalAuthorityService.id_to_label('participant_types',pt.to_i)!='Other' %>
                         <%= link_to  GenericLocalAuthorityService.id_to_label('participant_types',pt.to_i),
                                      '/catalog?f[participants_type_sim][]='+ra+'&locale=en&q=&search_field=all_fields',
-                                     :target => "_blank"
+                                     :target => "_blank",
+                                     :title => GenericLocalAuthorityService.id_to_label('participant_types',pt.to_i)
                         %>
                     <% else %>
                         <%= GenericLocalAuthorityService.id_to_label('participant_types',pt.to_i) %><br/>
@@ -83,7 +86,8 @@
                 <% else %>
                     <%= link_to  GenericLocalAuthorityService.id_to_label('participant_types',pt.to_i),
                                  '/catalog?f[participants_type_sim][]='+pt+'&locale=en&q=&search_field=all_fields',
-                                 :target => "_blank"
+                                 :target => "_blank",
+                                 :title => GenericLocalAuthorityService.id_to_label('participant_types',pt.to_i)
                     %>
                     <br/>
                 <% end %>
@@ -105,7 +109,8 @@
             <% ages.each do |age| %>
                 <%= link_to  GenericLocalAuthorityService.id_to_label('age_of_learners',age.to_i),
                            '/catalog?f[participants_age_sim][]='+age+'&locale=en&q=&search_field=all_fields',
-                           :target => "_blank"
+                           :target => "_blank",
+                           :title => GenericLocalAuthorityService.id_to_label('age_of_learners',age.to_i)
               %>
                <br/>
             <% end %>
