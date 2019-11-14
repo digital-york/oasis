@@ -32,8 +32,6 @@ form#new_summary {
   }
 }
 
-
-
 #search-results {
   .metadata {
     th {
@@ -44,4 +42,19 @@ form#new_summary {
       font-size: 14px;
     }
   }
+}
+
+.panel-heading {
+  h1 {
+    margin: 0;
+    font-size: 30px;
+  }
+}
+
+.representative-media {
+  margin: 0 auto;
+}
+
+.show-actions {
+  padding: 15px 0;
 }
