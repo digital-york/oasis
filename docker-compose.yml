@@ -1,0 +1,146 @@
+version: '3'
+
+volumes:
+  fcrepo:
+  solr:
+  postgresdb:
+  redis:
+  uploads:
+  derivatives:
+  state:
+
+networks:
+  internal:
+
+services:
+  fcrepo:
+    image: ualbertalib/docker-fcrepo4:4.7
+    expose:
+      - 8080
+    ports:
+      - 8080:8080
+    volumes:
+      - fcrepo:/data
+    env_file:
+      - .env
+    depends_on:
+       - postgresdb
+    networks:
+      internal:
+
+  solr:
+    image: solr:7-alpine
+    expose:
+      - 8983
+    ports:
+      - 8983:8983
+    env_file:
+      - .env
+    healthcheck:
+      test:
+        - CMD
+        - wget
+        - "-O"
+        - "/dev/null"
+        - http://localhost:8983/solr/
+      interval: 30s
+      timeout: 5s
+      retries: 3
+    networks:
+      internal:
+    volumes:
+      - solr:/opt/solr/server/solr/mycores
+      - ./solr/config:/opt/solr/solr_conf
+    entrypoint:
+      # - docker-entrypoint.sh
+      - solr-precreate
+      - ${SOLR_CORE}
+      - /opt/solr/solr_conf
+
+  postgresdb:
+    image: postgres:11-alpine
+    volumes:
+      - postgresdb:/var/lib/postgresql/data
+    env_file:
+      - .env
+    environment:
+      - POSTGRES_DB=${FCREPO_DB}
+      - POSTGRES_USER=${FCREPO_USER}
+      - POSTGRES_PASSWORD=${FCREPO_PASSWORD}
+    healthcheck:
+      test: "CMD echo 'SELECT 1' | PGPASSWORD=${POSTGRES_PASSWORD} psql --host 127.0.0.1 --username #{POSTGRES_USER} --dbname #{POSTGRES_DB} --quiet --no-align --tuples-only"
+      interval: 30s
+      timeout: 5s
+      retries: 3
+    volumes:
+      - postgresdb:/var/lib/postgresql/data
+    networks:
+      internal:
+    expose:
+      - 5432
+    ports:
+      - 5432:5432
+
+  app: &app
+    build: 
+      context: .
+      args:
+        RAILS_ENV: ${RAILS_ENV}
+        UPLOADS_PATH: ${UPLOADS_PATH}
+        DERIVATIVES_PATH: ${DERIVATIVES_PATH}
+        CACHE_PATH: ${CACHE_PATH}
+        WORKING_PATH: ${WORKING_PATH}
+        BRANDING_PATH: ${BRANDING_PATH}
+        APP_WORKDIR: ${APP_WORKDIR}
+        FITS_VERSION: ${FITS_VERSION}
+        SSH_PRIVATE_KEY: ${SSH_PRIVATE_KEY}
+    env_file:
+      - .env
+    volumes:
+      - uploads:${UPLOADS_PATH}
+      - derivatives:${DERIVATIVES_PATH}
+      - state:$APP_WORKDIR/shared/state
+      - .:/${APP_WORKDIR}
+    tmpfs:
+      - /${PIDS_PATH}
+    networks:
+      internal:
+    depends_on:
+      - postgresdb
+      - solr
+      - fcrepo
+      - redis
+
+  web:
+    <<: *app
+    entrypoint:
+        - /bin/docker-entrypoint-web.sh
+    expose:
+      - ${RAILS_PORT}
+    ports:
+      - ${EXTERNAL_PORT}:${RAILS_PORT}
+
+  # workers:
+  #   <<: *app
+  #   entrypoint:
+  #       - /bin/docker-entrypoint-worker.sh
+
+  redis:
+    image: redis:5
+    command: redis-server --appendonly yes
+    volumes:
+      - redis:/data
+    expose:
+      - 6379
+    ports:
+      - 6379:6379 
+    networks:
+      internal:
+    healthcheck:
+      test:
+        - CMD
+        - redis-cli
+        - ping
+      interval: 30s
+      timeout: 5s
+      retries: 3

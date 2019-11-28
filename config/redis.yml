@@ -1,12 +1,9 @@
 development:
   host: <%= Figaro.env.redis_host %>
   port: <%= Figaro.env.redis_port %>
-  password: <%= Figaro.env.redis_password %>
 test:
   host: <%= Figaro.env.redis_host %>
   port: <%= Figaro.env.redis_port %>
-  password: <%= Figaro.env.redis_password %>
 production:
   host: <%= Figaro.env.redis_host %>
   port: <%= Figaro.env.redis_port %>
-  password: <%= Figaro.env.redis_password %>

@@ -30,3 +30,10 @@ ubuntu-xenial-16.04-cloudimg-console.log
 
 # Ignore application configuration
 /config/application.yml
+
+# Ignore local bundling
+/vendor/*
+
+# Docker file
+/docker/oasis_id_rsa*
+/.env
