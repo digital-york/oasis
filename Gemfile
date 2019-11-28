@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+ruby '~> 2.6.5'
+
 git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
   "https://github.com/#{repo_name}.git"
@@ -14,6 +16,7 @@ gem 'sqlite3'
 gem 'puma', '~> 3.12'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
+gem 'bootstrap-sass', '~> 3.4.1'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
@@ -30,10 +33,12 @@ gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 # Add clamav for virus checking
-gem 'clamav'
+# gem 'clamav'
 
 gem 'loofah', '~> 2.3.1'
 gem 'rails-html-sanitizer', '~> 1.0.4'
+gem 'nokogiri', '~> 1.10.5'
+gem 'mini_magick', '~> 4.9.5'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
@@ -91,3 +96,4 @@ group :development, :test do
 end
 
 gem 'resque', :require => 'resque/server'
+

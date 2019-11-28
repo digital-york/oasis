@@ -1,7 +1,7 @@
 # Use an multi-stage build to setup ssh
 #   copy the key and config to enable git clone
 #   @todo Docker 18.9 provides an improved mechanism: https://docs.docker.com/develop/develop-images/build_enhancements/#using-ssh-to-access-private-data-in-builds
-FROM ruby:2.5 as intermediate
+FROM ruby:2.6 as intermediate
 
 RUN apt-get update
 RUN apt-get install -y git
