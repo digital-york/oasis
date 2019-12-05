@@ -91,7 +91,7 @@ en:
     pages:
       tabs:
         activities_page: "Activities"
-        people_saying_page: "Feedback"
+        people_saying_page: "Praise"
         supporting_journals_page: "Supporting journals"
     visibility:
       open:
@@ -124,8 +124,8 @@ en:
         summary_writer: "Writer of summary"
         summary_writer_all: "All writers of summary"
         title_of_summary: "Title of summary"
-        summary_general_research_area: "Topic"
-        summary_general_research_area_other: "new topic"
+        summary_general_research_area: "Area of research"
+        summary_general_research_area_other: "New area of research"
         summary_linguistictarget: "Feature being learned"
         summary_linguistictarget_other: "Feature being learned - other"
         conference_name: "Conference name"

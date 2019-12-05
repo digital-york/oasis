@@ -9,7 +9,8 @@
               <%if 'Other' != GenericLocalAuthorityService.id_to_label(authority_file_name, w.to_i>0 ? w.to_i : w)%>
                   <%= link_to  GenericLocalAuthorityService.id_to_label(authority_file_name, w.to_i>0 ? w.to_i : w),
                          '/catalog?f['+field_name+'_sim][]='+w+'&locale=en&q=&search_field=all_fields',
-                         :target => "_blank"
+                         :target => "_blank",
+                         :title => GenericLocalAuthorityService.id_to_label(authority_file_name, w.to_i>0 ? w.to_i : w)
                          %>
               <%else%>
                   Other

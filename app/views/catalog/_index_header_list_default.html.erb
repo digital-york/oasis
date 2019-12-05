@@ -1,7 +1,7 @@
 <h3>
   <% unless document.title_of_summary.nil? || document.title_of_summary==''%>
-    <%= link_to document.title_of_summary, document %>
+    <%= link_to document.title_of_summary, document, title: document.title_of_summary %>
   <% else %>
-    <%= link_to document.title_or_label, document %>
+    <%= link_to document.title_or_label, document, title: document.title_of_summary %>
   <% end %>
 </h3>
