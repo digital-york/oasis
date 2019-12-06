@@ -515,7 +515,7 @@ GEM
     pry-rails (0.3.9)
       pry (>= 0.10.4)
     public_suffix (3.0.3)
-    puma (3.12.0)
+    puma (3.12.2)
     qa (2.1.2)
       activerecord-import
       deprecation
@@ -807,7 +807,7 @@ DEPENDENCIES
   pg (~> 0.18)
   pry-byebug
   pry-rails
-  puma (~> 3.7)
+  puma (~> 3.12)
   rails (~> 5.1.4)
   rails-html-sanitizer (~> 1.0.4)
   redis (~> 4.0)
