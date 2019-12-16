@@ -56,3 +56,78 @@ International Federation of Foreign Language Teaching Associations: <a href="htt
 <a href="https://www.tenaxschoolstrust.co.uk/">Tenax Schools Trust</a> (Ian Bauckham)<br/>
 
 ![](app/assets/images/ESRC-logo-300x258.jpg)
+
+## Quick start
+0. Assume that Docker is avaiable
+```
+❯ docker-compose --version                                                                 ═
+docker-compose version 1.24.1, build 4667896b
+```
+Generate local ssh key
+```
+ssh-keygen -i rsa docker/oasis_id_rsa
+```
+
+1. Set .env with Docker variables. Use .env.template as starting point
+```
+cp .env.template .env
+```
+Customise as required
+
+2. Set config/application.yml
+```
+# Used by SMTP for workflow email notification, once enabled
+# oasis_host: https://test.oasis-database.org
+development:
+  application_database_adapter: postgresql
+  application_database_name: oasis
+  application_database_host: postgresdb
+  application_database_username: oasis
+  application_database_password: oasis
+  fedora_base_path: /oasis-development
+  fedora_url: http://fcrepo:8080/fcrepo/rest
+  fits_path: /fits/fits.sh
+  log_level: error
+  redis_namespace: oasis-public
+  realtime_notifications: 'false'
+  redis_host: redis
+  redis_port: '6379'
+  solr_url: http://solr:8983/solr/hyrax-development
+  secret_key_base: xxxx
+```
+3. Build docker images. Note this will take up to 1h depending on network and laptop speed.
+```
+❯ docker-compose build
+
+# Check images builded
+❯ docker-compose images
+        Container                   Repository              Tag        Image Id      Size  
+-------------------------------------------------------------------------------------------
+oasis-docker_app_1          oasis-docker_app             latest      c38b7b455ab2   3.22 GB
+oasis-docker_fcrepo_1       ualbertalib/docker-fcrepo4   4.7         15806dadb895   575 MB 
+oasis-docker_postgresdb_1   postgres                     11-alpine   da01ecfbabe1   68.5 MB
+oasis-docker_redis_1        redis                        5           de25a81a5a0b   93.7 MB
+oasis-docker_solr_1         solr                         7-alpine    64cb096f9679   286 MB 
+oasis-docker_web_1          oasis-docker_web             latest      c38b7b455ab2   3.22 GB
+```
+4. Start your docker stack
+```
+❯ docker-compose up
+...
+lots of logs
+...
+
+# Check status from an other terminal
+❯ docker-compose ps                                                                  ⏎ ═ ✹ ✚
+          Name                         Command                   State                Ports         
+----------------------------------------------------------------------------------------------------
+oasis-docker_fcrepo_1       catalina.sh run                  Up               0.0.0.0:8080->8080/tcp
+oasis-docker_postgresdb_1   docker-entrypoint.sh postgres    Up (unhealthy)   0.0.0.0:5432->5432/tcp
+oasis-docker_redis_1        docker-entrypoint.sh redis ...   Up (healthy)     0.0.0.0:6379->6379/tcp
+oasis-docker_solr_1         solr-precreate hyrax-devel ...   Up (healthy)     0.0.0.0:8983->8983/tcp
+oasis-docker_web_1          /bin/docker-entrypoint-web.sh    Up               0.0.0.0:3000->3000/tcp
+```
+
+The local source code is shared with Docker ${APP_DIR} volume. Any changes to .erb files, while running rails servers  in development mode, will be seen instantly. Changes to gems and new *.rb will require rebuild image. This should be faster as the process is staged.   
+
+The build process will create qazwsx:ncelp-admin@york.ac.uk admin user. Use this link to sign in http://127.0.0.1:3000/users/sign_in
