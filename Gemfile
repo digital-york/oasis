@@ -33,7 +33,7 @@ gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 # Add clamav for virus checking
-gem 'clamav'
+# gem 'clamav' 
 
 gem 'loofah', '~> 2.3.1'
 gem 'rails-html-sanitizer', '~> 1.0.4'
@@ -70,6 +70,7 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
+gem 'browse-everything', '~> 0.16.1'
 gem 'hyrax', '2.0.3'
 gem 'sinatra', '~> 2.0.2'
 gem 'ffi', '~> 1.9.24'
