@@ -13,7 +13,7 @@ gem 'rails', '~> 5.1.4'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 # Use Puma as the app server
-gem 'puma', '~> 3.12'
+gem 'puma', '~> 3.12.6'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 gem 'bootstrap-sass', '~> 3.4.1'
@@ -37,7 +37,7 @@ gem 'redis', '~> 4.0'
 
 gem 'loofah', '~> 2.3.1'
 gem 'rails-html-sanitizer', '~> 1.0.4'
-gem 'nokogiri', '~> 1.10.5'
+gem 'nokogiri', '~> 1.10.8'
 gem 'mini_magick', '~> 4.9.5'
 
 # Use Capistrano for deployment
