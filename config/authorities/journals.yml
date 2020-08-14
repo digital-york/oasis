@@ -45,10 +45,12 @@ terms:
     term: "Journal of Child Language"
   - id: "https://www.journals.elsevier.com/journal-of-communication-disorders/"
     term: "Journal of Communication Disorders"
-  - id: https://www.cambridge.org/core/journals/journal-of-french-language-studies
+  - id: "https://www.cambridge.org/core/journals/journal-of-french-language-studies"
     term: "Journal of French Language Studies"
   - id: "http://journals.sagepub.com/home/jls"
     term: "Journal of Language and Social Psychology"
+  - id: "https://www.tandfonline.com/loi/hlie20"
+    term: "Journal of Language, Identity & Education"
   - id: "https://www.journals.elsevier.com/journal-of-memory-and-language/"
     term: "Journal of Memory and Language"
   - id: "https://www.tandfonline.com/loi/rmmm20"
