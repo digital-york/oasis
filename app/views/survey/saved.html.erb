@@ -13,7 +13,11 @@
         <div class="row">
           <div class="col-sm-12">
 
-            <button type="button" class="btn btn-info" onclick="window.open('/downloads/<%= params["fileset_id"]%>','_blank');parent.$.fancybox.close();">Download summary</button>
+            <button type="button"
+                    class="btn btn-info"
+                    id="file_download"
+                    data-label="<%= params["fileset_id"] %>"
+                    onclick="window.open('/downloads/<%= params["fileset_id"]%>','_blank');parent.$.fancybox.close();">Download summary</button>
 
             <button type="button" class="btn btn-info" onclick="parent.$.fancybox.close();">Close</button>
 
