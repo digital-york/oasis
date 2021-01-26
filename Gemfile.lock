@@ -418,7 +418,7 @@ GEM
       slop
     legato (0.7.0)
       multi_json
-    libv8 (3.16.14.19)
+    libv8 (3.16.14.19-x86_64-linux)
     link_header (0.0.8)
     linkeddata (3.0.3)
       equivalent-xml (~> 0.6)
@@ -836,4 +836,4 @@ DEPENDENCIES
   xray-rails
 
 BUNDLED WITH
-   1.17.3
+   2.1.6
