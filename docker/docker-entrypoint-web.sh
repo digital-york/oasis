@@ -17,7 +17,7 @@ FLAG=""
 # This is global and persists across images
 #   ie. we don't want to re-initialize on a new image
 if [ ! -f $APP_WORKDIR/shared/state/.initialized ]; then
-    echo "Setting the initial flag"
+    echo "INFO: Setting the initial flag"
     FLAG="initialize"
     mkdir $APP_WORKDIR/shared/state
     touch $APP_WORKDIR/shared/state/.initialized
@@ -32,7 +32,7 @@ if [ "$FLAG" == "initialize" ]; then
   # check that Solr is running
   SOLR=$(curl --silent --connect-timeout 45 "http://${SOLR_HOST:-solr}:${SOLR_PORT:-8983}/solr/" | grep "Apache SOLR")
   if [ -n "$SOLR" ] ; then
-      echo "Solr is running..."
+      echo "INFO: Solr is running..."
   else
       echo "ERROR: Solr is not running"
       exit 1
@@ -41,22 +41,26 @@ if [ "$FLAG" == "initialize" ]; then
   # check that Fedora is running
   FEDORA=$(curl --silent --connect-timeout 45 "http://${FEDORA_HOST:-fcrepo}:${FEDORA_PORT:-8080}/fcrepo/" | grep "Fedora Commons Repository")
   if [ -n "$FEDORA" ] ; then
-      echo "Fedora is running..."
+      echo "INFO: Fedora is running..."
   else
       echo "ERROR: Fedora is not running"
       exit 1
   fi
   
-  echo "Create the db and run any pending migrations"
+  echo "INFO: Create the db and run any pending migrations"
+  echo "INFO: exec rails db:migrate RAILS_ENV=development"
   bundle exec rails db:migrate RAILS_ENV=development
   
-  echo "Running the initialization tasks"
+  echo "INFO: Running the initialization tasks"
 #   bundle exec rake assets:clean assets:precompile
+  echo "INFO: exec rake hyrax:default_admin_set:create"
   bundle exec rake hyrax:default_admin_set:create
+  echo "INFO: exec rake hyrax:workflow:load"
   bundle exec rake hyrax:workflow:load
+  echo "INFO: exec rake hyrax:default_collection_types:create"
   bundle exec rake hyrax:default_collection_types:create
   
-  echo "Add oasis-admin@york.ac.uk"
+  echo "INFO: Add oasis-admin@york.ac.uk"
   echo "admin = Role.create(name: 'admin'); \
         User.create!(email:'oasis-admin@york.ac.uk', password:'qazwsx'); \
         admin.users << User.find_by_user_key('oasis-admin@york.ac.uk'); \

@@ -130,4 +130,4 @@ oasis-docker_web_1          /bin/docker-entrypoint-web.sh    Up               0.
 
 The local source code is shared with Docker ${APP_DIR} volume. Any changes to .erb files, while running rails servers  in development mode, will be seen instantly. Changes to gems and new *.rb will require rebuild image. This should be faster as the process is staged.   
 
-The build process will create qazwsx:ncelp-admin@york.ac.uk admin user. Use this link to sign in http://127.0.0.1:3000/users/sign_in
+The build process will create qazwsx:oasis-admin@york.ac.uk admin user. Use this link to sign in http://127.0.0.1:3000/users/sign_in

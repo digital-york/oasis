@@ -1,7 +1,7 @@
 # Use an multi-stage build to setup ssh
 #   copy the key and config to enable git clone
 #   @todo Docker 18.9 provides an improved mechanism: https://docs.docker.com/develop/develop-images/build_enhancements/#using-ssh-to-access-private-data-in-builds
-FROM ruby:2.6 as intermediate
+FROM ruby:2.6.6 as intermediate
 
 RUN apt-get update
 RUN apt-get install -y git
@@ -20,7 +20,7 @@ ADD ${SSH_PRIVATE_KEY} /root/.ssh/id_rsa
 RUN mkdir $APP_WORKDIR
 WORKDIR $APP_WORKDIR
 
-FROM ruby:2.6
+FROM ruby:2.6.6
 
 # Setup build variables
 ARG APP_WORKDIR
@@ -85,5 +85,8 @@ RUN chmod +x /bin/docker-entrypoint-worker.sh
 WORKDIR $APP_WORKDIR
 COPY Gemfile /${APP_WORKDIR}/Gemfile
 COPY Gemfile.lock /${APP_WORKDIR}/Gemfile.lock
+RUN gem update --system; gem install bundler
 RUN if [ "$RAILS_ENV" = "production" ]; then bundle install --without development test; else bundle install; fi
+# Install app for production deployment 
+# Do not rebuild for local development as docker-compose use local mount to $APP_WORDKIR
 COPY . $APP_WORKDIR

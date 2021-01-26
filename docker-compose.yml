@@ -58,7 +58,7 @@ services:
       - /opt/solr/solr_conf
 
   postgresdb:
-    image: postgres:11-alpine
+    image: postgres:12-alpine
     volumes:
       - postgresdb:/var/lib/postgresql/data
     env_file:
@@ -113,6 +113,8 @@ services:
 
   web:
     <<: *app
+    tty: true 
+    stdin_open: true 
     entrypoint:
         - /bin/docker-entrypoint-web.sh
     expose:
