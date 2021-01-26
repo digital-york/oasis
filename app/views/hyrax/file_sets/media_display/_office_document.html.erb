@@ -5,6 +5,11 @@
                     class: "representative-media",
                     alt: "",
                     role: "presentation" %>
+      <%
+          summary_doc = FileSetHelper.get_parent_summary_docs(file_set.id)
+      %>
+      <input type="hidden" id="summary_journals" value="<%= SummaryHelper.get_journals(summary_doc).join('|')%>"/>
+
       <%= link_to hyrax.download_path(file_set),
                   data: { turbolinks: false },
                   target: :_blank,

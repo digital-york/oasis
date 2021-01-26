@@ -5,6 +5,14 @@
 
 $(document).on('click', '#file_download', function(e) {
   _gaq.push(['_trackEvent', 'Files', 'Downloaded', $(this).data('label')]);
-    
+
+  // send journals info to GA
+  let journals = $('#summary_journals').val();
+  if(journals) {
+    journals.split("|").forEach(function (item, index) {
+      _gaq.push(['_trackEvent', 'Journals', 'Downloaded', item]);
+      //console.log("Journal -> " + item);
+    });
+  }
 });
 
