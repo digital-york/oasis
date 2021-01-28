@@ -4,14 +4,13 @@
 // sent to Google Analytics.
 
 $(document).on('click', '#file_download', function(e) {
-  _gaq.push(['_trackEvent', 'Files', 'Downloaded', $(this).data('label')]);
+  _gaq.push(['_trackEvent', 'Files', 'Downloaded', $(this).data('label'), ,true]);
 
   // send journals info to GA
   let journals = $('#summary_journals').val();
   if(journals) {
     journals.split("|").forEach(function (item, index) {
-      _gaq.push(['_trackEvent', 'Journals', 'Downloaded', item]);
-      //console.log("Journal -> " + item);
+      _gaq.push(['_trackEvent', 'Journals', 'Metadata', item, ,true]);
     });
   }
 });
