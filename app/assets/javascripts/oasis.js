@@ -1,4 +1,13 @@
 $(function() {
+    // Force load TineMCE option, work arround Hyrax bug.
+    tinyMCE.init({
+        selector: "textarea.tinymce",
+        toolbar: "styleselect | bold italic | bullist numlist | alignleft aligncenter alignright alignjustify | outdent indent | link image codesample | code ",
+        plugins: "image,link,code,codesample,autoresize,imagetools,media,table,insertdatetime,charmap,print,preview,anchor,searchreplace,visualblocks,fullscreen,advlist,lists",
+        advlist_bullet_styles: 'square',
+        advlist_number_styles: 'lower-alpha,lower-roman,upper-alpha,upper-roman'
+    })
+
     $( "#accordion" ).accordion();
 
     $(".homepage_div").click(function() {
