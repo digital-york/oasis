@@ -4,7 +4,7 @@
 // sent to Google Analytics.
 
 $(document).on('click', '#file_download', function(e) {
-  _gaq.push(['_trackEvent', 'Files', 'Downloaded', $(this).data('label'), ,true]);
+  _gaq.push(['_trackEvent', 'Files', 'Downloaded', $(this).data('label'), 1]);
 
   // send journals info to GA
   let journals = $('#summary_journals').val();
