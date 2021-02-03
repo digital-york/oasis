@@ -8,7 +8,11 @@ $(function() {
         advlist_number_styles: 'lower-alpha,lower-roman,upper-alpha,upper-roman'
     })
 
-    $( "#accordion" ).accordion();
+    // Use the accordion effect on help pages.
+    $("#accordion").accordion({
+        active: false,
+        collapsible: true
+    })  
 
     $(".homepage_div").click(function() {
         var status_elt = $(this).find('input');
