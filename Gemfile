@@ -9,7 +9,7 @@ end
 # Production secrets management
 gem 'figaro'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 5.1.4'
+gem 'rails', '~> 5.2.4'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 # Use Puma as the app server
@@ -79,6 +79,7 @@ gem 'sprockets', '~> 3.7.2'
 
 gem 'hydra-role-management'
 gem 'blacklight-access_controls', '0.6.2'
+gem "activesupport", ">= 5.2.4.3"
 
 group :development, :test do
   gem 'solr_wrapper', '>= 0.3'
