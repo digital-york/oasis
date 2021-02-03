@@ -878,7 +878,7 @@ DEPENDENCIES
   pry-byebug
   pry-rails
   puma (~> 3.12.6)
-  rails (~> 5.2.4)
+  rails (~> 5.2.4.4)
   rails-html-sanitizer (~> 1.0.4)
   redis (~> 4.0)
   resque
