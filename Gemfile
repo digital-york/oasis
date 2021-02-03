@@ -80,6 +80,7 @@ gem 'sprockets', '~> 3.7.2'
 gem 'hydra-role-management'
 gem 'blacklight-access_controls', '0.6.2'
 gem "activesupport", ">= 5.2.4.3"
+gem "simple_form", ">= 5.0.0"
 
 group :development, :test do
   gem 'solr_wrapper', '>= 0.3'
