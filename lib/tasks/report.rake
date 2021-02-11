@@ -135,4 +135,42 @@ namespace :report do
         end
     end
 
+    # bundle exec rake report:downloader_per_email
+    desc 'Generate downloader statistics per email'
+    task :downloader_per_email => :environment do
+        results = {}
+
+        solr_query = 'has_model_ssim:Downloader'
+        solr = RSolr.connect :url => SOLR
+        response = solr.get 'select', :params => {
+            :q=>"#{solr_query}",
+            :start=>0,
+            :rows=>2147483647
+        }
+        number_of_downloaders = response['response']['numFound']
+        if number_of_downloaders == 0
+            puts 'No downloader found.'
+        else
+            puts "Total downloads: #{number_of_downloaders}"
+            puts '------------------------------'
+
+            response['response']['docs'].each do |doc|
+                unless doc['downloader_email_tesim'].nil?
+                    doc['downloader_email_tesim'].each do |email|
+                        # if current email is top level status
+                        if results[email].blank?
+                            results[email] = 1
+                        else
+                            results[email] = results[email] + 1
+                        end
+                    end
+                end
+            end
+
+            results.each do |k,v|
+                puts "#{k} => #{v}"
+            end
+        end
+    end
+
 end
