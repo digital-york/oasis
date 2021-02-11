@@ -9,7 +9,7 @@ end
 # Production secrets management
 gem 'figaro'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 5.1.4'
+gem 'rails', '~> 5.2.4.4'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 # Use Puma as the app server
@@ -37,7 +37,7 @@ gem 'redis', '~> 4.0'
 
 gem 'loofah', '~> 2.3.1'
 gem 'rails-html-sanitizer', '~> 1.0.4'
-gem 'nokogiri', '~> 1.10.8'
+gem 'nokogiri', '~> 1.11.0'
 gem 'mini_magick', '~> 4.9.5'
 
 # Use Capistrano for deployment
@@ -71,7 +71,7 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'browse-everything', '~> 0.16.1'
-gem 'hyrax', '2.0.3'
+gem 'hyrax', '>= 2.9.0'
 gem 'sinatra', '~> 2.0.2'
 gem 'ffi', '~> 1.9.24'
 gem 'rubyzip', '~> 1.3.0'
@@ -79,6 +79,8 @@ gem 'sprockets', '~> 3.7.2'
 
 gem 'hydra-role-management'
 gem 'blacklight-access_controls', '0.6.2'
+gem "activesupport", ">= 5.2.4.3"
+gem "simple_form", ">= 5.0.0"
 
 group :development, :test do
   gem 'solr_wrapper', '>= 0.3'
@@ -89,7 +91,7 @@ end
 
 gem 'rsolr', '>= 1.0'
 gem 'jquery-rails'
-gem 'devise'
+gem "devise", ">= 4.7.1"
 gem 'devise-guests', '~> 0.6'
 group :development, :test do
   gem 'fcrepo_wrapper'
