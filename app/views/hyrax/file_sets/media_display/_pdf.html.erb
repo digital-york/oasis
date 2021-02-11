@@ -23,7 +23,14 @@
           <a data-fancybox
             data-type="iframe"
             data-captain="Downloader Survey"
-            data-src="/survey/new?summary_id=<%= @presenter.solr_document.id %>&summary_fileset_id=<%= file_set.id%>"
+          <%
+            if @presenter.blank? or @presenter.solr_document.blank?
+                summary_id =  FileSetHelper.get_parent_summary_docs(file_set.id)[0]['id']
+            else
+                summary_id = @presenter.solr_document.id
+            end
+          %>
+            data-src="/survey/new?summary_id=<%= summary_id %>&summary_fileset_id=<%= file_set.id%>"
             data-options='{
               "buttons" : ["close"],
               "animationEffect": "fade",
