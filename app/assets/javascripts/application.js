@@ -11,8 +11,7 @@
 // about supported directives.
 //
 //=
-// Temporarly disable turbolinks to support TINYMCE in production
-// require turbolinks
+//= require turbolinks
 //
 // Required by Blacklight
 //= require jquery
@@ -23,6 +22,7 @@
 
 // Required by OASIS
 //= require jquery-ui
+//= require jquery-ui/accordion
 
 //= require_tree .
 //= require hyrax

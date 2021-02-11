@@ -24,5 +24,4 @@ module SolrHelper
             return response['response']['docs']
         end
     end
-
 end

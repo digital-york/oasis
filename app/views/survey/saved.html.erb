@@ -12,8 +12,16 @@
       <div class="panel-body">
         <div class="row">
           <div class="col-sm-12">
+            <%
+              summary_doc = FileSetHelper.get_parent_summary_docs(params["fileset_id"])
+            %>
+            <input type="hidden" id="summary_journals" value="<%= SummaryHelper.get_journals(summary_doc).join('|')%>"/>
 
-            <button type="button" class="btn btn-info" onclick="window.open('/downloads/<%= params["fileset_id"]%>','_blank');parent.$.fancybox.close();">Download summary</button>
+            <button type="button"
+                    class="btn btn-info"
+                    id="file_download"
+                    data-label="<%= params["fileset_id"] %>"
+                    onclick="window.open('/downloads/<%= params["fileset_id"]%>','_blank');parent.$.fancybox.close();">Download summary</button>
 
             <button type="button" class="btn btn-info" onclick="parent.$.fancybox.close();">Close</button>
 
