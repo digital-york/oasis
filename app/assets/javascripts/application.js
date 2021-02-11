@@ -22,7 +22,7 @@
 
 // Required by OASIS
 //= require jquery-ui
-//= require jquery-ui/accordion
+//= require jquery-ui/widgets/accordion
 
 //= require_tree .
 //= require hyrax
