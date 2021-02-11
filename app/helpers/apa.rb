@@ -64,6 +64,18 @@ class Apa
       get_publication_year_string(publication_year) +
       get_title_string(title) +
       j_string +
+      get_vol_issue_string_html(volume, issue) +
+      get_pages_string(page_from, page_to) +
+      get_doi_string(doi)
+  end
+
+  def self.get_reference(authors, publication_year, title, journal, authority_value = true, volume, issue, page_from, page_to, doi)
+    j_string = journal + '. '
+    j_string = get_journal_string_markup(journal) if authority_value == true
+    get_author_string(authors) +
+      get_publication_year_string(publication_year) +
+      get_title_string(title) +
+      j_string +
       get_vol_issue_string(volume, issue) +
       get_pages_string(page_from, page_to) +
       get_doi_string(doi)
@@ -71,7 +83,7 @@ class Apa
 
   def self.get_other_journal_string(other_journal_name, other_journal_url)
     if !other_journal_name.nil? && (other_journal_name != '')
-      return get_html_link(other_journal_url, other_journal_name)
+      return get_html_link(other_journal_url, other_journal_name) + ', '
     end
 
     ''
@@ -80,6 +92,26 @@ class Apa
   def self.get_reference_with_other_journal_name_html(authors, publication_year, title, other_journal_name, other_journal_url, authority_value = true, volume, issue, page_from, page_to, doi)
     j_string = html_italic(other_journal_name) + '. '
     j_string = html_italic(get_other_journal_string(other_journal_name, other_journal_url)) if authority_value == true
+    get_author_string(authors) +
+      get_publication_year_string(publication_year) +
+      get_title_string(title) +
+      j_string +
+      get_vol_issue_string_html(volume, issue) +
+      get_pages_string(page_from, page_to) +
+      get_doi_string(doi)
+  end
+
+  def self.get_other_journal_string_markup(other_journal_name, other_journal_url)
+    if !other_journal_name.nil? && (other_journal_name != '')
+      return '[' + other_journal_name + '](' + other_journal_url +'), '
+    end
+
+    ''
+  end
+
+  def self.get_reference_with_other_journal_name(authors, publication_year, title, other_journal_name, other_journal_url, authority_value = true, volume, issue, page_from, page_to, doi)
+    j_string = other_journal_name + '. '
+    j_string = get_other_journal_string_markup(other_journal_name, other_journal_url) if authority_value == true
     get_author_string(authors) +
       get_publication_year_string(publication_year) +
       get_title_string(title) +
@@ -144,9 +176,28 @@ class Apa
     ''
   end
 
-  def self.get_vol_issue_string(vol, issue)
+  def self.get_journal_string_markup(journal)
+    unless journal.nil?
+      if journal.starts_with?('http') || (journal.to_i <= 0)
+        return '[' + GenericLocalAuthorityService.id_to_label('journals', journal) + '](' + journal + '), '
+      else
+        return '[' + GenericLocalAuthorityService.id_to_label('journals', journal.to_i) + '](' + journal + '), '
+      end
+    end
+    ''
+  end
+
+  def self.get_vol_issue_string_html(vol, issue)
     unless vol.nil? || issue.nil?
       return html_italic(vol) + '(' + issue + ')' + ', '
+    end
+
+    ''
+  end
+
+  def self.get_vol_issue_string(vol, issue)
+    unless vol.nil? || issue.nil?
+      return vol + '(' + issue + ')' + ', '
     end
 
     ''

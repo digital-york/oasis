@@ -1,0 +1,52 @@
+<% content_for(:twitter_meta) do %>
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image:alt" content="<%= t('hyrax.institution_name_full') %>">
+  <meta name="twitter:site" content="<%= t('hyrax.product_twitter_handle') %>" />
+  <meta name="twitter:creator" content="<%= @presenter.tweeter %>" />
+  <meta property="og:site_name" content="<%= application_name %>" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="<%= @presenter.title_of_summary %>" />
+  <meta property="og:article:author" content="<%= sanitize(Apa.get_author_string(JSON.parse(@presenter.solr_document.summary_writer_all))) %>" />
+  <meta property="og:description" content="<%= @presenter.summary_description %>" />
+  <meta property="og:image" content="<%= thumbnail_url(file_set) rescue @presenter.oasis_image %>" />
+  <meta property="og:url" content="<%= polymorphic_url([main_app, @presenter]) %>" />
+  <meta property="og:article:published_time" content="<%= @presenter.date_uploaded %>" />
+  <%# <meta name="twitter:data1" content="..." /> %>
+  <%# <meta name="twitter:label1" content="Keywords" /> %>
+  <meta name="twitter:data2" content="Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)" />
+  <meta name="twitter:label2" content="Licence" />
+<% end %>
+
+<% content_for(:gscholar_meta) do %>
+  <meta name="description" content="<%= @presenter.description.first.truncate(200) rescue @presenter.title.first %>" />
+  <meta name="citation_title" content="<%= @presenter.title.first %>" />
+
+  <% @presenter.creator.each do |creator| %>
+  <meta name="citation_author" content="<%= creator %>" />
+  <% end %>
+
+  <% unless @presenter.date_created.blank? %>
+  <meta name="citation_publication_date" content="<%= @presenter.date_created.first %>" />
+  <% end %>
+
+  <% unless @presenter.download_url.blank? %>
+  <meta name="citation_pdf_url" content="<%= @presenter.download_url %>" />
+  <% end %>
+
+  <% unless @presenter.keyword.blank? %>
+  <meta name="citation_keywords" content="<%= @presenter.keyword.join('; ') %>" />
+  <% end %>
+
+  <% unless @presenter.publisher.blank? %>
+  <meta name="citation_publisher" content="<%= @presenter.publisher.join('; ') %>" />
+  <% end %>
+
+  <!-- Hyrax does not yet support these metadata -->
+  <!--
+    <meta name="citation_journal_title" content=""/>
+    <meta name="citation_volume" content=""/>
+    <meta name="citation_issue" content=""/>
+    <meta name="citation_firstpage" content=""/>
+    <meta name="citation_lastpage" content=""/>
+  -->
+<% end %>
