@@ -10,8 +10,8 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//=
-//= require turbolinks
+//Turbolinks does not work with our JQuery oasis.js. Using jquery.turbolinks gem will not solve the issue.
+//require turbolinks
 //
 // Required by Blacklight
 //= require jquery
