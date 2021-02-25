@@ -1,4 +1,4 @@
-$(function() {
+$(document).on('turbolinks:load', function() {
     // Use the accordion effect on help pages.
     $("#accordion").accordion({
         active: false,

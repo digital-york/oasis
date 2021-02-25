@@ -11,7 +11,7 @@
 // about supported directives.
 //
 //Turbolinks does not work with our JQuery oasis.js. Using jquery.turbolinks gem will not solve the issue.
-//require turbolinks
+//= require turbolinks
 //
 // Required by Blacklight
 //= require jquery
