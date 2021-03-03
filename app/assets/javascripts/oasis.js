@@ -43,23 +43,6 @@ $(document).on('turbolinks:load', function() {
     check_topic_other_fields();
 
     // ---------------------------------------------------
-    // show/hide other journal name fields
-    function check_publication_journal_name_other_fields() {
-        var t = $('#summary_publication_journal_name option').filter(':selected').text();
-        if(t.endsWith('Other')) {
-            $("#publication_journal_name_other_div").css("display","block");
-        }else{
-            $("#publication_journal_name_other_div").css("display","none");
-        }
-    }
-    // Show hiden 'other' journal field
-    $("#summary_publication_journal_name").click(function(){
-        check_publication_journal_name_other_fields();
-    });
-    // check if needs to show other journal name field on load of the page
-    check_publication_journal_name_other_fields();
-
-    // ---------------------------------------------------
     // show/hide other proficiency fields
     function check_participants_proficiency_other_fields() {
         if($('[id^=summary_participants_proficiency_]').eq(-2).is(':checked')) {
