@@ -576,7 +576,7 @@ GEM
     passenger (5.2.3)
       rack
       rake (>= 0.8.1)
-    pg (0.21.0)
+    pg (1.2.3)
     posix-spawn (0.3.15)
     power_converter (0.1.2)
     pry (0.13.1)
@@ -896,7 +896,7 @@ DEPENDENCIES
   mini_magick (~> 4.9.5)
   nokogiri (~> 1.11.0)
   passenger (~> 5.2.0)
-  pg (~> 0.18)
+  pg (~> 1.2.3)
   pry-byebug
   pry-rails
   puma (~> 3.12.6)
