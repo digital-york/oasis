@@ -35,7 +35,10 @@ module Hyrax
       end
     end
 
-    def oasis_image
+    def summary_thumbnail_url
+      fileset_id = Summary.find(@solr_document.id).thumbnail_id
+      return "https://oasis-database.org/downloads/#{fileset_id}?file=thumbnail" unless fileset_id.empty?
+
       'https://oasis-database.org/assets/oasis.png'
     end
   end

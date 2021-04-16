@@ -9,7 +9,7 @@
   <meta property="og:title" content="<%= @presenter.title_of_summary %>" />
   <meta property="og:article:author" content="<%= sanitize(Apa.get_author_string(JSON.parse(@presenter.solr_document.summary_writer_all))) %>" />
   <meta property="og:description" content="<%= @presenter.summary_description %>" />
-  <meta property="og:image" content="<%= thumbnail_url(file_set) rescue @presenter.oasis_image %>" />
+  <meta property="og:image" content="<%= @presenter.summary_thumbnail_url %>" />
   <meta property="og:url" content="<%= polymorphic_url([main_app, @presenter]) %>" />
   <meta property="og:article:published_time" content="<%= @presenter.date_uploaded %>" />
   <%# <meta name="twitter:data1" content="..." /> %>
