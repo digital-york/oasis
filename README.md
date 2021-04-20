@@ -131,3 +131,21 @@ oasis-docker_web_1          /bin/docker-entrypoint-web.sh    Up               0.
 The local source code is shared with Docker ${APP_DIR} volume. Any changes to .erb files, while running rails servers  in development mode, will be seen instantly. Changes to gems and new *.rb will require rebuild image. This should be faster as the process is staged.   
 
 The build process will create qazwsx:oasis-admin@york.ac.uk admin user. Use this link to sign in http://127.0.0.1:3000/users/sign_in
+
+5. Known issues
+
+Solr data re not store at external volume. Remove Solr container to start fresh.
+
+Upgrading hyrax application requires to rung DB migration, run ```docker-compose web run bundle exec rails db:migrate RAILS_ENV=development```. The command will be executed on stoping web service with Control+C as web container starts rails server.
+
+Hyrax app creates application PID at /var/run/hyrax/hyrax.pid. Occasionally, restarting docker will not clean the file. On this occassion web service fails to start. Simply stop docker and start it again. Ultimetly, this can be also solved by removing web container with volumes and rebuild it.
+```
+docker-compose rm
+docker volume rm oasis-docker_state 
+
+# all all Oasis volumes
+docker volume rm $(docker volume ls -q|grep oasis) 
+```
+
+In order to use Pry for debuging, add Pry bindig and restart docker. Visit relevant application section. Application will stop, however, access to terminal is not allowed. Connect to web service with attach command ```docker attach #Container ID``` and press enter to see Pry CMD prompt.
+
