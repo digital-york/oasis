@@ -1,11 +1,11 @@
 <footer class="navbar navbar-inverse site-footer">
   <div class="container-fluid">
     <div class="navbar-text text-left">
+      <%= image_tag("oasis-qrcode.png", size: "100x100", :alt => "OASIS QR code", :title => "Download reusable OASIS QR code")%>
+    </div>
+    <div class="navbar-text text-left">
         <p><%= t('hyrax.footer.service_html') %></p>
-        <p>
-          <%= image_tag("oasis-qrcode.png", size: "50x50", :alt => "OASIS QR code", :title => "Download reusable OASIS QR code") %>
-          <%= t('hyrax.product_name') %> v2.9.3 
-        </p>
+        <p><%= t('hyrax.product_name') %> v2.9.3</p>
     </div>
     <div class="navbar-right">
       <div class="navbar-text text-right">
