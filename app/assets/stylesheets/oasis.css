@@ -86,3 +86,7 @@ body .image-masthead .background-container-gradient {
 div.facets h3 {
     font-size: 1.2em;
 }
+
+.site-footer {
+    height: auto;
+}
