@@ -9,7 +9,7 @@ end
 # Production secrets management
 gem 'figaro'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 5.2.4.4'
+gem 'rails', '~> 5.2.4.6'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 # Use Puma as the app server
@@ -71,7 +71,7 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'browse-everything', '~> 0.16.1'
-gem 'hyrax', '>= 2.9.0'
+gem 'hyrax', '~> 2.9.5'
 gem 'sinatra', '~> 2.0.2'
 gem 'ffi', '~> 1.9.24'
 gem 'rubyzip', '~> 1.3.0'
