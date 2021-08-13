@@ -71,6 +71,7 @@ if [ "$FLAG" == "initialize" ]; then
 fi
 
 # echo "--------- Starting Hyrax in $RAILS_ENV mode ---------"
+rm $PIDS_PATH/$APPLICATION_KEY.pid
 bundle exec rails server -p $RAILS_PORT -b '0.0.0.0' --pid $PIDS_PATH/$APPLICATION_KEY.pid
 
 # Then exec the container's main process (what's set as CMD in the Dockerfile).
