@@ -110,6 +110,11 @@ en:
           transfer:  "Transfer ownership of summary"
         works: "Your work"
 
+    file_set:
+      show:
+        downloadable_content:
+          office_link: Download summary
+          pdf_link: Download summary
 
   helpers:
     action:

@@ -90,3 +90,16 @@ div.facets h3 {
 .site-footer {
     height: auto;
 }
+
+/* Active accordion */
+.ui-state-active {
+    border: 1px solid;
+    background-color: #286090;
+    border-color: #265b89;
+    font-weight: normal;
+}
+
+/* download button a data-fancybox .btn .btn-primary .btn-block */
+#file_download {
+    font-size: x-large;
+}
