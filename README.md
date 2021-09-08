@@ -136,7 +136,7 @@ The build process will create qazwsx:oasis-admin@york.ac.uk admin user. Use this
 
 Solr data re not store at external volume. Remove Solr container to start fresh.
 
-Upgrading hyrax application requires to rung DB migration, run ```docker-compose web run bundle exec rails db:migrate RAILS_ENV=development```. The command will be executed on stoping web service with Control+C as web container starts rails server.
+Upgrading hyrax application requires to rung DB migration, run ```docker-compose run web bundle exec rails db:migrate RAILS_ENV=development```. The command will be executed on stoping web service with Control+C as web container starts rails server.
 
 Hyrax app creates application PID at /var/run/hyrax/hyrax.pid. Occasionally, restarting docker will not clean the file. On this occassion web service fails to start. Simply stop docker and start it again. Ultimetly, this can be also solved by removing web container with volumes and rebuild it.
 ```
