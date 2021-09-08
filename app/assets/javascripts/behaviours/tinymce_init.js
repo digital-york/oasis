@@ -9,7 +9,7 @@ $(document).on('turbolinks:load', function() {
         tinyMCE.init({
             selector: 'textarea.tinymce',
             height: 500,
-            plugins: 'media link image lists table',
+            plugins: 'media link image lists table code visualblocks',
             menubar: false,
             toolbar: 'styleselect | formats | undo redo | ' +
                 'bold italic underline strikethrough | ' +
@@ -17,7 +17,8 @@ $(document).on('turbolinks:load', function() {
                 'image media link | table tabledelete | ' +
                 'tableprops tablerowprops tablecellprops | ' +
                 'tableinsertrowbefore tableinsertrowafter tabledeleterow | ' +
-                'tableinsertcolbefore tableinsertcolafter tabledeletecol'
+                'tableinsertcolbefore tableinsertcolafter tabledeletecol | ' +
+                'code visualblocks'
         })
     }
 });
