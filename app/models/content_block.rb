@@ -14,7 +14,8 @@ class ContentBlock < ActiveRecord::Base
     agreement: :agreement_page,
     activities: :activities_page,
     people_saying: :people_saying_page,
-    supporting_journals: :supporting_journals_page
+    supporting_journals: :supporting_journals_page,
+    cookie_statements: :cookie_statements_page,
   }.freeze
 
   # NOTE: method defined outside the metaclass wrapper below because
@@ -117,6 +118,15 @@ class ContentBlock < ActiveRecord::Base
       supporting_journals_page.update(value: value)
     end
 
+    def cookie_statements_page
+      find_by(name: 'cookie_statements_page') ||
+          create(name: 'cookie_statements_page', value: default_cookie_statements_text)
+    end
+
+    def cookie_statements_page=(value)
+      cookie_statements_page.update(value: value)
+    end
+
     def default_agreement_text
       ERB.new(
         IO.read(
@@ -154,6 +164,14 @@ class ContentBlock < ActiveRecord::Base
         IO.read(
           Rails.root.join('app', 'views', 'hyrax', 'content_blocks', 'templates', 'supporting_journals.html.erb')
         )
+      ).result
+    end
+
+    def default_cookie_statements_text
+      ERB.new(
+          IO.read(
+              Rails.root.join('app', 'views', 'hyrax', 'content_blocks', 'templates', 'cookie_statements.html.erb')
+          )
       ).result
     end
 
