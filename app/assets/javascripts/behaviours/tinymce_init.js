@@ -20,5 +20,7 @@ $(document).on('turbolinks:load', function() {
                 'tableinsertcolbefore tableinsertcolafter tabledeletecol | ' +
                 'code visualblocks'
         })
+    } else {
+        setTimeout(arguments.callee, 50);
     }
 });
