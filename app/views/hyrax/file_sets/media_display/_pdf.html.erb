@@ -19,45 +19,52 @@
                     class: "representative-media",
                     alt: "",
                     role: "presentation" %>
-      <% unless session['has_done_survey'] == 'yes' %>
-          <a data-fancybox
-            data-type="iframe"
-            data-captain="Downloader Survey"
-            id = "file_download"
-          <%
-            if @presenter.blank? or @presenter.solr_document.blank?
-                summary_id =  FileSetHelper.get_parent_summary_docs(file_set.id)[0]['id']
-            else
-                summary_id = @presenter.solr_document.id
-            end
-          %>
-            data-src="/survey/new?summary_id=<%= summary_id %>&summary_fileset_id=<%= file_set.id%>"
-            data-options='{
-              "buttons" : ["close"],
-              "animationEffect": "fade",
-              "animationDuration": "500",
-              "autoFocus": "true",
-              "modal": "true"
-            }'
-            class="btn btn-primary btn-block"
-            href="javascript:;" >
-          <%= t('hyrax.file_set.show.downloadable_content.pdf_link') %>
-        </a>
-      <% else %>
-        <%
-          summary_doc = FileSetHelper.get_parent_summary_docs(file_set.id)
-        %>
-        <input type="hidden" id="summary_journals" value="<%= SummaryHelper.get_journals(summary_doc).join('|')%>"/>
 
-        <%= link_to hyrax.download_path(file_set),
-                    data: { turbolinks: false },
-                    target: :_blank,
-                    id: "file_download",
-                    data: { label: file_set.id },
-                    class: "btn btn-primary btn-block" do %>
-          <%= t('hyrax.file_set.show.downloadable_content.pdf_link') %>
-        <% end %>
-      <% end %>
+      <!-- Download survey -->
+      <a data-fancybox
+        data-type="iframe"
+        data-captain="Downloader Survey"
+        id = "file_download"
+      <%
+        if @presenter.blank? or @presenter.solr_document.blank?
+            summary_id =  FileSetHelper.get_parent_summary_docs(file_set.id)[0]['id']
+        else
+            summary_id = @presenter.solr_document.id
+        end
+      %>
+        data-src="/survey/new?summary_id=<%= summary_id %>&summary_fileset_id=<%= file_set.id%>"
+        data-options='{
+          "buttons" : ["close"],
+          "animationEffect": "fade",
+          "animationDuration": "500",
+          "autoFocus": "true",
+          "modal": "true"
+        }'
+        class="btn btn-primary btn-block"
+        style="visibility: hidden"
+        href="javascript:;" >
+      <%= t('hyrax.file_set.show.downloadable_content.pdf_link') %>
+    </a>
+
+    <!-- direct download link -->
+    <%
+      summary_doc = FileSetHelper.get_parent_summary_docs(file_set.id)
+    %>
+    <input type="hidden" id="summary_journals" value="<%= SummaryHelper.get_journals(summary_doc).join('|')%>"/>
+    <%= link_to hyrax.download_path(file_set),
+                data: { turbolinks: false },
+                target: :_blank,
+                id: "file_download_direct",
+                style: "visibility:hidden",
+                data: { label: file_set.id },
+                class: "btn btn-primary btn-block" do %>
+      <%= t('hyrax.file_set.show.downloadable_content.pdf_link') %>
+    <% end %>
+
+    <button id="file_download_controller"
+            class="btn btn-primary btn-block">
+      Download summary
+    </button>
     </div>
 <% else %>
     <div>

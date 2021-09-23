@@ -1,5 +1,9 @@
 <%
-  session['has_done_survey'] = params["survey_done"] unless params["survey_done"].nil?
+  cookies[:oasis_survey] = {
+      :value => 'added_cookie',
+      :expires => 99.year.from_now,
+      :httponly => false
+  }
 %>
 
 <div class="row work-type">
