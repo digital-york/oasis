@@ -24,7 +24,7 @@
       <a data-fancybox
         data-type="iframe"
         data-captain="Downloader Survey"
-        id = "file_download"
+        id = "file_download_survey"
       <%
         if @presenter.blank? or @presenter.solr_document.blank?
             summary_id =  FileSetHelper.get_parent_summary_docs(file_set.id)[0]['id']
