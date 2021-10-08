@@ -24,7 +24,7 @@
       <a data-fancybox
         data-type="iframe"
         data-captain="Downloader Survey"
-        id = "file_download"
+        id = "file_download_survey"
       <%
         if @presenter.blank? or @presenter.solr_document.blank?
             summary_id =  FileSetHelper.get_parent_summary_docs(file_set.id)[0]['id']
@@ -54,7 +54,7 @@
     <%= link_to hyrax.download_path(file_set),
                 data: { turbolinks: false },
                 target: :_blank,
-                id: "file_download_direct",
+                id: "file_download",
                 style: "visibility:hidden",
                 data: { label: file_set.id },
                 class: "btn btn-primary btn-block" do %>
