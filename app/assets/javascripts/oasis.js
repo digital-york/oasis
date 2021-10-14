@@ -322,5 +322,4 @@ $(document).on('turbolinks:load', function() {
             $(this).css({"background-color": "yellow"});
         }
     });
-
 });
