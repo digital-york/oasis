@@ -5,7 +5,7 @@
         </div>
         <div class="col-sm-9">
           <%unless @presenter.solr_document._source[field_name+"_tesim"].nil?%>
-            <%@presenter.solr_document._source[field_name+"_tesim"].each do |w|%>
+            <%@presenter.solr_document._source[field_name+"_tesim"].sort_by(&:to_i).each do |w|%>
               <%if 'Other' != GenericLocalAuthorityService.id_to_label(authority_file_name, w.to_i>0 ? w.to_i : w)%>
                   <%= link_to  GenericLocalAuthorityService.id_to_label(authority_file_name, w.to_i>0 ? w.to_i : w),
                          '/catalog?f['+field_name+'_sim][]='+w+'&locale=en&q=&search_field=all_fields',
