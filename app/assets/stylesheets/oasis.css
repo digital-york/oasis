@@ -1,3 +1,7 @@
+.col-sm-9 a {
+    color: #2e74b2;
+}
+
 .homepage_div {
     text-align: center;
     height: 2.5em;
@@ -62,9 +66,10 @@
     font-size: 1.5em;
 }
 
-.detail_page_item_block {
+.detail_page_item_block, .detail_page_block {
     padding-top: 0.2em;
     padding-bottom: 0.2em;
+    margin-top: 1rem;
 }
 
 .accordian_title {
