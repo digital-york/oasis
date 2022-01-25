@@ -19,7 +19,7 @@ module Hyrax::FileSetHelper
     'hyrax/file_sets/media_display/' +
       if file_set.image?
         'image'
-      elsif file_set.video?
+      elsif file_set.video? || file_set.mime_type == 'application/mp4'
         'video'
       elsif file_set.audio?
         'audio'
