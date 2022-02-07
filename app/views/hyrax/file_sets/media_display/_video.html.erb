@@ -36,28 +36,30 @@
         href="javascript:;" >
       <%= t('hyrax.file_set.show.downloadable_content.video_link') %>
     </a>
-    <video controls="controls" class="video-js vjs-default-skin btn-block" data-setup="{}" preload="auto">
-      <source src="<%= hyrax.download_path(file_set, file: 'webm') %>" type="video/webm" />
-      <source src="<%= hyrax.download_path(file_set, file: 'mp4') %>" type="video/mp4" />
-      Your browser does not support the video tag.
-    </video>
-    <!-- direct download link -->
-    <%
-        summary_doc = FileSetHelper.get_parent_summary_docs(file_set.id)
-      %>
-    <input type="hidden" id="summary_journals" value="<%= SummaryHelper.get_journals(summary_doc).join('|')%>"/>
-    <%= link_to hyrax.download_path(file_set),
-                  data: { turbolinks: false },
-                  target: :_blank,
-                  id: "file_download",
-                  style: "visibility:hidden",
-                  data: { label: file_set.id },
-                  class: "btn btn-primary btn-block" do %>
-      <%= t('hyrax.file_set.show.downloadable_content.video_link') %>
-    <% end %>
-    <button id="file_download_controller"
-              class="btn btn-primary btn-block">
-      Download video summary
-    </button>
-  </div>
+    <video controls="controls" class="video-js vjs-default-skin btn-block" data-setup="{}" preload="auto"
+          id="video_download" data-label="<%= file_set.id %>">
+            <source src="<%= hyrax.download_path(file_set, file: 'webm') %>" type="video/webm" />
+            <source src="<%= hyrax.download_path(file_set, file: 'mp4') %>" type="video/mp4" /> 
+            Your browser does not support the video tag.
+     </video>
+  <!-- direct download link -->
+  <%
+      summary_doc = FileSetHelper.get_parent_summary_docs(file_set.id)
+    %>
+  <%# Pull all summary's journals metadata for GA event %>
+  <input type="hidden" id="summary_journals" value="<%= SummaryHelper.get_journals(summary_doc).join('|')%>"/>
+  <%= link_to hyrax.download_path(file_set),
+                data: { turbolinks: false },
+                target: :_blank,
+                id: "file_download",
+                style: "visibility:hidden",
+                data: { label: file_set.id },
+                class: "btn btn-primary btn-block" do %>
+    <%= t('hyrax.file_set.show.downloadable_content.video_link') %>
+  <% end %>
+  <button id="file_download_controller"
+            class="btn btn-primary btn-block">
+    Download video summary
+  </button>
+</div>
 <% end %>
