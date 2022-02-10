@@ -1,6 +1,65 @@
-  <video controls="controls" class="video-js vjs-default-skin" data-setup="{}" preload="auto">
-    <source src="<%= hyrax.download_path(file_set, file: 'webm') %>" type="video/webm" />
-    <source src="<%= hyrax.download_path(file_set, file: 'mp4') %>" type="video/mp4" />
-    Your browser does not support the video tag.
-  </video>
-
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.2/dist/jquery.fancybox.min.css" />
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.2/dist/jquery.fancybox.min.js"></script>
+<style>
+  .fancybox-container {
+    width: 100%;
+  }
+  .fancybox-content {
+    max-width: 600px;
+    max-height: 800px;
+  }
+</style>
+<% if Hyrax.config.display_media_download_link? %>
+  <div class="no-preview">
+    <!-- Download survey -->
+    <a data-fancybox
+        data-type="iframe"
+        data-captain="Downloader Survey"
+        id = "file_download_survey"
+      <%
+        if @presenter.blank? or @presenter.solr_document.blank?
+            summary_id =  FileSetHelper.get_parent_summary_docs(file_set.id)[0]['id']
+        else
+            summary_id = @presenter.solr_document.id
+        end
+      %>
+        data-src="/survey/new?summary_id=<%= summary_id %>&summary_fileset_id=<%= file_set.id%>"
+        data-options='{
+          "buttons" : ["close"],
+          "animationEffect": "fade",
+          "animationDuration": "500",
+          "autoFocus": "true",
+          "modal": "true"
+        }'
+        class="btn btn-primary btn-block"
+        style="visibility: hidden"
+        href="javascript:;" >
+      <%= t('hyrax.file_set.show.downloadable_content.video_link') %>
+    </a>
+    <video controls="controls" class="video-js vjs-default-skin btn-block" data-setup="{}" preload="auto"
+          id="video_download" data-label="<%= file_set.id %>">
+            <source src="<%= hyrax.download_path(file_set, file: 'webm') %>" type="video/webm" />
+            <source src="<%= hyrax.download_path(file_set, file: 'mp4') %>" type="video/mp4" /> 
+            Your browser does not support the video tag.
+     </video>
+  <!-- direct download link -->
+  <%
+      summary_doc = FileSetHelper.get_parent_summary_docs(file_set.id)
+    %>
+  <%# Pull all summary's journals metadata for GA event %>
+  <input type="hidden" id="summary_journals" value="<%= SummaryHelper.get_journals(summary_doc).join('|')%>"/>
+  <%= link_to hyrax.download_path(file_set),
+                data: { turbolinks: false },
+                target: :_blank,
+                id: "file_download",
+                style: "visibility:hidden",
+                data: { label: file_set.id },
+                class: "btn btn-primary btn-block" do %>
+    <%= t('hyrax.file_set.show.downloadable_content.video_link') %>
+  <% end %>
+  <button id="file_download_controller"
+            class="btn btn-primary btn-block">
+    Download video summary
+  </button>
+</div>
+<% end %>

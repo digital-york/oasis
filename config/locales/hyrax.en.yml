@@ -116,6 +116,7 @@ en:
         downloadable_content:
           office_link: Download summary
           pdf_link: Download summary
+          video_link: Download video summary
 
   helpers:
     action:
