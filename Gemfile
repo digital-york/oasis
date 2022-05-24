@@ -37,7 +37,7 @@ gem 'redis', '~> 4.0'
 
 gem 'loofah', '~> 2.3.1'
 gem 'rails-html-sanitizer', '~> 1.0.4'
-gem 'nokogiri', '~> 1.12.5'
+gem 'nokogiri', '~> 1.13.6'
 gem 'mini_magick', '~> 4.9.5'
 
 # Use Capistrano for deployment
