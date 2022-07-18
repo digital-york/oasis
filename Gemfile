@@ -72,7 +72,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'browse-everything', '~> 0.16.1'
 gem 'hyrax', '~> 2.9.5'
-gem 'sinatra', '~> 2.0.2'
+gem 'sinatra', '~> 2.2.0'
 gem 'ffi', '~> 1.9.24'
 gem 'rubyzip', '~> 1.3.0'
 gem 'sprockets', '~> 3.7.2'
