@@ -6,7 +6,7 @@ namespace :report do
     require 'date'
     require 'mail'
 
-    SOLR = Figaro.env.solr_url
+#  SOLR = Figaro.env.solr_url
 
     # define status value to desc map
     STATUS_MAP = {
@@ -69,8 +69,8 @@ namespace :report do
         if number_of_downloaders == 0
             puts 'No downloader found.'
         else
-            puts "Total downloads: #{number_of_downloaders}"
-            puts '------------------------------'
+            
+	    puts 'User Role, Downloads'
 
             response['response']['docs'].each do |doc|
                 current_doc_status = {}
@@ -97,8 +97,10 @@ namespace :report do
             end
 
             results.each do |k,v|
-                puts "#{STATUS_MAP[k]} => #{v}"
+                puts "#{STATUS_MAP[k]}, #{v}"
             end
+	    puts '-----------------------------------------'
+            puts "Total downloads, #{number_of_downloaders}"
         end
     end
 
@@ -117,8 +119,6 @@ namespace :report do
         if number_of_downloaders == 0
             puts 'No downloader found.'
         else
-            puts "Total downloads: #{number_of_downloaders}"
-            puts '------------------------------'
 
             response['response']['docs'].each do |doc|
                 download_time = Date.parse(doc['system_create_dtsi']).strftime("%Y.%m")
@@ -129,9 +129,12 @@ namespace :report do
                 end
             end
 
+            puts 'Date, Downloads'
             results.each do |k,v|
-                puts "#{k} => #{v}"
+                puts "#{k}, #{v}"
             end
+            puts '------------------------------'
+            puts "Total downloads, #{number_of_downloaders}"
         end
     end
 
@@ -167,7 +170,7 @@ namespace :report do
             end
 
             results.each do |k,v|
-                puts "#{k} => #{v}"
+                puts "#{k}, #{v}"
             end
         end
     end
