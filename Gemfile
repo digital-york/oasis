@@ -9,7 +9,7 @@ end
 # Production secrets management
 gem 'figaro'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 5.2.4.6'
+gem 'rails', '~> 5.2.8.1'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 # Use Puma as the app server
@@ -36,7 +36,7 @@ gem 'redis', '~> 4.0'
 # gem 'clamav' 
 
 gem 'loofah', '~> 2.3.1'
-gem 'rails-html-sanitizer', '~> 1.0.4'
+gem 'rails-html-sanitizer', '~> 1.4.3'
 gem 'nokogiri', '~> 1.13.6'
 gem 'mini_magick', '~> 4.9.5'
 
@@ -45,7 +45,7 @@ gem 'mini_magick', '~> 4.9.5'
 
 group :production do
   # Standalone passenger
-  gem 'passenger', '~> 5.2.0'
+  gem 'passenger', '~> 5.3.2'
   # Postgres DB
   gem 'pg', '~> 1.2.3'
 end
@@ -71,7 +71,7 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'browse-everything', '~> 0.16.1'
-gem 'hyrax', '~> 2.9.5'
+gem 'hyrax', '~> 2.9.6'
 gem 'sinatra', '~> 2.2.0'
 gem 'ffi', '~> 1.9.24'
 gem 'rubyzip', '~> 1.3.0'
