@@ -45,7 +45,7 @@ gem 'mini_magick', '~> 4.9.5'
 
 group :production do
   # Standalone passenger
-  gem 'passenger', '~> 5.2.0'
+  gem 'passenger', '~> 5.3.2'
   # Postgres DB
   gem 'pg', '~> 1.2.3'
 end
