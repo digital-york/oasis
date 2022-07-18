@@ -36,7 +36,7 @@ gem 'redis', '~> 4.0'
 # gem 'clamav' 
 
 gem 'loofah', '~> 2.3.1'
-gem 'rails-html-sanitizer', '~> 1.0.4'
+gem 'rails-html-sanitizer', '~> 1.4.3'
 gem 'nokogiri', '~> 1.13.6'
 gem 'mini_magick', '~> 4.9.5'
 
