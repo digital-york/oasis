@@ -21,7 +21,9 @@
                 <%unless @presenter.solr_document._source[field_name+"_other_tesim"].nil?%>
                   <ul>
                   <%@presenter.solr_document._source[field_name+"_other_tesim"].each do |w|%>
-                      <li><%=w%></li>
+                      <%w.split(";").each do |o| %>
+                        <li><%=o%></li>
+                      <%end%>
                   <%end%>
                   </ul>
                 <%end%>
