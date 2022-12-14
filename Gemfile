@@ -35,7 +35,7 @@ gem 'redis', '~> 4.0'
 # Add clamav for virus checking
 # gem 'clamav' 
 
-gem 'loofah', '~> 2.3.1'
+gem 'loofah', '~> 2.19.1'
 gem 'rails-html-sanitizer', '~> 1.4.3'
 gem 'nokogiri', '~> 1.13.6'
 gem 'mini_magick', '~> 4.9.5'
