@@ -1,4 +1,6 @@
 terms:
+  - id: 79
+    term: "Accents / accentedness"
   - id: 1
     term: "Acquisition"
   - id: 2
@@ -11,6 +13,8 @@ terms:
     term: "Bilingualism"
   - id: 6
     term: "Community or heritage (home) languages"
+  - id: 74
+    term: "Collaboration"
   - id: 7
     term: "Complexity"
   - id: 8
@@ -19,6 +23,8 @@ terms:
     term: "Computer-assisted language learning"
   - id: 10
     term: "Conversation"
+  - id: 87
+    term: "Corpora"
   - id: 11
     term: "Cross-linguistic influence"
   - id: 12
@@ -29,8 +35,12 @@ terms:
     term: "Discourse"
   - id: 15
     term: "Effectiveness of teaching"
+  - id: 70
+    term: "Emotion"
   - id: 16
     term: "Error correction / Corrective feedback"
+  - id: 81
+    term: "Exposure / input"
   - id: 17
     term: "Figurative language (metaphor)"
   - id: 18
@@ -41,8 +51,18 @@ terms:
     term: "Identity"
   - id: 21
     term: "Implicit learning"
+  - id: 80
+    term: "Intelligibility / comprehensibility"
+  - id: 69
+    term: "Intercultural"
   - id: 23
     term: "Interaction"
+  - id: 86
+    term: "Language awareness"
+  - id: 66
+    term: "Language policy and use"
+  - id: 77
+    term: "Language varieties / dialects"
   - id: 24
     term: "Learner attitudes"
   - id: 25
@@ -51,18 +71,26 @@ terms:
     term: "Learner strategies"
   - id: 28
     term: "Learning"
+  - id: 71
+    term: "Learner characteristics / individual differences"
   - id: 27
     term: "Learning style"
   - id: 29
     term: "Linguistic identity"
   - id: 55
     term: "Listening"
+  - id: 67
+    term: "Literacy"
   - id: 30
     term: "Meta-analysis"
   - id: 31
     term: "Motivation"
   - id: 32
     term: "Multilingualism"
+  - id: 83
+    term: "Multimodality"
+  - id: 85
+    term: "Music"
   - id: 33
     term: "Native / Non-native"
   - id: 34
@@ -87,12 +115,22 @@ terms:
     term: "Self-efficacy"
   - id: 43
     term: "Sentence processing"
+  - id: 82
+    term: "Sign Language"
+  - id: 78
+    term: "Social justice"
   - id: 57
     term: "Speaking"
+  - id: 73
+    term: "Speech and language pathology"
   - id: 44
     term: "Study abroad"
+  - id: 84
+    term: "Synthesis of research"
   - id: 45
     term: "Tasks"
+  - id: 72
+    term: "Teacher characteristics"
   - id: 46
     term: "Teacher cognition"
   - id: 47
@@ -117,6 +155,10 @@ terms:
     term: "Teaching policy"
   - id: 51
     term: "Testing"
+  - id: 75
+    term: "Translation / interpretation"
+  - id: 76
+    term: "Translanguaging"
   - id: 52
     term: "Vocabulary"
   - id: 64
@@ -125,5 +167,7 @@ terms:
     term: "Working memory"
   - id: 65
     term: "Writing"
+  - id: 68
+    term: "Writing systems"
   - id: 54
     term: "Other"
