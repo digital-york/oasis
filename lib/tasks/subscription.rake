@@ -15,8 +15,8 @@ namespace :subscription do
     puts "Find all Sumamries no older than one week ago #{one_week_ago}"
 
     Summary.find_each do |s|
-      if !s.nil? && (s.date_modified >= one_week_ago)
-        puts "Found new summary #{s.id} #{s.date_modified}"
+      if !s.nil? && (s.create_date >= one_week_ago)
+        puts "Found new summary #{s.id} #{s.create_date}"
         new_summaries[:summaries][s.id] = {
           title_of_summary: s.title_of_summary,
           categories_topics: {
