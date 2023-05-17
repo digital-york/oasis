@@ -97,35 +97,34 @@ development:
 ```
 3. Build docker images. Note this will take up to 1h depending on network and laptop speed.
 ```
-❯ docker-compose build
+❯ docker compose build
 
 # Check images builded
-❯ docker-compose images
-        Container                   Repository              Tag        Image Id      Size  
--------------------------------------------------------------------------------------------
-oasis-docker_app_1          oasis-docker_app             latest      c38b7b455ab2   3.22 GB
-oasis-docker_fcrepo_1       ualbertalib/docker-fcrepo4   4.7         15806dadb895   575 MB 
-oasis-docker_postgresdb_1   postgres                     11-alpine   da01ecfbabe1   68.5 MB
-oasis-docker_redis_1        redis                        5           de25a81a5a0b   93.7 MB
-oasis-docker_solr_1         solr                         7-alpine    64cb096f9679   286 MB 
-oasis-docker_web_1          oasis-docker_web             latest      c38b7b455ab2   3.22 GB
+❯ docker compose images
+CONTAINER                   REPOSITORY                   TAG                 IMAGE ID            SIZE
+oasis-docker-app-1          oasis-docker-app             latest              dd2e3a780415        4.06GB
+oasis-docker-console-1      oasis-docker-console         latest              f65bc54e190c        4.06GB
+oasis-docker-fcrepo-1       ualbertalib/docker-fcrepo4   4.7                 15806dadb895        603MB
+oasis-docker-postgresdb-1   postgres                     12-alpine           f976fa42a711        230MB
+oasis-docker-redis-1        redis                        5                   99ee9af2b6b1        110MB
+oasis-docker-solr-1         solr                         7-alpine            64cb096f9679        300MB
+oasis-docker-web-1          oasis-docker-web             latest              28960e732066        4.06GB
 ```
 4. Start your docker stack
 ```
-❯ docker-compose up
+❯ docker compose up
 ...
 lots of logs
 ...
 
 # Check status from an other terminal
-❯ docker-compose ps                                                                  ⏎ ═ ✹ ✚
-          Name                         Command                   State                Ports         
-----------------------------------------------------------------------------------------------------
-oasis-docker_fcrepo_1       catalina.sh run                  Up               0.0.0.0:8080->8080/tcp
-oasis-docker_postgresdb_1   docker-entrypoint.sh postgres    Up (unhealthy)   0.0.0.0:5432->5432/tcp
-oasis-docker_redis_1        docker-entrypoint.sh redis ...   Up (healthy)     0.0.0.0:6379->6379/tcp
-oasis-docker_solr_1         solr-precreate hyrax-devel ...   Up (healthy)     0.0.0.0:8983->8983/tcp
-oasis-docker_web_1          /bin/docker-entrypoint-web.sh    Up               0.0.0.0:3000->3000/tcp
+❯ docker compose ps                                                                  ⏎ ═ ✹ ✚
+NAME                        IMAGE                            COMMAND                  SERVICE             CREATED             STATUS                         PORTS
+oasis-docker-fcrepo-1       ualbertalib/docker-fcrepo4:4.7   "catalina.sh run"        fcrepo              About an hour ago   Up About an hour               0.0.0.0:8080->8080/tcp
+oasis-docker-postgresdb-1   postgres:12-alpine               "docker-entrypoint.s…"   postgresdb          About an hour ago   Up About an hour (unhealthy)   0.0.0.0:5432->5432/tcp
+oasis-docker-redis-1        redis:5                          "docker-entrypoint.s…"   redis               About an hour ago   Up About an hour (healthy)     0.0.0.0:6379->6379/tcp
+oasis-docker-solr-1         solr:7-alpine                    "solr-precreate hyra…"   solr                About an hour ago   Up About an hour (healthy)     0.0.0.0:8983->8983/tcp
+oasis-docker-web-1          oasis-docker-web                 "/bin/docker-entrypo…"   web                 54 minutes ago      Up 53 minutes                  0.0.0.0:3000->3000/tcp
 ```
 
 The local source code is shared with Docker ${APP_DIR} volume. Any changes to .erb files, while running rails servers  in development mode, will be seen instantly. Changes to gems and new *.rb will require rebuild image. This should be faster as the process is staged.   
@@ -147,5 +146,4 @@ docker volume rm oasis-docker_state
 docker volume rm $(docker volume ls -q|grep oasis) 
 ```
 
-In order to use Pry for debuging, add Pry bindig and restart docker. Visit relevant application section. Application will stop, however, access to terminal is not allowed. Connect to web service with attach command ```docker attach #Container ID``` and press enter to see Pry CMD prompt.
-
+You can connect to the rails console with pry environment: ```docker attach oasis-docker-console-1``` where _oasis-docker-console-1_ is the name of the container to connect to. You can also debug Ruby code by adding ```binding. pry``` at *.erb or *.rb source code and restart docker. When the execution of the app code hits the above trap,  the execution stops, and you can attach terming to this application state by running ```docker attach oasis-docker-web-1```. Now you can inspect the code variables and many more. For more information on how to use Pry IRB, see this [link](https://github.com/pry/pry). 
