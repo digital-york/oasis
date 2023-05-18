@@ -109,6 +109,13 @@ services:
       - fcrepo
       - redis
 
+  console:
+    <<: *app
+    tty: true 
+    stdin_open: true 
+    entrypoint:
+        - /bin/docker-entrypoint-console.sh
+
   web:
     <<: *app
     tty: true 

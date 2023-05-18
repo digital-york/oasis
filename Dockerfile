@@ -81,6 +81,9 @@ RUN chmod +x /bin/docker-entrypoint-web.sh
 COPY docker/docker-entrypoint-worker.sh /bin/
 RUN chmod +x /bin/docker-entrypoint-worker.sh
 
+COPY docker/docker-entrypoint-console.sh /bin/
+RUN chmod +x /bin/docker-entrypoint-console.sh
+
 # Install gems
 WORKDIR $APP_WORKDIR
 COPY Gemfile /${APP_WORKDIR}/Gemfile
