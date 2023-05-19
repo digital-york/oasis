@@ -16,7 +16,14 @@
         %>
         <tr>
           <th><span class="attribute-label h4">Publication</span></th>
-          <td><%= apa_short %></td>
+          <td><%= apa_short %>
+          <%
+        original_article_open_access = document.original_article_open_access
+        %>
+        <%if original_article_open_access=='Yes' %>
+                <%= image_tag "openaccess.png", :class=>'original_article_open_access_small'%>              
+        <% end%>
+        </td>
         </tr>
 
         <!-- Research Areas / Topics -->
