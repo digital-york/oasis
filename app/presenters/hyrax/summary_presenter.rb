@@ -34,8 +34,10 @@ module Hyrax
                                              @solr_document.publication_pages_to,
                                              @solr_document.publication_identifier)
       end
-      if(@solr_document.original_article_open_access=='Yes')
+      if(original_article_open_access=='Yes')
         description = description + " This article is open access"
+      else
+        description
       end 
     end
 
