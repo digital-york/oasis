@@ -3,11 +3,12 @@
 module Hyrax
   class SummaryPresenter < Hyrax::WorkShowPresenter
     delegate :title_of_summary, :summary_writer_all, :date_uploaded, :publication_author, :publication_journal_name,
-             :publication_date, to: :solr_document
+             :publication_date, :original_article_open_access, to: :solr_document
 
     def summary_description
       description = "OASIS summary of: "
       authors = @solr_document.publication_author_all unless @solr_document.publication_author_all.nil?
+      original_article_open_access = @solr_document.original_article_open_access unless @solr_document.original_article_open_access.nil?
       if(!@solr_document._source["publication_journal_name_label_tesim"].include? 'Other')
 
         description = description + Apa.get_reference(JSON.parse(authors),
@@ -33,6 +34,11 @@ module Hyrax
                                              @solr_document.publication_pages_to,
                                              @solr_document.publication_identifier)
       end
+      if(original_article_open_access=='Yes')
+        description = description + " This article is open access"
+      else
+        description
+      end 
     end
 
     def summary_thumbnail_url

@@ -121,6 +121,8 @@ module Oasis
     attribute :of_likely_interest_to_other, Solr::String, solr_name('of_likely_interest_to_other')
 
     attribute :materials_on_iris, Solr::String, solr_name('materials_on_iris')
+    attribute :original_article_open_access, Solr::String, solr_name('original_article_open_access')
+    
 
     attribute :iris_url, Solr::String, solr_name('iris_url')
   end

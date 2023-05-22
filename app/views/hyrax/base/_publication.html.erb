@@ -33,5 +33,10 @@
                                                @presenter.solr_document.publication_identifier
                                                ), attributes: %w(href target))%>
         <%end%>
+        <br>
+        <%unless @presenter.solr_document.original_article_open_access.nil? or @presenter.solr_document.original_article_open_access!='Yes'%>
+        This article is open access
+        <%= image_tag "openaccess.png", :class=>'original_article_open_access_small'%>
+    <%end%>
       </div>
 </div>

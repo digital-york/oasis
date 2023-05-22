@@ -58,6 +58,13 @@
     max-height: 25px;
     float: left;
 }
+.original_article_open_access{
+    max-height: 40px;
+}
+.original_article_open_access_small{
+    max-height: 20px;
+    padding-left: 5px;
+}
 
 .detail_page_section_block {
     padding-top: 0.4em;
