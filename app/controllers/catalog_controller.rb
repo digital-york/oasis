@@ -66,7 +66,7 @@ class CatalogController < ApplicationController
     config.add_facet_field solr_name('publication_journal_name', :facetable), label: "Journal of publication", limit: 5
     config.add_facet_field solr_name('publication_date', :facetable), label: "Date of publication", limit: 5
     config.add_facet_field solr_name('materials_on_iris', :facetable), label: "Materials on IRIS", limit: 5
-    config.add_facet_field solr_name('original_article_open_access', :facetable), label: "Original article open access", limit: 5
+    #config.add_facet_field solr_name('original_article_open_access', :facetable), label: "Original article open access", limit: 5
     config.add_facet_field solr_name('language_summary_written_in', :facetable), label: "Language summary written in", limit: 5
 
     # The generic_type isn't displayed on the facet list
