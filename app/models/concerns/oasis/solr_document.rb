@@ -122,6 +122,7 @@ module Oasis
 
     attribute :materials_on_iris, Solr::String, solr_name('materials_on_iris')
     attribute :original_article_open_access, Solr::String, solr_name('original_article_open_access')
+    attribute :other_versions, Solr::Array, solr_name('other_versions')
     
 
     attribute :iris_url, Solr::String, solr_name('iris_url')
