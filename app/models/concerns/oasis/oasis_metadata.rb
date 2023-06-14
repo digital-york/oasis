@@ -220,6 +220,9 @@ module Oasis
       property :original_article_open_access,       predicate: ::RDF::URI.new('http://dlib.york.ac.uk/ontologies/oasis#original_article_open_access'), multiple: false do |index|
         index.as :stored_searchable, :sortable, :facetable
       end
+      property :other_versions,       predicate: ::RDF::URI.new('http://dlib.york.ac.uk/ontologies/oasis#other_versions'), multiple: true do |index|
+        index.as :stored_searchable
+      end
     end
   end
 end
