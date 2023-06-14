@@ -1,0 +1,13 @@
+<%unless (@presenter.solr_document._source[field_name+"_tesim"].nil?) or (@presenter.solr_document._source[field_name+"_tesim"][0]=='') %>
+    <div class="row detail_page_item_block">
+        <div class="col-sm-3">
+          <b><%=I18n.t('simple_form.labels.summary.'+field_name)%></b>
+        </div>
+        <div class="col-sm-9">
+          <%@presenter.solr_document._source[field_name+"_tesim"].each do |w|%>              
+              <%= link_to 'https://oasis-database.org/concern/summaries/'+w, '/concern/summaries/'+w %><br>              
+              
+          <%end%>
+        </div>
+    </div>
+<%end%>
