@@ -49,17 +49,22 @@ module Hyrax
      end
 
     def other_versions_title
-    #fileset_id = Summary.find(@solr_document.id).thumbnail_id
-    #fileset_id = Summary.find(@solr_document.id).title_of_summary    
+      
     other_versions = @solr_document.other_versions
     version = ""
     final_html= ""
 
-      other_versions.each do |summary_id|              
-      version = OtherVersions.get_other_versions(summary_id)
-        version.each do |version_detail|
-        final_html << '<a href="/concern/summaries/'+version_detail['id']+'" title="'+version_detail['title_of_summary_tesim'].join()+'" target="_blank">'+version_detail['title_of_summary_tesim'].join()+'</a><br>'
-        end        
+      other_versions.each do |summary_id|
+        unless other_versions.blank? 
+          version = OtherVersions.get_other_versions(summary_id)
+          unless version.blank?
+            version.each do |version_detail|
+              unless version_detail.blank?
+                final_html << '<a href="/concern/summaries/'+version_detail['id']+'" title="'+version_detail['title_of_summary_tesim'].join()+'" target="_blank">'+version_detail['title_of_summary_tesim'].join()+'</a><br>'
+              end
+            end
+          end
+        end      
       end
 
     return final_html
