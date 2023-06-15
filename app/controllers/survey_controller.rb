@@ -16,7 +16,8 @@ class SurveyController < ApplicationController
     d.save!
 
     redirect_to '/survey/saved?survey_done=yes&summary_id=' + summary_id.to_s + '&downloader_id=' + d.id.to_s + '&fileset_id=' + summary_fileset_id.to_s
-  rescue StandardError
+  rescue StandardError => e
+    Rails.logger.error("Error while saving download survey: #{e.message}")
     redirect_to '/survey/error'
   end
 end
