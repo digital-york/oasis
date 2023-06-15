@@ -48,8 +48,7 @@ module Hyrax
     'https://oasis-database.org/assets/oasis.png'
      end
 
-    def other_versions_title
-      
+    def other_versions_title      
     other_versions = @solr_document.other_versions
     version = ""
     final_html= ""
@@ -66,9 +65,7 @@ module Hyrax
           end
         end      
       end
-
     return final_html
     end
-
   end
 end
