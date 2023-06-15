@@ -19,6 +19,7 @@
             <%
               summary_doc = FileSetHelper.get_parent_summary_docs(params["fileset_id"])
             %>
+            <input type="hidden" id="ga4_property_id" value="<%= Hyrax.config.google_analytics_id %>"/>
             <input type="hidden" id="summary_journals" value="<%= SummaryHelper.get_journals(summary_doc).join('|')%>"/>
 
             <button type="button"
