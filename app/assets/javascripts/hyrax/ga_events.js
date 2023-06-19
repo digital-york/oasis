@@ -16,7 +16,10 @@
 // });
 
 $(document).on("click", "#file_download", function (e) {
+  let ga4PropertyId = $("#ga4_property_id").val();
+
   gtag("event", "Downloaded", {
+    send_to: ga4PropertyId,
     event_category: "Files",
     event_label: $(this).data("label"),
   });
@@ -26,6 +29,7 @@ $(document).on("click", "#file_download", function (e) {
   if (journals) {
     journals.split("|").forEach(function (item, index) {
       gtag("event", "Metadata", {
+        send_to: ga4PropertyId,
         event_category: "Journals",
         event_label: item,
         non_interaction: true,
