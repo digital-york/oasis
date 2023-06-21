@@ -55,6 +55,7 @@ module Hyrax
                   :materials_on_iris,
                   :iris_url,
                   :original_article_open_access,
+                  :other_versions,
                   #:licence,
                   :licence_agreement,
                   :emails,
