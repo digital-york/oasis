@@ -21,29 +21,30 @@ class Hyrax::HomepageController < ApplicationController
     @marketing_text = ContentBlock.for(:marketing)
     @featured_work_list = FeaturedWorkList.new
     @announcement_text = ContentBlock.for(:announcement)
+    @total_downloads = DownloadTallyHelper.total_downloads
     recent
   end
 
   private
 
-    # Return 5 collections
-    def collections(rows: 5)
-      builder = Hyrax::CollectionSearchBuilder.new(self)
-                                              .rows(rows)
-      response = repository.search(builder)
-      response.documents
-    rescue Blacklight::Exceptions::ECONNREFUSED, Blacklight::Exceptions::InvalidRequest
-      []
-    end
+  # Return 5 collections
+  def collections(rows: 5)
+    builder = Hyrax::CollectionSearchBuilder.new(self)
+                                            .rows(rows)
+    response = repository.search(builder)
+    response.documents
+  rescue Blacklight::Exceptions::ECONNREFUSED, Blacklight::Exceptions::InvalidRequest
+    []
+  end
 
-    def recent
-      # grab any recent documents
-      (_, @recent_documents) = search_results(q: 'has_model_ssim:Summary', sort: sort_field, rows: 4)
-    rescue Blacklight::Exceptions::ECONNREFUSED, Blacklight::Exceptions::InvalidRequest
-      @recent_documents = []
-    end
+  def recent
+    # grab any recent documents
+    (_, @recent_documents) = search_results(q: 'has_model_ssim:Summary', sort: sort_field, rows: 4)
+  rescue Blacklight::Exceptions::ECONNREFUSED, Blacklight::Exceptions::InvalidRequest
+    @recent_documents = []
+  end
 
-    def sort_field
-      "#{Solrizer.solr_name('system_create', :stored_sortable, type: :date)} desc"
-    end
+  def sort_field
+    "#{Solrizer.solr_name('system_create', :stored_sortable, type: :date)} desc"
+  end
 end
