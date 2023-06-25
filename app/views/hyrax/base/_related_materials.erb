@@ -1,0 +1,12 @@
+<%unless (@presenter.solr_document._source["related_materials_title_tesim"].nil?) or (@presenter.solr_document._source["related_materials_title_tesim"][0]=='') %>
+   <div class="row detail_page_item_block">
+        <div class="col-sm-3">
+          <b>Related Materials</b>
+        </div>
+        <div class="col-sm-9">        
+        <%= @presenter.related_materials.html_safe %>
+        </div>
+    </div> 
+<%end%>
+    
+
