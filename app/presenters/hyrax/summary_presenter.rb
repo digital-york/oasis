@@ -67,5 +67,18 @@ module Hyrax
       end
     return final_html
     end
+
+    def related_materials     
+      final_html= ""
+      index=0
+      related_materials_title = @solr_document.related_materials_title
+      related_materials_url = @solr_document.related_materials_url
+      related_materials_title.each_with_index do |related_title,index|
+        unless related_materials_url[index.to_i].nil?
+          final_html << '<a href="'+related_materials_url[index.to_i]+'" title="'+related_title+'" target="_blank">'+related_title+'</a><br>'
+        end                 
+      end          
+      return final_html
+    end
   end
 end
