@@ -1,0 +1,23 @@
+User-agent: Googlebot
+Disallow:
+
+User-agent: DuckDuckBot
+Disallow:
+
+User-agent: BingBot
+Disallow:
+
+User-agent: Msnbot
+Disallow:
+
+User-agent: Yahoo-slurp
+Disallow:
+
+User-agent: Twitterbot
+Disallow:
+
+Allow: /downloads
+
+User-agent: *
+Disallow: /
+
