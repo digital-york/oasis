@@ -37,8 +37,8 @@
               <%= render :partial => 'generic_field_with_authority', :locals => {:field_name => 'of_likely_interest_to', :authority_file_name => 'of_likely_interest_to'} %>
               <!-- Other versions of the summary -->
               <%= render :partial => 'other_versions', :locals => {:field_name => 'other_versions'} %>
-              <%= render :partial => 'licence' %>
-              <%= render :partial => 'related_materials', :locals => {:field_name => 'related_materials'} %>              
+              <%= render :partial => 'related_materials', :locals => {:field_name => 'related_materials'} %>
+              <%= render :partial => 'licence' %>                            
               <%= render :partial => 'generic_field', :locals => {:field_name => 'summary_notes'} %>
               <% unless ShowSummaryHelper.participant_details?(@presenter) %>
                 <!-- First Language of Learners -->
