@@ -2,9 +2,17 @@
 
 <div class="row home-content">
   <h4>Welcome to OASIS</h4>
-  <p>The OASIS database makes research on language learning, use, and education available and accessible to a wide audience.</p>
+  
+  <div class="row">
+    <div class="col-md-8">
+      <p>The OASIS database makes research on language learning, use, and education available and accessible to a wide audience.</p>
+    </div>
+    <div class="col-md-4">
+      <%= render 'download_stats' %>
+    </div>
+  </div>
   <br/>
-
+  
   <h4>Search OASIS</h4>
 
   <%= render partial: 'catalog/homepage_search_form' %>
