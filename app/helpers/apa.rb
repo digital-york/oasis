@@ -101,10 +101,12 @@ class Apa
 
   def self.get_other_journal_string_markup(other_journal_name, other_journal_url)
     if !other_journal_name.nil? && (other_journal_name != '')
-      return '[' + other_journal_name + '](' + other_journal_url +'), '
+      if !other_journal_url.nil? && (other_journal_url != '')
+        '[' + other_journal_name + '](' + other_journal_url + '), '
+      else
+        '[' + other_journal_name + '], '
+      end
     end
-
-    ''
   end
 
   def self.get_reference_with_other_journal_name(authors, publication_year, title, other_journal_name, other_journal_url, authority_value = true, volume, issue, page_from, page_to, doi)
