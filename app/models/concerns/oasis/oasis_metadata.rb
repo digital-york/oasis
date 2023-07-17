@@ -223,6 +223,12 @@ module Oasis
       property :other_versions,       predicate: ::RDF::URI.new('http://dlib.york.ac.uk/ontologies/oasis#other_versions'), multiple: true do |index|
         index.as :stored_searchable
       end
+      property :related_materials_title,       predicate: ::RDF::URI.new('http://dlib.york.ac.uk/ontologies/oasis#related_materials_title'), multiple: true do |index|
+        index.as :stored_searchable
+      end
+      property :related_materials_url,       predicate: ::RDF::URI.new('http://dlib.york.ac.uk/ontologies/oasis#related_materials_url'), multiple: true do |index|
+        index.as :stored_searchable
+      end
     end
   end
 end
