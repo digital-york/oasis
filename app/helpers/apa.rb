@@ -110,7 +110,7 @@ class Apa
   end
 
   def self.get_reference_with_other_journal_name(authors, publication_year, title, other_journal_name, other_journal_url, authority_value = true, volume, issue, page_from, page_to, doi)
-    j_string = other_journal_name + '. '
+    j_string = other_journal_name + '. ' if !other_journal_name.nil?
     j_string = get_other_journal_string_markup(other_journal_name, other_journal_url) if authority_value == true
     get_author_string(authors) +
       get_publication_year_string(publication_year) +
