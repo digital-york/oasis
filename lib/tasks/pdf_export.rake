@@ -1,8 +1,23 @@
 # To run this task, type:
 # RAILS_ENV=production bundle exec rake summaries:export_pdf
+# RAILS_ENV=production bundle exec rake summaries:export_metadata
 require 'open-uri'
 
 namespace :summaries do
+  # Export all Summaries metadata into ./tmp/pdfs/summaries_all.json
+  desc 'Export all Sumaries metadata'
+  task export_metadata: :environment do
+    summaries = []
+    Summary.find_each do |s|
+      summaries << s.to_solr
+      pp "#{s.id}: #{s.title_of_summary}"
+    end
+
+    File.open('./tmp/summaries_all.json', 'w') do |file|
+      file.write(JSON.pretty_generate(summaries))
+    end
+  end
+
   # Export each summary PDF file into ./tmp/pdfs/id-file_name.pdf
   desc 'Export all PDFs files'
   task export_pdf: :environment do
