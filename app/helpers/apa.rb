@@ -22,9 +22,7 @@ class Apa
   # author_all can be passed as an Array, or a string containing all authors, e.g. ["Author1","Author2","Author3",]
   def self.get_apa_short_author_all_in_one(author_all, publication_year)
     authors = author_all
-    if authors.is_a? String
-      authors = author_all.strip.split('"').delete_if { |a| (a == '[') || a == ']' || (a == ',') }
-    end
+    authors = author_all.strip.split('"').delete_if { |a| (a == '[') || a == ']' || (a == ',') } if authors.is_a? String
     authors_s = ''
 
     return authors[0] + ' (' + publication_year + ')' if authors.length == 1
@@ -41,13 +39,13 @@ class Apa
     return '' if authors.nil? || publication_year.nil?
 
     if authors.length == 1
-      return get_surname(authors[0]) + ' (' + publication_year + ')'
+      get_surname(authors[0]) + ' (' + publication_year + ')'
     elsif authors.length == 2
-      return get_surname(authors[0]) + ' & ' + get_surname(authors[1]) + ' (' + publication_year + ')'
+      get_surname(authors[0]) + ' & ' + get_surname(authors[1]) + ' (' + publication_year + ')'
     elsif authors.length > 2
-      return get_surname(authors[0]) + ' et al. (' + publication_year + ')'
+      get_surname(authors[0]) + ' et al. (' + publication_year + ')'
     else
-      return ''
+      ''
     end
   end
 
@@ -103,14 +101,16 @@ class Apa
 
   def self.get_other_journal_string_markup(other_journal_name, other_journal_url)
     if !other_journal_name.nil? && (other_journal_name != '')
-      return '[' + other_journal_name + '](' + other_journal_url +'), '
+      if !other_journal_url.nil? && (other_journal_url != '')
+        '[' + other_journal_name + '](' + other_journal_url + '), '
+      else
+        '[' + other_journal_name + '], '
+      end
     end
-
-    ''
   end
 
   def self.get_reference_with_other_journal_name(authors, publication_year, title, other_journal_name, other_journal_url, authority_value = true, volume, issue, page_from, page_to, doi)
-    j_string = other_journal_name + '. '
+    j_string = other_journal_name + '. ' if !other_journal_name.nil?
     j_string = get_other_journal_string_markup(other_journal_name, other_journal_url) if authority_value == true
     get_author_string(authors) +
       get_publication_year_string(publication_year) +
@@ -188,25 +188,19 @@ class Apa
   end
 
   def self.get_vol_issue_string_html(vol, issue)
-    unless vol.nil? || issue.nil?
-      return html_italic(vol) + '(' + issue + ')' + ', '
-    end
+    return html_italic(vol) + '(' + issue + ')' + ', ' unless vol.nil? || issue.nil?
 
     ''
   end
 
   def self.get_vol_issue_string(vol, issue)
-    unless vol.nil? || issue.nil?
-      return vol + '(' + issue + ')' + ', '
-    end
+    return vol + '(' + issue + ')' + ', ' unless vol.nil? || issue.nil?
 
     ''
   end
 
   def self.get_pages_string(page_from, page_to)
-    if !page_from.nil? && (page_from != '') && !page_to.nil? && (page_to != '')
-      return page_from + '-' + page_to + '.'
-    end
+    return page_from + '-' + page_to + '.' if !page_from.nil? && (page_from != '') && !page_to.nil? && (page_to != '')
 
     ''
   end
