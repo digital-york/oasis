@@ -81,6 +81,7 @@ module Hyrax
                             :of_likely_interest_to,
                             :materials_on_iris,
                             :original_article_open_access,
+                            :publication_identifier,
                             #:licence,
                             :licence_agreement,
                             :emails
