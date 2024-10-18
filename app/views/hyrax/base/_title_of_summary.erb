@@ -1,8 +1,13 @@
 <%unless @presenter.solr_document.title_of_summary.nil? %>
   <div class="row">
     <div class="col-sm-12">
-      <h1><%= @presenter.solr_document.title_of_summary %>
-        <%= image_tag("openaccess.png", :alt => "Open Access", class: "openaccess_logo") %>
+      <h1><%= @presenter.solr_document.title_of_summary %>        
+        <%
+        original_article_open_access = @presenter.solr_document.original_article_open_access
+        %>
+        <%if original_article_open_access=='Yes' %>
+                <%= image_tag("openaccess.png", :alt => "Open Access", class: "openaccess_logo") %>              
+        <% end%>
         <%= link_to image_tag('by-nc-sa.eu.svg', height:32), 
           'https://creativecommons.org/licenses/by-nc-sa/4.0/', 
           target: :_blank,
